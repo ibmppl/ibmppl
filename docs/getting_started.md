@@ -1,10 +1,10 @@
 
-### Getting the source
+### Get the source
 
 Send email to Xavier R Guerin to gain access to SystemG project gsa
 
 ```bash
-$ git clone file:////gsa/yktgsa/projects/s/systemg/GIT/ibmppl
+git clone file:////gsa/yktgsa/projects/s/systemg/GIT/ibmppl
 ```
 The library contains the following source directories:
 - datastructure/ : implementation of graph abstraction
@@ -16,16 +16,16 @@ The library contains the following source directories:
 - libs/: libraries built out of ibmppl
 - tools/: tools for developers
 
-### Building the library
+### Buildi and test the library
 
 Recommend to use g++-4.6.4 or later versions.
 
 You can build ibmppl on x86-linux, ppc-linux, and ppc-aix. You need to use gnu make
 
 ```bash
-> cd ibmppl
-> gmake all  /* to build the library and the examples */
-> gmake run /* to run all the examples */
+cd ibmppl
+gmake all  /* to build the library and the examples */
+gmake run /* to run all the examples */
 ```
 
 At each level, you can type 'make help' to get help message. Here is the top-level help message
@@ -47,20 +47,20 @@ USAGE: make [OPTIONS] TARGET
       BLOCK=<n> : blocking size for foreach tasks (for run_parallel)
 ```
 
-### Running examples
-
-First build the library following the instructions above
+<b> Run examples </b>
 
 ```bash
-cd ibmppl/examples
-make all /* build all the examples */
-make run /* run all the examples */
+cd ibmppl
+make lib /* make the libraries */
+cd examples
+make all /* build the examples */
+make run /* run the examples */
 ```
 
-### Running applications
+<b> Run applications</b>
 
 <b>TBA </b>
 
-### Using the library
+### Use the library
 
 <b> TBA </b>

@@ -12,7 +12,7 @@ $ tools/presubmit.py
 ```
 For more information on google C++ style guide, refer to http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml
 
-##Running unit tests
+###Running unit tests
 
 <b> TBA </b>
 
