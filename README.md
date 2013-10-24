@@ -1,7 +1,6 @@
-ibmppl
-======
-
 #IBM Parallel Programming Library
+
+======
 
 The IBMPPL is a parallel C++ library to help develop distributed, parallel graph applications.
 
@@ -15,15 +14,12 @@ The IBMPPL is a parallel C++ library to help develop distributed, parallel graph
   + distributed array
 - Key-value store
 
-##Running examples
+## Examples
 
-<b> TBA </b>
+<b> Under Construction! </b>
 
-##More Information
-- [IBM PPL Library API](http://pengwuibm.github.io/ibmppl/index.html)
+## More Information
 - [Getting Started](docs/getting_started.md)
-- [Programming Guide](docs/programming_guide.md)
-- [Developer Guide](docs/developer_guide.md)
+- [Developers' Guide](docs/developer_guide.md)
+- [Users' Guide](docs/programming_guide.md)
 - [FAQ & Trouble Shooting](docs/faq.md)
-- [Performance Data](docs/performance.md)
-- [History](docs/history.md)

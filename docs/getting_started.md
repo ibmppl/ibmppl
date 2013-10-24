@@ -1,6 +1,5 @@
-#Getting Started
 
-## Getting the source
+### Getting the source
 
 Send email to Xavier R Guerin to gain access to SystemG project gsa
 
@@ -17,7 +16,7 @@ The library contains the following source directories:
 - libs/: libraries built out of ibmppl
 - tools/: tools for developers
 
-## Building the library
+### Building the library
 
 Recommend to use g++-4.6.4 or later versions.
 
@@ -48,7 +47,7 @@ USAGE: make [OPTIONS] TARGET
       BLOCK=<n> : blocking size for foreach tasks (for run_parallel)
 ```
 
-## Running examples
+### Running examples
 
 First build the library following the instructions above
 
@@ -58,10 +57,10 @@ make all /* build all the examples */
 make run /* run all the examples */
 ```
 
-## Running applications
+### Running applications
 
 <b>TBA </b>
 
-## Using the library
+### Using the library
 
 <b> TBA </b>

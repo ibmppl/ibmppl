@@ -1,7 +1,8 @@
-## Frequently Asked Questions
+### Frequently Asked Questions
 
+<b> Under Construction! </b>
 
-## Trouble shooting
+### Trouble shooting
 - Question: How do I build and run ibmppl if the systemG project gsa directory (/gsa/yktgsa-p1/09/systemg) is not mounted on my machine?
   + Answer: You need to do the following steps on your local machine:
 
@@ -26,5 +27,5 @@ make[1]: *** [scheduler] Error 1
 ``` 
    + Answer: Try a later version of g++. This problem happens on p7curielin where the default g++ is 4.6.0, and using /opt/at5.0/bin/g++ solves the problem (v. 4.6.4)
 
-## Known Bugs
+### Known Bugs
 

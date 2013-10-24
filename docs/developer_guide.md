@@ -1,6 +1,5 @@
-#Developer Guide
 
-##Programming style guide
+###Programming style guide
 
 We use the cpplint.py tool to do style/format checking.
 
@@ -9,7 +8,7 @@ You need to download depot_tools 'git clone https://chromium.googlesource.com/ch
 Before checking your codes, please run the presumbit tool and fix any reported formatting errors.
 
 ```bash
-tools/presubmit.py
+$ tools/presubmit.py
 ```
 For more information on google C++ style guide, refer to http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml
 
@@ -17,7 +16,7 @@ For more information on google C++ style guide, refer to http://google-styleguid
 
 <b> TBA </b>
 
-##Generate doxygen documentation
+###Generate doxygen documentation
 
 We use doxygen to generate documentations. The input files for doxygen is under <ibmppl_path>/docs/. To update the documentation, either modigy the *.txt files or doxygen annotations in the library source codes.
 
@@ -46,4 +45,4 @@ $ git status   # to check if there is any new file (untracked)
 $ manually add any new file "git add ..." and "git commit"
 $ git push     # push to github
 ```
-  Note: it may take 10 minutes before the new pages appear on http://pengwuibm.github.io/ibmppl/
+Note: it may take 10 minutes before the new pages appear on http://pengwuibm.github.io/ibmppl/
