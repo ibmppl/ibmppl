@@ -19,7 +19,7 @@ The IBMPPL is a parallel C++ library to help develop distributed, parallel graph
 <b> Under Construction! </b>
 
 ### More Information
-- [Getting Started](docs/getting_started.md)
-- [Developers' Guide](docs/developer_guide.md)
-- [Users' Guide](docs/programming_guide.md)
-- [FAQ & Trouble Shooting](docs/faq.md)
+- [Getting Started](docs/ppl/getting_started.md)
+- [Developers' Guide](docs/ppl/developer_guide.md)
+- [Users' Guide](docs/ppl/programming_guide.md)
+- [FAQ & Trouble Shooting](docs/ppl/faq.md)

@@ -16,7 +16,7 @@ The library contains the following source directories:
 - libs/: libraries built out of ibmppl
 - tools/: tools for developers
 
-### Buildi and test the library
+### Build and test the library
 
 Recommend to use g++-4.6.4 or later versions.
 
