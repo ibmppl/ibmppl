@@ -1,0 +1,13 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ibmppl::adjacency_list\l\< Traits \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classibmppl_1_1adjacency__list.html",tooltip="Adjaceny list class. The main functionality of a directed graph is implemented here. It uses Traits as a template argument from which it infers all teh types used by the graph. "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ibmppl::DAdaptor\< DIRECTED,\l Traits \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classibmppl_1_1DAdaptor_3_01DIRECTED_00_01Traits_01_4.html",tooltip="Adaptor to specialize add/delete edge for an directed graph. An empty class as all required functiona..."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ibmppl::DAdaptor\< PRED\l_DIRECTED, Traits \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classibmppl_1_1DAdaptor_3_01PRED__DIRECTED_00_01Traits_01_4.html",tooltip="Directed graph where each vertex stores both incoming and outgoing edges. "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="ibmppl::DAdaptor\< UNDIRECTED,\l Traits \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classibmppl_1_1DAdaptor_3_01UNDIRECTED_00_01Traits_01_4.html",tooltip="Adaptor to specialize add/delete edge for an undirected graph. It derives from the base adjacency_lis..."];
+}

@@ -1,0 +1,7 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ibmppl::target_is_not\l\< Edge \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structibmppl_1_1target__is__not.html",tooltip="Functor used with find edge when looking for a particular target. "];
+}

@@ -1,0 +1,7 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="ibmppl::for_each_wf2\l\< DS1, DS2, Func, hasReducer \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classibmppl_1_1for__each__wf2.html",tooltip="Work function class for two container classes 1) w/ the same # partitions and 2) same elements per pa..."];
+}
