@@ -1,9 +1,0 @@
-digraph "Graphical Class Hierarchy"
-{
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  rankdir="LR";
-  Node1 [label="ibmppl::linear_task\l_partitioner\< graph\l_vertex_iterator\< G \> \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classibmppl_1_1linear__task__partitioner.html"];
-  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="ibmppl::graph_linear\l_task_partitioner\< G \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classibmppl_1_1graph__linear__task__partitioner.html",tooltip="A wrapper for implementing a linear partition of vertices on graphs. "];
-}
