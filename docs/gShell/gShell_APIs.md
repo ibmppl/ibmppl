@@ -42,47 +42,67 @@ Example:
 The above command starts the shell. In the shell, it asks user to input instructions to create/access any store, after the prompt sign ">>". User can create a store to for saving a particular graph type; add a vertex or an edge with properties; update the property of existing vertices/edges; perform some queries, etc.
 	
 <b> 3. Commands </b>	
+The commonly used commands in gShell include:
 
-    -  Create a store. Assuming we want to create a graph store and call it as "mystore", and we want use it to store an undirected graph. Note that we do not require the graph to be connected. So, namely,  a user can store multiple graphs into the same store, but all of them must be of the same type (directed, undirected, or pred_directed). The command for creating such a store is:
+- Create a store. Assuming we want to create a graph store called "<store_name>", and we want use it to store an undirected graph. Note that a graph is not necessarily to be connected in gShell; that is, a graph store can maintain a set of small graphs, but all of them must be of the same type (directed, undirected, or pred_directed). The command for creating such a store is:
 
 ```bash
          create <store_name> <undirected|directed|pred_directed>
 ```
 
-    - Now, we have mystore as an empty graph. A easy way to populate the store is to convert a file, say .csv files or edge list, to the edge store. In the following example, we assume that we have a edge list called twitter_top25.dat, where each line in the file is a triplet, consisting of <source node> <target node> <edge weight>. That is, the source and target nodes are given by the 0-th and 1-st columns. The data in rest columns are viewed as properties for this edge. This command converts the whole list as follows. We must start with the store name since in the server/client mode we interleave the operations on multiple stores. We use comma, tab or blank space to separate columns in the .csv file. If a string contains these separator characters, we must quote the string using double quote sign. Two contiguous quotes stands for a quote sign in the property. 
+- Now, we have <store_name> as an empty graph. A easy way to populate the store is to convert a file, say .csv files or edge list, to the edge store. In the following example, we assume that we have a edge list in csv format called <csv_file>, where each line in the fileconsists of <source node> <target node> <edge weight>. User must indicate that the source and target nodes are given by the <colID_src> and <colID_targ> columns, respectively. The data in the rest columns are treated as the properties on this edge. Note that this command must follow a store name, since gShell can concurrently operate multiple graph stores. If the first row of the .csv file is the header, then users must specify "has_header". We can use comma, tab or blank space to separate columns in the .csv file. The separator is specified by [separators]. If a string contains these separator characters. 
 
-           mystore load_csv_edges twitter_top25.dat 0 1 [has_header|no_header] "separators"                                           
-                                                                                                       
-    3) Note that in the above edge list file we can only have edge properties. In order to create a graph with both edge and vertex properties, we need two .csv files. We can run the above operation first to build the graph with edge properties. Then we can read a vertex file to load vertex properties. In the following example, the 0-th column in the vertex file gives the ID of a vertex and the rest columns give the properties of the vertex as a vector of strings. 
+```bash
+         <store_name> load_csv_edges <csv_file> <colID_src> <colID_targ> [has_header|no_header] [separators]
+```         
 
-           mystore load_csv_vertices sample_vertex.csv 0 [has_header|no_header]  "separators"                              
+- Note that in the above edge list file (or .csv file)  we can only have edge properties. In order to create a graph with both edge and vertex properties, we need and additional .csv file. We can run the above operation first to build the graph with edge properties. Then we can read a vertex file to load vertex properties. In the following example, the <colID_vtx>-th column in the vertex file gives the ID of a vertex and the rest columns give the properties of the vertex as a vector of strings. 
 
-    4) It is possible to run some analytic routines using the data store. Any graph analytic applications that are developed using System G middleware APIs shall be easily plugged into the shell. In this example, we use a collaborative filter code. The application queries a vertex called 100000031 in the graph store and performs BFS for two levels. It computes the number of paths from the root vertex to any leaves and rank these leaves accordingly in descending order. The top 10 vertices are returned.
+```bash
+         <store_name> load_csv_vertices <csv_file> <colID_vtx> [has_header|no_header]  [separators]
+```
 
-           mystore colFilter 100000031 2 10       // colFilter  <node_id>  <#hops>  <#ranks>
+- It is possible to run some analytic routines using the data store. Any graph analytic applications that are developed using System G middleware APIs shall be easily plugged into the shell. In this command, we use a collaborative filter code. The application queries a vertex called <vertex_id> in the graph store and performs BFS for <#hops> levels. It computes the number of paths from the root vertex to any leaves and rank these leaves accordingly in descending order. The top <#ranks> vertices are returned. The result can be formatted into json format if the optional argument [json] is specified.
 
-      We provide a relevant command due to the request of collaborative filter visualization. The first argument is also the queried vertex ID, but the second is a choice of 0 or 1. By 0, it performs 4 hops using the above command and return the top #rank vertices; by 1, it performs a 2 hops colFIlter and got the top #rank nodes, and then for each of them perform 2 hops again and get the top 10 nodes. The results are of the top #rank from the 1st colFilter and the top 10 of the remaining colFilter are aggregated to return.
+```bash
+         <store_name> colFilter  <vertex_id>  <#hops>  <#ranks> [json]
+```		  
 
-           mystore colFilter_visual 100000031 1 10 // colFilter_visual <node_id> <is_balanced> <#ranks>
-          This is changed to: my store centroid_visual Q727718S84162V06 100 10 json  // ego_visual <node_id> <#rank1> <#rank2> [jason]
+- There is a relevant command called centroid visualization for recommandation (centroid_visual). The first argument <vertex_id> for this command is also the queried vertex ID, but it performs a 2 hops colFilter and got the top <#rank1> nodes, and then for each of them perform 2 hops again and get the top 10 nodes. The results are of the top #rank from the 1st colFilter and the top <#rank2> of the remaining colFilter are aggregated to return. The result can be formatted into json if the optional argument is specified.
 
-    5) gShell supports interactive graph updates. Here are some examples to add/update vertices/edges. The instruction line also starts with the store name to identify which store to work on, which is followed by the command. The first argument for add_vertex is the vertex ID, and the rest are the vertex properties as a vector of strings. We actually store the vertex ID as the first property. We can update the properties using update_vertex and/or update_edge. In the following example, then "John" is the ID of the vertex and the rest are all properties, separated by blank spaces. Quotes string can include spaces or other characters. If edge (2nd example), the next two words are the source and target vertices and the rest are properties. The number of properties for vertices and edges are arbitrary (0 to 2^64).
+```bash
+         <store_name>  centroid_visual <vertex_id> <#rank1> <#rank2> [jason]
+```
 
+- gShell supports interactive graph updates. Here are some examples to add/update vertices/edges. The instruction line also starts with the store name to identify which store to work on, which is followed by the command. The first argument for add_vertex is the vertex ID, and the rest are the vertex properties as a vector of strings. We actually store the vertex ID as the first property. We can update the properties using update_vertex and/or update_edge. In the following example, then "John" is the ID of the vertex and the rest are all properties, separated by blank spaces. Quotes string can include spaces or other characters. If edge (2nd example), the next two words are the source and target vertices and the rest are properties. The number of properties for vertices and edges are arbitrary (0 to 2^64).
 
-           mystore add_vertex    John  "These are my desk, table, and chair"  1000.00
+```bash
+         <store_name> add_vertex/update_vertex <vertex_id> [property list]
+		 <store_name> add_edge/update_edge <src_vid> <targ_vid> [property list]
+```
+
+Here are some examples:
+
+```bash
+           mystore add_vertex    John       "These are my desk, table, and chair"  1000.00
            mystore add_edge      Mary John  "They are friends" 2011-11-11 "good friend" active
-           mystore update_vertex John  "These are my books and laptop" 
+           mystore update_vertex John       "These are my books and laptop" 
            mystore update_edge   Mary John  "They are close friends" 2011-12-12 active NYC
+```
 
-    6) The query of a vertex or edge gives all the properties and adjacent data. We use the source vertex ID plus the target vertex ID to identify an edge. In the following example, we query the properties, adjacent edges of vertex John and then query the properties of edge (Mary, John).
+- The query of a vertex or edge gives all the properties (including the adjacent edges for a vertex). We use the source vertex ID plus the target vertex ID to identify an edge. In the following example, we query the properties, adjacent edges of vertex John and then query the properties of edge (Mary, John).
 
-           mystore query_vertex  John
-           mystore query_edge    Mary John
+```bash
+         <store_name> query_vertex  <vertex_id>
+         <store_name> query_edge    <src_vtx> <targ_vtx>
+```
 
-    7) The deletion is straightforward. We just delete the vertex or edge by giving the ID or the source and target IDs. 
+- The deletion is straightforward. We just delete the vertex or edge by giving the ID or the source and target IDs. 
 
-           mystore delete_vertex John
-           mystore delete_edge   Mary John
+```bash
+         <store_name> delete_vertex <vertx_id>
+         <store_name> delete_edge <src_vtx> <targ_vtx>
+```		   
 
     8) The print_all command prints all contents of a graph store and show the structural information including internal IDs. It is not recommended to use this command for large graphs.
 
