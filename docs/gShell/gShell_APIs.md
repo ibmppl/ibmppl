@@ -63,18 +63,6 @@ The commonly used commands in gShell include:
          <store_name> load_csv_vertices <csv_file> <colID_vtx> [has_header|no_header]  [separators]
 ```
 
-- It is possible to run some analytic routines using the data store. Any graph analytic applications that are developed using System G middleware APIs shall be easily plugged into the shell. In this command, we use a collaborative filter code. The application queries a vertex called <vertex_id> in the graph store and performs BFS for <#hops> levels. It computes the number of paths from the root vertex to any leaves and rank these leaves accordingly in descending order. The top <#ranks> vertices are returned. The result can be formatted into json format if the optional argument [json] is specified.
-
-```bash
-         <store_name> colFilter  <vertex_id>  <#hops>  <#ranks> [json]
-```		  
-
-- There is a relevant command called centroid visualization for recommandation (centroid_visual). The first argument <vertex_id> for this command is also the queried vertex ID, but it performs a 2 hops colFilter and got the top <#rank1> nodes, and then for each of them perform 2 hops again and get the top 10 nodes. The results are of the top #rank from the 1st colFilter and the top <#rank2> of the remaining colFilter are aggregated to return. The result can be formatted into json if the optional argument is specified.
-
-```bash
-         <store_name>  centroid_visual <vertex_id> <#rank1> <#rank2> [jason]
-```
-
 - gShell supports interactive graph updates. Here are some examples to add/update vertices/edges. The instruction line also starts with the store name to identify which store to work on, which is followed by the command. The first argument for add_vertex is the vertex ID, and the rest are the vertex properties as a vector of strings. We actually store the vertex ID as the first property. We can update the properties using update_vertex and/or update_edge. In the following example, then "John" is the ID of the vertex and the rest are all properties, separated by blank spaces. Quotes string can include spaces or other characters. If edge (2nd example), the next two words are the source and target vertices and the rest are properties. The number of properties for vertices and edges are arbitrary (0 to 2^64).
 
 ```bash
@@ -124,12 +112,6 @@ Here are some examples:
          close_all
 ```
  
-- We have a plug-in analytic call pageRank, which performs persistent page rank in a pred_directed graph. By persistent page rank, we mean that the importance of each vertex is stored in each iteration. Thus, we can incrementally perform page rank at any time, or after any changes to the graph. The arguments for the command are the damping factor, the quadratic error bound and the initialization control. The damping factor and quadratic error are explained in wiki. By specifying "restart", we re-initialize the importance of each vertex; otherwise, if we omit it, we use the current stored values for ranking. Note that due to a lot of string to number conversions, the performance might be adversely impact. For performing high-performance page rank, please choose our in-memory page ranking subroutine in "apps/pagerank/" directory.
-
-```bash
-         <store_name> pageRank <damping_factor> <quadratic_error> [restart]
-```
-
 - List all stores and their types. This command will list all existing stores (opened or not opened) and their respective graph type (directed, undirected, pred_directed). Note that this command will not load any store if they are not opened already. 
 
 ```bash
@@ -141,6 +123,29 @@ Here are some examples:
 ```bash
         delete <store_name>
 ```
+
+<b> 4. Plug-In Analytics </b>
+
+- It is possible to run some analytic routines using the data store. Any graph analytic applications that are developed using System G middleware APIs shall be easily plugged into the shell. In this command, we use a collaborative filter code. The application queries a vertex called <vertex_id> in the graph store and performs BFS for <#hops> levels. It computes the number of paths from the root vertex to any leaves and rank these leaves accordingly in descending order. The top <#ranks> vertices are returned. The result can be formatted into json format if the optional argument [json] is specified.
+
+```bash
+         <store_name> colFilter  <vertex_id>  <#hops>  <#ranks> [json]
+```		  
+
+- There is a relevant command called centroid visualization for recommandation (centroid_visual). The first argument <vertex_id> for this command is also the queried vertex ID, but it performs a 2 hops colFilter and got the top <#rank1> nodes, and then for each of them perform 2 hops again and get the top 10 nodes. The results are of the top #rank from the 1st colFilter and the top <#rank2> of the remaining colFilter are aggregated to return. The result can be formatted into json if the optional argument is specified.
+
+```bash
+         <store_name>  centroid_visual <vertex_id> <#rank1> <#rank2> [jason]
+```
+- We have a plug-in analytic call pageRank, which performs persistent page rank in a pred_directed graph. By persistent page rank, we mean that the importance of each vertex is stored in each iteration. Thus, we can incrementally perform page rank at any time, or after any changes to the graph. The arguments for the command are the damping factor, the quadratic error bound and the initialization control. The damping factor and quadratic error are explained in wiki. By specifying "restart", we re-initialize the importance of each vertex; otherwise, if we omit it, we use the current stored values for ranking. Note that due to a lot of string to number conversions, the performance might be adversely impact. For performing high-performance page rank, please choose our in-memory page ranking subroutine in "apps/pagerank/" directory.
+
+```bash
+         <store_name> pageRank <damping_factor> <quadratic_error> [restart]
+```
+
+
+<b> Note </b>
+
 More commands and plugin analytics are addition to gShell. Please contact Yinglong Xia for further information.
 
 
