@@ -43,13 +43,13 @@ The above command starts the shell. In the shell, it asks user to input instruct
 	
 <b> 3. Commands </b>	
 
-    *  Create a store. Assuming we want to create a graph store and call it as "mystore", and we want use it to store an undirected graph. Note that we do not require the graph to be connected. So, namely,  a user can store multiple graphs into the same store, but all of them must be of the same type (directed, undirected, or pred_directed). The command for creating such a store is:
+    -  Create a store. Assuming we want to create a graph store and call it as "mystore", and we want use it to store an undirected graph. Note that we do not require the graph to be connected. So, namely,  a user can store multiple graphs into the same store, but all of them must be of the same type (directed, undirected, or pred_directed). The command for creating such a store is:
 
 ```bash
          create <store_name> <undirected|directed|pred_directed>
 ```
 
-    * Now, we have mystore as an empty graph. A easy way to populate the store is to convert a file, say .csv files or edge list, to the edge store. In the following example, we assume that we have a edge list called twitter_top25.dat, where each line in the file is a triplet, consisting of <source node> <target node> <edge weight>. That is, the source and target nodes are given by the 0-th and 1-st columns. The data in rest columns are viewed as properties for this edge. This command converts the whole list as follows. We must start with the store name since in the server/client mode we interleave the operations on multiple stores. We use comma, tab or blank space to separate columns in the .csv file. If a string contains these separator characters, we must quote the string using double quote sign. Two contiguous quotes stands for a quote sign in the property. 
+    - Now, we have mystore as an empty graph. A easy way to populate the store is to convert a file, say .csv files or edge list, to the edge store. In the following example, we assume that we have a edge list called twitter_top25.dat, where each line in the file is a triplet, consisting of <source node> <target node> <edge weight>. That is, the source and target nodes are given by the 0-th and 1-st columns. The data in rest columns are viewed as properties for this edge. This command converts the whole list as follows. We must start with the store name since in the server/client mode we interleave the operations on multiple stores. We use comma, tab or blank space to separate columns in the .csv file. If a string contains these separator characters, we must quote the string using double quote sign. Two contiguous quotes stands for a quote sign in the property. 
 
            mystore load_csv_edges twitter_top25.dat 0 1 [has_header|no_header] "separators"                                           
                                                                                                        
