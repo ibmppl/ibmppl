@@ -7,11 +7,12 @@ gShell is a shell-like environment implemented using IBMPPL for demonstrating ho
 The compilation of gShell requires the compilation of IBMPPL runtime and System G kvstore. The compile can be done using make all in the respective directories. Here is the example.
 
 ```bash
-      cd ibmppl/runtime; make
-      cd ibmppl/kvstore; make
-      cd ibmppl/apps/gShell.demo2
-      make clean
-      make
+      cd ibmppl/runtime
+	  make clean; make all
+      cd ibmppl/kvstore
+	  make clean; make all
+      cd ibmppl/apps/gShell
+      make clean; make all
 ```
 
 <b> 2. Usage </b>
@@ -104,27 +105,43 @@ Here are some examples:
          <store_name> delete_edge <src_vtx> <targ_vtx>
 ```		   
 
-    8) The print_all command prints all contents of a graph store and show the structural information including internal IDs. It is not recommended to use this command for large graphs.
+- The print_all command prints all contents of a graph store and show the structural information including internal IDs. It is not recommended to use this command for large graphs.
 
-           mystore print_all
+```bash
+         <store_name> print_all
+```
 
-    9) To query all neighbors of a vertex, we use the following command. We just need to provide a vertex ID. 
+- To query all neighbors of a vertex, we use the following command. We just need to provide a vertex ID. 
 
-           mystore query_neighbors John  
+```bash
+         <store_name> query_neighbors <vertex_id>  
+```
 
-    10) To close a store, we use "<store_name> close". It remove the store from memory, so that we have more memory to process other stores. Or, we can issue "close_all" to close all opened stores. So, the memory is release. It is suggested to issue such commands time by time to make the memory free. 
+- To close a store, we use "<store_name> close". It remove the store from memory, so that we have more memory to process other stores. Or, we can issue "close_all" to close all opened stores. So, the memory is release. It is suggested to issue such commands time by time to make the memory free. 
 
-           mystore close
-           close_all
+```bash
+         <store_name> close
+         close_all
+```
  
-    11) We have a plug-in analytic call pageRank, which performs persistent page rank in a pred_directed graph. By persistent page rank, we mean that the importance of each vertex is stored in each iteration. Thus, we can incrementally perform page rank at any time, or after any changes to the graph. The arguments for the command are the damping factor, the quadratic error bound and the initialization control. The damping factor and quadratic error are explained in wiki. By specifying "restart", we re-initialize the importance of each vertex; otherwise, if we omit it, we use the current stored values for ranking. Note that due to a lot of string to number conversions, the performance might be adversely impact. For performing high-performance page rank, please choose our in-memory page ranking subroutine in "apps/pagerank/" directory.
+- We have a plug-in analytic call pageRank, which performs persistent page rank in a pred_directed graph. By persistent page rank, we mean that the importance of each vertex is stored in each iteration. Thus, we can incrementally perform page rank at any time, or after any changes to the graph. The arguments for the command are the damping factor, the quadratic error bound and the initialization control. The damping factor and quadratic error are explained in wiki. By specifying "restart", we re-initialize the importance of each vertex; otherwise, if we omit it, we use the current stored values for ranking. Note that due to a lot of string to number conversions, the performance might be adversely impact. For performing high-performance page rank, please choose our in-memory page ranking subroutine in "apps/pagerank/" directory.
 
-           mystore pageRank 0.8 0.01 restart
+```bash
+         <store_name> pageRank <damping_factor> <quadratic_error> [restart]
+```
 
-    12) List all stores and their types: 
+- List all stores and their types. This command will list all existing stores (opened or not opened) and their respective graph type (directed, undirected, pred_directed). Note that this command will not load any store if they are not opened already. 
 
-           list_all 
+```bash
+         list_all 
+```
 
-    13) Erase a store
+- Erase a store from the disk. This is a permanent deletion and can not be recovered. So, this command should be used in cautious. 
 
-            delete test  // delete <store_name>
+```bash
+        delete <store_name>
+```
+More commands and plugin analytics are addition to gShell. Please contact Yinglong Xia for further information.
+
+
+
