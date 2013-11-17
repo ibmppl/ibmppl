@@ -41,7 +41,7 @@ Example:
 
 The above command starts the shell. In the shell, it asks user to input instructions to create/access any store, after the prompt sign ">>". User can create a store to for saving a particular graph type; add a vertex or an edge with properties; update the property of existing vertices/edges; perform some queries, etc.
 	
-<b> 3. Commands <\b>	
+<b> 3. Commands </b>	
 
     *  Create a store. Assuming we want to create a graph store and call it as "mystore", and we want use it to store an undirected graph. Note that we do not require the graph to be connected. So, namely,  a user can store multiple graphs into the same store, but all of them must be of the same type (directed, undirected, or pred_directed). The command for creating such a store is:
 
