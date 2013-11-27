@@ -32,11 +32,13 @@ e.g., what happens when a graph runs out of memory. Does the system automaticall
 for new vertices? 
 e.g., can users explicitly unload a vertex or property from memory
 
-<b> other basic operations on inDiskGraph</b>
+<b> Other basic operations on inDiskGraph</b>
 
 <b> How does the inDiskGraph interface differ from the basic in-memory graph interface? </b>
+
 e.g., are there certain operations that are allowed on in-memory graph interface but not on inDiskGraph interface?
 
 <b> Any performance considerations when using inDiskGraph </b>
+
 e.g., Are there operations that are specially expensive?
 
