@@ -48,7 +48,6 @@ RUN_ARGS=interactive < test_script.txt
 # directoies that are first remove and then created before 'make run' or 'make verify'
 GENERATED_DIRS=database
 
-
 # include all the default definition and default targets (e.g., all, run, verify, clean)
 # many application tests can use the default targets in common.mk w/o having to define
 # any other targets
@@ -61,18 +60,16 @@ client: nvStoreClient.o
         ${CXX} ${LINKER_OPTIONS} $< -o nvStoreClient
 ```
 
-###How to run tests and run self-verifying tests?
+###How to run (self-verifying) tests?
 
-Currently, all tests under ${PPL_ROOT}/apps are self-verifying. 
+Currently, all tests under `${PPL_ROOT}/apps` are self-verifying. 
 
 To run a verification test: 
-
 ```bash 
 make clean 
 make VERIFY=1 all 
 make verify 
 ``` 
-
 Note, verification test requires building the binary with
 `VERIFY=1` specified. This is because some tests produce performance
 output (e.g., running time) that differ from run to run. Since the
@@ -80,23 +77,21 @@ verification is done by comparing the output against an expected
 output (i.e., `EXPECTED_OUTPUT`), we need to suppress time-sensitive
 output during verification runs.
 
-A typical output from a verify run is:
-```bash
-./../../tools/compare.sh _output.log EXPECTED_OUTPUT _diff.log
-****************************************************
-TEST FAILED: please check _diff.log for details
-****************************************************
-```
-or
+The output of a successful verification run is:
 ```bash
 ./../../../tools/compare.sh _output.log EXPECTED_OUTPUT _diff.log
 ****************************************************
 TEST PASSED
 ****************************************************
 ```
-
+The output of a failed verification run is:
+```bash
+./../../tools/compare.sh _output.log EXPECTED_OUTPUT _diff.log
+****************************************************
+TEST FAILED: please check _diff.log for details
+****************************************************
+```
 Here are the targets supported by the Makefile system:
-
 ```bash
  USAGE: make [OPTIONS] TARGET
             all: build all binaries
@@ -104,7 +99,6 @@ Here are the targets supported by the Makefile system:
           clean: clean up generated files
 
   Valid targets are:
-
 
   Valid build OPTIONS are:
     EXTRA_FLAGS=xx : additional C/C++ flags
@@ -118,22 +112,19 @@ Here are the targets supported by the Makefile system:
        BLOCK=<n> : blocking size for foreach tasks (for parallel version)
         VERIFY=1 : enable verify output in ppl
 ```
-
 ###Setup self-verifying tests
 
-Self verification is done by the 'make verify' target. Here is the
-definition of the 'verify' target defined in
-${PPL_ROOT}/common.mk. Basically, 'make run' captures the output into
+Self verification is done by the `make verify` target. Here is the
+definition of the `verify` target defined in
+`${PPL_ROOT}/common.mk`. Basically, `make run` captures the output into
 a log, which is compared against an expected output file. In most
-cases, the verify target provided by common.mk is sufficient.
-
+cases, the verify target provided by `common.mk` is sufficient.
 ```bash
 verify:
         make run
         ./${ROOT}/tools/compare.sh ${OUTPUT_LOG} ${EXPECTED_LOG} ${DIFF_LOG}
 ```
-
-To support the 'make verify' target in your tests:
+To support `make verify` in your tests:
 - The test needs to produce a verifiable output, which is saved to `EXPECTED_OUTPUT`
 - `git add EXPECTED_OUTPUT`; `git commit -a`
 - If the application by default produces some time-sensitive output, guard such output like this:
@@ -142,12 +133,13 @@ To support the 'make verify' target in your tests:
   printf("Timing is %d sec", end);
 #endif
 ```
-- If you temporarily do not support verification, add the following target into your makefile:
+NOTE that if your test does not support verification yet, add the
+following target into your makefile:
 ```bash
 verify:
     make no-self-verify
 ```
-When one runs 'make verify', it will produce the following message:
+When one runs `make verify`, it will produce the following message:
 ```bash
 ******************************************
 WARNING: test case has no self verification
