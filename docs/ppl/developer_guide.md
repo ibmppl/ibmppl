@@ -126,7 +126,8 @@ To support `make verify` in your tests:
 - The test needs to produce a verifiable output, which is saved to `EXPECTED_OUTPUT`
 - `git add EXPECTED_OUTPUT`; `git commit -a`
 - If the application by default produces some time-sensitive output, guard such output like this:
-```bash
+
+```C
 #ifndef ENABLE_VERIFY
   printf("Timing is %d sec", end);
 #endif
@@ -138,7 +139,7 @@ following target into your makefile:
 verify:
     make no-self-verify
 ```
-When one runs `make verify`, it will produce the following message:
+In this case, `make verify` produces the following message:
 ```bash
 ******************************************
 WARNING: test case has no self verification
