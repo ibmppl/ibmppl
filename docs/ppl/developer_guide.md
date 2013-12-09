@@ -15,12 +15,13 @@ For more information on google C++ style guide, refer to http://google-styleguid
 ###How to add tests/apps to PPL code base?
 
 Test codes for PPL are organized as follows:
-- apps: for applications that use PPL library
-- tests: for simple tests developed to unit test PPL library
+- `apps/`: for applications that use PPL library
+- `tests/`: for simple tests developed to unit test PPL library
+- `tests/defects/`: for defects
 
 All test case must have the following targets using Make:
-- `make all`: to build the binary
-- `make run`: to run the binary
+- `make all`: to build the binary specified in ${TARGET}
+- `make run`: to run the binary specified in ${TARGET}
 - `make VERIFY=1 all`: to build the binary for self verification
 - `make verify`: to run the binary and verify results
 - `make clean`: to cleanup generated files
@@ -28,7 +29,6 @@ All test case must have the following targets using Make:
 The makefile structure all share a common root at `${PPL_ROOT}/common.mk`
 
 Here is an example Makefile (from `apps/gShell`):
-
 ```bash
 # ROOT indicate the top-level directory of PPL
 ROOT=../..
@@ -36,6 +36,9 @@ ROOT=../..
 TARGET=nvStore
 # all the objects needed to build the target
 OBJS=store_engine.hpp nvStore.o Helper.o keymap_loader.o store_manager.o socket_server.o
+
+### the following flags are optional
+
 # additional flags to be passed to g++ during compilation
 EXTRA_CXX_FLAGS=-I../common/ -I${ROOT}/kvstore -I$(ROOT)/datastructure/graph/dbstore/ -I$(ROOT)/data
 structure/graph/  -std=c++0x
@@ -43,6 +46,7 @@ structure/graph/  -std=c++0x
 EXTRA_LIBS=-lkvstore
 # additional files or directories to be removed during 'make clean'
 EXTRA_CLEANUP=nvStoreClient
+
 # command line arguments when running target in 'make run' or 'make verify'
 RUN_ARGS=interactive < test_script.txt
 # directoies that are first remove and then created before 'make run' or 'make verify'
@@ -59,23 +63,19 @@ all: ${TARGET} client
 client: nvStoreClient.o
         ${CXX} ${LINKER_OPTIONS} $< -o nvStoreClient
 ```
-
 ###How to run (self-verifying) tests?
 
-Currently, all tests under `${PPL_ROOT}/apps` are self-verifying. 
-
-To run a verification test: 
+Currently, all tests under `${PPL_ROOT}/apps` are self-verifying. To run a verification test: 
 ```bash 
 make clean 
 make VERIFY=1 all 
 make verify 
 ``` 
-Note, verification test requires building the binary with
-`VERIFY=1` specified. This is because some tests produce performance
-output (e.g., running time) that differ from run to run. Since the
-verification is done by comparing the output against an expected
-output (i.e., `EXPECTED_OUTPUT`), we need to suppress time-sensitive
-output during verification runs.
+Note that verification test requires building the binary with
+`VERIFY=1` specified. This is because some tests output timing information
+that differ from run to run. Since the verification is done by comparing 
+the output against an expected output (i.e., `EXPECTED_OUTPUT`), 
+we need to suppress time-sensitive output during verification runs.
 
 The output of a successful verification run is:
 ```bash
