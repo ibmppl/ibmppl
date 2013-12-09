@@ -126,11 +126,12 @@ To support `make verify` in your tests:
 - The test needs to produce a verifiable output, which is saved to `EXPECTED_OUTPUT`
 - `git add EXPECTED_OUTPUT`; `git commit -a`
 - If the application by default produces some time-sensitive output, guard such output like this:
-```C
+```bash
 #ifndef ENABLE_VERIFY
   printf("Timing is %d sec", end);
 #endif
 ```
+
 NOTE that if your test does not support verification yet, add the
 following target into your makefile:
 ```bash
