@@ -124,6 +124,24 @@ Here are some examples:
         delete <store_name>
 ```
 
+- Filter vertices to only output those with the i-th property equal to val
+
+```bash
+        filter_vertices <i> <val>
+```
+
+- Find the vertex with the maximum node degree. If the condition <i> and <val> are given, it finds the vertex only from those satisfying the condition, i.e., the i-th property of the vertex is equal to val.
+
+```bash
+        find_vertex_max_degree [<i> <val>]
+```
+
+- For each vertex with the i-th property equal to val_1, find all its neighbors. Then, for each neighbor v, find all v's neighbor set U, where each one has its j-th property equal to val_2. For each u in U, find the total number of visits and output the one with the maximum visits. A more specific example could be: Given a graph consisting of nodes of device types, IPs, and URLs, grouped by device type, find the most popular URL (i.e., the URL vertex with the most neighbors of IP) for each group. 
+
+```bash
+find_vertex_max_degree_by_group <i> <val_1> <j> <val_2>
+```
+
 <b> 4. Plug-In Analytics </b>
 
 - It is possible to run some analytic routines using the data store. Any graph analytic applications that are developed using System G middleware APIs shall be easily plugged into the shell. In this command, we use a collaborative filter code. The application queries a vertex called <vertex_id> in the graph store and performs BFS for <#hops> levels. It computes the number of paths from the root vertex to any leaves and rank these leaves accordingly in descending order. The top <#ranks> vertices are returned. The result can be formatted into json format if the optional argument [json] is specified.
