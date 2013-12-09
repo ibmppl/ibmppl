@@ -19,14 +19,7 @@ Test codes for PPL are organized as follows:
 - `tests/`: for simple tests developed to unit test PPL library
 - `tests/defects/`: for defects
 
-All test case must have the following targets using Make:
-- `make all`: to build the binary specified in ${TARGET}
-- `make run`: to run the binary specified in ${TARGET}
-- `make VERIFY=1 all`: to build the binary for self verification
-- `make verify`: to run the binary and verify results
-- `make clean`: to cleanup generated files
-
-The makefile structure all share a common root at `${PPL_ROOT}/common.mk`
+Each new test/apps must have a makefile. Please copy ${PPL_ROOT}/Makefile.template and customize accordingly. 
 
 Here is an example Makefile (from `apps/gShell`):
 ```bash
@@ -113,7 +106,6 @@ Here are the targets supported by the Makefile system:
         VERIFY=1 : enable verify output in ppl
 ```
 ###Setup self-verifying tests
-
 Self verification is done by the `make verify` target. Here is the
 definition of the `verify` target defined in
 `${PPL_ROOT}/common.mk`. Basically, `make run` captures the output into
@@ -145,7 +137,6 @@ When one runs `make verify`, it will produce the following message:
 WARNING: test case has no self verification
 ******************************************
 ```
-
 ###Generate doxygen documentation
 
 We use doxygen to generate documentations. The input files for doxygen is under <ibmppl_path>/docs/. To update the documentation, either modigy the *.txt files or doxygen annotations in the library source codes.
