@@ -15,19 +15,19 @@ For more information on google C++ style guide, refer to http://google-styleguid
 ###How to add tests/apps to PPL code base?
 
 Test codes for PPL are organized as follows:
-# ${PPL_ROOT}/apps: for applications that use PPL library
-# ${PPL_ROOT}/tests: for simple tests developed to unit test PPL library functionality
+- apps: for applications that use PPL library
+- tests: for simple tests developed to unit test PPL library
 
 All test case must have the following targets using Make:
-# make all: to build the binary
-# make run: to run the binary
-# make VERIFY=1 all: to build the binary for self verification
-# make verify: to run the binary and verify results
-# make clean: to cleanup generated files
+- `make all`: to build the binary
+- `make run`: to run the binary
+- `make VERIFY=1 all`: to build the binary for self verification
+- `make verify`: to run the binary and verify results
+- `make clean`: to cleanup generated files
 
-The makefile structure all share a common root at ${PPL_ROOT}/common.mk
+The makefile structure all share a common root at `${PPL_ROOT}/common.mk`
 
-Here is an example Makefile (from apps/gShell):
+Here is an example Makefile (from `apps/gShell`):
 
 ```bash
 # ROOT indicate the top-level directory of PPL
@@ -65,12 +65,19 @@ client: nvStoreClient.o
 
 Currently, all tests under ${PPL_ROOT}/apps are self-verifying. 
 
-To run a verification test: ```bash make clean make VERIFY=1 all make
-verify ``` Note, verification test requires building the binary with
-VERIFY=1 specified. This is because some tests produce performance
+To run a verification test: 
+
+```bash 
+make clean 
+make VERIFY=1 all 
+make verify 
+``` 
+
+Note, verification test requires building the binary with
+`VERIFY=1` specified. This is because some tests produce performance
 output (e.g., running time) that differ from run to run. Since the
 verification is done by comparing the output against an expected
-output (i.e., EXPECTED_OUTPUT), we need to suppress time-sensitive
+output (i.e., `EXPECTED_OUTPUT`), we need to suppress time-sensitive
 output during verification runs.
 
 A typical output from a verify run is:
@@ -86,8 +93,8 @@ or
 ****************************************************
 TEST PASSED
 ****************************************************
-
 ```
+
 Here are the targets supported by the Makefile system:
 
 ```bash
@@ -127,13 +134,24 @@ verify:
 ```
 
 To support the 'make verify' target in your tests:
-[] The test needs to produce a verifiable output, which is saved to EXPECTED_OUTPUT
-[] git add EXPECTED_OUTPUT; git commit -a
-[] If the app produces any time-sensitive output, guard such output like this:
+- The test needs to produce a verifiable output, which is saved to `EXPECTED_OUTPUT`
+- `git add EXPECTED_OUTPUT`; `git commit -a`
+- If the application by default produces some time-sensitive output, guard such output like this:
 ```C
 #ifndef ENABLE_VERIFY
   printf("Timing is %d sec", end);
 #endif
+```
+- If you temporarily do not support verification, add the following target into your makefile:
+```bash
+verify:
+    make no-self-verify
+```
+When one runs 'make verify', it will produce the following message:
+```bash
+******************************************
+WARNING: test case has no self verification
+******************************************
 ```
 
 ###Generate doxygen documentation
