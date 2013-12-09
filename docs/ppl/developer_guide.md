@@ -19,7 +19,13 @@ Test codes for PPL are organized as follows:
 - `tests/`: for simple tests developed to unit test PPL library
 - `tests/defects/`: for defects
 
-Each new test/apps must have a makefile. Please copy ${PPL_ROOT}/Makefile.template and customize accordingly. 
+Each new test/apps must have a makefile with the following targets:
+- `make all`: build the binary
+- `make run`: run the binary
+- `make verify` and `make VERIFY=1 all`: run and build the binary and verify results
+- `make clean`: cleanup generated files
+
+Please copy `${PPL_ROOT}/Makefile.template` and customize it accordingly. 
 
 Here is an example Makefile (from `apps/gShell`):
 ```bash
