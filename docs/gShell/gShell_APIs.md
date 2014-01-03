@@ -161,6 +161,36 @@ Here are some examples:
          <store_name> pageRank <damping_factor> <quadratic_error> [restart]
 ```
 
+- ConnectedComponent, which finds all connected components in a graph. It takes an undirected graph as input and outputs in json format the following information: 1) a list of all the nodes in the graph with the component label for each node, 2) a list of all the edges in the graph with the component label for each edge, 3) a list of connected component with the labels of nodes contained in each component. To run:
+
+```bash
+<store_name> connectedComponent
+```
+
+- kCore, which finds the K-core of a graph, where K is a parameter specified by the user. A K-core of a graph G is a maximal connected subgraph of G in which all nodes have degree at least K. It takes an undirected graph and K as input and outputs in json format the following information: 1) a list of nodes in the K-core, 2) a list of edges in the K-core. To run:
+
+```bash
+<store_name> kCore <K>
+```
+
+- ClusteringCoefficient, which computes the local clustering coefficient of each node in an undirected or directed graph. Let N be the neighborhood of a node (immediately connected neighbors), let n be |N|, i.e. size of N. The local clustering coefficient C of this node is the number of links (edges) between the nodes within N divided by n*(n-1) for a directed graph or n*(n-1)/2 for an undirected graph. It takes a graph (undirected or directed) as input and outputs in json format the following information: 1) a list of all the nodes in the graph with the local clustering coefficient value for each node, 2) a list of all the edges in the graph. To run:
+
+```bash
+<store_name> clusteringCoefficient
+```
+
+- TriangleCount, which computes the triangle count on each node of an undirected or directed graph. For a directed graph, it counts the total number of in-, out-, through-, and cycle-triangles separately. It takes a graph (undirected or directed) as input and outputs in json format the following information: 1) a list of triangles with type and count information, 2) a list of all the nodes in the graph with the triangle count(s) for each node, 3) a list of edges that belong to the triangles. To run:
+
+```bash
+<store_name> triangleCount
+```
+
+- ShortestPaths, which computes the shortest paths from a given node to any other node in an undirected or directed graph, and two closeness centrality measures: 1) using the original formula, which is C(i)=1/(sum(shortest_distance(i, j)) for all j != i, 2) using Opsahl 2010 formula, which is C(i) = sum(1/shortest_distance(i, j)) for all j != i. It takes a graph (undirected or directed, with optional weight on each edge specified in the edge list data file) and the label of the target node as input and outputs in json format the following information: 1) a list of nodes with shortest distance value, number of shortest paths, and shortest paths (number of hops, sequence of nodes on each path) information from the target node to each of these nodes, 2) the closeness centrality measures of the target node, 3) a list of all the edges in the graph. To run:
+
+```bash
+<store_name> shortestPaths <target_node>
+```
+
 
 <b> Note </b>
 
