@@ -127,19 +127,19 @@ Here are some examples:
 - Filter vertices to only output those with the i-th property equal to val
 
 ```bash
-        filter_vertices <i> <val>
+        <store_name> filter_vertices <i> <val>
 ```
 
 - Find the vertex with the maximum node degree. If the condition <i> and <val> are given, it finds the vertex only from those satisfying the condition, i.e., the i-th property of the vertex is equal to val.
 
 ```bash
-        find_vertex_max_degree [<i> <val>]
+        <store_name> find_vertex_max_degree [<i> <val>]
 ```
 
 - For each vertex with the i-th property equal to val_1, find all its neighbors. Then, for each neighbor v, find all v's neighbor set U, where each one has its j-th property equal to val_2. For each u in U, find the total number of visits and output the one with the maximum visits. A more specific example could be: Given a graph consisting of nodes of device types, IPs, and URLs, grouped by device type, find the most popular URL (i.e., the URL vertex with the most neighbors of IP) for each group. 
 
 ```bash
-        find_vertex_max_degree_by_group <i> <val_1> <j> <val_2>
+        <store_name> find_vertex_max_degree_by_group <i> <val_1> <j> <val_2>
 ```
 
 <b> 4. Plug-In Analytics </b>
