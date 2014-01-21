@@ -51,6 +51,25 @@ The commonly used commands in gShell include:
          create <store_name> <undirected|directed|pred_directed>
 ```
 
+- To close a store, we use "<store_name> close". It remove the store from memory, so that we have more memory to process other stores. Or, we can issue "close_all" to close all opened stores. So, the memory is release. It is suggested to issue such commands time by time to make the memory free. 
+
+```bash
+         <store_name> close
+         close_all
+```
+ 
+- List all stores and their types. This command will list all existing stores (opened or not opened) and their respective graph type (directed, undirected, pred_directed). Note that this command will not load any store if they are not opened already. 
+
+```bash
+         list_all 
+```
+
+- Erase a store from the disk. This is a permanent deletion and can not be recovered. So, this command should be used in cautious. 
+
+```bash
+        delete <store_name>
+```
+
 - Now, we have <store_name> as an empty graph. A easy way to populate the store is to convert a file, say .csv files or edge list, to the edge store. In the following example, we assume that we have a edge list in csv format called <csv_file>, where each line in the fileconsists of <source node> <target node> <edge weight>. User must indicate that the source and target nodes are given by the <colID_src> and <colID_targ> columns, respectively. The data in the rest columns are treated as the properties on this edge. Note that this command must follow a store name, since gShell can concurrently operate multiple graph stores. If the first row of the .csv file is the header, then users must specify "has_header". We can use comma, tab or blank space to separate columns in the .csv file. The separator is specified by [separators]. If a string contains these separator characters. 
 
 ```bash
@@ -105,25 +124,6 @@ Here are some examples:
          <store_name> query_neighbors <vertex_id>  
 ```
 
-- To close a store, we use "<store_name> close". It remove the store from memory, so that we have more memory to process other stores. Or, we can issue "close_all" to close all opened stores. So, the memory is release. It is suggested to issue such commands time by time to make the memory free. 
-
-```bash
-         <store_name> close
-         close_all
-```
- 
-- List all stores and their types. This command will list all existing stores (opened or not opened) and their respective graph type (directed, undirected, pred_directed). Note that this command will not load any store if they are not opened already. 
-
-```bash
-         list_all 
-```
-
-- Erase a store from the disk. This is a permanent deletion and can not be recovered. So, this command should be used in cautious. 
-
-```bash
-        delete <store_name>
-```
-
 - Filter vertices to only output those with the i-th property equal to val
 
 ```bash
@@ -134,6 +134,17 @@ Here are some examples:
 
 ```bash
         <store_name> find_vertex_max_degree [<i> <val>]
+```
+
+- Find n vertices randomly from a graph. This command is for users to get some vertices, so that they can use such vertices as start points for certain analytics. <n> is a number, say 10.
+
+```bash
+        <store_name> find_random_vertices <n>
+```
+- Find n edgess (nearly) randomly from a graph. This command is for users to get some edges, so that they can use such vertices as start points for certain analytics. <n> is a number, say 10.
+
+```bash
+        <store_name> find_random_edges <n>
 ```
 
 - For each vertex with the i-th property equal to val_1, find all its neighbors. Then, for each neighbor v, find all v's neighbor set U, where each one has its j-th property equal to val_2. For each u in U, find the total number of visits and output the one with the maximum visits. A more specific example could be: Given a graph consisting of nodes of device types, IPs, and URLs, grouped by device type, find the most popular URL (i.e., the URL vertex with the most neighbors of IP) for each group. 
