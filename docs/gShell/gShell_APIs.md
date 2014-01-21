@@ -118,6 +118,13 @@ Here are some examples:
          <store_name> print_all
 ```
 
+- To get the number of edges and vetices in a graph, we use the following commands.
+
+```bash
+         <store_name> get_num_vertices
+		 <store_name> get_num_edges
+```
+
 - To query all neighbors of a vertex, we use the following command. We just need to provide a vertex ID. 
 
 ```bash
@@ -151,6 +158,13 @@ Here are some examples:
 
 ```bash
         <store_name> find_vertex_max_degree_by_group <i> <val_1> <j> <val_2>
+```
+
+- TO query the property keys of the vertices and edges, we use the following commands. If there is no such keys (i.e., the data was imported with arguemnt "no_header"), a notice is shown to tell that there is no property keys.
+
+```bash
+        <store_name> query_vpropkeys
+		<store_name> query_epropkeys
 ```
 
 <b> 4. Plug-In Analytics </b>
