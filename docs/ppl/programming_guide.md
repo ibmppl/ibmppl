@@ -1,5 +1,5 @@
  
-<b>For detailed interface specification, refer to [IBM PPL library API] (http://pengwuibm.github.io/ibmppl/index.html) </b>
+<b>For detailed interface specification, refer to [IBM PPL library API] (http://ibmppl.github.io/ibmppl/index.html) </b>
 
 <b> What is an in-disk graph? </b>
 

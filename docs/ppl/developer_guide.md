@@ -174,4 +174,4 @@ $ git status   # to check if there is any new file (untracked)
 $ manually add any new file "git add ..." and "git commit"
 $ git push     # push to github
 ```
-Note: it may take 10 minutes before the new pages appear on http://pengwuibm.github.io/ibmppl/
+Note: it may take 10 minutes before the new pages appear on http://ibmppl.github.io/ibmppl/
