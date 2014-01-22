@@ -160,7 +160,7 @@ Here are some examples:
         <store_name> find_vertex_max_degree_by_group <i> <val_1> <j> <val_2>
 ```
 
-- TO query the property keys of the vertices and edges, we use the following commands. If there is no such keys (i.e., the data was imported with arguemnt "no_header"), a notice is shown to tell that there is no property keys.
+- To query the property keys of the vertices and edges, we use the following commands. If there is no such keys (i.e., the data was imported with arguemnt "no_header"), a notice is shown to tell that there is no property keys.
 
 ```bash
         <store_name> query_vpropkeys
