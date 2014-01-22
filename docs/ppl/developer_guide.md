@@ -158,7 +158,7 @@ To publish new documentations, you need to go through the following steps:
 $ add docs/gh-pages.github to .gitignore
 $ cd docs
 # clone the project repo to docs/gh-pages.github
-$ git clone https://github.com/pengwuibm/ibmppl.git gh-pages.github
+$ git clone https://github.com/ibmppl/ibmppl.git gh-pages.github
 $ cd gh-pages.github
 $ git checkout gh-pages   # switch to the gh-pages branch of the project repo
 ```
