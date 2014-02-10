@@ -169,6 +169,12 @@ Here are some examples:
 
 <b> 4. Plug-In Analytics </b>
 
+- A user controled Breadth First Search (BFS) can be invoked by the following commands. <root> is an arbitrary vertex in the graph stored in <store_name>, and #hops shows the maximum allowed BFS levels. <max_breadth_per_level> gives the maximum number of vertices to traverse at each BFS level. This is for visualization purpose, where we do not want to visualize all the edges for dense vertices. [json|plain] defines if the output format should be in JSON or simply in plain text.
+
+```bash
+         <store_name> bfs_visual <root> <#hops> <max_breadth_per_level> [json]
+```
+
 - It is possible to run some analytic routines using the data store. Any graph analytic applications that are developed using System G middleware APIs shall be easily plugged into the shell. In this command, we use a collaborative filter code. The application queries a vertex called <vertex_id> in the graph store and performs BFS for <#hops> levels. It computes the number of paths from the root vertex to any leaves and rank these leaves accordingly in descending order. The top <#ranks> vertices are returned. The result can be formatted into json format if the optional argument [json] is specified.
 
 ```bash
