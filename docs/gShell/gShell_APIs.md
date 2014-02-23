@@ -137,10 +137,10 @@ Here are some examples:
         <store_name> filter_vertices <i> <val>
 ```
 
-- Find the vertex with the maximum node degree. If the condition <i> and <val> are given, it finds the vertex only from those satisfying the condition, i.e., the i-th property of the vertex is equal to val.
+- Find the vertex with the maximum node degree. If the condition <i> and <val> are given, it finds the vertex only from those satisfying the condition, i.e., the i-th property of the vertex is equal to val. It also finds the vertices with the top #n number of degrees. 
 
 ```bash
-        <store_name> find_vertex_max_degree [<i> <val>]
+        <store_name> find_vertex_max_degree [<#n> | <i> <val>]
 ```
 
 - Find n vertices randomly from a graph. This command is for users to get some vertices, so that they can use such vertices as start points for certain analytics. <n> is a number, say 10.
