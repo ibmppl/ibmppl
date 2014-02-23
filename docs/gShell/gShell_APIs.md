@@ -108,7 +108,7 @@ Here are some examples:
 - The deletion is straightforward. We just delete the vertex or edge by giving the ID or the source and target IDs. 
 
 ```bash
-         <store_name> delete_vertex <vertx_id>
+         <store_name> delete_vertex <vertex_id>
          <store_name> delete_edge <src_vtx> <targ_vtx>
 ```		   
 
@@ -122,7 +122,12 @@ Here are some examples:
 
 ```bash
          <store_name> get_num_vertices
-		 <store_name> get_num_edges
+	 <store_name> get_num_edges
+```
+- To get the number of neighbors of a vertex
+
+```bash
+        <store_name> get_num_neighbors <vertex_id>
 ```
 
 - To query all neighbors of a vertex, we use the following command. We just need to provide a vertex ID. 
