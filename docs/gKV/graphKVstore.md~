@@ -1,0 +1,5 @@
+### Interface of Graph Key-Value Stores in Native Store
+
+System G Native Store utilizes an alternated key-value store as the backend for persisting in-memory graph data, including both the graph structure and the properties on vertices and edges. This document specifies the interfaces of the graph K/V store. The interfaces are implemented using C++ natively, although they can be implemented up on any standard K/V stores with some additional efforts.
+
+
