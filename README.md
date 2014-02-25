@@ -25,3 +25,4 @@ The IBMPPL is a parallel C++ library to help develop distributed, parallel graph
 - [PPL Library API](http://ibmppl.github.io/ibmppl/index.html)
 - [FAQ & Trouble Shooting](docs/ppl/faq.md)
 - [Users' Guide to gShell (Native Store)](docs/gShell/gShell_APIs.md)
+- [Users' Guide to Graph K/V Store](docs/gKV/graphKVstore.md)
