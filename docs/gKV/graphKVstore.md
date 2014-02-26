@@ -47,6 +47,12 @@ Graph K/V store consists of a collection of key-value pairs, where each pair has
 
 Each key has a version (time stamp) cursor. By default, it is the latest version. By using the following APIs, we can retrieve data from earlier versions, or set all keys to a particular version. This is helpful for auditting a graph at a particular historic time. Any operations (see the previous section) will only affect the version matches the version cursor. It is up on the user's code if the historic data can be altered or not.
 
+- Create a new version for a particular key. This creates a new version and the latest version before this invocation becomes an old version. The version number can be assigned by user, but will be checked internally to ensure versions monotoneously increasing. By default, the version is derived from the current time stamp.
+
+```bash
+  bool generate_new_version(key_t key [, version_t ver]);
+```
+
 - Set the version number of a key for data access. All keys are at the latest version after creating/loading a store. The following APIs move the version cursor. If it reaches the earlier (latest) version, goto_previous (goto_next) will not function.
 
 ```bash
