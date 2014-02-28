@@ -34,7 +34,7 @@ Graph K/V store consists of a collection of key-value pairs, where each pair has
 - Append data to the end of a bundle buffer. If <key> does not exist, it is created and the value in the databuf is copied to the bundle specified by <bundle_index>. If the bundle is not empty, the data is added to the end of the buffer. This is equivalent to query the value first and then store with the argumented value to the same key. However, the API is provided for performance reasons.
 
 ```bash
-  void appende(key_t key, void *databuf, size_t datasz, size_t bundle_index);
+  void append(key_t key, void *databuf, size_t datasz, size_t bundle_index);
 ```
 
 - Delete a key. If the index is specified, delete the value in the corresponding property bundle. If not, all bundles of this key is removed.
