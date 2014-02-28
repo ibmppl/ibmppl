@@ -65,26 +65,27 @@ Each key has a version (time stamp) cursor. By default, it is the latest version
 - Get number of versions a key has. Note that different keys may have different number of versions.
 
 ```bash
-  version_t get_num_versions(key_t key); 
+  int get_num_versions(key_t key); 
 ``` 
   
 - Retrive the current version number of a key; set a key to a particular version for lateron data access. The version_t can be the type of time stamp or a nonnegative number. 
 
 ```bash
   version_t get_current_version(key_t key);
-  void      goto_version(key_t key, version_t v);
+  bool      goto_version(key_t key, version_t v);
 ```
 
 - Go to a version approximately, when the specified version does not exist
 
 ```bash
-  void goto_version(key_t key, version_t v, const Compare& comp=Compare())
+  bool goto_version(key_t key, version_t v, const Compare& comp=Compare())
 ```
 
 - Set all keys into a particular version (approximately) for batch operations. This will take time for large stores, but afterward there is no repeated version seeking in analytics. The overall execution time may be lower.
 
 ```bash
   void goto_latest_all();
+  void goto_first_all();
   void goto_version_all(version_t v);
   void goto_version_all(version_t v, const Compare& comp=Compare());
 ```
