@@ -56,16 +56,16 @@ Each key has a version (time stamp) cursor. By default, it is the latest version
 - Set the version number of a key for data access. All keys are at the latest version after creating/loading a store. The following APIs move the version cursor. If it reaches the earlier (latest) version, goto_previous (goto_next) will not function.
 
 ```bash
-  void goto_latest(key_t key);
-  void goto_first(key_t key);
-  void goto_previous(key_t key);
-  void goto_next(key_t key);
+  bool goto_latest(key_t key);
+  bool goto_first(key_t key);
+  bool goto_previous(key_t key);
+  bool goto_next(key_t key);
 ```
 
 - Get number of versions a key has. Note that different keys may have different number of versions.
 
 ```bash
-  void get_num_versions(key_t key); 
+  version_t get_num_versions(key_t key); 
 ``` 
   
 - Retrive the current version number of a key; set a key to a particular version for lateron data access. The version_t can be the type of time stamp or a nonnegative number. 
