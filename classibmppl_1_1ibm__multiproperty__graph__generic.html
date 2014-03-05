@@ -256,8 +256,6 @@ std::vector&lt; index_type * &gt;&#160;</td><td class="memItemRight" valign="bot
 class ibmppl::ibm_multiproperty_graph_generic&lt; VProperty, EProperty, Directness &gt;</h3>
 
 <p>IBM Multi property graph class; It maintains an associative table (hash table) for individual properties; All properties are stored as strings : &lt;property_name:int, property_value:string&gt; A secondary table maps from property_name as string to property name as integer </p>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00972">972</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 </div><hr/><h2>Member Typedef Documentation</h2>
 <a class="anchor" id="ab5ff13ad644f26d605c246d48cc66311"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::edged_type" ref="ab5ff13ad644f26d605c246d48cc66311" args="" -->
 <div class="memitem">
@@ -276,8 +274,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <p><a class="el" href="classibmppl_1_1Edge.html" title="Generic implementation of graph edge templated by Property type.">Edge</a> descriptor or unique edge identifier. </p>
 
 <p>Reimplemented from <a class="el" href="classibmppl_1_1Graph.html#a9c588d2c567836ffe531a9d0daa769fa">ibmppl::Graph&lt; VProperty, EProperty, Directness, Traits &gt;</a>.</p>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00980">980</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -344,8 +340,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014) </dd></dl>
 <p>This method returns a vector of index names. Right now the index names are the name of the property indexed. And at the moment only vertex properties are indexable.</p>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01129">1129</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a56e3e8f1364640d4a6da920587c8dbfb"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::~ibm_multiproperty_graph_generic" ref="a56e3e8f1364640d4a6da920587c8dbfb" args="()" -->
@@ -366,8 +360,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <p>Destructor</p>
 <p>It is important that this method be called. It will do things like save meta-data on the graph and deallocate some underlying structures.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014) </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01172">1172</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -401,8 +393,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <p>Helper routine to help implement get_Xpropertyid() methods</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>size_t the property id for the specified property name </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01871">1871</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -442,8 +432,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>size_t The newly-allocated or existing property id. </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01844">1844</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a8e8933aa0d7e3c8ee3115d0df83da27d"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::_load_keys" ref="a8e8933aa0d7e3c8ee3115d0df83da27d" args="(std::string fn, std::map&lt; std::string, vertexd_type &gt; *vvec, std::vector&lt; std::string &gt; *revmap=0)" -->
@@ -481,8 +469,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <p>Utility routine for reloading mappings between property-id's and property-name's.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014) </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01746">1746</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="ad7022f47d5184f60522b8b4c01fcc5f1"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::_load_keys" ref="ad7022f47d5184f60522b8b4c01fcc5f1" args="()" -->
@@ -502,8 +488,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <div class="memdoc">
 <p>Utility routine for reloading mappings between property-id's and property-name's.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014) </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01785">1785</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -536,8 +520,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <p>Utility routine for persisting mappings between property-id's and property-name's.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014) </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01804">1804</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="acada190c7f558eac5b9947dee59064ce"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::_save_keys" ref="acada190c7f558eac5b9947dee59064ce" args="()" -->
@@ -557,8 +539,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <div class="memdoc">
 <p>Utility routine for persisting mappings between property-id's and property-name's.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014) </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01824">1824</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -599,8 +579,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/7/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>edged_type The eid of the new edge </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01722">1722</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a994e008078983dc9b9d14a527f7ae25d"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::add_edge" ref="a994e008078983dc9b9d14a527f7ae25d" args="(vertexd_type vsource, vertexd_type vtarget)" -->
@@ -632,8 +610,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <p>Add an edge to the graph.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/7/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>edged_type The eid of the new edge </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01734">1734</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -675,8 +651,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 </dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014) </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01291">1291</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a46ae3a543a57a96ea27ff30764013b0e"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::add_vertex" ref="a46ae3a543a57a96ea27ff30764013b0e" args="(vertex_property vp)" -->
@@ -700,8 +674,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/7/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>vertexd_type </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01692">1692</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="af2e6475eb819187d83ce7e45586cd966"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::add_vertex" ref="af2e6475eb819187d83ce7e45586cd966" args="()" -->
@@ -723,8 +695,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/7/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>vertexd_type the vid of the new vertex </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01704">1704</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a46e050325495b13327ca69d903293cd7"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::delete_vertex" ref="a46e050325495b13327ca69d903293cd7" args="(vertexd_type vid)" -->
@@ -745,8 +715,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <div class="memdoc">
 <p>Deletes specified vertex and adjacent edges.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014) </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01672">1672</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -770,8 +738,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <p>This routine returns an iterator for a vertex with the given property id. This method should be fairly fast, but not as fast as already having an iterator.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>vertex_iterator </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01593">1593</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -807,8 +773,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>vertex_iterator </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01631">1631</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a53924ea45ee98d86b3ebb12f29abd1ff"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_edge_property_name" ref="a53924ea45ee98d86b3ebb12f29abd1ff" args="(const size_t propid) const " -->
@@ -831,8 +795,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <p>If the mapping doesn't exist, it will (currently) throw an out of range exception. That might change in a future version.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>string The property name </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01505">1505</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -858,8 +820,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>string The property name </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01489">1489</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a146f0eae14d383d8aa28a3d3ad6cf118"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_label_string" ref="a146f0eae14d383d8aa28a3d3ad6cf118" args="(const size_t labelid) const " -->
@@ -882,8 +842,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <p>If the mapping doesn't exist, it will (currently) throw an out of range exception. That might change in a future version.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/10/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>string The label string </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01576">1576</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -909,8 +867,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/10/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>size_t The labelid </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01560">1560</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="ada5b1f1dea72cfd1845a7de9c581d561"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_or_allocate_epropertyid" ref="ada5b1f1dea72cfd1845a7de9c581d561" args="(const property_name_type &amp;pname)" -->
@@ -934,8 +890,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <p>Property-id's can be valuable because operations on property id's are faster than operations on property names.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>string The property name </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01432">1432</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -961,8 +915,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/10/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>string The label string </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01470">1470</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="aa1f80df34d13189cd139143144beb15b"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_or_allocate_vpropertyid" ref="aa1f80df34d13189cd139143144beb15b" args="(const property_name_type &amp;pname)" -->
@@ -987,8 +939,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>string The property name </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01452">1452</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a7ba5dc3c83358951c62ad813d9e01ca9"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_vertex_property_name" ref="a7ba5dc3c83358951c62ad813d9e01ca9" args="(const size_t propid) const " -->
@@ -1011,8 +961,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <p>If the mapping doesn't exist, it will (currently) throw an out of range exception. That might change in a future version.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>string The property name </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01541">1541</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -1037,8 +985,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <p>If the mapping doesn't exist, it will (currently) throw an out of range exception. That might change in a future version.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>size_t The labelid </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01525">1525</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -1074,8 +1020,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>property_value_type </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01393">1393</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="ac3661de7e445ceffba24bd5fa84a5f0f"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_vsubproperty" ref="ac3661de7e445ceffba24bd5fa84a5f0f" args="(vertexd_type vid, size_t propid)" -->
@@ -1110,8 +1054,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>property_value_type </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01413">1413</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a47b0d07836428f88f3e1e48818383a7d"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::index_available" ref="a47b0d07836428f88f3e1e48818383a7d" args="(size_t propid) const " -->
@@ -1133,8 +1075,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <p>This method indicates if the named index exists. Currently the index name is the name of the vertex property that would be indexed. At the moment this class does not support edge properties.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01196">1196</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -1172,8 +1112,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <div class="memdoc">
 <p>This is a method that most people should not use. It's used internally to keep the index up to date.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014) </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01264">1264</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -1222,8 +1160,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01219">1219</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a71e996d4d7112230b8949d1a2a744cf8"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::index_find_all" ref="a71e996d4d7112230b8949d1a2a744cf8" args="(int propid, const property_value_type &amp;pval, std::vector&lt; vertexd_type &gt; &amp;vids)" -->
@@ -1271,8 +1207,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01241">1241</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a4b463a4e745a692546f6bcc109ff8529"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::index_insert" ref="a4b463a4e745a692546f6bcc109ff8529" args="(int propid, const property_value_type &amp;pval, vertexd_type vid)" -->
@@ -1309,8 +1243,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <div class="memdoc">
 <p>This is a method that most people should not use. It's used internally to keep the index up to date.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014) </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01251">1251</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -1349,8 +1281,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <p>((see the similarly named vertex method))</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014) </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01318">1318</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="aacfc1a5960fe99558fc81f38866b5d27"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::set_esubproperty" ref="aacfc1a5960fe99558fc81f38866b5d27" args="(edged_type eid, const size_t propid, property_value_type value)" -->
@@ -1387,8 +1317,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <div class="memdoc">
 <p>((see the similarly named vertex method))</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014) </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01328">1328</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -1428,8 +1356,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <p>This method set the specified property for the specified vertex to the specified string value. If you'd like to set it to a non-string value, see the other similarly named methods of the vertex and edge classes.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014) </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01344">1344</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a3251ccb83021b7e2b1773eb50474046b"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::set_vsubproperty" ref="a3251ccb83021b7e2b1773eb50474046b" args="(vertexd_type vid, const size_t propid, property_value_type value)" -->
@@ -1467,8 +1393,6 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <p>Sets the specified property for the specified vertex to the specified string value.</p>
 <p>This method set the specified property for the specified vertex to the specified string value. If you'd like to set it to a non-string value, see the other similarly named methods of the vertex and edge classes.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014) </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l01360">1360</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>

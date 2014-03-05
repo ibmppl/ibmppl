@@ -133,8 +133,6 @@ class arena&lt; N &gt;</h3>
 <p>The allocator first needs an arena of a fixed compiled size; Subsequently memory from this arena is allocated/free; No interaction with malloca afterwards. However when using it with STL vector one needs to be carefull and not resize; The allocation/free needs to happen in a stack like fassion;</p>
 <p>E.g., you can't do this vector&lt;int, short_alloc&gt; v1(10) vector&lt;int, short_alloc&gt; v2(10) V1.resize(...);</p>
 <p>As a rule of thumb just don't use resize(); </p>
-
-<p>Definition at line <a class="el" href="short__alloc_8h_source.html#l00027">27</a> of file <a class="el" href="short__alloc_8h_source.html">short_alloc.h</a>.</p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="short__alloc_8h_source.html">short_alloc.h</a></li>
 </ul>

@@ -193,8 +193,6 @@ class ibmppl::imp_graphelement_iterator&lt; GraphElement, BaseIterator, Graph, I
 
 <p>Buffers all modifications to the properties until the user triggers the commit. </p>
 <p>Multiproperty graph base iterator; <a class="el" href="classibmppl_1_1Vertex.html" title="Generic implementation of graph vertex class w/ a list of edges and a vertex property.">Vertex</a> and edge iterators derive from it. Pred iterator does not. </p>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00044">44</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="aa7dd1de0b0bb26218710e6c5a234eb19"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::check_consistency" ref="aa7dd1de0b0bb26218710e6c5a234eb19" args="(const char *filename, int linenum)" -->
 <div class="memitem">
@@ -227,8 +225,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 
 <p>Reimplemented in <a class="el" href="classibmppl_1_1imp__vertex__iterator.html#ae82900660854cb6f0dc042ff2a13595c">ibmppl::imp_vertex_iterator&lt; Vertex, BaseIterator, Graph, IdType &gt;</a>, and <a class="el" href="classibmppl_1_1imp__edge__iterator.html#a8a7ad07bf950c9b9cc7aa36efa875192">ibmppl::imp_edge_iterator&lt; Edge, BaseEdgeIterator, Graph, IdType &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00077">77</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="af81fd7f918a94f72a47f87ce4fa18b38"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::delete_subproperty" ref="af81fd7f918a94f72a47f87ce4fa18b38" args="(const property_name_type &amp;pname)" -->
@@ -251,8 +247,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 <p>Note: the propid version of this method is somewhat faster.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014) </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00549">549</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="ac43f9513feb239fc245596c1bc852ac6"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::delete_subproperty" ref="ac43f9513feb239fc245596c1bc852ac6" args="(size_t propid)" -->
@@ -273,8 +267,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 <div class="memdoc">
 <p>Delete the specified sub-property from this graph element</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014) </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00569">569</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -299,8 +291,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>double </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00534">534</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a09fc22e2abc30262c72a32beff68ee3d"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::get_externalid" ref="a09fc22e2abc30262c72a32beff68ee3d" args="()" -->
@@ -322,8 +312,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 <p>See the <a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#aab4862bdf0aaae8122ea5e754a02131c">set_externalid()</a> method for more information about external id's.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::string </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00242">242</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -347,8 +335,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>size_t the first property-id set on a given graph element. </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00179">179</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="abc2da61525820eb9cd19e97a0ab69889"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::get_int_subproperty" ref="abc2da61525820eb9cd19e97a0ab69889" args="(size_t propid)" -->
@@ -371,8 +357,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 <p>To-do: document what happens if the property is not set or is not of the specified type.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>int </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00516">516</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -403,8 +387,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::string </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00258">258</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a232172583d37b256043b091d4491f19b"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::get_labelid" ref="a232172583d37b256043b091d4491f19b" args="()" -->
@@ -432,8 +414,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 </dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/10/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>img_label_type </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00276">276</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -463,8 +443,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>size_t </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00200">200</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a6943170108502253c7a4aab3458da32a"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::get_subproperty" ref="a6943170108502253c7a4aab3458da32a" args="(const property_name_type &amp;pname)" -->
@@ -487,8 +465,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 <p>Note: other methods are likely to be somewhat faster because property-id's are faster than property names and eventually value-type specific methods can be expected to be faster than generic string methods.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>property_value_type </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00449">449</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -514,8 +490,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>int </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00498">498</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a483b5cfef2771c7ab20689da654f6ed3"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::get_subproperty_count" ref="a483b5cfef2771c7ab20689da654f6ed3" args="()" -->
@@ -535,8 +509,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 <div class="memdoc">
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>size_t The number of sub-properties on this graph element </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00592">592</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -561,8 +533,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>int </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00469">469</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a979709c72e3dedf0a5a584bd545272b1"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::id" ref="a979709c72e3dedf0a5a584bd545272b1" args="() const " -->
@@ -583,8 +553,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 <p>This method returns the internal id of the element currently referenced by this iterator. The type of returned value (elementd_type) is usually a 64bit integer.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>const elementd_type </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00149">149</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -607,8 +575,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 <p>This method advances the iterator.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014) </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00099">99</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="aec1d351ef116babe488e3210e8234a22"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::operator++" ref="aec1d351ef116babe488e3210e8234a22" args="()" -->
@@ -628,8 +594,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 <div class="memdoc">
 <p>advance the iterator</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014) </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00107">107</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -653,8 +617,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00118">118</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a11c891b4a5b42ff9a3f711642b2b4f4d"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::property" ref="a11c891b4a5b42ff9a3f711642b2b4f4d" args="() const " -->
@@ -675,8 +637,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 <p>This method is implemented in the superclass but is deprecated for objects of this class.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00133">133</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -700,8 +660,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 <p>External id's are unique values that the application sets on a given graph element that are meaningful to the application. Ex. "George Washington" or "IBM". We don't enforce this yet, but it expected that only one element will have a given external id value.</p>
 <p>Note: 2013-01-06: it is likely that in a future implementation of this graph we'll automatically build an index for vertex external id's. That index is likely to support only unique mappings from externalid -&gt; vertex.</p>
 <p>FIXME: It should be set in the constructor; </p>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00227">227</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -734,8 +692,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 </dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/10/2014) </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00305">305</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a886ebce94ce65d1fd0ed334a8873ca2b"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::set_labelid" ref="a886ebce94ce65d1fd0ed334a8873ca2b" args="(img_labelid_type labelid)" -->
@@ -765,8 +721,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 </dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/10/2014) </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00325">325</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a9ad1ad9b3e0e45bb1398f0ad1c3180e2"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::set_property" ref="a9ad1ad9b3e0e45bb1398f0ad1c3180e2" args="(property_type &amp;new_vp)" -->
@@ -788,8 +742,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 <p>This method is implemented in the super class but deprecated in this class.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>const elementd_type </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00162">162</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -821,8 +773,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 <div class="memdoc">
 <p>This method takes the name of a property and a new (string) value and updates the referenced element.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014) </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00348">348</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
@@ -862,8 +812,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 </dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014) </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00365">365</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="ab96015fb02bb1450baf2bef86b3e4ae4"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::set_subproperty" ref="ab96015fb02bb1450baf2bef86b3e4ae4" args="(const size_t propid, int ivalue)" -->
@@ -895,8 +843,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 <p>An int version of the <a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a0f95b86aec12b85815bb59f1157ac1c5">set_subproperty()</a> method.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014) </dd></dl>
 
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00398">398</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a72bed296e0734c768c55325ea4673574"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::set_subproperty" ref="a72bed296e0734c768c55325ea4673574" args="(const size_t propid, double dvalue)" -->
@@ -927,8 +873,6 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 <div class="memdoc">
 <p>An double version of the <a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a0f95b86aec12b85815bb59f1157ac1c5">set_subproperty()</a> method.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014) </dd></dl>
-
-<p>Definition at line <a class="el" href="ibm__multiproperty__graph_8hpp_source.html#l00420">420</a> of file <a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a>.</p>
 
 </div>
 </div>
