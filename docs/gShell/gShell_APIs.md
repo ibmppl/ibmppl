@@ -20,8 +20,8 @@ The compilation of gShell requires the compilation of IBMPPL runtime and System 
 There are 4 modes for using gShell: interactive mode, server/client mode, argument mode, and batch mode. gShel is invoked as follows:
 
 ```bash
-    ./nvStore <interactive|server|execute> [arguments] [< batch_file]
-	./nvStoreClient <server_ip> <command+arguments>
+    ./nvStore <interactive [< batch_file] |server [socket_port]|execute [arguments]> 
+	./nvStoreClient <server_ip> <command+arguments> [socket_port]
 ```
 <interactive>: start gShell in interactive mode, where a prompt will appear to ask for input commands
 Batch mode is a variant of the interactive mode, where the commands stored in a text file is redirected to the interactive mode.
