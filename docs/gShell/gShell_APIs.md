@@ -180,7 +180,7 @@ Here are some examples:
          <store_name> bfs_visual <root> <#hops> <max_breadth_per_level> [json]
 ```
 
-- It is possible to run some analytic routines using the data store. Any graph analytic applications that are developed using System G middleware APIs shall be easily plugged into the shell. In this command, we use a collaborative filter code. The application queries a vertex called <vertex_id> in the graph store and performs BFS for <#hops> levels. It computes the number of paths from the root vertex to any leaves and rank these leaves accordingly in descending order. The top <#ranks> vertices are returned. The result can be formatted into json format if the optional argument [json] is specified.
+- It is possible to run some analytic routines using the data store. Any graph analytic applications that are developed using System G middleware APIs shall be easily plugged into the shell. In this command, we use a collaborative filter code. Collaborative filter is widely used in recommandation systems and has many alternatives. In this version, it takes a bipartite graph G(X, Y) as the input, and finds <i>relevant</i> vertices to a user specificed vertex, say x∈X. The most relevant vertex is z = argmax |neighbors(x) ^ neighbors(z)| for any z∈X.  The analytics queries a vertex called <vertex_id> in the graph store and performs BFS for <#hops> levels. It computes the number of paths from the root vertex to any leaves and rank these leaves accordingly in descending order. The top <#ranks> vertices are returned. The result can be formatted into json format if the optional argument [json] is specified.
 
 ```bash
          <store_name> colFilter  <vertex_id>  <#hops>  <#ranks> [json]
