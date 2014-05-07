@@ -2,6 +2,7 @@
 
 1. Define graph type
 
+```bash
    typedef ibmppl::ibm_multiproperty_persistent_graph graph_t;
    typedef ibmppl::ibm_multiproperty_inmemory_graph graph_t;
 
@@ -12,6 +13,7 @@
    typedef graph_t::edged_type	    eid_t;
 
    typedef int label_t;
+````
 
 1. Declare a graph
 
