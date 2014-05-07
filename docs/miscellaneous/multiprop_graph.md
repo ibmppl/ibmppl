@@ -17,33 +17,40 @@
 
 1. Declare a graph
 
-   graph_type g("name", "directory");
+```bash
+graph_type g("name", "directory");
+````
 
 1. Add vertices
 
+```bash
    label_t vlabel;
    vid_t vid = g.add_vertex(vlabel);
-
+````
 1. Add edges
 
+```bash
    vid_t src, targ;
    label_t elabel;
    eid_t eid = g.add_edge(src, targ, elabel);
-
+````
 1. Find vertices
 
+```bash
    vit_t vit = g.find_vertex(vid);
    vit_t vit = g.find_vertex(pkey, pval);
-
+````
 1. Find edges
 
+```bash
    vid_t src, targ;
    eit_t eid;
    eit_t eit = g.find_edge(src, eid);  
    eit_t eit = g.find_edge(src, targ);   // need to add!!!
-
+````
 1. Property management
 
+```bash
    string pkey, pval;
    vit->set_subproperty(pkey, pval);
    eit->set_subproperty(pkey, pval);
@@ -53,12 +60,10 @@
 
    size_t pid = get_vpropertyid(pkey);
    size_t pid = get_epropertyid(pkey);
+  
    string pkey = get_vertex_property_name(pid);
    string pkey = get_edge_property_name(pid);
   
- 
-   // the following argment may be prop_id. should change to pkey!!!!
-
    vit->get_int_subproperty(pid);
    vit->get_double_subproperty(pid);
    time_t t = vit->get_time_subproperty(pid);
@@ -70,13 +75,20 @@
    g.delete_subproperty(pid);
    
    bool g.has_subproperty(pkey);
+````
 
+   Traverse the properties:
+
+```bash
    size_t n = g.get_subproperty_count();
-
+   size_t pid = get_first_subproperty_id();
+   size_t pid = get_next_subproperty_id(pid);
+````
    
 
 1. Traversal
    
+```bash
    label_t lid;
 
    for (vit_t vit=g.vertices_begin(lid); vit!=g.vertices_end(lid); vit++)
@@ -85,22 +97,25 @@
    for (eit_t eit=vit->edges_begin(lid); eit!=vit->edges_end(lid); eit++)  // ???
 
    for (eit_t eit=vit.preds_begin(lid); eit!=vit.preds_end(lid); eit++)  // ???
-
+````
 
 1. Get number of edges for a vertex
 
+```bash
    vit->edges_size(lid);
    vit->preds_size(lid);
-
+````
 1. Get end vertices of an edge
 
+```bash
    eit->source();   // eit.source()??
    eit->target();
    eit_t eit = eit->id();
-
+````
 1. Deletion
 
+```bash
    vid_t src, targ;
    g.delete_edge(src, targ);
-    
+````    
 
