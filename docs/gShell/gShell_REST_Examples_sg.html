@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+<title>System G Native Store REST-like API Examples</title></head>
+<body>
+
+<h2>System G Native Store REST-like API Examples</h2>
+
+Here we provide the brief introduction to Native Store gShell command and the examples to run it via the REST-like APIs. 
+
+<ul>
+    <li>Create a store. Assuming we want to create a graph store called "", and we want use it to store an undirected graph. Note that a graph is not necessarily to be connected in gShell; that is, a graph store can maintain a set of small graphs, but all of them must be of the same type (directed, undirected, or pred_directed). The command for creating such a store is:
+
+   <pre>http://127.0.0.1/cgi2/nsREST.pl?cmd=create&storename=&lt;store_name>&graphtype=&lt;type> </pre><br>
+
+   Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?cmd=create&storename=kv11&graphtype=undirected" target="_blank">
+     http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?cmd=create&storename=kv11&graphtype=undirected</a><br><br>
+
+    </li>	
+
+    <li> To close a store, we use " close". It remove the store from memory, so that we have more memory to process other stores. So, the memory is release. It is suggested to issue such commands time by time to make the memory free. Note that close_all is not supported in API mode.
+      <pre>http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?cmd=close&storename=kv11</pre>
+      Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?cmd=close&storename=kv11" target="_blank">http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?cmd=close&storename=kv11</a><br><br>
+    </li>
+
+    <li> List all stores and their types. This command will list all existing stores (opened or not opened) and their respective graph type (directed, undirected, pred_directed). Note that this command will not load any store if they are not opened already. 
+      <pre>http://127.0.0.1/cgi2/nsREST.pl?cmd=list_all</pre>
+    Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?cmd=list_all" target="_blank">http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?cmd=list_all</a><br><br>
+    </li>
+
+    <li>Now, we have as an empty graph. A easy way to populate the store is to convert a file, say .csv files or edge list, to the edge store. In the following example, we assume that we have a edge list in csv format called , where each line in the fileconsists of . User must indicate that the source and target nodes are given by the and columns, respectively. The data in the rest columns are treated as the properties on this edge. Note that this command must follow a store name, since gShell can concurrently operate multiple graph stores. If the first row of the .csv file is the header, then users must specify "has_header". We can use comma, tab or blank space to separate columns in the .csv file. The separator is specified by [separators]. If a string contains these separator characters.
+      <pre>http://127.0.0.1/cgi2/nsREST.pl?cmd=load_csv_edges&csv_file=&lt;csv file>&colID_src=&lt;source>&colID_targ=&lt;target>&header=&lt;has_header|no_header>&separator=&lt;sep></pre>
+      Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?cmd=load_csv_edges&storename=kv11test&csv_file=/mnt/l3-4/data/yx\
+ia03/dataset/kv11_cleaned_withHeader.csv&colID_src=1&colID_targ=2&header=has_header&separator=," target="_blank">http://sg01.rescloud.ibm.com/cgi-bin/nsREST.pl?cmd=load_csv_edges&storename=kv11test&csv_file=/mnt/l3-4/data/yxia03/dataset/kv11_cleaned_withHeader.csv&colID_src=1&colID_targ=2&header=has_header&separator=,></a><br><br>
+    </li>  
+
+    <li>Note that in the above edge list file (or .csv file) we can only have edge properties. In order to create a graph with both edge and vertex properties, we need and additional .csv file. We can run the above operation first to build the graph with edge properties. Then we can read a vertex file to load vertex properties. In the following example, the -th column in the vertex file gives the ID of a vertex and the rest columns give the properties of the vertex as a vector of strings. 
+      <pre>http://127.0.0.1/cgi2/nsREST.pl?cmd=load_csv_vertices&csv_file=&lt;csv file>&vertex_id=&lt;vertex_id>&header=&lt;has_header|no_header>&separator=&lt;sep></pre>
+      Try it: <!--<a href="" target+"_blank">http://sg01.rescloud.ibm.com/cgi-bin/nsREST.pl?cmd=load_csv_edges&storename=kv11test&csv_file=/mnt/l3-4/data/yxia03/dataset/kv11_cleaned_withHeader.csv&colID_src=1&colID_targ=2&header=has_header&separator=,</a>--> under construction <br><br>
+    </li>  
+
+    <li>Erase a store from the disk. This is a permanent deletion and can not be recovered. So, this command should be used in cautious. 
+      <pre>http://127.0.0.1/cgi2/nsREST.pl?cmd=delete&storename=&lt;store_name>
+</pre>Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?cmd=delete&storename=kv11" target="_blank">http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?cmd=delete&storename=kv11</a><br><br></li>
+
+    <li>gShell supports interactive graph updates. Here are some examples to add/update vertices/edges. The instruction line also starts with the store name to identify which store to work on, which is followed by the command. The first argument for add_vertex is the vertex ID, and the rest are the vertex properties as a vector of strings. We actually store the vertex ID as the first property. We can update the properties using update_vertex and/or update_edge. 
+
+      <pre>http://127.0.0.1/cgi2/nsREST.pl?cmd=add_vertex&storename=&lt;storename>&vertex_id=&lt;vertex_id>&property_list=p1%20p2%p3</pre>
+      Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?cmd=add_vertex&storename=kv11&vertex_id=Q727718S84162V06&property_list=new%20prop"  target="_blank">http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?cmd=add_vertex&storename=kv11&vertex_id=Q727718S84162V06&property_list=new%20prop</a><br></li>
+
+      <pre>http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?cmd=add_vertex&storename=kv11&vertex_id=Q727718S84162V06&property_list=new%20prop</pre>Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?cmd=update_vertex&storename=kv11&vertex_id=Q727718S84162V06&property_list=prop1%20prop2" target="_blank">http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?cmd=update_vertex&storename=kv11&vertex_id=Q727718S84162V06&property_list=prop1%20prop2</a><br>
+         
+      <pre>http://127.0.0.1/cgi2/nsREST.pl?cmd=add_edge&storename=&lt;storename>&src_vid=&lt;source>&targ_vid=&lt;target>&property_list=p1%20p2%20p3</pre>Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?cmd=add_edge&storename=kv11&src_vid=Q727718S84162V05&targ_vid=Q727718S84162V06&property_list=prop2%20prop3" target="_blank"> http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?cmd=add_edge&storename=kv11&src_vid=Q727718S84162V05&targ_vid=Q727718S84162V06&property_list=prop2%20prop3</a><br>
+
+																		
+       <pre>http://127.0.0.1/cgi2/nsREST.pl?cmd=update_edge&storename=&lt;storename>&src_vid=&lt;source>&targ_vid=&lt;target>&property_list=p1%20p2%20p3</pre>Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?cmd=update_edge&storename=kv11&src_vid=Q727718S84162V05&targ_vid=Q727718S84162V06&property_list=prop1%20prop3" target="_blank"> http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?cmd=update_edge&storename=kv11&src_vid=Q727718S84162V05&targ_vid=Q727718S84162V06&property_list=prop1%20prop3</a><br><br></li>
+
+       <li>The deletion is straightforward. We just delete the vertex or edge by giving the ID or the source and target IDs. <pre> http://127.0.0.1/cgi2/nsREST.pl?storename=&lt;store_name>&cmd=delete_vertex&vertex_id=&lt;vertex_id></pre>Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=delete_vertex&vertex_id=Q727718S84162V06" target="_blank">http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=delete_vertex&vertex_id=Q727718S84162V06 </a><br>
+																		    
+       <pre>http://127.0.0.1/cgi2/nsREST.pl?storename=&lt;store_name>&cmd=delete_edge&src_vid=&lt;source>&targ_vid=&lt;target></pre>Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=delete_edge&src_vid=Q727718S84162V05&targ_vid=Q727718S84162V06" target="_blank">http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=delete_edge&src_vid=Q727718S84162V05&targ_vid=Q727718S84162V06</a><br><br></li>
+
+																      
+       <li>To get the number of edges and vetices in a graph, we use the following commands.<pre> http://127.0.0.1/cgi2/nsREST.pl?storename=&lt;store_name>&cmd=get_num_vertices</pre>Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=get_num_vertices" target="_blank">http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=get_num_vertices</a><br>
+
+	<pre>http://127.0.0.1/cgi2/nsREST.pl?storename=&lt;store_name>&cmd=get_num_edges</pre>Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=get_num_edges" target="_blank">http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=get_num_edges</a><br><br></li>
+
+
+         <li>To get the number of neighbors of a vertex.<pre>http://127.0.0.1/cgi2/nsREST.pl?storename=&lt;store_name>&cmd=get_num_neighbors&vertex_id=&lt;vertex_id></pre>Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=get_num_neighbors&vertex_id=Q727718S84162V06"  target="_blank">http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=get_num_neighbors&vertex_id=Q727718S84162V06</a><br><br></li>
+
+
+        <li>To query all neighbors of a vertex, we use the following command. We just need to provide a vertex ID. <pre>http://127.0.0.1/cgi2/nsREST.pl?storename=&lt;store_name>&cmd=query_neighbors&vertex_id=&lt;vertex_id></pre>Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=query_neighbors&vertex_id=Q727718S84162V06" target="_blank">http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?store\
+name=kv11&cmd=query_neighbors&vertex_id=Q727718S84162V06</a><br><br></li>
+
+
+        <li>Filter vertices to only output those with the i-th property equal to val<pre>http://127.0.0.1/cgi2/nsREST.pl?storename=&lt;store_name>&cmd=filter_vertices&prop_idx=&lt;index>&prop_val=&lt;value></pre>Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=filter_vertices&prop_idx=0&prop_val=2012-02-10-10.04.39.485842" target="_blank">http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=filter_vertices&prop_idx=0&prop_val=2012-02-10-10.04.39.485842</a><br><br></li>
+
+
+        <li>Find the vertex with the maximum node degree. If the condition i and val are given, it finds the vertex only from those satisfying the condition, i.e., the i-th property of the vertex is equal to val. It also finds the vertices with the top #n number of degrees.<pre>http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=find_vertex_max_degre</pre>Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=find_vertex_max_degree" target="_blank">http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=find_vertex_max_degree</a><br><br></li>
+
+        <li>Find n vertices randomly from a graph. This command is for users to get some vertices, so that they can use such vertices as start points for certain analytics. is a number, say 10.<pre> http://127.0.0.1/cgi2/nsREST.pl?storename=&lt;store_name>&cmd=find_random_vertices&n=&lt;#n></pre>Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=find_random_vertices&n=10" target="_blank">http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=find_random_vertices&n=10</a><br><br></li>
+
+        <li>Find n edges (nearly) randomly from a graph. This command is for users to get some edges, so that they can use such vertices as start points for certain analytics. is a number, say 10.<pre>http://127.0.0.1/cgi2/nsREST.pl?storename=&lt;store_name>&cmd=find_random_edges&n=&lt;#n></pre>Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=find_random_edges&n=10" target="_blank"></a><br><br></li>
+
+        <li>To query the property keys of the vertices and edges, we use the following commands. If there is no such keys (i.e., the data was imported with arguemnt <i>no_header</i>), a notice is shown to tell that there is no property keys<pre>http://127.0.0.1/cgi2/nsREST.pl?storename=&lt;store_name>&cmd=query_vpropkeys</pre>Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=query_vpropkeys" target="_blank">http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=query_vpropkeys</a><br>
+
+        <pre>http://127.0.0.1/cgi2/nsREST.pl?storename=&lt;store_name>&cmd=query_epropkeys</pre>Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=query_epropkeys" target="_blank"> http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=query_epropkeys</a><br><br></li>
+
+        <li>A user controled Breadth First Search (BFS) can be invoked by the following commands. is an arbitrary vertex in the graph stored in , and #hops shows the maximum allowed BFS levels. gives the maximum number of vertices to traverse at each BFS level. This is for visualization purpose, where we do not want to visualize all the edges for dense vertices. The output is in JSON format.<pre>http://127.0.0.1/cgi2/nsREST.pl?storename=&lt;store_name>&cmd=bfs_visual&root=&lt;vertex_id>&hops=&lt;#hops>&max_breadth=&lt;#max_breadth></pre>Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=bfs_visual&root=Q727718S84162V06&hops=3&max_breadth=5" target="_blank">http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=bfs_visual&root=Q727718S84162V06&hops=3&max_breadth=5 </a><br><br></li>
+
+        <li>It is possible to run some analytic routines using the data store. Any graph analytic applications that are developed using System G middleware APIs shall be easily plugged into the shell. In this command, we use a collaborative filter code. Collaborative filter is widely used in recommandation systems and has many alternatives. In this version, it takes a bipartite graph G((X, Y), E) as the input, and finds relevant vertices to a user specificed vertex, say x∈X. The most relevant vertex is z = argmax |neighbors(x) ^ neighbors(z)| for any z∈X. The analytics queries a vertex called in the graph store and performs BFS for <#hops> levels. It computes the number of paths from the root vertex to any leaves and rank these leaves accordingly in descending order. The top <#ranks> vertices are returned. The result is formatted into json format.<pre>http://127.0.0.1/cgi2/nsREST.pl?storename=&lt;store_name>&cmd=colFilter&vertex_id=&lt;vertex_id>&hops#=&lt;n>&ranks=5</pre>Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=colFilter&vertex_id=Q727718S84162V06&hops=2&ranks=10" target="_blank">http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=colFilter&vertex_id=Q727718S84162V06&hops=2&ranks=10</a><br><br></li>
+
+        <li>There is a relevant command called centroid visualization for recommandation (centroid_visual). The first argument for this command is also the queried vertex ID, but it performs a 2 hops colFilter and got the top <#rank1> nodes, and then for each of them perform 2 hops again and get the top 10 nodes. The results are of the top #rank from the 1st colFilter and the top <#rank2> of the remaining colFilter are aggregated to return. The result is formatted into json<pre>http://127.0.0.1/cgi2/nsREST.pl?storename=&lt;store_name>&cmd=centroid_visual&vertex_id=Y077571E64061O86&rank1=&lt;rank1>&rank1=&lt;rank2></pre>Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=centroid_visual&vertex_id=Y077571E64061O86&rank1=20&rank1=10" target="_blank">http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=centroid_visual&vertex_id=Y077571E64061O86&\
+rank1=20&rank1=10</a><br></li>
+
+<!--
+        <li><pre></pre>Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=pageRank&dumpling_factor=0.2&quadratic_factor=0.5
+        " target="_blank"> </a><br></li><li><pre></pre>Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=connectedComponent
+        " target="_blank"> </a><br></li><li><pre></pre>Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=kCore&k=2
+	" target="_blank"> </a><br></li><li><pre></pre>Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=clusteringCoefficient
+	" target="_blank"> </a><br></li><li><pre></pre>Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=triangleCount
+	" target="_blank"> </a><br></li><li><pre></pre>Try it: <a href="http://sg01.rescloud.ibm.com/cgi-bin/nsREST/nsREST.pl?storename=kv11&cmd=ShortestPaths&targ_vid
+        " target="_blank"> </a><br></li>						     
+--->
+
+<ul>
+</body>
