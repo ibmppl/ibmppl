@@ -38,16 +38,20 @@ memgraph_type g("name", "directory",  "directness");
 
 - Add vertices
 
+__default label should be provided, so that user do not have to input it__
+
 ```bash
    label_t vlabel;
-   vid_t vid = g.add_vertex(vlabel);
+   vid_t vid = g.add_vertex(vlabel = 0);
 ````
 - Add edges
+
+__default label should be provided__
 
 ```bash
    vid_t src, targ;
    label_t elabel;
-   eid_t eid = g.add_edge(src, targ, elabel);
+   eid_t eid = g.add_edge(src, targ, elabel=0);
 ````
 - Find vertices
 
@@ -57,6 +61,8 @@ memgraph_type g("name", "directory",  "directness");
 ````
 - Find edges
 
+__should support find_edge(src, targ) for the first edge between them__
+
 ```bash
    vid_t src, targ;
    eit_t eid;
@@ -64,6 +70,8 @@ memgraph_type g("name", "directory",  "directness");
    eit_t eit = g.find_edge(src, targ);   // need to add!!!
 ````
 - Property management
+
+__how & when the indexing is built___
 
 ```bash
    string pkey, pval;
@@ -94,19 +102,24 @@ memgraph_type g("name", "directory",  "directness");
 
    Traverse the properties:
 
+__all vertices and edges have the same property lists?!__
+__sounds like Java format?? More natural to use subproperty iterator__
+
 ```bash
    size_t n = g.get_subproperty_count();
    size_t pid = get_first_subproperty_id();
    size_t pid = get_next_subproperty_id(pid);
 ````
    
+__default label should be provided for all _begin() _end()__
+__confusion for vit.begin() and vit->begin()?? the latter is natural__
 
 - Traversal
    
 ```bash
    label_t lid;
 
-   for (vit_t vit=g.vertices_begin(lid); vit!=g.vertices_end(lid); vit++)
+   for (vit_t vit=g.vertices_begin(lid=0); vit!=g.vertices_end(lid=0); vit++)
 
    for (eit_t eit=vit.edges_begin(lid); eit!=vit.edges_end(lid); eit++)  // ???
    for (eit_t eit=vit->edges_begin(lid); eit!=vit->edges_end(lid); eit++)  // ???
@@ -121,6 +134,8 @@ memgraph_type g("name", "directory",  "directness");
    vit->preds_size(lid);
 ````
 - Get end vertices of an edge
+
+__iterator should be like a pointer__
 
 ```bash
    eit->source();   // eit.source()??
