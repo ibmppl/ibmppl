@@ -172,6 +172,12 @@ Here are some examples:
 		<store_name> query_epropkeys
 ```
 
+- The graph database maintains an in-memory graph layer, which performs as a cache for disk data. To change the maximum allowed memory size for the in-mem graph, we use the following commands. By default, the max allowed memory size is 4GB.
+
+```bash
+        <store_name> set_max_mem <size> <B|KB|MB|GB>
+```
+
 <b> 4. Plug-In Analytics </b>
 
 - A user controled Breadth First Search (BFS) can be invoked by the following commands. <root> is an arbitrary vertex in the graph stored in <store_name>, and #hops shows the maximum allowed BFS levels. <max_breadth_per_level> gives the maximum number of vertices to traverse at each BFS level. This is for visualization purpose, where we do not want to visualize all the edges for dense vertices. [json|plain] defines if the output format should be in JSON or simply in plain text.
