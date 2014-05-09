@@ -27,6 +27,9 @@ Hereafter we assume the persistent graph is used, although all APIs are appliabl
 
 We provide the storename and the directory for both graphs, since there are some stored meta data for both.
 
+** add global property to graph:  g.directness = {pred_directed | undirected} **
+** additional global property can be supported by: g.set_subproperty(pkey, pval); g.get_subproperty(pkey) **
+
 ```bash
 graph_type g("name", "directory", "directness");    !!! changes for having global properties !!!
 memgraph_type g("name", "directory",  "directness");
