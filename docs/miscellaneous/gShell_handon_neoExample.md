@@ -2,7 +2,9 @@
 
 Create a node for the actor Tom Hanks:
 
+```bash
 CREATE (n:Actor { name:"Tom Hanks" });
+````
 
 Let’s find the node we created:
 
