@@ -6,6 +6,11 @@ Create a node for the actor Tom Hanks:
 CREATE (n:Actor { name:"Tom Hanks" });
 ````
 
+```bash
+add_vertex "Tom Hanks" label:"Actor"
+````
+<sup>gShell accepts vertex ID string as a default vertex property</sup>
+
 Let’s find the node we created:
 
 MATCH (actor:Actor { name: "Tom Hanks" })
