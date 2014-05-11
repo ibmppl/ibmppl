@@ -7,9 +7,11 @@ CREATE (n:Actor { name:"Tom Hanks" });
 ````
 
 ```bash
-add_vertex "Tom Hanks" label:"Actor"
+create g
+g add_vertex "Tom Hanks" label:"Actor"
 ````
-<sup>gShell accepts vertex ID string as a default vertex property</sup>
+<sup>* gShell allows interleave multiple graphs, so we must explictly create a graph and specify the graph before graph operation commands.</sup> 
+<sup>* gShell accepts vertex ID string as a default vertex property.</sup>
 
 Let’s find the node we created:
 
