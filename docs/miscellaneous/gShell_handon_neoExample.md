@@ -1,31 +1,42 @@
 ###We use the example from Neo4j Tutorial to show how to use Native Store gShell
 
-Create a node for the actor Tom Hanks:
+- Create a node for the actor Tom Hanks:
 
 ```bash
 CREATE (n:Actor { name:"Tom Hanks" });
 ````
 
 ```bash
-create g
 g add_vertex "Tom Hanks" label:"Actor"
 ````
-<sup>* gShell allows interleave multiple graphs, so we must explictly create a graph and specify the graph before graph operation commands.</sup><br>
+<sup>* gShell allows interleave multiple graphs, so we must explictly specify the graph name (e.g. "g") prior to graph operation commands.</sup><br>
 <sup>* gShell accepts vertex ID string as a default vertex property.</sup>
 
-Let’s find the node we created:
+- Let’s find the node we created:
 
+```bash
 MATCH (actor:Actor { name: "Tom Hanks" })
 RETURN actor;
+````
 
-Now let’s create a movie and connect it to the Tom Hanks node with an ACTED_IN relationship:
+```bash
+g filter_vertices label:"Actor" ID:"Tom Hanks"
+````
 
+- Now let’s create a movie and connect it to the Tom Hanks node with an ACTED_IN relationship:
+
+```bash
 MATCH (actor:Actor)
 WHERE actor.name = "Tom Hanks"
 CREATE (movie:Movie { title:'Sleepless IN Seattle' })
 CREATE (actor)-[:ACTED_IN]->(movie);
+````
+```bash
+g add_vertex "Sleepless IN Seattle" label:Movie
+g add_edge "Tom Hanks" "Sleepless IN Seattle" label:"ACTED_IN"
+````
 
-Set a property on a node:
+- Set a property on a node:
 
 MATCH (actor:Actor { name: "Tom Hanks" })
 SET actor.DoB = 1944
