@@ -2,22 +2,24 @@
 ###We use the example from Neo4j Tutorial to show how to use Native Store gShell
 
 -----------
+
 Grammar for Native Store gShell for Multiproperty Graph 
 
 ```bash
 <command> [argKey[:sub-argKey]:argVal]
 ````
-* <command> is a command  verb defined by gShell
+* <i>command</i> is a command  verb defined by gShell
 
-* argKey is a key of an argument, defined by gShell or user
+* <i>argKey</i> is a key of an argument, defined by gShell or user
 
-* multiple sub-argKey can be applied 
+* multiple <i>sub-argKey</i> can be applied 
 
-* argVal is the corresponding value.
+* <i>argVal</i> is the corresponding value.
 
 
 <b>For example:</b>
 
+```bash
 create graph:kv11     // create a graph store named kv11
 
 list_all              // display all graph stores 
@@ -29,6 +31,8 @@ query_vertex graph:kv11 id:"Tom"  // query a vertex according to vertex ID
 filter_vertices graph:kv11 prop:DoB:"1944" prop:gender:"Male" out:result // find a set of vertices 
 
 filter_vertices in:result id:"Tom"  // second find
+````
+
 -----------
 
 The description of each bullet below comes from Neo4j Tutorial example. We display the both solutions from Neo4j Cypher and Native Store gShell, for illustrating how much they can be mapped to each other. Our CLI-style makes queries more compact, clearer, and easier for embedded use.  
