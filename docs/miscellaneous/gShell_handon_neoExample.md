@@ -1,4 +1,7 @@
+## Handon Tutorial for Native Store gShell  
 ###We use the example from Neo4j Tutorial to show how to use Native Store gShell
+
+The description of each bullet below comes from Neo4j Tutorial example. We display the both solutions from Neo4j Cypher and Native Store gShell, for illustrating how much they can be mapped to each other. Our CLI-style makes queries more compact, clearer, and easier for embedded use.  
 
 - Create a node for the actor Tom Hanks:
 
@@ -38,17 +41,29 @@ g add_edge "Tom Hanks" "Sleepless IN Seattle" label:"ACTED_IN"
 
 - Set a property on a node:
 
+```bash
 MATCH (actor:Actor { name: "Tom Hanks" })
 SET actor.DoB = 1944
 RETURN actor.name, actor.DoB;
+````
+```bash
+g update_vertex "Tom Hanks" label:"Actor" DoB:"1944" 
+````
 
-The labels Actor and Movie help us organize the graph. Let’s list all Movie nodes:
+- The labels Actor and Movie help us organize the graph. Let’s list all Movie nodes:
 
+```bash
 MATCH (movie:Movie)
 RETURN movie AS `All Movies`;
+````
 
-We’ll go with three movies and three actors:
+```bash
+g query_vertices label:Movie
+````
 
+- We’ll go with three movies and three actors:
+
+```bash
 CREATE (matrix1:Movie { title : 'The Matrix', year : '1999-03-31' })
 CREATE (matrix2:Movie { title : 'The Matrix Reloaded', year : '2003-05-07' })
 CREATE (matrix3:Movie { title : 'The Matrix Revolutions', year : '2003-10-27' })
@@ -64,97 +79,196 @@ CREATE (laurence)-[:ACTS_IN { role : 'Morpheus' }]->(matrix3)
 CREATE (carrieanne)-[:ACTS_IN { role : 'Trinity' }]->(matrix1)
 CREATE (carrieanne)-[:ACTS_IN { role : 'Trinity' }]->(matrix2)
 CREATE (carrieanne)-[:ACTS_IN { role : 'Trinity' }]->(matrix3)
+````
 
+```bash
+g add_vertex "The Matrix" label:Movie year:"1999-03-31"
+g add_vertex "The Matrix Reloaded" label:Motive year:"2003-05-07"
+g add_vertex "The Matrix Revoluations" label:Motive year:"2003-10-27"
+g add_vertex "Keanu Reeves" label:Actor
+g add_vertex "Laurence Fishburne" label:Actor
+g add_vertex "Carrie-Anne Moss" label:Actor
+g add_edge "Keanu Reeves" "The Matrix" label:ACTS_IN role:"Neo"
+g add_edge "Keanu Reeves" "The Matrix Reloaded" label:ACTS_IN role:"Neo"
+g add_edge "Keanu Reeves" "The Matrix Revoluations" label:ACTS_IN role:"Neo"
+g add_edge "Laurence Fishburne" "The Matrix" label:ACTS_IN role:"Morpheus"
+g add_edge "Laurence Fishburne" "The Matrix Reloaded" label:ACTS_IN role:"Morpheus"
+g add_edge "Laurence Fishburne" "The Matrix Revoluation" label:ACTS_IN role:"Morpheus"
+g add_edge "Carrie-Anne" "The Matrix" label:ACTS_IN role:"Trinity"
+g add_edge "Carrie-Anne" "The Matrix Reloaded" label:ACTS_IN role:"Trinity"
+g add_edge "Carrie-Anne" "The Matrix Revoluation" label:ACTS_IN role:"Trinity"
+````
 
-Let’s check how many nodes we have now:
+- Let’s check how many nodes we have now:
 
+```bash
 MATCH (n)
 RETURN "Hello Graph with " + count(*)+ " Nodes!" AS welcome;
+````
+```bash
+g get_num_vertices
+````
 
-Return a single node, by name:
+- Return a single node, by name:
 
+```bash
 MATCH (movie:Movie { title: 'The Matrix' })
 RETURN movie;
+````
+```bash
+g query_vertex "The Matrix"
+````
 
+- Return the title and date of the matrix node:
 
-Return the title and date of the matrix node:
-
+```bash
 MATCH (movie:Movie { title: 'The Matrix' })
 RETURN movie.title, movie.year;
+````
+```bash
+g query_vertex "The Matrix" title year
+````
 
-Show all actors:
+- Show all actors:
 
+```bash
 MATCH (actor:Actor)
 RETURN actor;
+````
 
-Return just the name, and order them by name:
+```bash
+g filter_vertices label:Actor
+````
 
+- Return just the name, and order them by name:
+
+```bash
 MATCH (actor:Actor)
 RETURN actor.name
 ORDER BY actor.name;
+````
+```bash
+g filter_vertices label:Actor
+??? output[??] sort vertex name
+````
 
-Count the actors:
+- Count the actors:
 
+```bash
 MATCH (actor:Actor)
 RETURN count(*);
+````
+```bash
+g filter_vertices label:Actor
+??? output[??] count vertex
+````
 
+- Get only the actors whose names end with “s”:
 
-Get only the actors whose names end with “s”:
-
+```bash
 MATCH (actor:Actor)
 WHERE actor.name =~ ".*s$"
 RETURN actor.name;
+````
+```bash
+???
+````
 
+- Count nodes:
 
-Count nodes:
-
+```bash
 MATCH (n)
 RETURN count(*);
+````
+```bash
+g get_num_vertices
+````
 
-Count relationship types:
+- Count relationship types:
 
+```bash
 MATCH (n)-[r]->()
 RETURN type(r), count(*);
+````
 
-List all nodes and their relationships:
+```bash
+g filter_edges label:r
+output[??] count
+````
 
+- List all nodes and their relationships:
+
+```bash
 MATCH (n)-[r]->(m)
 RETURN n AS FROM , r AS `->`, m AS to;
+````
+```bash
+g filter_edges	// no constraint
+````
 
-So far, we queried the movie data; now let’s update the graph too.
+- Here’s how to add a node for yourself and return it, let’s say your name is “Me”:
 
-Here’s how to add a node for yourself and return it, let’s say your name is “Me”:
-
+```bash
 CREATE (me:User { name: "Me" })
 RETURN me;
+````
+```bash
+g add_vertex "Me" label:User
+````
 
-Let’s check if the node is there:
+- Let’s check if the node is there:
 
+```bash
 MATCH (me:User { name: "Me" })
 RETURN me.name;
+````
+```bash
+g query_vertex "Me"
+````
 
-Add a movie rating:
+- Add a movie rating:
 
+```bash
 MATCH (me:User { name: "Me" }),(movie:Movie { title: "The Matrix" })
 CREATE (me)-[:RATED { stars : 5, comment : "I love that movie!" }]->(movie);
+````
+```bash
+g add_edge "Me" "The Matrix" label:REATED stars:5 comment:"I love that movie!"
+````
 
-Which movies did I rate?
+- Which movies did I rate?
 
+```bash
 MATCH (me:User { name: "Me" }),(me)-[rating:RATED]->(movie)
 RETURN movie.title, rating.stars, rating.comment;
+````
+```bash
+g find_neighbors "Me" 
+???
+````
 
-We need a friend!
+- We need a friend!
 
+```bash
 CREATE (friend:User { name: "A Friend" })
 RETURN friend;
+````
+```bash
+g add_vertex "A Friend" label:User
+````
 
-Add our friendship idempotently, so we can re-run the query without adding it several times. We return the relationship to check that it has not been created several times.
+- Add our friendship idempotently, so we can re-run the query without adding it several times. We return the relationship to check that it has not been created several times.
 
+```bash
 MATCH (me:User { name: "Me" }),(friend:User { name: "A Friend" })
 CREATE UNIQUE (me)-[friendship:FRIEND]->(friend)
 RETURN friendship;
+````
+```bash
+g add_edge "Me" "A Friend" label:FRIEND
+````
 
-Let’s update our friendship with a since property:
+- Let’s update our friendship with a since property:
 
 MATCH (me:User { name: "Me" })-[friendship:FRIEND]->(friend:User { name: "A Friend" })
 SET friendship.since='forever'
