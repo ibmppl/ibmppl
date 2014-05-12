@@ -67,7 +67,7 @@ RETURN actor;
 ````
 
 ```bash
-filter_vertices graph:g label:"Actor" ID:"Tom Hanks"
+filter_vertices graph:g label:"Actor" id:"Tom Hanks"
 ````
 
 - Now let’s create a movie and connect it to the Tom Hanks node with an ACTED_IN relationship:
@@ -205,8 +205,8 @@ MATCH (actor:Actor)
 RETURN count(*);
 ````
 ```bash
-g filter_vertices label:Actor
-??? output[??] count vertex
+filter_vertices graph:g label:Actor out:result
+count in:result:vertices
 ````
 
 - Get only the actors whose names end with “s”:
@@ -217,8 +217,12 @@ WHERE actor.name =~ ".*s$"
 RETURN actor.name;
 ````
 ```bash
-???
+filter_vertices graph:g label:Actor out:result
+pattern_match in:result:vertices where:id pattern:".*s$"
 ````
+<sup>* keyword "where" gives where we retrieve the information. It can be something like "id" or "prop:role".</sup><br>
+<sup>* keyword "pattern" gives the pattern description string.
+
 
 - Count nodes:
 
@@ -227,7 +231,7 @@ MATCH (n)
 RETURN count(*);
 ````
 ```bash
-g get_num_vertices
+get_num_vertices graph:g 
 ````
 
 - Count relationship types:
@@ -238,9 +242,9 @@ RETURN type(r), count(*);
 ````
 
 ```bash
-g filter_edges label:r
-output[??] count
+get_num_elabels graph:g
 ````
+<sup>* elabel stands for edge label. Similarly, we have get_num_vlabels. </sup>
 
 - List all nodes and their relationships:
 
@@ -249,8 +253,10 @@ MATCH (n)-[r]->(m)
 RETURN n AS FROM , r AS `->`, m AS to;
 ````
 ```bash
-g filter_edges	// no constraint
+filter_edges graph:g out:result
+query_edges in:result:edges src label targ
 ````
+<sup>* this is a very expensive and not recommended for large graphs</sup>
 
 - Here’s how to add a node for yourself and return it, let’s say your name is “Me”:
 
@@ -259,7 +265,7 @@ CREATE (me:User { name: "Me" })
 RETURN me;
 ````
 ```bash
-g add_vertex "Me" label:User
+add_vertex graph:g id:"Me" label:User
 ````
 
 - Let’s check if the node is there:
@@ -269,7 +275,7 @@ MATCH (me:User { name: "Me" })
 RETURN me.name;
 ````
 ```bash
-g query_vertex "Me"
+query_vertex graph:g id:"Me"
 ````
 
 - Add a movie rating:
@@ -279,7 +285,7 @@ MATCH (me:User { name: "Me" }),(movie:Movie { title: "The Matrix" })
 CREATE (me)-[:RATED { stars : 5, comment : "I love that movie!" }]->(movie);
 ````
 ```bash
-g add_edge "Me" "The Matrix" label:REATED stars:5 comment:"I love that movie!"
+add_edge graph:g src:"Me" targ:"The Matrix" label:REATED prop:stars:5 prop:comment:"I love that movie!"
 ````
 
 - Which movies did I rate?
@@ -289,8 +295,8 @@ MATCH (me:User { name: "Me" }),(me)-[rating:RATED]->(movie)
 RETURN movie.title, rating.stars, rating.comment;
 ````
 ```bash
-g find_neighbors "Me" 
-???
+filter_edges graph:g src:"Me" out:result
+query_edges in:result:edges prop:stars prop:comment
 ````
 
 - We need a friend!
@@ -300,7 +306,7 @@ CREATE (friend:User { name: "A Friend" })
 RETURN friend;
 ````
 ```bash
-g add_vertex "A Friend" label:User
+add_vertex graph:g "A Friend" label:User
 ````
 
 - Add our friendship idempotently, so we can re-run the query without adding it several times. We return the relationship to check that it has not been created several times.
@@ -311,14 +317,19 @@ CREATE UNIQUE (me)-[friendship:FRIEND]->(friend)
 RETURN friendship;
 ````
 ```bash
-g add_edge "Me" "A Friend" label:FRIEND
+add_edge graph:g  src:"Me" targ:"A Friend" label:FRIEND
 ````
 
 - Let’s update our friendship with a since property:
 
+```bash
 MATCH (me:User { name: "Me" })-[friendship:FRIEND]->(friend:User { name: "A Friend" })
 SET friendship.since='forever'
 RETURN friendship;
+````
+```bash
+add_subprop graph:g src:"Me" targ:"Friend" prop:since:"forever"
+````
 
 Let’s pretend us being our friend and wanting to see which movies our friends have rated.
 
