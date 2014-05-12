@@ -192,9 +192,11 @@ RETURN actor.name
 ORDER BY actor.name;
 ````
 ```bash
-g filter_vertices label:Actor
-??? output[??] sort vertex name
+filter_vertices graph:g label:Actor out:result
+sort_vertices in:result:vertices orderby:id 
 ````
+<sup>* keyword "out:" allows users to define a variable (i.e. result) storing the filtering output</sup><br>
+<sup>* keyword "in:" allows users to get data from a stored output. </sup> 
 
 - Count the actors:
 
