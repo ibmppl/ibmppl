@@ -28,18 +28,22 @@ create graph:kv11     // create a graph store named kv11
 
 list_all              // display all graph stores 
 
-add_vertex graph:kv11 id:"Tom" label:"Actor" prop:DoB:"1944" prop:gender:"Male"  // add a vertex 
+add_vertex graph:g id:"Tom" label:"Actor" prop:DoB:"1944" prop:gender:"Male"  // add a vertex with label and properties
 
-query_vertex graph:kv11 id:"Tom"  // query a vertex according to vertex ID
+query_vertex graph:g id:"Tom"  // query a vertex according to vertex ID
 
-filter_vertices graph:kv11 prop:DoB:"1944" prop:gender:"Male" out:result // find a set of vertices 
+filter_vertices graph:g prop:DoB:"1944" prop:gender:"Male" out:result // find a set of vertices 
 
 filter_vertices in:result id:"Tom"  // second find
 ````
 
+_question: how to build the map for prop:Dob and prop:gender? build a secondary map?
+
+_question: how to handle user-defined IDs? is it a property or we build an internal map from string to vid
+
 -----------
 
-###We use the example from Neo4j Tutorial to show how to use Native Store gShell
+####We use the example from Neo4j Tutorial to show how to use Native Store gShell
 
 The description of each bullet below comes from Neo4j Tutorial example. We display the both solutions from Neo4j Cypher and Native Store gShell, for illustrating how much they can be mapped to each other. Our CLI-style makes queries more compact, clearer, and easier for embedded use.  
 
@@ -50,9 +54,9 @@ CREATE (n:Actor { name:"Tom Hanks" });
 ````
 
 ```bash
-g add_vertex "Tom Hanks" label:"Actor"
+add_vertex graph:g id:"Tom Hanks" label:"Actor"
 ````
-<sup>* gShell allows interleave multiple graphs, so we must explictly specify the graph name (e.g. "g") prior to graph operation commands.</sup><br>
+<sup>* gShell allows interleave multiple graphs, so we must explictly specify the graph name (e.g. "g") for each  graph operation commands.</sup><br>
 <sup>* gShell accepts vertex ID string as a default vertex property.</sup>
 
 - Let’s find the node we created:
@@ -63,7 +67,7 @@ RETURN actor;
 ````
 
 ```bash
-g filter_vertices label:"Actor" ID:"Tom Hanks"
+filter_vertices graph:g label:"Actor" ID:"Tom Hanks"
 ````
 
 - Now let’s create a movie and connect it to the Tom Hanks node with an ACTED_IN relationship:
@@ -75,8 +79,8 @@ CREATE (movie:Movie { title:'Sleepless IN Seattle' })
 CREATE (actor)-[:ACTED_IN]->(movie);
 ````
 ```bash
-g add_vertex "Sleepless IN Seattle" label:Movie
-g add_edge "Tom Hanks" "Sleepless IN Seattle" label:"ACTED_IN"
+add_vertex graph:g id:"Sleepless IN Seattle" label:Movie
+add_edge graph:g src:"Tom Hanks" targ:"Sleepless IN Seattle" label:"ACTED_IN"
 ````
 
 - Set a property on a node:
@@ -87,7 +91,7 @@ SET actor.DoB = 1944
 RETURN actor.name, actor.DoB;
 ````
 ```bash
-g update_vertex "Tom Hanks" label:"Actor" DoB:"1944" 
+add_subprop graph:g id:"Tom Hanks" prop:DoB:"1944"
 ````
 
 - The labels Actor and Movie help us organize the graph. Let’s list all Movie nodes:
@@ -96,9 +100,8 @@ g update_vertex "Tom Hanks" label:"Actor" DoB:"1944"
 MATCH (movie:Movie)
 RETURN movie AS `All Movies`;
 ````
-
 ```bash
-g query_vertices label:Movie
+filter_vertices graph:g label:Movie
 ````
 
 - We’ll go with three movies and three actors:
@@ -122,21 +125,21 @@ CREATE (carrieanne)-[:ACTS_IN { role : 'Trinity' }]->(matrix3)
 ````
 
 ```bash
-g add_vertex "The Matrix" label:Movie year:"1999-03-31"
-g add_vertex "The Matrix Reloaded" label:Motive year:"2003-05-07"
-g add_vertex "The Matrix Revoluations" label:Motive year:"2003-10-27"
-g add_vertex "Keanu Reeves" label:Actor
-g add_vertex "Laurence Fishburne" label:Actor
-g add_vertex "Carrie-Anne Moss" label:Actor
-g add_edge "Keanu Reeves" "The Matrix" label:ACTS_IN role:"Neo"
-g add_edge "Keanu Reeves" "The Matrix Reloaded" label:ACTS_IN role:"Neo"
-g add_edge "Keanu Reeves" "The Matrix Revoluations" label:ACTS_IN role:"Neo"
-g add_edge "Laurence Fishburne" "The Matrix" label:ACTS_IN role:"Morpheus"
-g add_edge "Laurence Fishburne" "The Matrix Reloaded" label:ACTS_IN role:"Morpheus"
-g add_edge "Laurence Fishburne" "The Matrix Revoluation" label:ACTS_IN role:"Morpheus"
-g add_edge "Carrie-Anne" "The Matrix" label:ACTS_IN role:"Trinity"
-g add_edge "Carrie-Anne" "The Matrix Reloaded" label:ACTS_IN role:"Trinity"
-g add_edge "Carrie-Anne" "The Matrix Revoluation" label:ACTS_IN role:"Trinity"
+add_vertex graph:g id:"The Matrix" label:Movie year:"1999-03-31"
+add_vertex graph:g id:"The Matrix Reloaded" label:Motive year:"2003-05-07"
+add_vertex graph:g id:"The Matrix Revoluations" label:Motive year:"2003-10-27"
+add_vertex graph:g id:"Keanu Reeves" label:Actor
+add_vertex graph:g id:"Laurence Fishburne" label:Actor
+add_vertex graph:g id:"Carrie-Anne Moss" label:Actor
+add_edge graph:g src:"Keanu Reeves" targ:"The Matrix" label:ACTS_IN role:"Neo"
+add_edge graph:g src:"Keanu Reeves" targ:"The Matrix Reloaded" label:ACTS_IN role:"Neo"
+add_edge graph:g src:"Keanu Reeves" targ:"The Matrix Revoluations" label:ACTS_IN role:"Neo"
+add_edge graph:g src:"Laurence Fishburne" targ:"The Matrix" label:ACTS_IN role:"Morpheus"
+add_edge graph:g src:"Laurence Fishburne" targ:"The Matrix Reloaded" label:ACTS_IN role:"Morpheus"
+add_edge graph:g src:"Laurence Fishburne" targ:"The Matrix Revoluation" label:ACTS_IN role:"Morpheus"
+add_edge graph:g src:"Carrie-Anne" targ:"The Matrix" label:ACTS_IN role:"Trinity"
+add_edge graph:g src:"Carrie-Anne" targ:"The Matrix Reloaded" label:ACTS_IN role:"Trinity"
+add_edge graph:g src:"Carrie-Anne" targ:"The Matrix Revoluation" label:ACTS_IN role:"Trinity"
 ````
 
 - Let’s check how many nodes we have now:
