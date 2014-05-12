@@ -125,21 +125,21 @@ CREATE (carrieanne)-[:ACTS_IN { role : 'Trinity' }]->(matrix3)
 ````
 
 ```bash
-add_vertex graph:g id:"The Matrix" label:Movie year:"1999-03-31"
-add_vertex graph:g id:"The Matrix Reloaded" label:Motive year:"2003-05-07"
-add_vertex graph:g id:"The Matrix Revoluations" label:Motive year:"2003-10-27"
+add_vertex graph:g id:"The Matrix" label:Movie prop:year:"1999-03-31"
+add_vertex graph:g id:"The Matrix Reloaded" label:Motive prop:year:"2003-05-07"
+add_vertex graph:g id:"The Matrix Revoluations" label:Motive prop:year:"2003-10-27"
 add_vertex graph:g id:"Keanu Reeves" label:Actor
 add_vertex graph:g id:"Laurence Fishburne" label:Actor
 add_vertex graph:g id:"Carrie-Anne Moss" label:Actor
-add_edge graph:g src:"Keanu Reeves" targ:"The Matrix" label:ACTS_IN role:"Neo"
-add_edge graph:g src:"Keanu Reeves" targ:"The Matrix Reloaded" label:ACTS_IN role:"Neo"
-add_edge graph:g src:"Keanu Reeves" targ:"The Matrix Revoluations" label:ACTS_IN role:"Neo"
-add_edge graph:g src:"Laurence Fishburne" targ:"The Matrix" label:ACTS_IN role:"Morpheus"
-add_edge graph:g src:"Laurence Fishburne" targ:"The Matrix Reloaded" label:ACTS_IN role:"Morpheus"
-add_edge graph:g src:"Laurence Fishburne" targ:"The Matrix Revoluation" label:ACTS_IN role:"Morpheus"
-add_edge graph:g src:"Carrie-Anne" targ:"The Matrix" label:ACTS_IN role:"Trinity"
-add_edge graph:g src:"Carrie-Anne" targ:"The Matrix Reloaded" label:ACTS_IN role:"Trinity"
-add_edge graph:g src:"Carrie-Anne" targ:"The Matrix Revoluation" label:ACTS_IN role:"Trinity"
+add_edge graph:g src:"Keanu Reeves" targ:"The Matrix" label:ACTS_IN prop:role:"Neo"
+add_edge graph:g src:"Keanu Reeves" targ:"The Matrix Reloaded" label:ACTS_IN prop:role:"Neo"
+add_edge graph:g src:"Keanu Reeves" targ:"The Matrix Revoluations" label:ACTS_IN prop:role:"Neo"
+add_edge graph:g src:"Laurence Fishburne" targ:"The Matrix" label:ACTS_IN prop:role:"Morpheus"
+add_edge graph:g src:"Laurence Fishburne" targ:"The Matrix Reloaded" label:ACTS_IN prop:role:"Morpheus"
+add_edge graph:g src:"Laurence Fishburne" targ:"The Matrix Revoluation" label:ACTS_IN prop:role:"Morpheus"
+add_edge graph:g src:"Carrie-Anne" targ:"The Matrix" label:ACTS_IN prop:role:"Trinity"
+add_edge graph:g src:"Carrie-Anne" targ:"The Matrix Reloaded" label:ACTS_IN prop:role:"Trinity"
+add_edge graph:g src:"Carrie-Anne" targ:"The Matrix Revoluation" label:ACTS_IN prop:role:"Trinity"
 ````
 
 - Let’s check how many nodes we have now:
