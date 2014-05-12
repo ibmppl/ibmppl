@@ -1,5 +1,5 @@
 
-## Handon Tutorial for Native Store gShell (v2)  
+## Hands-on Tutorial for Native Store gShell (v2)  
 
 ### gShell version 2 Usage
 
