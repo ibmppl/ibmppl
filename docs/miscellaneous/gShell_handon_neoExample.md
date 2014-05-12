@@ -1,14 +1,18 @@
-## Handon Tutorial for Native Store gShell  
-###We use the example from Neo4j Tutorial to show how to use Native Store gShell
+
+## Handon Tutorial for Native Store gShell (v2)  
+
+### gShell version 2 Usage
+
+gShell runs in the interactive mode, server/client mode, REST API mode, and the command-line mode. In all modes, the commands are the same or with very limited changes that can be told without introduction. In this document, we use the interactive mode as an example, which is perfect for users to operate multiple local graph stores simultaneously. 
 
 -----------
 
-Grammar for Native Store gShell for Multiproperty Graph 
+####Grammar for Native Store gShell for Multiproperty Graph 
 
 ```bash
 <command> [argKey[:sub-argKey]:argVal]
 ````
-* <i>command</i> is a command  verb defined by gShell
+* <i>command</i> is a command verb defined by gShell
 
 * <i>argKey</i> is a key of an argument, defined by gShell or user
 
@@ -34,6 +38,8 @@ filter_vertices in:result id:"Tom"  // second find
 ````
 
 -----------
+
+###We use the example from Neo4j Tutorial to show how to use Native Store gShell
 
 The description of each bullet below comes from Neo4j Tutorial example. We display the both solutions from Neo4j Cypher and Native Store gShell, for illustrating how much they can be mapped to each other. Our CLI-style makes queries more compact, clearer, and easier for embedded use.  
 
