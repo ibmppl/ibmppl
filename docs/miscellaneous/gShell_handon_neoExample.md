@@ -149,7 +149,7 @@ MATCH (n)
 RETURN "Hello Graph with " + count(*)+ " Nodes!" AS welcome;
 ````
 ```bash
-g get_num_vertices
+get_num_vertices graph:g
 ````
 
 - Return a single node, by name:
@@ -159,7 +159,7 @@ MATCH (movie:Movie { title: 'The Matrix' })
 RETURN movie;
 ````
 ```bash
-g query_vertex "The Matrix"
+query_vertex graph:g id:"The Matrix"
 ````
 
 - Return the title and date of the matrix node:
@@ -169,8 +169,10 @@ MATCH (movie:Movie { title: 'The Matrix' })
 RETURN movie.title, movie.year;
 ````
 ```bash
-g query_vertex "The Matrix" title year
+query_vertex graph:g id:"The Matrix"  prop:year
 ````
+<sup>* query_vertex always outputs the id. When specifying props, it shows the selected properties; otherwise, all props are shown.</sup><Br>
+<sup>* This can also be solved using filter_vertices. See the next example for hints.</sup>
 
 - Show all actors:
 
@@ -178,9 +180,8 @@ g query_vertex "The Matrix" title year
 MATCH (actor:Actor)
 RETURN actor;
 ````
-
 ```bash
-g filter_vertices label:Actor
+filter_vertices graph:g label:Actor
 ````
 
 - Return just the name, and order them by name:
