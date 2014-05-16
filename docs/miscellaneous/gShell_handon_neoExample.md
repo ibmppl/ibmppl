@@ -328,59 +328,54 @@ SET friendship.since='forever'
 RETURN friendship;
 ````
 ```bash
-add_subprop graph:g src:"Me" targ:"Friend" prop:since:"forever"
+add_prop graph:g src:"Me" slabel:User targ:"Friend" tlabel:User elabel:FRIEND prop:since:"forever"
 ````
 
-Let’s pretend us being our friend and wanting to see which movies our friends have rated.
+- Let’s pretend us being our friend and wanting to see which movies our friends have rated.
 
+```bash
 MATCH (me:User { name: "A Friend" })-[:FRIEND]-(friend)-[rating:RATED]->(movie)
 RETURN movie.title, avg(rating.stars) AS stars, collect(rating.comment) AS comments, count(*);
+````
+```bash
+find_neighbors graph:g root:"A Friend" elabel:FRIEND out:friends
+find_neighbors graph:g root:in:friends:vertices elabel:RATED out:movies
+query_edges graph:g src:in:friends elabel:RATED targ:in:movies   prop:stars prop:comment
+````
+<sup>* count(*) is not supported for now </sup>
 
-That’s too little data, let’s add some more friends and friendships.
+- That’s too little data, let’s add some more friends and friendships.
 
+```bash
 MATCH (me:User { name: "Me" })
 FOREACH (i IN range(1,10)| CREATE (friend:User { name: "Friend " + i }),(me)-[:FRIEND]->(friend));
+````
+```bash
+for_each from:1 to:10 out:eval("Friend ", iterator)
+add_vertex graph:g id:in:vertices 
+````
 
-Show all our friends:
+- Show all our friends:
 
+```bash
 MATCH (me:User { name: "Me" })-[r:FRIEND]->(friend)
 RETURN type(r) AS friendship, friend.name;
+````
+```bash
+find_neigbhors graph:g root:"Me" srclabel:User out:friends
+query_vertex graph:g id:in:vertices
+````
 
-All other movies that actors in “The Matrix” acted in ordered by occurrence:
 
+- All other movies that actors in “The Matrix” acted in ordered by occurrence:
+
+```bash
 MATCH (:Movie { title: "The Matrix" })<-[:ACTS_IN]-(actor)-[:ACTS_IN]->(movie)
 RETURN movie.title, count(*)
 ORDER BY count(*) DESC ;
+````
+```bash
+find_neighbors graph:g src:targ:ACTS_IN
+`````
 
-Let’s see who acted in each of these movies:
-
-MATCH (:Movie { title: "The Matrix" })<-[:ACTS_IN]-(actor)-[:ACTS_IN]->(movie)
-RETURN movie.title, collect(actor.name), count(*) AS count
-ORDER BY count DESC ;
-
-What about co-acting, that is actors that acted together:
-
-MATCH (:Movie { title: "The Matrix"
-  })<-[:ACTS_IN]-(actor)-[:ACTS_IN]->(movie)<-[:ACTS_IN]-(colleague)
-RETURN actor.name, collect(DISTINCT colleague.name);
-
-Who of those other actors acted most often with anyone from the matrix cast?
-
-MATCH (:Movie { title: "The Matrix"
-  })<-[:ACTS_IN]-(actor)-[:ACTS_IN]->(movie)<-[:ACTS_IN]-(colleague)
-RETURN colleague.name, count(*)
-ORDER BY count(*) DESC LIMIT 10;
-
-We know that Trinity loves Neo, but how many paths exist between their actors? We’ll limit the path length and the query as it exhaustively searches the graph otherwise
-
-MATCH p =(:Actor { name: "Keanu Reeves" })-[:ACTS_IN*0..5]-(:Actor { name: "Carrie-Anne Moss" })
-RETURN p, length(p)
-LIMIT 10;
-
-Bur that’s a lot of data, we just want to look at the names and titles of the nodes of the path.
-
-MATCH p =(:Actor { name: "Keanu Reeves" })-[:ACTS_IN*0..5]-(:Actor { name: "Carrie-Anne Moss" })
-RETURN extract(n IN nodes(p)| coalesce(n.title,n.name)) AS `names AND titles`, length(p)
-ORDER BY length(p)
-LIMIT 10;
 
