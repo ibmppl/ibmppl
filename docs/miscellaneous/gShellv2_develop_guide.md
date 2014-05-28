@@ -52,7 +52,7 @@
 
 - add a store query command (e.g., `add_vertex`)
 
-  * register the command in `query_engine.cpp`: `EGISTER_QUERY_NAME(query_add_vertex,       "add_vertex");`  
+  * register the command in `query_engine.cpp`: `REGISTER_QUERY_NAME(query_add_vertex,       "add_vertex");`  
   
   * implement the `run()` and `info()` method in `query_engine.cpp`: `int query_add_vertex::run(struct query_param_type param){}`
 
