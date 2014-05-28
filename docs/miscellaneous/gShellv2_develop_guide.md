@@ -10,6 +10,13 @@
 
   * Define a macro `REGISTER_QUERY_NAME(NAME, STRNAME)` that registers a command, whoes name is STRNAME and the implementation is an object NAME.
 
- 
+- `nvStore.h`
+
+  * `run_input(string& data, string& cmd, socket_server_type& sock, int mode, simpleShell& shell)` accepts an input from user. The input is obtained using a class `simpleShell`, which supports arrow keys and command/filename auto complete. The user input is stored in `data`. `cmd` is used when gShell is launched in argument mode, where it stores the argument. `sock` is used when gShell is launched in socket mode. 
+
+  * `argument_processs(query_arg_type& args,
+                       string& data, string& query_cmd,
+                       string& store_name, string& output_name,
+                       string& output_format_name)` parses the received argument.   
 
   
