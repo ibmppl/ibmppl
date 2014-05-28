@@ -1,4 +1,10 @@
-###gShell v2 Developer's Guide
+##gShell v2 Developer's Guide
+
+###Background in gShell v2 Framework
+
+gShell v2 provides an open framework for users to add self-defined commands. Each command in gShell v2 has a corresponding endpoint in the System G Native Store REST APIs.
+
+The follow files can be involved or developers of gShell commands when adding new commands or plug-in analytics tools:
 
 - `types.h`
 
@@ -9,6 +15,8 @@
   * Define class `query_param_type` that stores a graph pointer and its associated global properties, including `directness`, `key_to_id`, `id_to_key`, internal_outputFormat, and query_arg_type. 
 
 - `defines.hpp`
+
+  * Define a set of constants for representing argument names and return values.
 
 - `query_map.h`
 
@@ -38,7 +46,8 @@
   * ` struct sigaction sigIntHandler;` handles ctrl-C during execution.
  
 -----------------
------------------
+
+### Handon example on how to add new command
 
 - add a global command (e.g., `create`, `list_all`, etc.)
 
@@ -56,9 +65,9 @@
   ```cpp
   class query_add_vertex : public query_base
   {
-   public:
-    REGISTER_QUERY_TYPE(query_add_vertex);
-    int run(struct query_param_type);
+     public:
+      REGISTER_QUERY_TYPE(query_add_vertex);
+      int run(struct query_param_type);
   };
   ```
   * register the command in `query_engine.cpp` and implement the `run()` method (and `option()` as well). If success, the `run()` method should return `_QUERY_SUCCESS_RET`; else return `_QUERY_FAIL_RET`
