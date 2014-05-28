@@ -56,3 +56,12 @@
   
   * implement the `run()` and `info()` method in `query_engine.cpp`: `int query_add_vertex::run(struct query_param_type param){}`
 
+  * If success, the `run()` method should return `_QUERY_SUCCESS_RET`; else return `_QUERY_FAIL_RET`
+
+  * Output vertices to the output buffer:
+
+```cpp
+ param.internal_output->output_seg_begin("vertex",header);
+    param.internal_output->output_seg_data(data);
+    param.internal_output->output_seg_end();
+````
