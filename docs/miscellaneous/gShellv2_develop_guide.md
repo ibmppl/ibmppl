@@ -52,16 +52,15 @@
 
 - add a store query command (e.g., `add_vertex`)
 
-  * declare the class for the command in `query_engine.h`, making sure it is derived from the `query_base` class:```cpp
-class query_add_vertex : public query_base
-{
-public:
+  * declare the class for the command in `query_engine.h`, making sure it is derived from the `query_base` class:
+  ```cpp
+  class query_add_vertex : public query_base
+  {
+   public:
     REGISTER_QUERY_TYPE(query_add_vertex);
-
     int run(struct query_param_type);
-
-};
-```
+  };
+  ```
   * register the command in `query_engine.cpp` and implement the class: 
 
 ```cpp
