@@ -20,7 +20,7 @@
 
   * Define a macro `REGISTER_QUERY_NAME(NAME, STRNAME)` that registers a command, whoes name is STRNAME and the implementation is an object NAME.
 
-- `nvStore.h`
+- `nvStore.h / nvStore.cpp`
 
   * `run_input(string& data, string& cmd, socket_server_type& sock, int mode, simpleShell& shell)` accepts an input from user. The input is obtained using a class `simpleShell`, which supports arrow keys and command/filename auto complete. The user input is stored in `data`. `cmd` is used when gShell is launched in argument mode, where it stores the argument. `sock` is used when gShell is launched in socket mode. 
 
@@ -35,10 +35,12 @@
 
   * `run(int mode, string &cmd)` manages multiple graph stores. This function first checks if the command is a store management command and, if so, executes it in `int ret = store_process(args,query_cmd,store_name,i_out,stores);`. If not, it should be a store query, which is executed in `ret = execute(store_ptr, args, query_cmd);` 
 
+  * ` struct sigaction sigIntHandler;` handles ctrl-C during execution.
+ 
 -----------------
 -----------------
 
-- add a global command (`create`, `list_all`, etc.)
+- add a global command (e.g., `create`, `list_all`, etc.)
 
   * add the global command in nvStore.cpp::store_process().
 
@@ -48,5 +50,9 @@
  
   * register the command for auto complete using `shell.add_cmd(cmd|vector<cmd>)` in `nvStore.cpp::run()` 
 
+- add a store query command (e.g., `add_vertex`)
 
+  * register the command in `query_engine.cpp`: `EGISTER_QUERY_NAME(query_add_vertex,       "add_vertex");`  
   
+  * implement the `run()` and `info()` method in `query_engine.cpp`: `int query_add_vertex::run(struct query_param_type param){}`
+
