@@ -29,9 +29,11 @@
                        string& store_name, string& output_name,
                        string& output_format_name)` parses the received argument. The parser is done by `stringParser::argumentParser(data,args,query_cmd);`, where the input `data` is decomposed into `args` and `cmd`. From the args, the input graph store `store_name`, the output variable name `output_name` and the output format are identified. 
 
-  * ` store_process(query_arg_type& args, string& query_cmd,
+  * `store_process(query_arg_type& args, string& query_cmd,
                   string& store_name, internal_outputFormat& i_out,
-               store_manager_type& stores)' executes the command `query_cmd` regarding the specified graph store `store_name`. 
+               store_manager_type& stores)' executes the store management commands in `query_cmd` regarding the specified graph store `store_name`. By store management, we mean `create`, `delete`, `open`, `close`, `close_all`.
+
+  * `run(int mode, string &cmd)` manages multiple graph stores. This function first checks if the command is a store management command and, if so, executes it in `int ret = store_process(args,query_cmd,store_name,i_out,stores);`. If not, it should be a store query, which is executed in `ret = execute(store_ptr, args, query_cmd);` 
 
 -----------------
 -----------------
@@ -44,6 +46,7 @@
 
   * output should be assigned to `i_out.info()`, `i_out.error()`, etc.
  
-   
+  * register the command for auto complete using `shell.add_cmd(cmd|vector<cmd>)` in `nvStore.cpp::run()` 
+
 
   
