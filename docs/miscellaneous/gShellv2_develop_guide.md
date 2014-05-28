@@ -2,6 +2,6 @@
 
 - `query_map.h`
 
-..* Define query class `query_base` with two virtual functions `run()` and `help()`. Each command for operating a graph shall derive from the base class and implement the two methods. 
+  * Define query class `query_base` with two virtual functions `run()` and `help()`. Each command for operating a graph shall derive from the base class and implement the two methods. 
 
-..* Define 
+  * Define 
