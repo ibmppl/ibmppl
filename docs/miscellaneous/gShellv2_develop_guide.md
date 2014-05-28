@@ -63,8 +63,7 @@ public:
     int run(struct query_param_type);
 
 };
-````
-
+```
   * register the command in `query_engine.cpp` and implement the class: 
 
 ```cpp
