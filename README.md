@@ -1,5 +1,5 @@
 ##IBM Parallel Programming Library
-
+### A High Performance Property Graph Runtime and Store
 ======
 
 The IBMPPL is a parallel C++ library to help develop distributed, parallel graph applications.
