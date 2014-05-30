@@ -106,6 +106,7 @@ The follow files can be involved or developers of gShell commands when adding ne
   ```cpp
   REGISTER_QUERY_NAME(query_add_vertex,       "add_vertex");
 
+  <!--
   int query_add_vertex::run(struct query_param_type param)
   {
     qit_type iter = param.info->find(_ID_ARG);  // get a cmd argument (defined in defines.hpp)	
@@ -125,7 +126,7 @@ The follow files can be involved or developers of gShell commands when adding ne
     }
     if (param.internal_output) param.internal_output->info("vertex added");
     return _QUERY_SUCCESS_RET;
-  }
+  }-->
   
   void query_add_vertex::options(command_options & opts)
   {
@@ -169,10 +170,10 @@ The follow files can be involved or developers of gShell commands when adding ne
         while (next != string::npos)
         {
            next = stringParser::csv_nextCell(full_prop, " ", pname, next);
- 	   if (next == string::npos) break;
-            next = stringParser::csv_nextCell(full_prop, " ", pvalue, next);
-            //stringParser::headParser(element, pname, pvalue);                                                                                                                                                         if (pname.empty() || pvalue.empty()) break;
-            vit->set_subproperty(pname,pvalue);
+ 	       if (next == string::npos) break;
+           next = stringParser::csv_nextCell(full_prop, " ", pvalue, next);
+		   if (pname.empty() || pvalue.empty()) break;
+           vit->set_subproperty(pname,pvalue);
         }
     }
 
