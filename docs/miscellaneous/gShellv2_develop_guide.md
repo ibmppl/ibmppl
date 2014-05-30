@@ -53,10 +53,18 @@ The follow files can be involved or developers of gShell commands when adding ne
 
   * add the global command invocation in `nvStore.cpp::store_process()`, where a command is identified and calls corresponding function (typically, a method of `store_manager_type& stores`.
   
-  * add the global command help info to `nvStore.cpp::init_command_parser()`:
+  * add the global command argument description info to `nvStore.cpp::init_command_parser()`:
   ```cpp
-  commandOptMap.add_command_info("list_all",  "list all graphs");
+  commandOptMap.add_command_info("create",    "create a new graph");
+  
+  commandOptMap.add_option("create",  _DIRECTNESS_ARG,false, HAS_ARGUMENT, "graph directness");
+  commandOptMap.add_option("create",  _GRAPH_ARG,     true,  HAS_ARGUMENT, "graph store name");
+  commandOptMap.add_option("create",  _FORMAT_ARG,    false, HAS_ARGUMENT, "output format");
+  commandOptMap.add_option("create",  _HELP_ARG,      false, NO_ARGUMENT,  "help infomation");
   ````
+  where `add_command_info` describes the command; `add_option` describes an arguments, using the following parameters: the command name, argument name, argument type (`true`=require, `false`=optional), argument value type (i.e., `NO_ARGUMENT, HAS_ARGUMENT, OPTIONAL_ARGUMENT, MULTIPLE_ARGUMENT`), and a short description.
+	      
+										  
 
   * all argument names of a commnad should be defined in `defines.hpp`
 
