@@ -97,6 +97,7 @@ The follow files can be involved or developers of gShell commands when adding ne
      public:
       REGISTER_QUERY_TYPE(query_add_vertex);
       int run(struct query_param_type);
+	  void options(command_options & opts);
   };
   ```
   * register the command in `query_engine.cpp` and implement the `run()` method (and `option()` as well). If success, the `run()` method should return `_QUERY_SUCCESS_RET`; else return `_QUERY_FAIL_RET`
