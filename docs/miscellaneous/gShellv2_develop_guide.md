@@ -51,9 +51,12 @@ The follow files can be involved or developers of gShell commands when adding ne
 
 - add a global command (e.g., `create`, `list_all`, etc.)
 
-  * add the global command in `nvStore.cpp::store_process()`.
+  * add the global command invocation in `nvStore.cpp::store_process()`, where a command is identified and calls corresponding function (typically, a method of `store_manager_type& stores`.
   
-  * add the global command help info to `init_command_parser()`.
+  * add the global command help info to `nvStore.cpp::init_command_parser()`:
+  ```cpp
+  commandOptMap.add_command_info("list_all",  "list all graphs");
+  ````
 
   * all argument names of a commnad should be defined in `defines.hpp`
 
