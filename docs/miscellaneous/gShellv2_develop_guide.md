@@ -78,16 +78,15 @@ The follow files can be involved or developers of gShell commands when adding ne
   ````
   where `add_command_info` describes the command; `add_option` describes an arguments, using the following parameters: the command name, argument name, argument type (`true`=require, `false`=optional), argument value type (i.e., `NO_ARGUMENT, HAS_ARGUMENT, OPTIONAL_ARGUMENT, MULTIPLE_ARGUMENT`), and a short description.
 	      
-										  
+  * register the command for auto complete in `nvStore.cpp::run()`
+  ```cpp
+  shell.add_cmd("create");   //.add_cmd(cmd|vector<cmd>)
+  ````										  
 
   * all argument names (e.g., `_DIRECTNESS_ARG, _GRAPH_ARG, _FORMAT_ARG`) of a commnad should be defined in `defines.hpp`
 
   * output should be assigned to `i_out.info(), .error(), .warning(), .time()`, etc.
  
-  * register the command for auto complete in `nvStore.cpp::run()`
-  ```cpp
-  shell.add_cmd("create")   //.add_cmd(cmd|vector<cmd>)
-  ````
   
 - add a store query command (e.g., `add_vertex`)
 
