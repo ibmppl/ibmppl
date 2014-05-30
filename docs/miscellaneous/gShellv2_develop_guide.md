@@ -106,28 +106,6 @@ The follow files can be involved or developers of gShell commands when adding ne
   ```cpp
   REGISTER_QUERY_NAME(query_add_vertex,       "add_vertex");
 
-  <!--
-  int query_add_vertex::run(struct query_param_type param)
-  {
-    qit_type iter = param.info->find(_ID_ARG);  // get a cmd argument (defined in defines.hpp)	
-    size_t vid = param.key_to_id->find(key)
-    vertex_iterator_type vit = param.g->find_vertex(vid);
- 
-    qit_type lower, upper;
-    lower = param.info->lower_bound(string("prop"));
-    upper = param.info->upper_bound(string("prop"));
-    if (lower != param.info->end()) {
-       for (qit_type it=lower;it!=upper;it++) {
-         string element = it->second;
-         string pname, pvalue;
-         stringParser::headParser(element, pname, pvalue);
-         vit->set_subproperty(pname,pvalue);
-       }
-    }
-    if (param.internal_output) param.internal_output->info("vertex added");
-    return _QUERY_SUCCESS_RET;
-  }-->
-  
   void query_add_vertex::options(command_options & opts)
   {
       opts.add_command_info("add a new vertex");
