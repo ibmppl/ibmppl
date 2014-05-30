@@ -141,10 +141,12 @@ The follow files can be involved or developers of gShell commands when adding ne
   {
     string key, label;
 
-    // get key & label                                                                                                                                                                                          param.opts->get_value(_ID_ARG, key);
+    // get key & label
+	param.opts->get_value(_ID_ARG, key);
     param.opts->get_value(_LABEL_ARG, label);
 
-    // insert vertex                                                                                                                                                                                            vertexd_type vid;
+    // insert vertex
+    vertexd_type vid;
     if (param.key_to_id->find(key) == param.key_to_id->end())
     {
         vid = param.g->add_vertex(label);  // add vertex                                                                                                                                                     
@@ -158,11 +160,15 @@ The follow files can be involved or developers of gShell commands when adding ne
 
     vertex_iterator_type vit = param.g->find_vertex(vid);
 
-    // add sub properties                                                                                                                                                                                       vit->set_subproperty(_ID_ARG_INTERNAL, key);
+    // add sub properties
+    vit->set_subproperty(_ID_ARG_INTERNAL, key);
 
     string full_prop;
 
-    // get property by calling get_value. the property is returned in full_prop                                                                                                                                 // since property is MULTIPLE_ARGUMENT, it will return a long string with                                                                                                                                   // multiple properties. for example: "prop1:pvalue1 prop2:pvalue2"                                                                                                                                          if (param.opts->get_value(_PROP_ARG, full_prop)==command_options::_get_option_arg)
+    // get property by calling get_value. the property is returned in full_prop
+    // since property is MULTIPLE_ARGUMENT, it will return a long string with
+	// multiple properties. for example: "prop1:pvalue1 prop2:pvalue2"
+    if (param.opts->get_value(_PROP_ARG, full_prop)==command_options::_get_option_arg)
     {
         string element;
         string pname, pvalue;
