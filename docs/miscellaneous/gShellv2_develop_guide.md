@@ -141,11 +141,10 @@ The follow files can be involved or developers of gShell commands when adding ne
     // add sub properties
     vit->set_subproperty(_ID_ARG_INTERNAL, key);
 
-    string full_prop;
-
     // get property by calling get_value. the property is returned in full_prop
     // since property is MULTIPLE_ARGUMENT, it will return a long string with
 	// multiple properties. for example: "prop1:pvalue1 prop2:pvalue2"
+    string full_prop;
     if (param.opts->get_value(_PROP_ARG, full_prop)==command_options::_get_option_arg)
     {
         string element;
@@ -166,10 +165,6 @@ The follow files can be involved or developers of gShell commands when adding ne
   } 		  
   ````
 
-int query_add_vertex::run(struct query_param_type param)
-{
-
-  
   * If we need to output vertices to the output buffer:
 
   ```cpp
@@ -177,5 +172,6 @@ int query_add_vertex::run(struct query_param_type param)
       param.internal_output->output_seg_begin("vertex",header);
       param.internal_output->output_seg_data(data);
       param.internal_output->output_seg_end();
+	}
   ````
-
+  
