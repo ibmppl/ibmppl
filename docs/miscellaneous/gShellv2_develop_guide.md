@@ -86,7 +86,7 @@ The follow files can be involved or developers of gShell commands when adding ne
  
   * register the command for auto complete in `nvStore.cpp::run()`
   ```cpp
-  shell.add_cmd(cmd|vector<cmd>)
+  shell.add_cmd("create")   //.add_cmd(cmd|vector<cmd>)
   ````
   
 - add a store query command (e.g., `add_vertex`)
