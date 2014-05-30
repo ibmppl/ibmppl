@@ -51,13 +51,17 @@ The follow files can be involved or developers of gShell commands when adding ne
 
 - add a global command (e.g., `create`, `list_all`, etc.)
 
-  * add the global command in nvStore.cpp::store_process().
+  * add the global command in `nvStore.cpp::store_process()`.
+  
+  * add the global command help info to `init_command_parser()`.
 
   * all argument names of a commnad should be defined in `defines.hpp`
 
   * output should be assigned to `i_out.info()`, `i_out.error()`, etc.
  
   * register the command for auto complete using `shell.add_cmd(cmd|vector<cmd>)` in `nvStore.cpp::run()` 
+  
+  * if adding a store manage command, one should add option information (e.g., help info) in `nvStore.cpp::init_command_parser()`
 
 - add a store query command (e.g., `add_vertex`)
 
@@ -96,7 +100,64 @@ The follow files can be involved or developers of gShell commands when adding ne
     if (param.internal_output) param.internal_output->info("vertex added");
     return _QUERY_SUCCESS_RET;
   }
+  
+  void query_add_vertex::options(command_options & opts)
+  {
+      opts.add_command_info("add a new vertex");
+      opts.add_option(_ID_ARG,     true,   HAS_ARGUMENT, "vertex id");
+      opts.add_option(_LABEL_ARG,  false,  HAS_ARGUMENT, "vertex label", _DEFAULT_LABEL);
+      opts.add_option(_PROP_ARG,   false,  MULTIPLE_ARGUMENT, "vertex property (prop_name:prop_value)");
+  }
+
+
+  int query_add_vertex::run(struct query_param_type param)
+  {
+    string key, label;
+
+    // get key & label                                                                                                                                                                                          param.opts->get_value(_ID_ARG, key);
+    param.opts->get_value(_LABEL_ARG, label);
+
+    // insert vertex                                                                                                                                                                                            vertexd_type vid;
+    if (param.key_to_id->find(key) == param.key_to_id->end())
+    {
+        vid = param.g->add_vertex(label);  // add vertex                                                                                                                                                     
+        (*(param.key_to_id))[key] = vid;
+        (*(param.id_to_key))[vid] = key;
+    }
+    else
+    {
+        vid = (*(param.key_to_id))[key];
+    }
+
+    vertex_iterator_type vit = param.g->find_vertex(vid);
+
+    // add sub properties                                                                                                                                                                                       vit->set_subproperty(_ID_ARG_INTERNAL, key);
+
+    string full_prop;
+
+    // get property by calling get_value. the property is returned in full_prop                                                                                                                                 // since property is MULTIPLE_ARGUMENT, it will return a long string with                                                                                                                                   // multiple properties. for example: "prop1:pvalue1 prop2:pvalue2"                                                                                                                                          if (param.opts->get_value(_PROP_ARG, full_prop)==command_options::_get_option_arg)
+    {
+        string element;
+        string pname, pvalue;
+        size_t next=0;
+        while (next != string::npos)
+        {
+           next = stringParser::csv_nextCell(full_prop, " ", pname, next);
+ 	   if (next == string::npos) break;
+            next = stringParser::csv_nextCell(full_prop, " ", pvalue, next);
+            //stringParser::headParser(element, pname, pvalue);                                                                                                                                                         if (pname.empty() || pvalue.empty()) break;
+            vit->set_subproperty(pname,pvalue);
+        }
+    }
+
+    if (param.internal_output) param.internal_output->info("vertex added");
+    return _QUERY_SUCCESS_RET;
+  } 		  
   ````
+
+int query_add_vertex::run(struct query_param_type param)
+{
+
   
   * If we need to output vertices to the output buffer:
 
