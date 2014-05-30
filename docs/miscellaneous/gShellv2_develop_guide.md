@@ -80,14 +80,15 @@ The follow files can be involved or developers of gShell commands when adding ne
 	      
 										  
 
-  * all argument names of a commnad should be defined in `defines.hpp`
+  * all argument names (e.g., `_DIRECTNESS_ARG, _GRAPH_ARG, _FORMAT_ARG`) of a commnad should be defined in `defines.hpp`
 
-  * output should be assigned to `i_out.info()`, `i_out.error()`, etc.
+  * output should be assigned to `i_out.info(), .error(), .warning(), .time()`, etc.
  
-  * register the command for auto complete using `shell.add_cmd(cmd|vector<cmd>)` in `nvStore.cpp::run()` 
+  * register the command for auto complete in `nvStore.cpp::run()`
+  ```cpp
+  shell.add_cmd(cmd|vector<cmd>)
+  ````
   
-  * if adding a store manage command, one should add option information (e.g., help info) in `nvStore.cpp::init_command_parser()`
-
 - add a store query command (e.g., `add_vertex`)
 
   * declare the class for the command in `query_engine.h`, making sure it is derived from the `query_base` class:
