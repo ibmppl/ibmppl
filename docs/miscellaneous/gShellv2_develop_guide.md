@@ -52,7 +52,21 @@ The follow files can be involved or developers of gShell commands when adding ne
 - add a global command (e.g., `create`, `list_all`, etc.)
 
   * add the global command invocation in `nvStore.cpp::store_process()`, where a command is identified and calls corresponding function (typically, a method of `store_manager_type& stores`.
-  
+  ```cpp
+  if (query_cmd == "create")     // create a store with specific graph type                                                                                                                       
+  {
+    string directness;
+    get_query_argument(query_cmd, _DIRECTNESS_ARG, directness);
+    if (directness.empty())
+    {
+      directness = string("directed");
+      i_out.info("graph_type missing. directed graph is used");
+    }
+    
+    stores.create_store(store_name, directness, stores);
+    return 1;
+  }
+  ````
   * add the global command argument description info to `nvStore.cpp::init_command_parser()`:
   ```cpp
   commandOptMap.add_command_info("create",    "create a new graph");
