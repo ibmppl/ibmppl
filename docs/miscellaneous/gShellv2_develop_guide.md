@@ -169,8 +169,14 @@ The follow files can be involved or developers of gShell commands when adding ne
   full_prop)`, the returned value can be: 
   The return value can be
   
-   `_unknown_option` | the option doesn't exist. `full_prop` is empty 
-  ------------------ | -----------------------------------------------
+  returned value | explanation
+  ---------- | ---------
+  `_unknown_option` | the option doesn't exist. `full_prop` is empty 
+  `_use_default_arg` | the option exists, but the value was not set,
+  `full_prop` is set as the default value (configured in
+  `query_add_vertex::options(command_options & opts)`)
+  `_get_option_arg` | find the option value successfully
+  
 
   * If we need to output vertices to the output buffer:
 
@@ -182,8 +188,3 @@ The follow files can be involved or developers of gShell commands when adding ne
 	}
   ````
   
-  
-  First Header  | Second Header
-  ------------- | -------------
-  Content Cell  | Content Cell
-  Content Cell  | Content Cell
