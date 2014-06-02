@@ -165,9 +165,8 @@ The follow files can be involved or developers of gShell commands when adding ne
   } 		  
   ```
   
-  Note that we checked the return value of `param.opts->get_value(_PROP_ARG,
+  Note that we checked the returned value of `param.opts->get_value(_PROP_ARG,
   full_prop)`, the returned value can be: 
-  The return value can be
   
   returned value | explanation
   ---------- | ---------
