@@ -168,6 +168,7 @@ The follow files can be involved or developers of gShell commands when adding ne
   Note that we checked the return value of `param.opts->get_value(_PROP_ARG,
   full_prop)`, the returned value can be: 
   The return value can be
+  
   |------|-------|
   | _unknown_option | the option doesn't exist. in this case, the value string
   will be empty |
