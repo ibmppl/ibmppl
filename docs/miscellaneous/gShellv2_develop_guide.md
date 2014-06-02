@@ -169,10 +169,9 @@ The follow files can be involved or developers of gShell commands when adding ne
   full_prop)`, the returned value can be: 
   The return value can be
   
-  -----------------|--------------------------------------------------------
-   _unknown_option | the option doesn't exist. in this case, the value string
-  will be empty 
-  -----------------|--------------------------------------------------------
+  ------------------ | --------------------------------------------------------
+   `_unknown_option` | the option doesn't exist. `full_prop` is empty 
+  ------------------ | --------------------------------------------------------
 
   * If we need to output vertices to the output buffer:
 
