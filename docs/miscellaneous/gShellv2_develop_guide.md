@@ -172,9 +172,7 @@ The follow files can be involved or developers of gShell commands when adding ne
   returned value | explanation
   ---------- | ---------
   `_unknown_option` | the option doesn't exist. `full_prop` is empty 
-  `_use_default_arg` | the option exists, but the value was not set,
-  `full_prop` is set as the default value (configured in
-  `query_add_vertex::options(command_options & opts)`)
+  `_use_default_arg` | the option exists, but the value was not set, `full_prop` is set as the default value (configured in `query_add_vertex::options(command_options & opts)`)
   `_get_option_arg` | find the option value successfully
   
 
