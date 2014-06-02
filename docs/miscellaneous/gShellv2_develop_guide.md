@@ -183,3 +183,8 @@ The follow files can be involved or developers of gShell commands when adding ne
 	}
   ````
   
+  
+  First Header  | Second Header
+  ------------- | -------------
+  Content Cell  | Content Cell
+  Content Cell  | Content Cell
