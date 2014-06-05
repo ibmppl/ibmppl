@@ -88,7 +88,8 @@ The follow files can be involved when adding new commands or plug-in analytics t
   
 - add a store query command (e.g., `add_vertex`)
 
-  * declare the class for the command in `query_engine.h`, making sure it is derived from the `query_base` class:
+  * declare the class for the command in `query_engine.h`(or newly added .h file), making sure it is derived from the `query_base` class. register this class by adding `REGISTER_QUERY_TYPE(<class name>)` as the public member of the class.
+
   ```cpp
   class query_add_vertex : public query_base
   {
@@ -98,7 +99,19 @@ The follow files can be involved when adding new commands or plug-in analytics t
 	  void options(command_options & opts);
   };
   ```
-  * register the command in `query_engine.cpp` and implement the `run()` method (and `option()` as well). If success, the `run()` method should return `_QUERY_SUCCESS_RET`; else return `_QUERY_FAIL_RET`
+  * register the command name in `query_engine.cpp` by using `REGISTER_QUERY_NAME(<class name>, <query name string>)`. implement the `run()` method (and `options()` as well) in the .cpp file. 
+  
+  * the `run()` method takes `struct query_param_type` as the input argument (defined in types.hpp). if success, it should return `_QUERY_SUCCESS_RET`; else return `_QUERY_FAIL_RET`.
+  
+  * the `options()` method defines the options and help info of this query. first, defining the command explanation by calling `add_command_info(<cmd explanation string>)`. then, add command options one by one using `add_option(<option name>, <required option?> <argument type> <option explanation> <default value (optional)>)`
+  
+  option argument type | explanation
+  ---------- | ---------
+  `HAS_ARGUMENT` | the option requires one and only one argument
+  `NO_ARGUMENT` | the option is just a flag with no arguments
+  `MULTIPLE_ARGUMENT` | the option contains one or more than one arguments
+
+  * full code is as follows. 
  
 
   ```cpp
