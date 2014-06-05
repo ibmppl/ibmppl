@@ -4,15 +4,13 @@
 
 gShell v2 provides an open framework for users to add self-defined commands. Each command in gShell v2 has a corresponding endpoint in the System G Native Store REST APIs.
 
-The follow files can be involved or developers of gShell commands when adding new commands or plug-in analytics tools:
+The follow files can be involved when adding new commands or plug-in analytics tools:
 
 - `types.h`
 
-  * Define `query_arg_type` as type for command arguments, which is essentially a `multimap<string,string>`.
+  * Define `graph_type` and `<vertex|edge|pred|property>_iterator_type`
 
-  * Define `graph_type` as the `ibmppl::ibm_generic_graph`
-
-  * Define class `query_param_type` that stores a graph pointer and its associated global properties, including `directness`, `key_to_id`, `id_to_key`, internal_outputFormat, and query_arg_type. 
+  * Define class `query_param_type`, which will be used as the input argument by each queries. It stores a graph pointer and its associated global properties, including `directness`, `key_to_id`, `id_to_key`, `internal_outputFormat` pointer, and `command_options` pointer. 
 
 - `defines.hpp`
 
@@ -20,7 +18,7 @@ The follow files can be involved or developers of gShell commands when adding ne
 
 - `query_map.h`
 
-  * Define class `query_base` with two virtual functions `run()` and `help()`. Each command for operating a graph must derive from the base class and implement the two methods. The former gives the execution of the command and the later the help info. `run()` returns an int as the return status; `help()` outputs a text string.
+  * Define class `query_base` with two virtual functions `run()` and `options()`. Each command for operating a graph must derive from the base class and implement these two methods. The former gives the execution of the command and the later defines the help info and command options. `run()` returns an int as the return status; `options()` takes a reference of `command_options`.
 
   * Define class `queryMap` that _maps_ a string (command name) to a class pointer in type of `query_base`, where the command is implemented. It has three methods: `createInstance(cmd)` accepts a cmd name as a string, and _returns_ (not create) the query_base instance that implements the command; `get_query_name(std::vector<std::string>& retnames)` returns all the command in their names; `get_map()` returns the map as a pointer.
 
