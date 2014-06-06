@@ -4,72 +4,111 @@
 
 Generic graph is a high level interface on top of IBMPPL native graph store. It provides graph operations with strict persistence support. Generic graph allows users to easily add vertex/edge, load csv files, and traverse graph. The details are explained as follows.
 
-- `Define graph type and related iterators`
-* Before declaring a graph and operating on it, users should first define graph_type and corresponding iterators as follows. 
-```cpp
-// define graph type as generic graph
-typedef ibmppl::ibm_generic_graph       graph_type;
-// define iterators
-typedef graph_type::vertex_iterator     vertex_iterator;
-typedef graph_type::edge_iterator       edge_iterator;
-typedef graph_type::pred_iterator       pred_iterator;
-typedef graph_type::property_iterator   property_iterator;
-// define types of vertex/edge id
-typedef graph_type::vertexd_type        vertexd_type;
-typedef graph_type::edged_type          edged_type;
-````
+- Define graph type and related iterators
+  * Before declaring a graph and operating on it, users should first define graph_type and corresponding iterators as follows. 
+  ```cpp
+  // define graph type as generic graph
+  typedef ibmppl::ibm_generic_graph       graph_type;
+  // define iterators
+  typedef graph_type::vertex_iterator     vertex_iterator;
+  typedef graph_type::edge_iterator       edge_iterator;
+  typedef graph_type::pred_iterator       pred_iterator;
+  typedef graph_type::property_iterator   property_iterator;
+  // define types of vertex/edge id
+  typedef graph_type::vertexd_type        vertexd_type;
+  typedef graph_type::edged_type          edged_type;
+  ````
 
-- `Update graph`
+- Create/open graph
+  
+  * `graph_type(string graphname, string path, DIRECTNESS direct=ibmppl::PRED_DIRECTED, UINT64 max_memsize=4294967295)`
+  * Create a new graph by declaring an instance of graph_type. If the graph already exists, it will just be opened. If using `new` to generate the instance, `delete` should be properly called to avoid dangling meta data.
+  * __arguments__: `graphname`: graph name. `path`: path of the graph native store. `direct`: (optional) directness of the graph. It can be ibmppl::PRED_DIRECTED|DIRECTED|UNDIRECTED.  `max_mem_size`: (optional) maximum allowed memory size in bytes. Default value is 4GB. 
 
-API name|Return value|Arguments|Comment
----------- | ---------- | ---------- | ----------
-add_vertex|vertex id|vertex label, external vertex id|add a new vertex into graph using given label and external id
 
-- `Load csv files`
-- `Search graph`
-- `Traverse graph`
-- `Iterators`
+- Update graph
+
+  * `vertexd_type add_vertex(string label, string external_id)`
+    * add a new vertex into graph using given label and external id
+    * __return__: vertex id of the new added vertex
+    * __arguments__:  `label`: vertex label.  `external_id`: (optional) a globally unique string id for vertex
+
+  * `edge_iterator add_edge_ref(vertexd_type source, vertexd_type target, string label)`
+    * add a new edge into graph and return the iterator of it
+    * __return__: iterator of the new edge
+    * __arguments__: `source`: source vertex id.  `target`: target vertex id. `label`: edge label
+  
+- Load csv files
+
+  * `bool load_csv_vertices(string filename, bool has_header, string separators, size_t keypos, string global_label, size_t labelpos)`
+    * load vertices from a csv file into graph. If the vertex already exists in graph, its property will be updated.
+    * __return__: success or not
+    * __arguments__: `filename`: csv file name. `has_header`: if csv file has header. `separators`: separators used in the csv file.  `keypos`: column # of external vertex id (starting from 0).  `global_label`: if not empty, set all vertices to this label. `labelpos`: if global_label is empty, get label from csv file according to this column #.
+  
+  * `bool load_csv_edges(string filename, bool has_header, string separators,                                      
+                       size_t srcpos, size_t targpos,                                          
+                       string global_label, size_t labelpos,                                   
+                       string default_vertex_label="na")`
+    * load edges from a csv file into graph. If edge source/target vertex doesn't exist, it will be added into graph using the default_vertex_label.
+    * __return__: success or not
+    * __arguments__: `filename`: csv file name. `has_header`: if csv file has header. `separators`: separators used in the csv file. `srcpos`&`targpos`: column # of external source/target vertex id (starting from 0).  `global_label`: if not empty, set all edges to this label. `labelpos`: if global_label is empty, get label from csv file according to this column #.  `default_vertex_label`: label of newly added vertex
+    
+- Search graph
+  * `vertex_iterator find_vertex(vertexd_type vertex_id)`
+    * find vertex by vertex id
+    * __return__: a vertex iterator to this vertex. If cannot find it, returns an iterator to *vertices_end()*
+    * __arguments__: `vertex_id`: vertex id
+    
+  * `vertex_iterator find_vertex(string external_vertex_id)`
+    * find vertex by vertex id
+    * __return__: a vertex iterator to this vertex. If cannot find it, returns an iterator to *vertices_end()*
+    * __arguments__: `external_vertex_id`: a string external vertex id (set when adding vertex)
+  
+  * `void find_edge(string source, string target, std::vector<edge_iterator>& ret)`
+    * find edges between given source/target vertex.
+    * __return__: none
+    * __argument__: `source`&`target`: string external id of source/target vertex.  `ret`: (reference) a vector of iterators of found edges. If cannot find it, the vector will be empty
+
+  * `void find_edge(vertexd_type source, vertexd_type target, std::vector<edge_iterator>& ret)`
+    * same as above except for using vertex id directly
+    
+  * `bool find_edge(vertexd_type source, edged_type eid, edge_iterator& ret)`
+    * find edge with given source vertex id and edge id.
+    * __return__: find it or not
+    * __arguments__: `source`: source vertex id.  `eid`: edge id. `ret`: (reference) iterator of found edge
+  
+- Graph iterators
+  * `vertex_iterator`
+    * iterator pointing to a vertex. Through calling its member functions, users can get vertex id, vertex property, outgoing edges, and predecessors.
+    * `id()`: return vertex id.
+    * `get_external_id()`: return a string external id. exception may happen if external id doesn't exist.
+    * `get_label()`: return vertex label.
+    * `edges_size()`: return num of outgoing edges.
+    * `edges_begin()`: return an *edge_iterator* pointing to the first edge of this vertex.
+    * `edges_end()`: return an *edge_iterator* referring to past-the-end edge.
+    * `preds_size()`: return num of predecessors.
+    * `preds_begin()`: return a *pred_iterator* pointing to the first predecessor of this vertex.
+    * `preds_end()`: return a *pred_iterator* referring to past-the-end predecessor.
+    * `property_begin()`: return a *property_iterator* pointing to the first subproperty of this vertex.
+    * `property_end()`: return a *property_iterator* referring to past-the-end subproperty.
+    
+  * `edge_iterator`
+    * iterator pointing to an edge. Through calling its member functions, users can get edge id, edge source/target vertex id, and edge property.
+    * `id()`: return edge id.
+    * `source()`: return source vertex id.
+    * `target()`: return target vertex id.
+    * `get_label()`: return edge label.
+    * `property_begin()`: return a *property_iterator* pointing to the first subproperty of this edge.
+    * `property_end()`: return a *property_iterator* referring to past-the-end subproperty.
+
+  * `pred_iterator`
+    * iterator pointing to a predecessor.
+    * `vertex_id()`: return predecessor vertex id.
+    * `edge_id()`: return id of the corresponding edge.
+  
+  * `property_iterator`
+    * iterator pointing to a subproperty of vertex/edge
+    * `subproperty_name()`: return the name(key) of current subproperty.
+    * `subproperty_value()`: return the value of current subproperty.
 
 <b>For detailed interface specification, refer to [IBM PPL library API] (http://ibmppl.github.io/ibmppl/index.html) </b>
-
-<b> What is an in-disk graph? </b>
-
-e.g.,
-  - describe 3 types of graphs (UNDIRECTD, DIRECTED, PRED_DIRECTED)
-  - what are properties and volatile properties and the difference between the two
-
-<b> How to construct an in-disk graph? </b>
-
-e.g., 
-  - please add a note on the importance of properly closing a in-disk graph
-  - when is it necessary to provide serialize and deserialize functions for vertex and edge properties
-  - which function to call to properly set vertex/edge property (in memory and on disk), how/when to use set_property_volatile
-
-<b> How graphs are stored on disk </b>
-
-e.g., 
-  - how is consistency between graphs stored in the file system and in-memory graph maintained
-  - is there a map between external vertex label (key) and internal vertex id, or does the user (writer of the analytic) need to create and maintain one himself
-
-<b> How to open/load an in-disk graph </b>
-
-e.g., 
-  - how to correctly access information stored in an in-disk graph, whether need to call find_vertex for each vertex explicitly in order to bring its information into memory, or whether can simply traverse the graph using vertex iterator
-  - what is the proper way to detect in the code whether a graph already exists on disk
-
-<b> Memory management of inDisk graph </b>
-
-e.g., what happens when a graph runs out of memory. Does the system automatically kick out vertices to make room 
-for new vertices? 
-e.g., can users explicitly unload a vertex or property from memory
-
-<b> Other basic operations on inDiskGraph</b>
-
-<b> How does the inDiskGraph interface differ from the basic in-memory graph interface? </b>
-
-e.g., are there certain operations that are allowed on in-memory graph interface but not on inDiskGraph interface?
-
-<b> Any performance considerations when using inDiskGraph </b>
-
-e.g., Are there operations that are specially expensive?
-
