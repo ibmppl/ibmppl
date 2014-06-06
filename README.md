@@ -1,8 +1,9 @@
-##IBM Parallel Programming Library
-### --  A High Performance Property Graph Runtime and Store
+##High Performance Property Graph Runtime and Store
 ======
 
-The IBMPPL is a parallel C++ library to help develop distributed, parallel graph applications.
+<i>Please contact Yinglong Xia (yxia@us.ibm.com) for trial.</i>
+
+The IBMPPL is the kernel part of IBM System G Native Store, which provides high performance C++ graph libraries to help develop various graph applications on sequential, concurrent and/or distributed platforms. 
 
 ### Key features
 
@@ -21,14 +22,16 @@ The IBMPPL is a parallel C++ library to help develop distributed, parallel graph
   + distributed array/mapping
 - Graph Key-value store
   + optimized for graph primitives
-  + portable on file systems
+  + portable on various file systems
 - Usability
   + C++ Graph APIs
   + gShell for graph query
-  + server/client mode support
+  + server/client socket support
   + REST-like API support
-  + TinkPop support
-  + Gremlin support
+  + Java TinkerPop API support
+  + Gremlin Query support
+  + Python API support (undergoing)
+  + SPARQL frontend support (undergoing)
 
 <!--### Examples
 
