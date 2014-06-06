@@ -38,7 +38,7 @@ Generic graph is a high level interface on top of IBMPPL native graph store. It 
     * __return__: iterator of the new edge
     * __arguments__: `source`: source vertex id.  `target`: target vertex id. `label`: edge label
   
-- Load csv files
+- Populate graph (load CSV files)
 
   * `bool load_csv_vertices(string filename, bool has_header, string separators, size_t keypos, string global_label, size_t labelpos)`
     * load vertices from a csv file into graph. If the vertex already exists in graph, its property will be updated.
@@ -53,7 +53,7 @@ Generic graph is a high level interface on top of IBMPPL native graph store. It 
     * __return__: success or not
     * __arguments__: `filename`: csv file name. `has_header`: if csv file has header. `separators`: separators used in the csv file. `srcpos`&`targpos`: column # of external source/target vertex id (starting from 0).  `global_label`: if not empty, set all edges to this label. `labelpos`: if global_label is empty, get label from csv file according to this column #.  `default_vertex_label`: label of newly added vertex
     
-- Search graph
+- Query graph
   * `vertex_iterator find_vertex(vertexd_type vertex_id)`
     * find vertex by vertex id
     * __return__: a vertex iterator to this vertex. If cannot find it, returns an iterator to *vertices_end()*
