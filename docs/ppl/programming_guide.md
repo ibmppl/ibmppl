@@ -102,7 +102,7 @@ Generic graph is a high level interface on top of IBMPPL native graph store. It 
     * `get_label()`: return edge label.
     * `property_begin()`: return a *property_iterator* pointing to the first subproperty of this edge.
     * `property_end()`: return a *property_iterator* referring to past-the-end subproperty.
-    * `get_subproperty(string pname)`: return subproperty value of given name(key).
+    * `get_subproperty(const string& pname)`: return subproperty value of given name(key).
     * `set_subproperty(const string& pname, const string& pvalue)`: add/update subproperty with given name and value
 
   * `pred_iterator`
