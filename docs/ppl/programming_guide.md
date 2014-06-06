@@ -7,15 +7,24 @@ Generic graph is a high level interface on top of IBMPPL native graph store. It 
 - `Define graph type and related iterators`
 * Before declaring a graph and operating on it, users should first define graph_type and corresponding iterators as follows. 
 ```cpp
+// define graph type as generic graph
 typedef ibmppl::ibm_generic_graph       graph_type;
+// define iterators
 typedef graph_type::vertex_iterator     vertex_iterator;
 typedef graph_type::edge_iterator       edge_iterator;
 typedef graph_type::pred_iterator       pred_iterator;
-typedef graph_type::vertexd_type        vertexd_type;
 typedef graph_type::property_iterator   property_iterator;
+// define types of vertex/edge id
+typedef graph_type::vertexd_type        vertexd_type;
+typedef graph_type::edged_type          edged_type;
 ````
 
 - `Update graph`
+
+API name|Return value|Arguments|Comment
+---------- | ---------- | ---------- | ----------
+add_vertex|vertex id|vertex label, external vertex id|add a new vertex into graph using given label and external id
+
 - `Load csv files`
 - `Search graph`
 - `Traverse graph`
