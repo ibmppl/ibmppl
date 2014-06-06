@@ -1,4 +1,16 @@
- 
+##IBMPPL Programming Guide
+
+###Generic Graph
+
+Generic graph is a high level interface on top of IBMPPL native graph store. It provides graph operations with strict persistence support. Generic graph allows users to easily add vertex/edge, load csv files, and traverse graph. The details are explained as follows.
+
+- `Define graph type and related iterators`
+- `Update graph`
+- `Load csv files`
+- `Search graph`
+- `Traverse graph`
+- `Iterators`
+
 <b>For detailed interface specification, refer to [IBM PPL library API] (http://ibmppl.github.io/ibmppl/index.html) </b>
 
 <b> What is an in-disk graph? </b>
