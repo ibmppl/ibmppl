@@ -267,3 +267,5 @@ cout<<"open graph now\n";
   `````
 
 <b>For detailed interface specification, refer to [IBM PPL library API] (http://ibmppl.github.io/ibmppl/index.html) </b>
+
+<b>The source codes in `<ibmppl>/examples` and `<ibmppl>/tests` serve as good examples for users. 
