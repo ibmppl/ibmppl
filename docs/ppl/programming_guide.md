@@ -73,6 +73,11 @@ Generic graph is a high level interface on top of IBMPPL native graph store. It 
   `````
 
 - Query graph
+
+  * `bool is_directed(void);  bool is_undirected(void)`
+    * check graph directness
+    * __return__: return true if the graph is directed/undirected.
+
   * `vertex_iterator find_vertex(vertexd_type vertex_id)`
     * find vertex by vertex id
     * __return__: a vertex iterator to this vertex. If cannot find it, returns an iterator to *vertices_end()*
