@@ -1,11 +1,18 @@
 
 ### Get the source
 
-Send email to Xavier R Guerin to gain access to SystemG project gsa
+Send email to Yinglong Xia to gain access to System G Native Store project on GSA
 
 ```bash
 git clone file:////gsa/yktgsa/projects/s/systemg/GIT/ibmppl
 ```
+
+or
+
+```bash
+git clone <your_gsa_account>@<server>:/gsa/yktgsa/projects/s/systemg/GIT/ibmppl
+```
+
 The library contains the following source directories:
 - datastructure/ : implementation of graph abstraction
 - runtime/: implementation of the task and scheduling runtime
