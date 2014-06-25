@@ -103,6 +103,16 @@ Generic graph is a high level interface on top of IBMPPL native graph store. It 
   
   * __Example of graph queries__: (full code can be found at examples/generic_graph.cc)
   
+  * `string get_external_id(size_t vid)`
+    * return the corresponding external id of given internal vertex id
+    * __return__: external id string. If cannot find it, returns an empty string
+    * __arguments__: `vid`: internal vertex id (allocated when adding vertex)
+ 
+  * `bool get_internal_id(const string& external_id, size_t& ret_vid)`
+    * find the corresponding internal id of given external vertex id
+    * __return__: if given external_id exists in graph, return true. otherwise, return false.
+    * __arguments__: `external_id`: external vertex id. `vid`: internal vertex id (allocated when adding vertex)
+   
   ```cpp
 cout<<"open graph now\n";
     // open an existing graph.
@@ -175,7 +185,6 @@ cout<<"open graph now\n";
   * `vertex_iterator`
     * iterator pointing to a vertex. Through calling its member functions, users can get vertex id, vertex property, outgoing edges, and predecessors.
     * `id()`: return vertex id.
-    * `get_external_id()`: return a string external id. exception may happen if external id doesn't exist.
     * `get_label()`: return vertex label.
     * `edges_size()`: return num of outgoing edges.
     * `edges_begin()`: return an *edge_iterator* pointing to the first edge of this vertex.
