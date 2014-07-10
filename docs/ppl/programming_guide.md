@@ -21,9 +21,9 @@ Generic graph is a high level interface on top of IBMPPL native graph store. It 
 
 - Create/open graph
   
-  * `graph_type(string graphname, string path, DIRECTNESS direct=ibmppl::PRED_DIRECTED, UINT64 max_memsize=4294967295)`
+  * `graph_type(string graphname, string path, DIRECTNESS direct=ibmppl::PRED_DIRECTED, UINT64 max_memsize=0)`
   * Create a new graph by declaring an instance of graph_type. If the graph already exists, it will just be opened. If using `new` to generate the instance, `delete` should be properly called to avoid dangling meta data.
-  * __arguments__: `graphname`: graph name. `path`: path of the graph native store. `direct`: (optional) directness of the graph. It can be ibmppl::PRED_DIRECTED|DIRECTED|UNDIRECTED.  `max_mem_size`: (optional) maximum allowed memory size in bytes. Default value is 4GB. 
+  * __arguments__: `graphname`: graph name. `path`: path of the graph native store. `direct`: (optional) directness of the graph. It can be ibmppl::PRED_DIRECTED|DIRECTED|UNDIRECTED.  `max_mem_size`: (optional) maximum allowed memory size in bytes. If it is not set, the system will use half of the total physical memory size. 
 
 
 - Update graph
