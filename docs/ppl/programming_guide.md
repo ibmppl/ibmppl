@@ -53,6 +53,19 @@ Generic graph is a high level interface on top of IBMPPL native graph store. It 
     * __return__: if sucess, return number of processed edges. Otherwise, return -1.
     * __arguments__: `filename`: csv file name. `has_header`: if csv file has header. `separators`: separators used in the csv file. `srcpos`&`targpos`: column # of external source/target vertex id (starting from 0).  `global_label`: if not empty, set all edges to this label. `labelpos`: if global_label is empty, get label from csv file according to this column #.  `default_vertex_label`: label of newly added vertex
 
+  * `long int batch_load_csv_vertices(string filename, bool has_header, string separators, size_t keypos, string global_label, size_t labelpos, size_t batch_size=60000000)`
+    * load vertices from a csv file into graph. If the vertex already exists in graph, its property will be updated.
+    * __return__: if sucess, return number of processed vertices. Otherwise, return -1. 
+    * __arguments__: `filename`: csv file name. `has_header`: if csv file has header. `separators`: separators used in the csv file.  `keypos`: column # of external vertex id (starting from 0).  `global_label`: if not empty, set all vertices to this label. `labelpos`: if global_label is empty, get label from csv file according to this column #. `batch_size`: # of operations allowed in each batch. A commit happens when a batch reaches the limit. Both add vertex and add edge are considered as an operation.
+  
+  * `long int batch_load_csv_edges(string filename, bool has_header, string separators,
+                       size_t srcpos, size_t targpos,                                          
+                       string global_label, size_t labelpos,                                   
+                       string default_vertex_label="na", size_t batch_size=60000000)`
+    * load edges from a csv file into graph. If edge source/target vertex doesn't exist, it will be added into graph using the default_vertex_label.
+    * __return__: if sucess, return number of processed edges. Otherwise, return -1.
+    * __arguments__: `filename`: csv file name. `has_header`: if csv file has header. `separators`: separators used in the csv file. `srcpos`&`targpos`: column # of external source/target vertex id (starting from 0).  `global_label`: if not empty, set all edges to this label. `labelpos`: if global_label is empty, get label from csv file according to this column #.  `default_vertex_label`: label of newly added vertex. `batch_size`: # of operations allowed in each batch. A commit happens when a batch reaches the limit. Both add vertex and add edge are considered as an operation.
+    
   * __Example of creating and populating graph__: (full code can be found at examples/generic_graph.cc)    
   
   ```cpp
