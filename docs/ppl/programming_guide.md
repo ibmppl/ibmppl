@@ -37,7 +37,28 @@ Generic graph is a high level interface on top of IBMPPL native graph store. It 
     * add a new edge into graph and return the iterator of it
     * __return__: iterator of the new edge
     * __arguments__: `source`: source vertex id.  `target`: target vertex id. `label`: edge label
+    
+  * `void delete_vertex(string external_id)`
+    * delete the vertex with given external id
+    * __arguments__:  `external_id`: a globally unique string id for vertex  
+
+  * `void delete_vertex(vertexd_type vid)`
+    * delete the vertex with given vertex internal id
+    * __arguments__:  `vid`: a globally unique integer id for vertex
+
+  * `void delete_edge(vertexd_type src, vertexd_type targ)`
+    * delete the first edge between given source and target vertices
+    * __arguments__:  `src`: source vertex id. `targ`: target vertex id.
   
+  * `void delete_all_edges(vertexd_type src, vertexd_type targ)`
+    * delete all edges between given source and target vertices
+    * __arguments__:  `src`: source vertex id. `targ`: target vertex id.
+
+  * `void delete_edge(vertexd_type src, vertexd_type targ, edged_type edge_id)`
+    * delete the edge with specific edge_id between given source and target vertices 
+    * __arguments__:  `src`: source vertex id. `targ`: target vertex id. `edge_id`: an unique integer id of edge
+    
+    
 - Populate graph (load CSV files)
 
   * `long int load_csv_vertices(string filename, bool has_header, string separators, size_t keypos, string global_label, size_t labelpos)`
