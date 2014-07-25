@@ -121,8 +121,8 @@ CREATE (carrieanne)-[:ACTS_IN { role : 'Trinity' }]->(matrix3)
 
 ```bash
 add_vertex --graph g --id "The Matrix" --label Movie --prop year:"1999-03-31"
-add_vertex --graph g --id "The Matrix Reloaded" --label Motive --prop year:"2003-05-07"
-add_vertex --graph g --id "The Matrix Revoluations" --label Motive --prop year:"2003-10-27"
+add_vertex --graph g --id "The Matrix Reloaded" --label Movie --prop year:"2003-05-07"
+add_vertex --graph g --id "The Matrix Revoluations" --label Movie --prop year:"2003-10-27"
 add_vertex --graph g --id "Keanu Reeves" --label Actor
 add_vertex --graph g --id "Laurence Fishburne" --label Actor
 add_vertex --graph g --id "Carrie-Anne Moss" --label Actor
