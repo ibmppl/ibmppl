@@ -58,6 +58,11 @@ for v in g.vertices():
          for pe in e.properties():                                                                  
             print ('Edge property ', pe.name(), pe.value())            
 ```
+
+# Test code 
+We provide a test code in python for users to try out native store
+in python environment, the code is available at [python_wrapper_test.py](docs/ppl/wrapper/python_wrapper_test.py)
+
 # Building and running
 The directory contains a makefile, which can be invoked via `make`. This
 should build all the necessary components. `libleveldb.so` needs to be
