@@ -61,7 +61,7 @@ for v in g.vertices():
 
 # Test code 
 We provide a test code in python for users to try out native store
-in python environment, the code is available at [python_wrapper_test.py](docs/ppl/wrapper/python_wrapper_test.py)
+in python environment, the code is available at [python_wrapper_test.py](python_wrapper_test.py)
 
 # Building and running
 The directory contains a makefile, which can be invoked via `make`. This
