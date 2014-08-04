@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>IBM SYSTEMG RUNTIME: PPL: ibmppl::ibm_multiproperty_graph_generic&lt; VProperty, EProperty, Directness &gt; Class Template Reference</title>
+<title>IBM SYSTEMG G RUNTIME &amp; NATIVE STORE: ibmppl::ibm_multiproperty_graph_generic&lt; ST &gt; Class Template Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">IBM SYSTEMG RUNTIME: PPL
-   &#160;<span id="projectnumber">0.3</span>
+   <div id="projectname">IBM SYSTEMG G RUNTIME &amp; NATIVE STORE
+   &#160;<span id="projectnumber">0.5</span>
    </div>
-   <div id="projectbrief">Parallel Programming Library</div>
+   <div id="projectbrief">IBM Native Graph Computing and Storage System based on IBM Parallel Programming Library</div>
   </td>
   
   
@@ -48,7 +48,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -100,190 +99,240 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-types">Private Types</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
-<a href="#pri-attribs">Private Attributes</a>  </div>
+<a href="#pro-types">Protected Types</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-types">Private Types</a>  </div>
   <div class="headertitle">
-<div class="title">ibmppl::ibm_multiproperty_graph_generic&lt; VProperty, EProperty, Directness &gt; Class Template Reference</div>  </div>
+<div class="title">ibmppl::ibm_multiproperty_graph_generic&lt; ST &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="ibmppl::ibm_multiproperty_graph_generic" --><!-- doxytag: inherits="ibmppl::inDiskGraph" -->
-<p>Inherits ibmppl::inDiskGraph&lt; VProperty, EProperty, Directness &gt;.</p>
+<!-- doxytag: class="ibmppl::ibm_multiproperty_graph_generic" --><!-- doxytag: inherits="rdfGraph&lt; tabular_multiproperty_type, tabular_multiproperty_type, ST &gt;" -->
+<p>IBM Multi property graph class to store multiple properties.  
+ <a href="classibmppl_1_1ibm__multiproperty__graph__generic.html#details">More...</a></p>
+
+<p><code>#include &lt;ibm_multiproperty_graph.hpp&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for ibmppl::ibm_multiproperty_graph_generic&lt; ST &gt;:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classibmppl_1_1ibm__multiproperty__graph__generic.png" usemap="#ibmppl::ibm_multiproperty_graph_generic&lt; ST &gt;_map" alt=""/>
+  <map id="ibmppl::ibm_multiproperty_graph_generic&lt; ST &gt;_map" name="ibmppl::ibm_multiproperty_graph_generic&lt; ST &gt;_map">
+<area href="classibmppl_1_1rdfGraph.html" alt="ibmppl::rdfGraph&lt; tabular_multiproperty_type, tabular_multiproperty_type, ST &gt;" shape="rect" coords="0,0,462,24"/>
+</map>
+ </div></div>
 
 <p><a href="classibmppl_1_1ibm__multiproperty__graph__generic-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classibmppl_1_1Graph.html#a9c588d2c567836ffe531a9d0daa769fa">base_type::edged_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ab5ff13ad644f26d605c246d48cc66311">edged_type</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Directness type. This is either UNDIRECTED, DIRECTED or PRED_DIRECTED.  <a href="#ab5ff13ad644f26d605c246d48cc66311"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a376de16f4fd11cea600c94e029b07483"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::vertex_type" ref="a376de16f4fd11cea600c94e029b07483" args="" -->
-typedef base_type::vertex_type&#160;</td><td class="memItemRight" valign="bottom"><b>vertex_type</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed24833482d9383cdf27366482122157"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::edge_type" ref="aed24833482d9383cdf27366482122157" args="" -->
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a723782cd96926999cc235a8acf8f1654"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::edged_type" ref="a723782cd96926999cc235a8acf8f1654" args="" -->
+typedef <a class="el" href="classibmppl_1_1rdfGraph.html#a9e8eea64ca85317bc411a407312994ce">base_type::edged_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a723782cd96926999cc235a8acf8f1654">edged_type</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classibmppl_1_1Edge.html" title="Generic implementation of graph edge templated by Property type.">Edge</a> descriptor or unique edge identifier. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a57f0b05af94598497337a27f86cdc17a"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::vertex_type" ref="a57f0b05af94598497337a27f86cdc17a" args="" -->
+typedef base_type::vertex_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a57f0b05af94598497337a27f86cdc17a">vertex_type</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The vertex class; storage for property and edges. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a12b551724da5b275c5cdeb48da624d61"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::edge_type" ref="a12b551724da5b275c5cdeb48da624d61" args="" -->
 typedef base_type::edge_type&#160;</td><td class="memItemRight" valign="bottom"><b>edge_type</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2f63f40158d266adefe063889d0b6371"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::vertexd_type" ref="a2f63f40158d266adefe063889d0b6371" args="" -->
-typedef <a class="el" href="classibmppl_1_1Graph.html#ae66dd6705430d44e662c96550640443a">base_type::vertexd_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4243ae01a238e356583fe77a2fbfa857"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::vertexd_type" ref="a4243ae01a238e356583fe77a2fbfa857" args="" -->
+typedef <a class="el" href="classibmppl_1_1rdfGraph.html#a80a6eea13d8d0a0a4540289d2b56198d">base_type::vertexd_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classibmppl_1_1Vertex.html" title="Generic implementation of graph vertex class w/ a list of edges and a vertex property.">Vertex</a> descriptor. Unique vertex identifier. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a985f321a813dc698f4ee298633172719"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::vertex_property" ref="a985f321a813dc698f4ee298633172719" args="" -->
-typedef <a class="el" href="classibmppl_1_1Graph.html#a4dcdfb59caa8ade3032f1b52700c9ba3">base_type::vertex_property</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a985f321a813dc698f4ee298633172719">vertex_property</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4d529729143c23ef9bb7a805ff0ded88"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::vertex_property" ref="a4d529729143c23ef9bb7a805ff0ded88" args="" -->
+typedef <a class="el" href="classibmppl_1_1rdfGraph.html#a3f7b4ea34f7b34ad57c765e4a93dbe07">base_type::vertex_property</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4d529729143c23ef9bb7a805ff0ded88">vertex_property</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Property type associated with each vertex. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac19d685e51e6c98e282f5247205c5a6b"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::edge_property" ref="ac19d685e51e6c98e282f5247205c5a6b" args="" -->
-typedef <a class="el" href="classibmppl_1_1Graph.html#a48cc44cbfea4e4d8fae8e895f69815fa">base_type::edge_property</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ac19d685e51e6c98e282f5247205c5a6b">edge_property</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a464ba627b686485b1de1236252823aa3"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::edge_property" ref="a464ba627b686485b1de1236252823aa3" args="" -->
+typedef <a class="el" href="classibmppl_1_1rdfGraph.html#a26faf086fbc17ee8078b327101d6d75b">base_type::edge_property</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a464ba627b686485b1de1236252823aa3">edge_property</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Property type associated with each edge. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a77786355f2838b90e3366b6f868e96a9"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::base_edge_iterator" ref="a77786355f2838b90e3366b6f868e96a9" args="" -->
-typedef base_type::edge_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a77786355f2838b90e3366b6f868e96a9">base_edge_iterator</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a659436d5d1391566687ece540b607ddd"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::base_edge_iterator" ref="a659436d5d1391566687ece540b607ddd" args="" -->
+typedef <a class="el" href="classibmppl_1_1rdfGraph.html#a8252230bab32504447cd1ccab63148a9">base_type::edge_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a659436d5d1391566687ece540b607ddd">base_edge_iterator</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator type for traversing vertices. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aee8b9d9459b39bf19bad54a8042f6225"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::base_vertex_iterator" ref="aee8b9d9459b39bf19bad54a8042f6225" args="" -->
-typedef base_type::vertex_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>base_vertex_iterator</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a12a402249f066e8b313212c7bded10f2"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::base_pred_iterator" ref="a12a402249f066e8b313212c7bded10f2" args="" -->
-typedef <br class="typebreak"/>
-base_vertex_iterator::pred_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>base_pred_iterator</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab0066078c410600f3435c15bfcfb8e27"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::vertex_iterator" ref="ab0066078c410600f3435c15bfcfb8e27" args="" -->
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ee361eb6b98df4eb929e402af6fcc00"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::base_vertex_iterator" ref="a5ee361eb6b98df4eb929e402af6fcc00" args="" -->
+typedef <a class="el" href="classibmppl_1_1rdfGraph.html#a89e8b8a86e6ff9b323e7328deda41385">base_type::vertex_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>base_vertex_iterator</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a27a9effa86877f901b24efee4a993704"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::base_pred_iterator" ref="a27a9effa86877f901b24efee4a993704" args="" -->
+typedef base_type::pred_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>base_pred_iterator</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7022234b7d92e807eb63cb690e03cd2a"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::vertex_iterator" ref="a7022234b7d92e807eb63cb690e03cd2a" args="" -->
 typedef <a class="el" href="classibmppl_1_1imp__vertex__iterator.html">imp_vertex_iterator</a><br class="typebreak"/>
-&lt; vertex_type, <br class="typebreak"/>
+&lt; <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a57f0b05af94598497337a27f86cdc17a">vertex_type</a>, <br class="typebreak"/>
 base_vertex_iterator, <br class="typebreak"/>
-<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">this_type</a>, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ab0066078c410600f3435c15bfcfb8e27">vertex_iterator</a></td></tr>
+<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a05773970d54976b050e74d824c7bb9cb">this_type</a>, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a7022234b7d92e807eb63cb690e03cd2a">vertex_iterator</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator type for traversing vertices. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a01b80acbdf925940f809dd9785c00900"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::edge_iterator" ref="a01b80acbdf925940f809dd9785c00900" args="" -->
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abdfff6941905a3f37c8d0a92bc746e62"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::edge_iterator" ref="abdfff6941905a3f37c8d0a92bc746e62" args="" -->
 typedef <a class="el" href="classibmppl_1_1imp__edge__iterator.html">imp_edge_iterator</a><br class="typebreak"/>
 &lt; edge_type, <br class="typebreak"/>
-<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a77786355f2838b90e3366b6f868e96a9">base_edge_iterator</a>, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">this_type</a>, <br class="typebreak"/>
-<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ab5ff13ad644f26d605c246d48cc66311">edged_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>edge_iterator</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a106de4b0267e0fd0e05a8408c77e8f35"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::pred_iterator" ref="a106de4b0267e0fd0e05a8408c77e8f35" args="" -->
+<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a659436d5d1391566687ece540b607ddd">base_edge_iterator</a>, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a05773970d54976b050e74d824c7bb9cb">this_type</a>, <br class="typebreak"/>
+<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a723782cd96926999cc235a8acf8f1654">edged_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#abdfff6941905a3f37c8d0a92bc746e62">edge_iterator</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">edge iterator <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a967652d83a7b35dfa20296cdd7600426"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::pred_iterator" ref="a967652d83a7b35dfa20296cdd7600426" args="" -->
 typedef <a class="el" href="classibmppl_1_1imp__pred__iterator.html">imp_pred_iterator</a><br class="typebreak"/>
 &lt; edge_type, <br class="typebreak"/>
-base_pred_iterator, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">this_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>pred_iterator</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abcae073d6cbb2d35502d3ec36b2ba88f"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::const_vertex_iterator" ref="abcae073d6cbb2d35502d3ec36b2ba88f" args="" -->
+base_pred_iterator, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a05773970d54976b050e74d824c7bb9cb">this_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>pred_iterator</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3597954dbb6179b2c2ca3dacaf10b4e6"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::const_vertex_iterator" ref="a3597954dbb6179b2c2ca3dacaf10b4e6" args="" -->
 typedef <br class="typebreak"/>
-<a class="el" href="classibmppl_1_1Graph.html#a4035bf7908a90f77f8bf385531ed1231">base_type::const_vertex_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#abcae073d6cbb2d35502d3ec36b2ba88f">const_vertex_iterator</a></td></tr>
+<a class="el" href="classibmppl_1_1rdfGraph.html#aea3db4e401556f561516cd27aad54a4a">base_type::const_vertex_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a3597954dbb6179b2c2ca3dacaf10b4e6">const_vertex_iterator</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Const Iterator type for traversing edges. You won't be able to modify properties when using this iterator. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1bea60c9399a8d83d6654aed7e622714"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::property_name_type" ref="a1bea60c9399a8d83d6654aed7e622714" args="" -->
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adb55c1f39a7a34bc9044ffafd6be8eac"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::property_name_type" ref="adb55c1f39a7a34bc9044ffafd6be8eac" args="" -->
 typedef std::string&#160;</td><td class="memItemRight" valign="bottom"><b>property_name_type</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a33f3a5ac86c05f35bd17c693461a8885"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::property_value_type" ref="a33f3a5ac86c05f35bd17c693461a8885" args="" -->
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af6b21fa56b2606d4379c541b93d88a93"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::property_value_type" ref="af6b21fa56b2606d4379c541b93d88a93" args="" -->
 typedef std::string&#160;</td><td class="memItemRight" valign="bottom"><b>property_value_type</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a383d19311ab298bd4231a004944163f6"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::label_string_type" ref="a383d19311ab298bd4231a004944163f6" args="" -->
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a71131bdef9b60629dd727d40d9a79a6a"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::label_string_type" ref="a71131bdef9b60629dd727d40d9a79a6a" args="" -->
 typedef std::string&#160;</td><td class="memItemRight" valign="bottom"><b>label_string_type</b></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a876bcf5f9d9fc6c7087c1dba29df2b60">ibm_multiproperty_graph_generic</a> (string filename, string path, UINT64 max_memsize=(UINT64)(4294967296), size_t el_blk_sz=DEFAULT_BUNDLE_SZ, size_t vp_blk_sz=DEFAULT_BUNDLE_SZ, size_t ep_blk_sz=DEFAULT_BUNDLE_SZ)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a56e3e8f1364640d4a6da920587c8dbfb">~ibm_multiproperty_graph_generic</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a47b0d07836428f88f3e1e48818383a7d">index_available</a> (size_t propid) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#acaa05cb9f8af76f710f305e3f5996161">index_find</a> (int propid, const property_value_type &amp;pval, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> &amp;vid)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a71e996d4d7112230b8949d1a2a744cf8">index_find_all</a> (int propid, const property_value_type &amp;pval, std::vector&lt; <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> &gt; &amp;vids)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4b463a4e745a692546f6bcc109ff8529">index_insert</a> (int propid, const property_value_type &amp;pval, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> vid)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2722a4d14d1a6e73b56deae92e41a4c0"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::index_erasexx" ref="a2722a4d14d1a6e73b56deae92e41a4c0" args="(int propid, const property_value_type &amp;pval)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>index_erasexx</b> (int propid, const property_value_type &amp;pval)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#abc1a1654429cd92cd5006afed26184cc">index_erase</a> (int propid, const property_value_type &amp;pval, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> vid)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#adfe27ee91e2675dc635bfe01177830a5">add_index</a> (const property_name_type &amp;pname, bool is_multi=false)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#abd57a6057ff7ec22358b55ad0759779c">set_esubproperty</a> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ab5ff13ad644f26d605c246d48cc66311">edged_type</a> eid, const property_name_type &amp;pname, property_value_type value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#aacfc1a5960fe99558fc81f38866b5d27">set_esubproperty</a> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ab5ff13ad644f26d605c246d48cc66311">edged_type</a> eid, const size_t propid, property_value_type value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a551ef512e0ab17b89416cbf3fd27c073">set_vsubproperty</a> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> vid, const property_name_type &amp;pname, property_value_type value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a3251ccb83021b7e2b1773eb50474046b">set_vsubproperty</a> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> vid, const size_t propid, property_value_type value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">property_value_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a6bbfede650fae251f3d1d87fbe9ed6ed">get_vsubproperty</a> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> vid, const property_name_type &amp;pname)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">property_value_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ac3661de7e445ceffba24bd5fa84a5f0f">get_vsubproperty</a> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> vid, size_t propid)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ada5b1f1dea72cfd1845a7de9c581d561">get_or_allocate_epropertyid</a> (const property_name_type &amp;pname)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#aa1f80df34d13189cd139143144beb15b">get_or_allocate_vpropertyid</a> (const property_name_type &amp;pname)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ad73d036e8bf37ca71000295f8ee836ba">get_or_allocate_labelid</a> (const label_string_type &amp;labelstr)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#af97912b0216c9cc18642b6e03df45248">get_epropertyid</a> (const property_name_type &amp;pname)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a53924ea45ee98d86b3ebb12f29abd1ff">get_edge_property_name</a> (const size_t propid) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a9ea4d619e66ef35716f9d09bd5f9f52c">get_vpropertyid</a> (const property_name_type &amp;pname)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a7ba5dc3c83358951c62ad813d9e01ca9">get_vertex_property_name</a> (const size_t propid) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#aa8c826d35480481bb11eeabd4932e229">get_labelid</a> (const label_string_type &amp;labelstr)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a146f0eae14d383d8aa28a3d3ad6cf118">get_label_string</a> (const size_t labelid) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ab0066078c410600f3435c15bfcfb8e27">vertex_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a632e419e65f3de9ca8b9c2441b718e17">find_vertex</a> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> vid)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adf6530c48ab96a9e8add01584317555d"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::find_edge" ref="adf6530c48ab96a9e8add01584317555d" args="(vertexd_type vid, edged_type eid)" -->
-<a class="el" href="classibmppl_1_1imp__edge__iterator.html">edge_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>find_edge</b> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> vid, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ab5ff13ad644f26d605c246d48cc66311">edged_type</a> eid)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ab0066078c410600f3435c15bfcfb8e27">vertex_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a5a1d2ed1c66e0476ca6e950f1d5f7f61">find_vertex</a> (property_name_type &amp;pname, const property_value_type &amp;pval)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab87ca225601cbbb11b5ecfaef2d66347"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::vertices_begin" ref="ab87ca225601cbbb11b5ecfaef2d66347" args="()" -->
-<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ab0066078c410600f3435c15bfcfb8e27">vertex_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>vertices_begin</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5930fe2b0ff4041b764531845342ab73"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::vertices_end" ref="a5930fe2b0ff4041b764531845342ab73" args="()" -->
-<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ab0066078c410600f3435c15bfcfb8e27">vertex_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>vertices_end</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a46e050325495b13327ca69d903293cd7">delete_vertex</a> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> vid)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a46ae3a543a57a96ea27ff30764013b0e">add_vertex</a> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a985f321a813dc698f4ee298633172719">vertex_property</a> vp)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#af2e6475eb819187d83ce7e45586cd966">add_vertex</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ab5ff13ad644f26d605c246d48cc66311">edged_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a0cb03f2fe1403474b9628a5f2c9a064c">add_edge</a> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> vsource, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> vtarget, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ac19d685e51e6c98e282f5247205c5a6b">edge_property</a> ep)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ab5ff13ad644f26d605c246d48cc66311">edged_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a994e008078983dc9b9d14a527f7ae25d">add_edge</a> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> vsource, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> vtarget)</td></tr>
-<tr><td colspan="2"><h2><a name="pri-types"></a>
-Private Types</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adb348cc19de2fecf7c19edfac3960fe5"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::base_type" ref="adb348cc19de2fecf7c19edfac3960fe5" args="" -->
-typedef inDiskGraph&lt; VProperty, <br class="typebreak"/>
-EProperty, Directness &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>base_type</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab9a94a12e44dee9b7526e0c17fb5beee"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::this_type" ref="ab9a94a12e44dee9b7526e0c17fb5beee" args="" -->
-typedef <br class="typebreak"/>
-<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibm_multiproperty_graph_generic</a><br class="typebreak"/>
-&lt; VProperty, EProperty, <br class="typebreak"/>
-Directness &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>this_type</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7fe9d1dac242bb4619ee6c381d29366e"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::index_type" ref="a7fe9d1dac242bb4619ee6c381d29366e" args="" -->
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4d81a2f53bce505613b81832ae511d58">ibm_multiproperty_graph_generic</a> (string filename, string path, UINT64 max_memsize=(UINT64)(4294967295), size_t el_blk_sz=DEFAULT_BUNDLE_SZ, size_t vp_blk_sz=DEFAULT_BUNDLE_SZ, size_t ep_blk_sz=DEFAULT_BUNDLE_SZ)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">IBM Multiporperty graph constructor.  <a href="#a4d81a2f53bce505613b81832ae511d58"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a81e669ff851acdf4796faf4867896d56">~ibm_multiproperty_graph_generic</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">IBM Multiprpoerty graph destructor.  <a href="#a81e669ff851acdf4796faf4867896d56"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a36e2c66da8b31db8b0b9fed2d755ff7b">vert_index_available</a> (size_t propid) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This method indicates if the named index exists. Currently the index name is the name of the vertex property that would be indexed. At the moment this class does not support edge properties.  <a href="#a36e2c66da8b31db8b0b9fed2d755ff7b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#adf9814917066d9a10b0bf8ad9c8d9c2e">vert_index_available_we</a> (size_t propid) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is like <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a36e2c66da8b31db8b0b9fed2d755ff7b" title="This method indicates if the named index exists. Currently the index name is the name of the vertex p...">vert_index_available()</a> but it will throw an out_of_range exception if the propid is beyond the highest index we're supporting. This will help the calling code to enumerate indices.  <a href="#adf9814917066d9a10b0bf8ad9c8d9c2e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ac82e7266a0febc54e471ea2e43957f4e">index_find</a> (int propid, const property_value_type &amp;pval, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> &amp;vid)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This method allows the caller to find the vid of a vertex that has the given value on the given property.  <a href="#ac82e7266a0febc54e471ea2e43957f4e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a5edf7328f3660d75146b780bb02f2be2">index_find_all</a> (int propid, const property_value_type &amp;pval, std::vector&lt; <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> &gt; &amp;vids)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This method allows the caller to find all the vertices that have the given value on the given property. Warning: it will crash if there is no index. Check for that using the "available" method.  <a href="#a5edf7328f3660d75146b780bb02f2be2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ab496b5277cc15f9dff150c0e71732d72">find_all</a> (int propid, const property_value_type &amp;pval, std::vector&lt; <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> &gt; &amp;vids)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This method allows the caller to find all the vertices that have the given value on the given property. This version will not die if the index doesn't exist. Instead it will slowly generate the response after printing a warning message.  <a href="#ab496b5277cc15f9dff150c0e71732d72"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a074dacbf6ccae862e57061c270fa7f2a">index_insert</a> (int propid, const property_value_type &amp;pval, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> vid)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a method that most people should not use. It's used internally to keep the index up to date.  <a href="#a074dacbf6ccae862e57061c270fa7f2a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ac0840ee6fa0aeced4b920420dbc409f0">index_erasexx</a> (int propid, const property_value_type &amp;pval)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a method that most people should not use. It's used internally to keep the index up to date.  <a href="#ac0840ee6fa0aeced4b920420dbc409f0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a79f6da301fd8da8c3cf535311d07fa74">index_erase</a> (int propid, const property_value_type &amp;pval, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> vid)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a method that most people should not use. It's used internally to keep the index up to date.  <a href="#a79f6da301fd8da8c3cf535311d07fa74"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a0d2905ea6148bea170d916bececcecfd">add_index</a> (const property_name_type &amp;pname, bool is_multi=false)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This method creates an index on the specified property and property value.  <a href="#a0d2905ea6148bea170d916bececcecfd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#acb8eac708a7927d635ce1a442f4f6413">set_esubproperty</a> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a723782cd96926999cc235a8acf8f1654">edged_type</a> eid, const property_name_type &amp;pname, const property_value_type &amp;value)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This method adds a property to an edge.  <a href="#acb8eac708a7927d635ce1a442f4f6413"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#aaffd27bb8ad2e23eb44e90b6b1e6b687">set_esubproperty</a> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a723782cd96926999cc235a8acf8f1654">edged_type</a> eid, const size_t propid, const property_value_type &amp;value)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This method adds a property to an edge.  <a href="#aaffd27bb8ad2e23eb44e90b6b1e6b687"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a495c689c7019abbfd21b7004edffc68e">set_vsubproperty</a> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> vid, const property_name_type &amp;pname, const property_value_type &amp;value)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the specified property for the specified vertex to the specified string value.  <a href="#a495c689c7019abbfd21b7004edffc68e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ae1b54de7b66b679bf4705d0926f91e96">set_vsubproperty</a> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> vid, const size_t propid, const property_value_type &amp;value)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the specified property for the specified vertex to the specified string value.  <a href="#ae1b54de7b66b679bf4705d0926f91e96"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">property_value_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a544b5621faf5a29ebd355c256a3cdd96">get_vsubproperty</a> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> vid, const property_name_type &amp;pname)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified property for the specified vertex.  <a href="#a544b5621faf5a29ebd355c256a3cdd96"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">property_value_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a3ddfe41c9c823e879f3e653918e86e7e">get_vsubproperty</a> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> vid, size_t propid)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ac27c35a232c23c1fd9fde1d44280cacf">get_or_allocate_epropertyid</a> (const property_name_type &amp;pname)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a specified edge property-name to it's property-id.  <a href="#ac27c35a232c23c1fd9fde1d44280cacf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a31ae1880dc0ea90b5d57fe615675f724">get_or_allocate_vpropertyid</a> (const property_name_type &amp;pname)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a specified vertex property-name to it's property-id.  <a href="#a31ae1880dc0ea90b5d57fe615675f724"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a8bb515737948cd963db684c951a1e907">get_or_allocate_labelid</a> (const label_string_type &amp;labelstr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a specified label name to it's label-id.  <a href="#a8bb515737948cd963db684c951a1e907"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a93af8b201084c791c37dd18ffda4d12f">get_labelid</a> (const label_string_type &amp;labelstr, size_t &amp;retval)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a specified label name to it's label-id.  <a href="#a93af8b201084c791c37dd18ffda4d12f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ae8f00c7a993162b7fc47938958bdd985">get_epropertyid</a> (const property_name_type &amp;pname)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a specified edge property-name to it's property-id.  <a href="#ae8f00c7a993162b7fc47938958bdd985"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a824e7c28d996539890b1a67b45871103">get_edge_property_name</a> (const size_t propid) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a specified edge property-id to it's property name.  <a href="#a824e7c28d996539890b1a67b45871103"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a5150345ed560ac93a0a7431d7ce2b33c">get_vpropertyid</a> (const property_name_type &amp;pname)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a specified vertex property-name to it's property-id.  <a href="#a5150345ed560ac93a0a7431d7ce2b33c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ac8499115382af4c0f52601231207e68e">get_vertex_property_name</a> (const size_t propid) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a specified vertex property-id to it's property value.  <a href="#ac8499115382af4c0f52601231207e68e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a6dec84cb6d7f6945e59e0c2c4976ca54">get_labelid</a> (const label_string_type &amp;labelstr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a specified label string to it's label-id.  <a href="#a6dec84cb6d7f6945e59e0c2c4976ca54"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a9073965031afdb930a81ae1a97aa0c0e">get_label_string</a> (const size_t labelid) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a specified label-id it's label string.  <a href="#a9073965031afdb930a81ae1a97aa0c0e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac4f0631879f1318ae7d16c10608d0d5d"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_vertex_label" ref="ac4f0631879f1318ae7d16c10608d0d5d" args="(size_t labelid)" -->
+virtual string&#160;</td><td class="memItemRight" valign="bottom"><b>get_vertex_label</b> (size_t labelid)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a778dc51101c1f1c9c1d023415b85b2bf"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_external_id" ref="a778dc51101c1f1c9c1d023415b85b2bf" args="(size_t vid)" -->
+virtual string&#160;</td><td class="memItemRight" valign="bottom"><b>get_external_id</b> (size_t vid)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a7022234b7d92e807eb63cb690e03cd2a">vertex_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a78e66d72ed1a3aff69375e4a0ea61396">find_vertex</a> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> vid)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the first vertex with a given vertex id.  <a href="#a78e66d72ed1a3aff69375e4a0ea61396"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#abdfff6941905a3f37c8d0a92bc746e62">edge_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ae5c2ce19f6109a3f6352b21465e64e6d">find_edge</a> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> vid, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a723782cd96926999cc235a8acf8f1654">edged_type</a> eid)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the first edge for a given vertex with a given edge id.  <a href="#ae5c2ce19f6109a3f6352b21465e64e6d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a7022234b7d92e807eb63cb690e03cd2a">vertex_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a9e6365310ff63de7a9c732ef354a9f76">find_vertex</a> (const property_name_type &amp;pname, const property_value_type &amp;pval)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the first vertex with a given property value.  <a href="#a9e6365310ff63de7a9c732ef354a9f76"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a79ab27a14f057502c251cbdbad22507c"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::vertices_begin" ref="a79ab27a14f057502c251cbdbad22507c" args="()" -->
+<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a7022234b7d92e807eb63cb690e03cd2a">vertex_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>vertices_begin</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4e30fa014e87c5e709a02ab6d4666d28"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::vertices_end" ref="a4e30fa014e87c5e709a02ab6d4666d28" args="()" -->
+<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a7022234b7d92e807eb63cb690e03cd2a">vertex_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>vertices_end</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a6da6c1d5dc0ad1870cc1903c538e01bd">delete_vertex</a> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> vid)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes specified vertex and adjacent edges.  <a href="#a6da6c1d5dc0ad1870cc1903c538e01bd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#abf6ef51763deb6d1c487e15ee6594a4b">add_vertex</a> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4d529729143c23ef9bb7a805ff0ded88">vertex_property</a> &amp;vp)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a vertex to the graph.  <a href="#abf6ef51763deb6d1c487e15ee6594a4b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a1ae23622db24444179a5ba1b186d280d">add_vertex</a> (size_t lid)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a vertex to the graph.  <a href="#a1ae23622db24444179a5ba1b186d280d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#aa665ad213109ced84d2e1f5e2b00bff8">add_vertex</a> (property_value_type &amp;value)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a vertex to the graph.  <a href="#aa665ad213109ced84d2e1f5e2b00bff8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a723782cd96926999cc235a8acf8f1654">edged_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a505558098acbbf58f9c6e633b14e53d3">add_edge</a> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> vsource, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> vtarget, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a464ba627b686485b1de1236252823aa3">edge_property</a> ep)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an edge to the graph.  <a href="#a505558098acbbf58f9c6e633b14e53d3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a723782cd96926999cc235a8acf8f1654">edged_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#aad5968912df055d6e20af931056f0418">add_edge</a> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> vsource, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> vtarget, size_t lid)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a723782cd96926999cc235a8acf8f1654">edged_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#aa52281f7c722d7ea91ae72c60790b30b">add_edge</a> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> vsource, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> vtarget, std::string label)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#abdfff6941905a3f37c8d0a92bc746e62">edge_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a63b8aa1b62befe5ba8aa661206f12a3e">add_edge_ref</a> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> vsource, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> vtarget, size_t lid)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an edge to the graph.  <a href="#a63b8aa1b62befe5ba8aa661206f12a3e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#abdfff6941905a3f37c8d0a92bc746e62">edge_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a8dfcc846081131827b83140660126416">add_edge_ref</a> (<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> vsource, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> vtarget, std::string label)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an edge to the graph.  <a href="#a8dfcc846081131827b83140660126416"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a212bd89c011eb40c84f8f427727f3a0c"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::index_type" ref="a212bd89c011eb40c84f8f427727f3a0c" args="" -->
 typedef index&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>index_type</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad80f0c6756282a84b5b69b6b17c3014a"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::index_iterator" ref="ad80f0c6756282a84b5b69b6b17c3014a" args="" -->
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adad2d6c572b5a10b7fd4bbf4cedc90c0"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::index_iterator" ref="adad2d6c572b5a10b7fd4bbf4cedc90c0" args="" -->
 typedef std::vector<br class="typebreak"/>
 &lt; index_type * &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><b>index_iterator</b></td></tr>
-<tr><td colspan="2"><h2><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a8e8933aa0d7e3c8ee3115d0df83da27d">_load_keys</a> (std::string fn, std::map&lt; std::string, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> &gt; *vvec, std::vector&lt; std::string &gt; *revmap=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ad7022f47d5184f60522b8b4c01fcc5f1">_load_keys</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a9ae28beffd6a733b9d61b98a9c19414f">_save_keys</a> (std::string fn, std::map&lt; std::string, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> &gt; *vvec)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#acada190c7f558eac5b9947dee59064ce">_save_keys</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ad939a6609c3cb23ce6bd3badee013602">_get_or_alloc_map</a> (std::map&lt; std::string, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> &gt; *mapin, std::vector&lt; std::string &gt; *vecin, std::string keystring)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ae00f41f45dd6756d247bfeae83fe6c4f">_get_mapping</a> (std::map&lt; std::string, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> &gt; *mapin, std::string keystring)</td></tr>
-<tr><td colspan="2"><h2><a name="pri-attribs"></a>
-Private Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac3e0603c044ae76130c7bba110d1e030"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::vpropname_to_id" ref="ac3e0603c044ae76130c7bba110d1e030" args="" -->
-std::map&lt; std::string, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ac3e0603c044ae76130c7bba110d1e030">vpropname_to_id</a></td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ae82fb0bb5ac98aff8419210aa6fea342">_load_keys</a> (std::string fn, std::map&lt; std::string, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> &gt; *vvec, std::vector&lt; std::string &gt; *revmap=0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility routine for reloading mappings between property-id's and property-name's.  <a href="#ae82fb0bb5ac98aff8419210aa6fea342"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a7e0dc7f5d775a3d646e1f792085db888">_load_keys</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility routine for reloading mappings between property-id's and property-name's.  <a href="#a7e0dc7f5d775a3d646e1f792085db888"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ae3bb06021df4fbaa11e9eb89faca6eb2">_save_keys</a> (std::string fn, std::map&lt; std::string, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> &gt; *vvec)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility routine for persisting mappings between property-id's and property-name's.  <a href="#ae3bb06021df4fbaa11e9eb89faca6eb2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a37bb69f593d95e73eb81d696f8c30a44">_save_keys</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility routine for persisting mappings between property-id's and property-name's.  <a href="#a37bb69f593d95e73eb81d696f8c30a44"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#af5272633ab205fd0af8b1b693dea123f">_get_or_alloc_map</a> (std::map&lt; std::string, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> &gt; *mapin, std::vector&lt; std::string &gt; *vecin, std::string keystring)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper routine for get_or_allocXXXX() methods.  <a href="#af5272633ab205fd0af8b1b693dea123f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a63dab70a5ffd38de7f31cf7a6521cae3">_get_mapping</a> (std::map&lt; std::string, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> &gt; *mapin, std::string keystring)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper routine to help implement get_Xpropertyid() methods.  <a href="#a63dab70a5ffd38de7f31cf7a6521cae3"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5737c0d8b4941cd38762645aafc5bf81"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::vpropname_to_id" ref="a5737c0d8b4941cd38762645aafc5bf81" args="" -->
+std::map&lt; std::string, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a5737c0d8b4941cd38762645aafc5bf81">vpropname_to_id</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a property name to a property id. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a459899780cffc4fa93ff32bdefa5046b"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::id_to_vpropname" ref="a459899780cffc4fa93ff32bdefa5046b" args="" -->
-std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a459899780cffc4fa93ff32bdefa5046b">id_to_vpropname</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4f28d1abc9045a343ac1e7b7aa2bb808"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::id_to_vpropname" ref="a4f28d1abc9045a343ac1e7b7aa2bb808" args="" -->
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4f28d1abc9045a343ac1e7b7aa2bb808">id_to_vpropname</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a property id to a property name(string) <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a155c3ffa3239a7deac2bcf7a10e30243"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::epropname_to_id" ref="a155c3ffa3239a7deac2bcf7a10e30243" args="" -->
-std::map&lt; std::string, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a155c3ffa3239a7deac2bcf7a10e30243">epropname_to_id</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a59ff842b88871de25156f6703a4e2255"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::epropname_to_id" ref="a59ff842b88871de25156f6703a4e2255" args="" -->
+std::map&lt; std::string, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a59ff842b88871de25156f6703a4e2255">epropname_to_id</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Similar as above for edges. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad6fab6985255a82342da233d5adc91f7"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::id_to_epropname" ref="ad6fab6985255a82342da233d5adc91f7" args="" -->
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab3a15d9b096e18b52a028fa709ca3b7d"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::id_to_epropname" ref="ab3a15d9b096e18b52a028fa709ca3b7d" args="" -->
 std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>id_to_epropname</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a312cc746c5f826ffb07ea5b667a08055"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::id_to_label" ref="a312cc746c5f826ffb07ea5b667a08055" args="" -->
-std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a312cc746c5f826ffb07ea5b667a08055">id_to_label</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3e4e79b2955a60abafc1e3e19fc1abf8"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::id_to_label" ref="a3e4e79b2955a60abafc1e3e19fc1abf8" args="" -->
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a3e4e79b2955a60abafc1e3e19fc1abf8">id_to_label</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a label id to a label string. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab3f5afe6cbeb252dca86acc1f05c9044"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::label_to_id" ref="ab3f5afe6cbeb252dca86acc1f05c9044" args="" -->
-std::map&lt; std::string, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ab3f5afe6cbeb252dca86acc1f05c9044">label_to_id</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7ea7769ba7f49fe65de2ed7734d75790"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::label_to_id" ref="a7ea7769ba7f49fe65de2ed7734d75790" args="" -->
+std::map&lt; std::string, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a7ea7769ba7f49fe65de2ed7734d75790">label_to_id</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a label string to a label id. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6c51465490837ac69db08de7c359f4f4"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::store_name" ref="a6c51465490837ac69db08de7c359f4f4" args="" -->
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5d641ea19339a04e205129dbf7a4a088"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::store_name" ref="a5d641ea19339a04e205129dbf7a4a088" args="" -->
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>store_name</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a578ac541a787fe1c12add3c99d25c30f"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::indices" ref="a578ac541a787fe1c12add3c99d25c30f" args="" -->
-std::vector&lt; index_type * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>indices</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aac0bf7a537d803ef41f3b396f1e1fb27"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::vert_indices" ref="aac0bf7a537d803ef41f3b396f1e1fb27" args="" -->
+std::vector&lt; index_type * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>vert_indices</b></td></tr>
+<tr><td colspan="2"><h2><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a07e2b6a940e0161defdc721ac0f70cec"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::base_type" ref="a07e2b6a940e0161defdc721ac0f70cec" args="" -->
+typedef <a class="el" href="classibmppl_1_1rdfGraph.html">rdfGraph</a><br class="typebreak"/>
+&lt; tabular_multiproperty_type, <br class="typebreak"/>
+tabular_multiproperty_type, ST &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a07e2b6a940e0161defdc721ac0f70cec">base_type</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class type. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a05773970d54976b050e74d824c7bb9cb"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::this_type" ref="a05773970d54976b050e74d824c7bb9cb" args="" -->
+typedef <br class="typebreak"/>
+<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibm_multiproperty_graph_generic</a><br class="typebreak"/>
+&lt; ST &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a05773970d54976b050e74d824c7bb9cb">this_type</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Self type. <br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><h3>template&lt;class VProperty, class EProperty, DIRECTNESS Directness&gt;<br/>
-class ibmppl::ibm_multiproperty_graph_generic&lt; VProperty, EProperty, Directness &gt;</h3>
+<div class="textblock"><h3>template&lt;STORAGE_TYPE ST&gt;<br/>
+class ibmppl::ibm_multiproperty_graph_generic&lt; ST &gt;</h3>
 
+<p>IBM Multi property graph class to store multiple properties. </p>
 <p>IBM Multi property graph class; It maintains an associative table (hash table) for individual properties; All properties are stored as strings : &lt;property_name:int, property_value:string&gt; A secondary table maps from property_name as string to property name as integer </p>
-</div><hr/><h2>Member Typedef Documentation</h2>
-<a class="anchor" id="ab5ff13ad644f26d605c246d48cc66311"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::edged_type" ref="ab5ff13ad644f26d605c246d48cc66311" args="" -->
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a4d81a2f53bce505613b81832ae511d58"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::ibm_multiproperty_graph_generic" ref="a4d81a2f53bce505613b81832ae511d58" args="(string filename, string path, UINT64 max_memsize=(UINT64)(4294967295), size_t el_blk_sz=DEFAULT_BUNDLE_SZ, size_t vp_blk_sz=DEFAULT_BUNDLE_SZ, size_t ep_blk_sz=DEFAULT_BUNDLE_SZ)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classibmppl_1_1Graph.html#a9c588d2c567836ffe531a9d0daa769fa">base_type::edged_type</a> <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ab5ff13ad644f26d605c246d48cc66311">edged_type</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Directness type. This is either UNDIRECTED, DIRECTED or PRED_DIRECTED. </p>
-<p><a class="el" href="classibmppl_1_1Edge.html" title="Generic implementation of graph edge templated by Property type.">Edge</a> descriptor or unique edge identifier. </p>
-
-<p>Reimplemented from <a class="el" href="classibmppl_1_1Graph.html#a9c588d2c567836ffe531a9d0daa769fa">ibmppl::Graph&lt; VProperty, EProperty, Directness, Traits &gt;</a>.</p>
-
-</div>
-</div>
-<hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a876bcf5f9d9fc6c7087c1dba29df2b60"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::ibm_multiproperty_graph_generic" ref="a876bcf5f9d9fc6c7087c1dba29df2b60" args="(string filename, string path, UINT64 max_memsize=(UINT64)(4294967296), size_t el_blk_sz=DEFAULT_BUNDLE_SZ, size_t vp_blk_sz=DEFAULT_BUNDLE_SZ, size_t ep_blk_sz=DEFAULT_BUNDLE_SZ)" -->
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibm_multiproperty_graph_generic</a> </td>
+          <td class="memname"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibm_multiproperty_graph_generic</a> </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>filename</em>, </td>
@@ -298,7 +347,7 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">UINT64&#160;</td>
-          <td class="paramname"><em>max_memsize</em> = <code>(UINT64)(4294967296)</code>, </td>
+          <td class="paramname"><em>max_memsize</em> = <code>(UINT64)(4294967295)</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -326,7 +375,8 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
       </table>
 </div>
 <div class="memdoc">
-<p>Constructor</p>
+
+<p>IBM Multiporperty graph constructor. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>the base filename in the directory specified in the path parameter. If they don't exist, this method will create a variety of files that start with this filename. Together they'll represent a graph. Initially it will be an empty graph.</td></tr>
@@ -340,38 +390,39 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a56e3e8f1364640d4a6da920587c8dbfb"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::~ibm_multiproperty_graph_generic" ref="a56e3e8f1364640d4a6da920587c8dbfb" args="()" -->
+<a class="anchor" id="a81e669ff851acdf4796faf4867896d56"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::~ibm_multiproperty_graph_generic" ref="a81e669ff851acdf4796faf4867896d56" args="()" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::~<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibm_multiproperty_graph_generic</a> </td>
+          <td class="memname">virtual <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::~<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibm_multiproperty_graph_generic</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td><code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Destructor</p>
+
+<p>IBM Multiprpoerty graph destructor. </p>
 <p>It is important that this method be called. It will do things like save meta-data on the graph and deallocate some underlying structures.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014) </dd></dl>
 
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="ae00f41f45dd6756d247bfeae83fe6c4f"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::_get_mapping" ref="ae00f41f45dd6756d247bfeae83fe6c4f" args="(std::map&lt; std::string, vertexd_type &gt; *mapin, std::string keystring)" -->
+<a class="anchor" id="a63dab70a5ffd38de7f31cf7a6521cae3"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::_get_mapping" ref="a63dab70a5ffd38de7f31cf7a6521cae3" args="(std::map&lt; std::string, vertexd_type &gt; *mapin, std::string keystring)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">size_t <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ae00f41f45dd6756d247bfeae83fe6c4f">_get_mapping</a> </td>
+          <td class="memname">size_t <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a63dab70a5ffd38de7f31cf7a6521cae3">_get_mapping</a> </td>
           <td>(</td>
-          <td class="paramtype">std::map&lt; std::string, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> &gt; *&#160;</td>
+          <td class="paramtype">std::map&lt; std::string, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> &gt; *&#160;</td>
           <td class="paramname"><em>mapin</em>, </td>
         </tr>
         <tr>
@@ -383,27 +434,28 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [inline, private]</code></td>
+          <td></td><td><code> [inline, protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Helper routine to help implement get_Xpropertyid() methods</p>
+
+<p>Helper routine to help implement get_Xpropertyid() methods. </p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>size_t the property id for the specified property name </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ad939a6609c3cb23ce6bd3badee013602"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::_get_or_alloc_map" ref="ad939a6609c3cb23ce6bd3badee013602" args="(std::map&lt; std::string, vertexd_type &gt; *mapin, std::vector&lt; std::string &gt; *vecin, std::string keystring)" -->
+<a class="anchor" id="af5272633ab205fd0af8b1b693dea123f"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::_get_or_alloc_map" ref="af5272633ab205fd0af8b1b693dea123f" args="(std::map&lt; std::string, vertexd_type &gt; *mapin, std::vector&lt; std::string &gt; *vecin, std::string keystring)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">size_t <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ad939a6609c3cb23ce6bd3badee013602">_get_or_alloc_map</a> </td>
+          <td class="memname">size_t <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#af5272633ab205fd0af8b1b693dea123f">_get_or_alloc_map</a> </td>
           <td>(</td>
-          <td class="paramtype">std::map&lt; std::string, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> &gt; *&#160;</td>
+          <td class="paramtype">std::map&lt; std::string, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> &gt; *&#160;</td>
           <td class="paramname"><em>mapin</em>, </td>
         </tr>
         <tr>
@@ -421,25 +473,26 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [inline, private]</code></td>
+          <td></td><td><code> [inline, protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Helper routine for get_or_allocXXXX() methods.</p>
+
+<p>Helper routine for get_or_allocXXXX() methods. </p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>size_t The newly-allocated or existing property id. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a8e8933aa0d7e3c8ee3115d0df83da27d"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::_load_keys" ref="a8e8933aa0d7e3c8ee3115d0df83da27d" args="(std::string fn, std::map&lt; std::string, vertexd_type &gt; *vvec, std::vector&lt; std::string &gt; *revmap=0)" -->
+<a class="anchor" id="ae82fb0bb5ac98aff8419210aa6fea342"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::_load_keys" ref="ae82fb0bb5ac98aff8419210aa6fea342" args="(std::string fn, std::map&lt; std::string, vertexd_type &gt; *vvec, std::vector&lt; std::string &gt; *revmap=0)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a8e8933aa0d7e3c8ee3115d0df83da27d">_load_keys</a> </td>
+          <td class="memname">void <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ae82fb0bb5ac98aff8419210aa6fea342">_load_keys</a> </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>fn</em>, </td>
@@ -447,7 +500,7 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::map&lt; std::string, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> &gt; *&#160;</td>
+          <td class="paramtype">std::map&lt; std::string, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> &gt; *&#160;</td>
           <td class="paramname"><em>vvec</em>, </td>
         </tr>
         <tr>
@@ -459,44 +512,46 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [inline, private]</code></td>
+          <td></td><td><code> [inline, protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Utility routine for reloading mappings between property-id's and property-name's.</p>
+
+<p>Utility routine for reloading mappings between property-id's and property-name's. </p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ad7022f47d5184f60522b8b4c01fcc5f1"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::_load_keys" ref="ad7022f47d5184f60522b8b4c01fcc5f1" args="()" -->
+<a class="anchor" id="a7e0dc7f5d775a3d646e1f792085db888"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::_load_keys" ref="a7e0dc7f5d775a3d646e1f792085db888" args="()" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a8e8933aa0d7e3c8ee3115d0df83da27d">_load_keys</a> </td>
+          <td class="memname">void <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ae82fb0bb5ac98aff8419210aa6fea342">_load_keys</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline, private]</code></td>
+          <td><code> [inline, protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Utility routine for reloading mappings between property-id's and property-name's.</p>
+
+<p>Utility routine for reloading mappings between property-id's and property-name's. </p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a9ae28beffd6a733b9d61b98a9c19414f"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::_save_keys" ref="a9ae28beffd6a733b9d61b98a9c19414f" args="(std::string fn, std::map&lt; std::string, vertexd_type &gt; *vvec)" -->
+<a class="anchor" id="ae3bb06021df4fbaa11e9eb89faca6eb2"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::_save_keys" ref="ae3bb06021df4fbaa11e9eb89faca6eb2" args="(std::string fn, std::map&lt; std::string, vertexd_type &gt; *vvec)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a9ae28beffd6a733b9d61b98a9c19414f">_save_keys</a> </td>
+          <td class="memname">void <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ae3bb06021df4fbaa11e9eb89faca6eb2">_save_keys</a> </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>fn</em>, </td>
@@ -504,64 +559,66 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::map&lt; std::string, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> &gt; *&#160;</td>
+          <td class="paramtype">std::map&lt; std::string, <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> &gt; *&#160;</td>
           <td class="paramname"><em>vvec</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [inline, private]</code></td>
+          <td></td><td><code> [inline, protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Utility routine for persisting mappings between property-id's and property-name's.</p>
+
+<p>Utility routine for persisting mappings between property-id's and property-name's. </p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="acada190c7f558eac5b9947dee59064ce"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::_save_keys" ref="acada190c7f558eac5b9947dee59064ce" args="()" -->
+<a class="anchor" id="a37bb69f593d95e73eb81d696f8c30a44"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::_save_keys" ref="a37bb69f593d95e73eb81d696f8c30a44" args="()" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a9ae28beffd6a733b9d61b98a9c19414f">_save_keys</a> </td>
+          <td class="memname">void <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ae3bb06021df4fbaa11e9eb89faca6eb2">_save_keys</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline, private]</code></td>
+          <td><code> [inline, protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Utility routine for persisting mappings between property-id's and property-name's.</p>
+
+<p>Utility routine for persisting mappings between property-id's and property-name's. </p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a0cb03f2fe1403474b9628a5f2c9a064c"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::add_edge" ref="a0cb03f2fe1403474b9628a5f2c9a064c" args="(vertexd_type vsource, vertexd_type vtarget, edge_property ep)" -->
+<a class="anchor" id="a505558098acbbf58f9c6e633b14e53d3"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::add_edge" ref="a505558098acbbf58f9c6e633b14e53d3" args="(vertexd_type vsource, vertexd_type vtarget, edge_property ep)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ab5ff13ad644f26d605c246d48cc66311">edged_type</a> <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a0cb03f2fe1403474b9628a5f2c9a064c">add_edge</a> </td>
+          <td class="memname"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a723782cd96926999cc235a8acf8f1654">edged_type</a> <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a505558098acbbf58f9c6e633b14e53d3">add_edge</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a>&#160;</td>
           <td class="paramname"><em>vsource</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a>&#160;</td>
           <td class="paramname"><em>vtarget</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ac19d685e51e6c98e282f5247205c5a6b">edge_property</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a464ba627b686485b1de1236252823aa3">edge_property</a>&#160;</td>
           <td class="paramname"><em>ep</em>&#160;</td>
         </tr>
         <tr>
@@ -572,30 +629,45 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
       </table>
 </div>
 <div class="memdoc">
-<p>Add an edge to the graph.</p>
+
+<p>Add an edge to the graph. </p>
 <p>Note: please only use this method if you need to understand the underlying property implementation. Otherwise, please use the method of the same name that does not have a property parameter.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vsource</td><td>The source vertex of the edge. </td></tr>
+    <tr><td class="paramname">vtarget</td><td>The target vertex of the edge. </td></tr>
+    <tr><td class="paramname">ep</td><td>The property assoicated with the new edge.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/7/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>edged_type The eid of the new edge </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a994e008078983dc9b9d14a527f7ae25d"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::add_edge" ref="a994e008078983dc9b9d14a527f7ae25d" args="(vertexd_type vsource, vertexd_type vtarget)" -->
+<a class="anchor" id="aad5968912df055d6e20af931056f0418"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::add_edge" ref="aad5968912df055d6e20af931056f0418" args="(vertexd_type vsource, vertexd_type vtarget, size_t lid)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ab5ff13ad644f26d605c246d48cc66311">edged_type</a> <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a0cb03f2fe1403474b9628a5f2c9a064c">add_edge</a> </td>
+          <td class="memname"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a723782cd96926999cc235a8acf8f1654">edged_type</a> <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a505558098acbbf58f9c6e633b14e53d3">add_edge</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a>&#160;</td>
           <td class="paramname"><em>vsource</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a>&#160;</td>
-          <td class="paramname"><em>vtarget</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a>&#160;</td>
+          <td class="paramname"><em>vtarget</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>lid</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -607,18 +679,170 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <div class="memdoc">
 <p>Add an edge to the graph.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/7/2014)</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vsource</td><td>The source vertex of the edge. </td></tr>
+    <tr><td class="paramname">vtarget</td><td>The target vertex of the edge. </td></tr>
+    <tr><td class="paramname">lid</td><td>The label associated with the new edge.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>edged_type The eid of the new edge </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="adfe27ee91e2675dc635bfe01177830a5"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::add_index" ref="adfe27ee91e2675dc635bfe01177830a5" args="(const property_name_type &amp;pname, bool is_multi=false)" -->
+<a class="anchor" id="aa52281f7c722d7ea91ae72c60790b30b"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::add_edge" ref="aa52281f7c722d7ea91ae72c60790b30b" args="(vertexd_type vsource, vertexd_type vtarget, std::string label)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#adfe27ee91e2675dc635bfe01177830a5">add_index</a> </td>
+          <td class="memname"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a723782cd96926999cc235a8acf8f1654">edged_type</a> <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a505558098acbbf58f9c6e633b14e53d3">add_edge</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a>&#160;</td>
+          <td class="paramname"><em>vsource</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a>&#160;</td>
+          <td class="paramname"><em>vtarget</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>label</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Add an edge to the graph.</p>
+<dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/7/2014)</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vsource</td><td>The source vertex of the edge. </td></tr>
+    <tr><td class="paramname">vtarget</td><td>The target vertex of the edge. </td></tr>
+    <tr><td class="paramname">lable</td><td>The label string associated with the new edge.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>edged_type The eid of the new edge </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a63b8aa1b62befe5ba8aa661206f12a3e"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::add_edge_ref" ref="a63b8aa1b62befe5ba8aa661206f12a3e" args="(vertexd_type vsource, vertexd_type vtarget, size_t lid)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;STORAGE_TYPE ST&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#abdfff6941905a3f37c8d0a92bc746e62">edge_iterator</a> <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a63b8aa1b62befe5ba8aa661206f12a3e">add_edge_ref</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a>&#160;</td>
+          <td class="paramname"><em>vsource</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a>&#160;</td>
+          <td class="paramname"><em>vtarget</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>lid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Add an edge to the graph. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vsource</td><td>The source vertex of the edge. </td></tr>
+    <tr><td class="paramname">vtarget</td><td>The target vertex of the edge. </td></tr>
+    <tr><td class="paramname">lid</td><td>The label identifier associated with the new edge.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/7/2014)</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>edged_type The eid of the new edge </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classibmppl_1_1ibm__generic__graph.html#af0d1b9520858f38381bde103aa1ae176">ibmppl::ibm_generic_graph</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8dfcc846081131827b83140660126416"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::add_edge_ref" ref="a8dfcc846081131827b83140660126416" args="(vertexd_type vsource, vertexd_type vtarget, std::string label)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;STORAGE_TYPE ST&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#abdfff6941905a3f37c8d0a92bc746e62">edge_iterator</a> <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a63b8aa1b62befe5ba8aa661206f12a3e">add_edge_ref</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a>&#160;</td>
+          <td class="paramname"><em>vsource</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a>&#160;</td>
+          <td class="paramname"><em>vtarget</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>label</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Add an edge to the graph. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vsource</td><td>The source vertex of the edge. </td></tr>
+    <tr><td class="paramname">vtarget</td><td>The target vertex of the edge. </td></tr>
+    <tr><td class="paramname">label</td><td>The label string associated with the new edge.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/7/2014)</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>edged_type The eid of the new edge </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classibmppl_1_1ibm__generic__graph.html#adf63bcacae2c352b930d0a4dc3bbd202">ibmppl::ibm_generic_graph</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0d2905ea6148bea170d916bececcecfd"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::add_index" ref="a0d2905ea6148bea170d916bececcecfd" args="(const property_name_type &amp;pname, bool is_multi=false)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;STORAGE_TYPE ST&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a0d2905ea6148bea170d916bececcecfd">add_index</a> </td>
           <td>(</td>
           <td class="paramtype">const property_name_type &amp;&#160;</td>
           <td class="paramname"><em>pname</em>, </td>
@@ -637,7 +861,8 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
       </table>
 </div>
 <div class="memdoc">
-<p>This method creates an index on the specified property and property value.</p>
+
+<p>This method creates an index on the specified property and property value. </p>
 <p>The caller should specify if it's possible that several vertices will have the same property value. It is safe to always specify that this is the case, but the code might be slightly slower than it needs to be. If the caller specifies that it's not the case, but then the graph does end up having more than one vertex with a given property value, the implementation will not notice this, but the index will not behave quite the way expected.</p>
 <p>If the index already exists, this method does nothing. If it exists, but the is_multi is different than the existing index's is_multi value, still nothing is done.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -651,104 +876,248 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a46ae3a543a57a96ea27ff30764013b0e"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::add_vertex" ref="a46ae3a543a57a96ea27ff30764013b0e" args="(vertex_property vp)" -->
+<a class="anchor" id="abf6ef51763deb6d1c487e15ee6594a4b"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::add_vertex" ref="abf6ef51763deb6d1c487e15ee6594a4b" args="(vertex_property &amp;vp)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a46ae3a543a57a96ea27ff30764013b0e">add_vertex</a> </td>
+          <td class="memname"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#abf6ef51763deb6d1c487e15ee6594a4b">add_vertex</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a985f321a813dc698f4ee298633172719">vertex_property</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4d529729143c23ef9bb7a805ff0ded88">vertex_property</a> &amp;&#160;</td>
           <td class="paramname"><em>vp</em></td><td>)</td>
           <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Add a vertex to the graph.</p>
+
+<p>Add a vertex to the graph. </p>
 <p>Note: please only use this method if you need to understand the underlying property implementation. Otherwise, please use the parameter-less method of the same name.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vp</td><td>The vertex property of the new vertex begin added.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/7/2014)</dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>vertexd_type </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>vertexd_type The vertex id of the new vertex. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="af2e6475eb819187d83ce7e45586cd966"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::add_vertex" ref="af2e6475eb819187d83ce7e45586cd966" args="()" -->
+<a class="anchor" id="a1ae23622db24444179a5ba1b186d280d"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::add_vertex" ref="a1ae23622db24444179a5ba1b186d280d" args="(size_t lid)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a46ae3a543a57a96ea27ff30764013b0e">add_vertex</a> </td>
+          <td class="memname"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#abf6ef51763deb6d1c487e15ee6594a4b">add_vertex</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>lid</em></td><td>)</td>
           <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Add a vertex to the graph.</p>
+
+<p>Add a vertex to the graph. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/7/2014)</dd></dl>
+<p>#param lid The label associated with the new vertex added.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>vertexd_type the vid of the new vertex </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classibmppl_1_1ibm__generic__graph.html#a450d1d3c02183823f942b01c8503fa69">ibmppl::ibm_generic_graph</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa665ad213109ced84d2e1f5e2b00bff8"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::add_vertex" ref="aa665ad213109ced84d2e1f5e2b00bff8" args="(property_value_type &amp;value)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;STORAGE_TYPE ST&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#abf6ef51763deb6d1c487e15ee6594a4b">add_vertex</a> </td>
+          <td>(</td>
+          <td class="paramtype">property_value_type &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Add a vertex to the graph. </p>
+<p>Adds a vertex to the graph with a specified property value The property value is associated with the external id.</p>
+<p>TODO (rkaleem) Is this the only way to associate with external ids? </p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/7/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>vertexd_type the vid of the new vertex </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a46e050325495b13327ca69d903293cd7"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::delete_vertex" ref="a46e050325495b13327ca69d903293cd7" args="(vertexd_type vid)" -->
+<a class="anchor" id="a6da6c1d5dc0ad1870cc1903c538e01bd"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::delete_vertex" ref="a6da6c1d5dc0ad1870cc1903c538e01bd" args="(vertexd_type vid)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a46e050325495b13327ca69d903293cd7">delete_vertex</a> </td>
+          <td class="memname">void <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a6da6c1d5dc0ad1870cc1903c538e01bd">delete_vertex</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a>&#160;</td>
           <td class="paramname"><em>vid</em></td><td>)</td>
           <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Deletes specified vertex and adjacent edges.</p>
+
+<p>Deletes specified vertex and adjacent edges. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vid</td><td>The vertex to be deleted.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014) </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classibmppl_1_1ibm__generic__graph.html#a8066375a4a71454dab6b42592ad320c3">ibmppl::ibm_generic_graph</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a632e419e65f3de9ca8b9c2441b718e17"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::find_vertex" ref="a632e419e65f3de9ca8b9c2441b718e17" args="(vertexd_type vid)" -->
+<a class="anchor" id="ab496b5277cc15f9dff150c0e71732d72"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::find_all" ref="ab496b5277cc15f9dff150c0e71732d72" args="(int propid, const property_value_type &amp;pval, std::vector&lt; vertexd_type &gt; &amp;vids)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ab0066078c410600f3435c15bfcfb8e27">vertex_iterator</a> <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a632e419e65f3de9ca8b9c2441b718e17">find_vertex</a> </td>
+          <td class="memname">int <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ab496b5277cc15f9dff150c0e71732d72">find_all</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>propid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const property_value_type &amp;&#160;</td>
+          <td class="paramname"><em>pval</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vids</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>This method allows the caller to find all the vertices that have the given value on the given property. This version will not die if the index doesn't exist. Instead it will slowly generate the response after printing a warning message. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propid</td><td>the property of interest</td></tr>
+    <tr><td class="paramname">pval</td><td>the property value that must match</td></tr>
+    <tr><td class="paramname">vids</td><td>a reference to a vector of vids that will be updated with the vids of matching vertices.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true if it is found, false otherwise.</dd></dl>
+<dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014)</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>bool </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae5c2ce19f6109a3f6352b21465e64e6d"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::find_edge" ref="ae5c2ce19f6109a3f6352b21465e64e6d" args="(vertexd_type vid, edged_type eid)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;STORAGE_TYPE ST&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#abdfff6941905a3f37c8d0a92bc746e62">edge_iterator</a> <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ae5c2ce19f6109a3f6352b21465e64e6d">find_edge</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a>&#160;</td>
+          <td class="paramname"><em>vid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a723782cd96926999cc235a8acf8f1654">edged_type</a>&#160;</td>
+          <td class="paramname"><em>eid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Finds the first edge for a given vertex with a given edge id. </p>
+<p>This routine returns an iterator for a edge with the given property id. This method should be fairly fast, but not as fast as already having an iterator.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vid</td><td>The vertex for which the edges are considered. </td></tr>
+    <tr><td class="paramname">eid</td><td>The edge id being searched.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>vertex_iterator </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classibmppl_1_1ibm__generic__graph.html#af40f29dc6c0fb016da1e0348ada993ec">ibmppl::ibm_generic_graph</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a78e66d72ed1a3aff69375e4a0ea61396"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::find_vertex" ref="a78e66d72ed1a3aff69375e4a0ea61396" args="(vertexd_type vid)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;STORAGE_TYPE ST&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a7022234b7d92e807eb63cb690e03cd2a">vertex_iterator</a> <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a78e66d72ed1a3aff69375e4a0ea61396">find_vertex</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a>&#160;</td>
           <td class="paramname"><em>vid</em></td><td>)</td>
           <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Finds the first vertex with a given vertex id.</p>
+
+<p>Finds the first vertex with a given vertex id. </p>
 <p>This routine returns an iterator for a vertex with the given property id. This method should be fairly fast, but not as fast as already having an iterator.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vid</td><td>The vertex id being searched.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>vertex_iterator </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a5a1d2ed1c66e0476ca6e950f1d5f7f61"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::find_vertex" ref="a5a1d2ed1c66e0476ca6e950f1d5f7f61" args="(property_name_type &amp;pname, const property_value_type &amp;pval)" -->
+<a class="anchor" id="a9e6365310ff63de7a9c732ef354a9f76"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::find_vertex" ref="a9e6365310ff63de7a9c732ef354a9f76" args="(const property_name_type &amp;pname, const property_value_type &amp;pval)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ab0066078c410600f3435c15bfcfb8e27">vertex_iterator</a> <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a632e419e65f3de9ca8b9c2441b718e17">find_vertex</a> </td>
+          <td class="memname"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a7022234b7d92e807eb63cb690e03cd2a">vertex_iterator</a> <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a78e66d72ed1a3aff69375e4a0ea61396">find_vertex</a> </td>
           <td>(</td>
-          <td class="paramtype">property_name_type &amp;&#160;</td>
+          <td class="paramtype">const property_name_type &amp;&#160;</td>
           <td class="paramname"><em>pname</em>, </td>
         </tr>
         <tr>
@@ -765,22 +1134,32 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
       </table>
 </div>
 <div class="memdoc">
-<p>Finds the first vertex with a given property value.</p>
+
+<p>Finds the first vertex with a given property value. </p>
 <p>This routine returns an iterator for a vertex with the given property value. If you really want multiple vertices with the same value, then you probably should refactor the graph to have a single vertex representing that value and have other vertices reference it.</p>
 <p>At this date (2014/01/06) this method is not implemented. We'll implement it when we add indexing support. Until then the caller should perhaps implement this themselves and include appropriate caching support to that implementation.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pname</td><td>the property name being searched </td></tr>
+    <tr><td class="paramname">pval</td><td>the property value for specified property.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>vertex_iterator </dd></dl>
 
+<p>Reimplemented in <a class="el" href="classibmppl_1_1ibm__generic__graph.html#a5023ed157c8a29eca10cd90f2bb8f90b">ibmppl::ibm_generic_graph</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a53924ea45ee98d86b3ebb12f29abd1ff"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_edge_property_name" ref="a53924ea45ee98d86b3ebb12f29abd1ff" args="(const size_t propid) const " -->
+<a class="anchor" id="a824e7c28d996539890b1a67b45871103"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_edge_property_name" ref="a824e7c28d996539890b1a67b45871103" args="(const size_t propid) const " -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a53924ea45ee98d86b3ebb12f29abd1ff">get_edge_property_name</a> </td>
+          <td class="memname">string <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a824e7c28d996539890b1a67b45871103">get_edge_property_name</a> </td>
           <td>(</td>
           <td class="paramtype">const size_t&#160;</td>
           <td class="paramname"><em>propid</em></td><td>)</td>
@@ -789,21 +1168,28 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
       </table>
 </div>
 <div class="memdoc">
-<p>Maps a specified edge property-id to it's property name.</p>
+
+<p>Maps a specified edge property-id to it's property name. </p>
 <p>If the mapping doesn't exist, it will (currently) throw an out of range exception. That might change in a future version.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propid</td><td>The edge property id for which the name is requested. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>string The property name </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="af97912b0216c9cc18642b6e03df45248"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_epropertyid" ref="af97912b0216c9cc18642b6e03df45248" args="(const property_name_type &amp;pname)" -->
+<a class="anchor" id="ae8f00c7a993162b7fc47938958bdd985"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_epropertyid" ref="ae8f00c7a993162b7fc47938958bdd985" args="(const property_name_type &amp;pname)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">size_t <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#af97912b0216c9cc18642b6e03df45248">get_epropertyid</a> </td>
+          <td class="memname">size_t <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ae8f00c7a993162b7fc47938958bdd985">get_epropertyid</a> </td>
           <td>(</td>
           <td class="paramtype">const property_name_type &amp;&#160;</td>
           <td class="paramname"><em>pname</em></td><td>)</td>
@@ -812,22 +1198,29 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
       </table>
 </div>
 <div class="memdoc">
-<p>Maps a specified edge property-name to it's property-id.</p>
+
+<p>Maps a specified edge property-name to it's property-id. </p>
 <p>This method can be valuable because operations on property id's are faster than operations on property names.</p>
 <p>If the mapping doesn't exist, it will (currently) throw an out of range exception. That might change in a future version.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pname</td><td><a class="el" href="classibmppl_1_1Edge.html" title="Generic implementation of graph edge templated by Property type.">Edge</a> property name for which id is requested. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>string The property name </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a146f0eae14d383d8aa28a3d3ad6cf118"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_label_string" ref="a146f0eae14d383d8aa28a3d3ad6cf118" args="(const size_t labelid) const " -->
+<a class="anchor" id="a9073965031afdb930a81ae1a97aa0c0e"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_label_string" ref="a9073965031afdb930a81ae1a97aa0c0e" args="(const size_t labelid) const " -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a146f0eae14d383d8aa28a3d3ad6cf118">get_label_string</a> </td>
+          <td class="memname">string <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a9073965031afdb930a81ae1a97aa0c0e">get_label_string</a> </td>
           <td>(</td>
           <td class="paramtype">const size_t&#160;</td>
           <td class="paramname"><em>labelid</em></td><td>)</td>
@@ -836,21 +1229,69 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
       </table>
 </div>
 <div class="memdoc">
-<p>Maps a specified label-id it's label string.</p>
+
+<p>Maps a specified label-id it's label string. </p>
 <p>If the mapping doesn't exist, it will (currently) throw an out of range exception. That might change in a future version.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">labelid</td><td>The label-id for which the string is requested.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/10/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>string The label string </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="aa8c826d35480481bb11eeabd4932e229"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_labelid" ref="aa8c826d35480481bb11eeabd4932e229" args="(const label_string_type &amp;labelstr)" -->
+<a class="anchor" id="a93af8b201084c791c37dd18ffda4d12f"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_labelid" ref="a93af8b201084c791c37dd18ffda4d12f" args="(const label_string_type &amp;labelstr, size_t &amp;retval)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">size_t <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#aa8c826d35480481bb11eeabd4932e229">get_labelid</a> </td>
+          <td class="memname">bool <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a93af8b201084c791c37dd18ffda4d12f">get_labelid</a> </td>
+          <td>(</td>
+          <td class="paramtype">const label_string_type &amp;&#160;</td>
+          <td class="paramname"><em>labelstr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t &amp;&#160;</td>
+          <td class="paramname"><em>retval</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Maps a specified label name to it's label-id. </p>
+<p>This method maps the specified label-string to a label-id. If the label does not exist, it returs false, otherwise sets the parameter to the label-id. Label-id's can be valuable because operations on label id's are faster than operations on label strings.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">labelstr</td><td>The label string requested. </td></tr>
+    <tr><td class="paramname">retval</td><td>The label id, if the label string exists in the mapping.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/10/2014)</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>bool true if the mapping existed, false otherwise. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6dec84cb6d7f6945e59e0c2c4976ca54"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_labelid" ref="a6dec84cb6d7f6945e59e0c2c4976ca54" args="(const label_string_type &amp;labelstr)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;STORAGE_TYPE ST&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a93af8b201084c791c37dd18ffda4d12f">get_labelid</a> </td>
           <td>(</td>
           <td class="paramtype">const label_string_type &amp;&#160;</td>
           <td class="paramname"><em>labelstr</em></td><td>)</td>
@@ -859,22 +1300,29 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
       </table>
 </div>
 <div class="memdoc">
-<p>Maps a specified label string to it's label-id.</p>
+
+<p>Maps a specified label string to it's label-id. </p>
 <p>This method can be valuable because operations on labelid's are faster than operations on label strings.</p>
 <p>If the mapping doesn't exist, it will (currently) throw an out of range exception. That might change in a future version.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">labelstr</td><td>The label for which an id is requested. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/10/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>size_t The labelid </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ada5b1f1dea72cfd1845a7de9c581d561"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_or_allocate_epropertyid" ref="ada5b1f1dea72cfd1845a7de9c581d561" args="(const property_name_type &amp;pname)" -->
+<a class="anchor" id="ac27c35a232c23c1fd9fde1d44280cacf"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_or_allocate_epropertyid" ref="ac27c35a232c23c1fd9fde1d44280cacf" args="(const property_name_type &amp;pname)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">size_t <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ada5b1f1dea72cfd1845a7de9c581d561">get_or_allocate_epropertyid</a> </td>
+          <td class="memname">size_t <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ac27c35a232c23c1fd9fde1d44280cacf">get_or_allocate_epropertyid</a> </td>
           <td>(</td>
           <td class="paramtype">const property_name_type &amp;&#160;</td>
           <td class="paramname"><em>pname</em></td><td>)</td>
@@ -883,22 +1331,29 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
       </table>
 </div>
 <div class="memdoc">
-<p>Maps a specified edge property-name to it's property-id.</p>
+
+<p>Maps a specified edge property-name to it's property-id. </p>
 <p>This method maps the specified edge property-name to a vertex property-id. If that mapping doesn't exist, it creates one.</p>
 <p>Property-id's can be valuable because operations on property id's are faster than operations on property names.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pname</td><td>The name of the edge property requested.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>string The property name </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ad73d036e8bf37ca71000295f8ee836ba"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_or_allocate_labelid" ref="ad73d036e8bf37ca71000295f8ee836ba" args="(const label_string_type &amp;labelstr)" -->
+<a class="anchor" id="a8bb515737948cd963db684c951a1e907"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_or_allocate_labelid" ref="a8bb515737948cd963db684c951a1e907" args="(const label_string_type &amp;labelstr)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">size_t <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ad73d036e8bf37ca71000295f8ee836ba">get_or_allocate_labelid</a> </td>
+          <td class="memname">size_t <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a8bb515737948cd963db684c951a1e907">get_or_allocate_labelid</a> </td>
           <td>(</td>
           <td class="paramtype">const label_string_type &amp;&#160;</td>
           <td class="paramname"><em>labelstr</em></td><td>)</td>
@@ -907,22 +1362,29 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
       </table>
 </div>
 <div class="memdoc">
-<p>Maps a specified label name to it's label-id.</p>
+
+<p>Maps a specified label name to it's label-id. </p>
 <p>This method maps the specified label-string to a label-id. If that mapping doesn't exist, it creates one.</p>
 <p>Label-id's can be valuable because operations on label id's are faster than operations on label strings.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">labelstr</td><td>The label string requested.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/10/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>string The label string </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="aa1f80df34d13189cd139143144beb15b"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_or_allocate_vpropertyid" ref="aa1f80df34d13189cd139143144beb15b" args="(const property_name_type &amp;pname)" -->
+<a class="anchor" id="a31ae1880dc0ea90b5d57fe615675f724"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_or_allocate_vpropertyid" ref="a31ae1880dc0ea90b5d57fe615675f724" args="(const property_name_type &amp;pname)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">size_t <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#aa1f80df34d13189cd139143144beb15b">get_or_allocate_vpropertyid</a> </td>
+          <td class="memname">size_t <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a31ae1880dc0ea90b5d57fe615675f724">get_or_allocate_vpropertyid</a> </td>
           <td>(</td>
           <td class="paramtype">const property_name_type &amp;&#160;</td>
           <td class="paramname"><em>pname</em></td><td>)</td>
@@ -931,22 +1393,29 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
       </table>
 </div>
 <div class="memdoc">
-<p>Maps a specified vertex property-name to it's property-id.</p>
+
+<p>Maps a specified vertex property-name to it's property-id. </p>
 <p>This method maps the specified vertex property-name to a vertex property-id. If that mapping doesn't exist, it creates one.</p>
 <p>Property-id's can be valuable because operations on property id's are faster than operations on property names.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pname</td><td>The name of the property requested.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>string The property name </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a7ba5dc3c83358951c62ad813d9e01ca9"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_vertex_property_name" ref="a7ba5dc3c83358951c62ad813d9e01ca9" args="(const size_t propid) const " -->
+<a class="anchor" id="ac8499115382af4c0f52601231207e68e"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_vertex_property_name" ref="ac8499115382af4c0f52601231207e68e" args="(const size_t propid) const " -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">string <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a7ba5dc3c83358951c62ad813d9e01ca9">get_vertex_property_name</a> </td>
+          <td class="memname">string <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ac8499115382af4c0f52601231207e68e">get_vertex_property_name</a> </td>
           <td>(</td>
           <td class="paramtype">const size_t&#160;</td>
           <td class="paramname"><em>propid</em></td><td>)</td>
@@ -955,21 +1424,28 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
       </table>
 </div>
 <div class="memdoc">
-<p>Maps a specified vertex property-id to it's property value.</p>
+
+<p>Maps a specified vertex property-id to it's property value. </p>
 <p>If the mapping doesn't exist, it will (currently) throw an out of range exception. That might change in a future version.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propid</td><td>The vertex property id for which the name is being requested.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>string The property name </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a9ea4d619e66ef35716f9d09bd5f9f52c"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_vpropertyid" ref="a9ea4d619e66ef35716f9d09bd5f9f52c" args="(const property_name_type &amp;pname)" -->
+<a class="anchor" id="a5150345ed560ac93a0a7431d7ce2b33c"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_vpropertyid" ref="a5150345ed560ac93a0a7431d7ce2b33c" args="(const property_name_type &amp;pname)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">size_t <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a9ea4d619e66ef35716f9d09bd5f9f52c">get_vpropertyid</a> </td>
+          <td class="memname">size_t <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a5150345ed560ac93a0a7431d7ce2b33c">get_vpropertyid</a> </td>
           <td>(</td>
           <td class="paramtype">const property_name_type &amp;&#160;</td>
           <td class="paramname"><em>pname</em></td><td>)</td>
@@ -978,24 +1454,31 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
       </table>
 </div>
 <div class="memdoc">
-<p>Maps a specified vertex property-name to it's property-id.</p>
+
+<p>Maps a specified vertex property-name to it's property-id. </p>
 <p>This method can be valuable because operations on property id's are faster than operations on property names.</p>
 <p>If the mapping doesn't exist, it will (currently) throw an out of range exception. That might change in a future version.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pname</td><td>The vertex property name for which the id is requested.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>size_t The labelid </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a6bbfede650fae251f3d1d87fbe9ed6ed"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_vsubproperty" ref="a6bbfede650fae251f3d1d87fbe9ed6ed" args="(vertexd_type vid, const property_name_type &amp;pname)" -->
+<a class="anchor" id="a544b5621faf5a29ebd355c256a3cdd96"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_vsubproperty" ref="a544b5621faf5a29ebd355c256a3cdd96" args="(vertexd_type vid, const property_name_type &amp;pname)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">property_value_type <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a6bbfede650fae251f3d1d87fbe9ed6ed">get_vsubproperty</a> </td>
+          <td class="memname">property_value_type <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a544b5621faf5a29ebd355c256a3cdd96">get_vsubproperty</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a>&#160;</td>
           <td class="paramname"><em>vid</em>, </td>
         </tr>
         <tr>
@@ -1012,24 +1495,32 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns the specified property for the specified vertex.</p>
+
+<p>Returns the specified property for the specified vertex. </p>
 <p>This method returns the specified property for the specified vertex. The returned value is in string form. If the value itself is not a string value, the returned value is converted to string form before being returned.</p>
 <p>Note: update docs to indicate what happens if the property doesn't exist on the element.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vid</td><td>The vertex for which the property is being queried. </td></tr>
+    <tr><td class="paramname">pname</td><td>The name of the property being queried. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>property_value_type </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ac3661de7e445ceffba24bd5fa84a5f0f"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_vsubproperty" ref="ac3661de7e445ceffba24bd5fa84a5f0f" args="(vertexd_type vid, size_t propid)" -->
+<a class="anchor" id="a3ddfe41c9c823e879f3e653918e86e7e"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::get_vsubproperty" ref="a3ddfe41c9c823e879f3e653918e86e7e" args="(vertexd_type vid, size_t propid)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">property_value_type <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a6bbfede650fae251f3d1d87fbe9ed6ed">get_vsubproperty</a> </td>
+          <td class="memname">property_value_type <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a544b5621faf5a29ebd355c256a3cdd96">get_vsubproperty</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a>&#160;</td>
           <td class="paramname"><em>vid</em>, </td>
         </tr>
         <tr>
@@ -1049,41 +1540,26 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 <p>Returns the specified property for the specified vertex.</p>
 <p>This method returns the specified property for the specified vertex. The returned value is in string form. If the value itself is not a string value, the returned value is converted to string form before being returned.</p>
 <p>Note: update docs to indicate what happens if the property doesn't exist on the element.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vid</td><td>The vertex for which the property is being queried. </td></tr>
+    <tr><td class="paramname">propid</td><td>The property id being queried.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>property_value_type </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a47b0d07836428f88f3e1e48818383a7d"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::index_available" ref="a47b0d07836428f88f3e1e48818383a7d" args="(size_t propid) const " -->
+<a class="anchor" id="a79f6da301fd8da8c3cf535311d07fa74"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::index_erase" ref="a79f6da301fd8da8c3cf535311d07fa74" args="(int propid, const property_value_type &amp;pval, vertexd_type vid)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a47b0d07836428f88f3e1e48818383a7d">index_available</a> </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>propid</em></td><td>)</td>
-          <td> const<code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>This method indicates if the named index exists. Currently the index name is the name of the vertex property that would be indexed. At the moment this class does not support edge properties.</p>
-<dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014)</dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>bool </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="abc1a1654429cd92cd5006afed26184cc"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::index_erase" ref="abc1a1654429cd92cd5006afed26184cc" args="(int propid, const property_value_type &amp;pval, vertexd_type vid)" -->
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#abc1a1654429cd92cd5006afed26184cc">index_erase</a> </td>
+          <td class="memname">void <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a79f6da301fd8da8c3cf535311d07fa74">index_erase</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>propid</em>, </td>
@@ -1097,7 +1573,7 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a>&#160;</td>
           <td class="paramname"><em>vid</em>&#160;</td>
         </tr>
         <tr>
@@ -1108,19 +1584,67 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
       </table>
 </div>
 <div class="memdoc">
-<p>This is a method that most people should not use. It's used internally to keep the index up to date.</p>
+
+<p>This is a method that most people should not use. It's used internally to keep the index up to date. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propid</td><td>The index property-id that needs to be updated.</td></tr>
+    <tr><td class="paramname">pval</td><td>The property value to be erased to the index.</td></tr>
+    <tr><td class="paramname">vid</td><td>The vertex represented by that property in the index.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="acaa05cb9f8af76f710f305e3f5996161"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::index_find" ref="acaa05cb9f8af76f710f305e3f5996161" args="(int propid, const property_value_type &amp;pval, vertexd_type &amp;vid)" -->
+<a class="anchor" id="ac0840ee6fa0aeced4b920420dbc409f0"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::index_erasexx" ref="ac0840ee6fa0aeced4b920420dbc409f0" args="(int propid, const property_value_type &amp;pval)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#acaa05cb9f8af76f710f305e3f5996161">index_find</a> </td>
+          <td class="memname">void <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ac0840ee6fa0aeced4b920420dbc409f0">index_erasexx</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>propid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const property_value_type &amp;&#160;</td>
+          <td class="paramname"><em>pval</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>This is a method that most people should not use. It's used internally to keep the index up to date. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propid</td><td>The index property-id that needs to be updated.</td></tr>
+    <tr><td class="paramname">pval</td><td>The property value to be erased to the index.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac82e7266a0febc54e471ea2e43957f4e"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::index_find" ref="ac82e7266a0febc54e471ea2e43957f4e" args="(int propid, const property_value_type &amp;pval, vertexd_type &amp;vid)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;STORAGE_TYPE ST&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ac82e7266a0febc54e471ea2e43957f4e">index_find</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>propid</em>, </td>
@@ -1134,7 +1658,7 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> &amp;&#160;</td>
           <td class="paramname"><em>vid</em>&#160;</td>
         </tr>
         <tr>
@@ -1145,7 +1669,8 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
       </table>
 </div>
 <div class="memdoc">
-<p>This method allows the caller to find the vid of a vertex that has the given value on the given property.</p>
+
+<p>This method allows the caller to find the vid of a vertex that has the given value on the given property. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">propid</td><td>the property of interest</td></tr>
@@ -1160,14 +1685,14 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a71e996d4d7112230b8949d1a2a744cf8"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::index_find_all" ref="a71e996d4d7112230b8949d1a2a744cf8" args="(int propid, const property_value_type &amp;pval, std::vector&lt; vertexd_type &gt; &amp;vids)" -->
+<a class="anchor" id="a5edf7328f3660d75146b780bb02f2be2"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::index_find_all" ref="a5edf7328f3660d75146b780bb02f2be2" args="(int propid, const property_value_type &amp;pval, std::vector&lt; vertexd_type &gt; &amp;vids)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a71e996d4d7112230b8949d1a2a744cf8">index_find_all</a> </td>
+          <td class="memname">int <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a5edf7328f3660d75146b780bb02f2be2">index_find_all</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>propid</em>, </td>
@@ -1181,7 +1706,7 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>vids</em>&#160;</td>
         </tr>
         <tr>
@@ -1192,7 +1717,8 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
       </table>
 </div>
 <div class="memdoc">
-<p>This method allows the caller to find all the vertices that have the given value on the given property.</p>
+
+<p>This method allows the caller to find all the vertices that have the given value on the given property. Warning: it will crash if there is no index. Check for that using the "available" method. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">propid</td><td>the property of interest</td></tr>
@@ -1207,14 +1733,14 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a4b463a4e745a692546f6bcc109ff8529"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::index_insert" ref="a4b463a4e745a692546f6bcc109ff8529" args="(int propid, const property_value_type &amp;pval, vertexd_type vid)" -->
+<a class="anchor" id="a074dacbf6ccae862e57061c270fa7f2a"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::index_insert" ref="a074dacbf6ccae862e57061c270fa7f2a" args="(int propid, const property_value_type &amp;pval, vertexd_type vid)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4b463a4e745a692546f6bcc109ff8529">index_insert</a> </td>
+          <td class="memname">void <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a074dacbf6ccae862e57061c270fa7f2a">index_insert</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>propid</em>, </td>
@@ -1228,7 +1754,7 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a>&#160;</td>
           <td class="paramname"><em>vid</em>&#160;</td>
         </tr>
         <tr>
@@ -1239,21 +1765,30 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
       </table>
 </div>
 <div class="memdoc">
-<p>This is a method that most people should not use. It's used internally to keep the index up to date.</p>
+
+<p>This is a method that most people should not use. It's used internally to keep the index up to date. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propid</td><td>The index property-id that needs to be updated.</td></tr>
+    <tr><td class="paramname">pval</td><td>The property value to be inserted to the index.</td></tr>
+    <tr><td class="paramname">vid</td><td>The vertex represented by that property in the index.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="abd57a6057ff7ec22358b55ad0759779c"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::set_esubproperty" ref="abd57a6057ff7ec22358b55ad0759779c" args="(edged_type eid, const property_name_type &amp;pname, property_value_type value)" -->
+<a class="anchor" id="acb8eac708a7927d635ce1a442f4f6413"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::set_esubproperty" ref="acb8eac708a7927d635ce1a442f4f6413" args="(edged_type eid, const property_name_type &amp;pname, const property_value_type &amp;value)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#abd57a6057ff7ec22358b55ad0759779c">set_esubproperty</a> </td>
+          <td class="memname">void <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#acb8eac708a7927d635ce1a442f4f6413">set_esubproperty</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ab5ff13ad644f26d605c246d48cc66311">edged_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a723782cd96926999cc235a8acf8f1654">edged_type</a>&#160;</td>
           <td class="paramname"><em>eid</em>, </td>
         </tr>
         <tr>
@@ -1265,7 +1800,7 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">property_value_type&#160;</td>
+          <td class="paramtype">const property_value_type &amp;&#160;</td>
           <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>
@@ -1276,21 +1811,30 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
       </table>
 </div>
 <div class="memdoc">
-<p>((see the similarly named vertex method))</p>
+
+<p>This method adds a property to an edge. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">eid</td><td>The edge to add the property to </td></tr>
+    <tr><td class="paramname">pname</td><td>The property name to be inserted. </td></tr>
+    <tr><td class="paramname">value</td><td>The property value to be set for the named property </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="aacfc1a5960fe99558fc81f38866b5d27"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::set_esubproperty" ref="aacfc1a5960fe99558fc81f38866b5d27" args="(edged_type eid, const size_t propid, property_value_type value)" -->
+<a class="anchor" id="aaffd27bb8ad2e23eb44e90b6b1e6b687"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::set_esubproperty" ref="aaffd27bb8ad2e23eb44e90b6b1e6b687" args="(edged_type eid, const size_t propid, const property_value_type &amp;value)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#abd57a6057ff7ec22358b55ad0759779c">set_esubproperty</a> </td>
+          <td class="memname">void <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#acb8eac708a7927d635ce1a442f4f6413">set_esubproperty</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#ab5ff13ad644f26d605c246d48cc66311">edged_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a723782cd96926999cc235a8acf8f1654">edged_type</a>&#160;</td>
           <td class="paramname"><em>eid</em>, </td>
         </tr>
         <tr>
@@ -1302,7 +1846,7 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">property_value_type&#160;</td>
+          <td class="paramtype">const property_value_type &amp;&#160;</td>
           <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>
@@ -1313,21 +1857,30 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
       </table>
 </div>
 <div class="memdoc">
-<p>((see the similarly named vertex method))</p>
+
+<p>This method adds a property to an edge. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">eid</td><td>The edge to add the property to </td></tr>
+    <tr><td class="paramname">pid</td><td>The property id to be inserted. </td></tr>
+    <tr><td class="paramname">value</td><td>The property value to be set for the named property </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a551ef512e0ab17b89416cbf3fd27c073"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::set_vsubproperty" ref="a551ef512e0ab17b89416cbf3fd27c073" args="(vertexd_type vid, const property_name_type &amp;pname, property_value_type value)" -->
+<a class="anchor" id="a495c689c7019abbfd21b7004edffc68e"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::set_vsubproperty" ref="a495c689c7019abbfd21b7004edffc68e" args="(vertexd_type vid, const property_name_type &amp;pname, const property_value_type &amp;value)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a551ef512e0ab17b89416cbf3fd27c073">set_vsubproperty</a> </td>
+          <td class="memname">void <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a495c689c7019abbfd21b7004edffc68e">set_vsubproperty</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a>&#160;</td>
           <td class="paramname"><em>vid</em>, </td>
         </tr>
         <tr>
@@ -1339,7 +1892,7 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">property_value_type&#160;</td>
+          <td class="paramtype">const property_value_type &amp;&#160;</td>
           <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>
@@ -1350,22 +1903,31 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
       </table>
 </div>
 <div class="memdoc">
-<p>Sets the specified property for the specified vertex to the specified string value.</p>
+
+<p>Sets the specified property for the specified vertex to the specified string value. </p>
 <p>This method set the specified property for the specified vertex to the specified string value. If you'd like to set it to a non-string value, see the other similarly named methods of the vertex and edge classes.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vid</td><td>The vertex to add the property to </td></tr>
+    <tr><td class="paramname">pname</td><td>The property name to add to the specified vertex. </td></tr>
+    <tr><td class="paramname">value</td><td>The value to be set for the specified property </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a3251ccb83021b7e2b1773eb50474046b"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::set_vsubproperty" ref="a3251ccb83021b7e2b1773eb50474046b" args="(vertexd_type vid, const size_t propid, property_value_type value)" -->
+<a class="anchor" id="ae1b54de7b66b679bf4705d0926f91e96"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::set_vsubproperty" ref="ae1b54de7b66b679bf4705d0926f91e96" args="(vertexd_type vid, const size_t propid, const property_value_type &amp;value)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
+template&lt;STORAGE_TYPE ST&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; VProperty, EProperty, Directness &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a551ef512e0ab17b89416cbf3fd27c073">set_vsubproperty</a> </td>
+          <td class="memname">void <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a495c689c7019abbfd21b7004edffc68e">set_vsubproperty</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a2f63f40158d266adefe063889d0b6371">vertexd_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a4243ae01a238e356583fe77a2fbfa857">vertexd_type</a>&#160;</td>
           <td class="paramname"><em>vid</em>, </td>
         </tr>
         <tr>
@@ -1377,7 +1939,7 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">property_value_type&#160;</td>
+          <td class="paramtype">const property_value_type &amp;&#160;</td>
           <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>
@@ -1388,14 +1950,82 @@ template&lt;class VProperty , class EProperty , DIRECTNESS Directness&gt; </div>
       </table>
 </div>
 <div class="memdoc">
-<p>Sets the specified property for the specified vertex to the specified string value.</p>
+
+<p>Sets the specified property for the specified vertex to the specified string value. </p>
 <p>This method set the specified property for the specified vertex to the specified string value. If you'd like to set it to a non-string value, see the other similarly named methods of the vertex and edge classes.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vid</td><td>The vertex to add the property to </td></tr>
+    <tr><td class="paramname">propid</td><td>The property idetifier to add to the specified vertex. </td></tr>
+    <tr><td class="paramname">value</td><td>The value to be set for the specified property</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a36e2c66da8b31db8b0b9fed2d755ff7b"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::vert_index_available" ref="a36e2c66da8b31db8b0b9fed2d755ff7b" args="(size_t propid) const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;STORAGE_TYPE ST&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a36e2c66da8b31db8b0b9fed2d755ff7b">vert_index_available</a> </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>propid</em></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>This method indicates if the named index exists. Currently the index name is the name of the vertex property that would be indexed. At the moment this class does not support edge properties. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propid</td><td>The property id queried for indexing. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014)</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>bool </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="adf9814917066d9a10b0bf8ad9c8d9c2e"></a><!-- doxytag: member="ibmppl::ibm_multiproperty_graph_generic::vert_index_available_we" ref="adf9814917066d9a10b0bf8ad9c8d9c2e" args="(size_t propid) const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;STORAGE_TYPE ST&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html">ibmppl::ibm_multiproperty_graph_generic</a>&lt; ST &gt;::<a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#adf9814917066d9a10b0bf8ad9c8d9c2e">vert_index_available_we</a> </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>propid</em></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>This method is like <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#a36e2c66da8b31db8b0b9fed2d755ff7b" title="This method indicates if the named index exists. Currently the index name is the name of the vertex p...">vert_index_available()</a> but it will throw an out_of_range exception if the propid is beyond the highest index we're supporting. This will help the calling code to enumerate indices. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propid</td><td>The property id queried for indexing.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>todo: if the number of propid's allocated is often high, this polling approach will be inefficient and we'll need to replace this method.</p>
+<dl class="author"><dt><b>Author:</b></dt><dd>ccjason (7/19/2014)</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>bool </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a></li>
+<li>/home/yxia/Work/ibmppl.gsa/datastructure/graph/ibm_multiproperty_graph.hpp</li>
 </ul>
 </div><!-- contents -->
 <!-- window showing the filter options -->

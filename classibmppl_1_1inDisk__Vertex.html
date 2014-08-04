@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>IBM SYSTEMG RUNTIME: PPL: ibmppl::inDisk_Vertex&lt; Data, EdgeList, Directedness &gt; Class Template Reference</title>
+<title>IBM SYSTEMG G RUNTIME &amp; NATIVE STORE: ibmppl::inDisk_Vertex&lt; Data, EdgeList, Directedness, Base &gt; Class Template Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">IBM SYSTEMG RUNTIME: PPL
-   &#160;<span id="projectnumber">0.3</span>
+   <div id="projectname">IBM SYSTEMG G RUNTIME &amp; NATIVE STORE
+   &#160;<span id="projectnumber">0.5</span>
    </div>
-   <div id="projectbrief">Parallel Programming Library</div>
+   <div id="projectbrief">IBM Native Graph Computing and Storage System based on IBM Parallel Programming Library</div>
   </td>
   
   
@@ -48,7 +48,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -101,53 +100,58 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
-<div class="title">ibmppl::inDisk_Vertex&lt; Data, EdgeList, Directedness &gt; Class Template Reference</div>  </div>
+<div class="title">ibmppl::inDisk_Vertex&lt; Data, EdgeList, Directedness, Base &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="ibmppl::inDisk_Vertex" --><!-- doxytag: inherits="ibmppl::inDisk_VertexBase" -->
 <p><a class="el" href="classibmppl_1_1Vertex.html" title="Generic implementation of graph vertex class w/ a list of edges and a vertex property.">Vertex</a> for a large graph where only part of the graph fits into the memory.  
  <a href="classibmppl_1_1inDisk__Vertex.html#details">More...</a></p>
 
-<p>Inherits ibmppl::inDisk_VertexBase&lt; Data, EdgeList, Directedness &gt;.</p>
+<p><code>#include &lt;graph_disk_storage.h&gt;</code></p>
+
+<p>Inherits ibmppl::inDisk_VertexBase&lt; Data, EdgeList, Directedness, Base &gt;.</p>
+
+<p>Inherited by ibmppl::inDiskRDFVertex&lt; Data, EdgeList, Base &gt;.</p>
 
 <p><a href="classibmppl_1_1inDisk__Vertex-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afbeebfd9dd1e4be2c374d195751324d5"></a><!-- doxytag: member="ibmppl::inDisk_Vertex::this_type" ref="afbeebfd9dd1e4be2c374d195751324d5" args="" -->
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6e1d4f4d599b1843b9f69925a7f09db"></a><!-- doxytag: member="ibmppl::inDisk_Vertex::this_type" ref="ab6e1d4f4d599b1843b9f69925a7f09db" args="" -->
 typedef <a class="el" href="classibmppl_1_1inDisk__Vertex.html">inDisk_Vertex</a>&lt; Data, <br class="typebreak"/>
-EdgeList, Directedness &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>this_type</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a73adbb27883f4253ded9f939429b6f57"></a><!-- doxytag: member="ibmppl::inDisk_Vertex::base_type" ref="a73adbb27883f4253ded9f939429b6f57" args="" -->
+EdgeList, Directedness, Base &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>this_type</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0f597908b8d8641992400f6ab5787e14"></a><!-- doxytag: member="ibmppl::inDisk_Vertex::base_type" ref="a0f597908b8d8641992400f6ab5787e14" args="" -->
 typedef inDisk_VertexBase<br class="typebreak"/>
-&lt; Data, EdgeList, Directedness &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>base_type</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a36fb5c201b0c760c33e218c9f875b176"></a><!-- doxytag: member="ibmppl::inDisk_Vertex::vertexd_type" ref="a36fb5c201b0c760c33e218c9f875b176" args="" -->
+&lt; Data, EdgeList, Directedness, <br class="typebreak"/>
+Base &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>base_type</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a420369db7c787008bda67b6b4c5038a3"></a><!-- doxytag: member="ibmppl::inDisk_Vertex::vertexd_type" ref="a420369db7c787008bda67b6b4c5038a3" args="" -->
 typedef base_type::vertexd_type&#160;</td><td class="memItemRight" valign="bottom"><b>vertexd_type</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acb3e88dbaf78fa9c4ef2447111f2dda2"></a><!-- doxytag: member="ibmppl::inDisk_Vertex::property_type" ref="acb3e88dbaf78fa9c4ef2447111f2dda2" args="" -->
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2b74cd013e5b655754f6999a1fe80552"></a><!-- doxytag: member="ibmppl::inDisk_Vertex::property_type" ref="a2b74cd013e5b655754f6999a1fe80552" args="" -->
 typedef base_type::property_type&#160;</td><td class="memItemRight" valign="bottom"><b>property_type</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9fd12ba90c7c8e047f15ddb01175bd4a"></a><!-- doxytag: member="ibmppl::inDisk_Vertex::edgelist_type" ref="a9fd12ba90c7c8e047f15ddb01175bd4a" args="" -->
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac7119eddf1a75cf550c0b1360d437ae2"></a><!-- doxytag: member="ibmppl::inDisk_Vertex::edgelist_type" ref="ac7119eddf1a75cf550c0b1360d437ae2" args="" -->
 typedef base_type::edgelist_type&#160;</td><td class="memItemRight" valign="bottom"><b>edgelist_type</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8cfd0fdb70d6e018b549c58ba19d72d4"></a><!-- doxytag: member="ibmppl::inDisk_Vertex::edge_type" ref="a8cfd0fdb70d6e018b549c58ba19d72d4" args="" -->
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4db34faacf96f0cb7c1e68141010446a"></a><!-- doxytag: member="ibmppl::inDisk_Vertex::edge_type" ref="a4db34faacf96f0cb7c1e68141010446a" args="" -->
 typedef base_type::edge_type&#160;</td><td class="memItemRight" valign="bottom"><b>edge_type</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adbafdaf847912c4426de6d144c81edfb"></a><!-- doxytag: member="ibmppl::inDisk_Vertex::edged_type" ref="adbafdaf847912c4426de6d144c81edfb" args="" -->
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0f5a037cd7377ee109c492f8cca48c2f"></a><!-- doxytag: member="ibmppl::inDisk_Vertex::edged_type" ref="a0f5a037cd7377ee109c492f8cca48c2f" args="" -->
 typedef base_type::edged_type&#160;</td><td class="memItemRight" valign="bottom"><b>edged_type</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6022d3d98c68d0c8d55cb2c863cdb191"></a><!-- doxytag: member="ibmppl::inDisk_Vertex::edge_property_type" ref="a6022d3d98c68d0c8d55cb2c863cdb191" args="" -->
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4e1c6e7551b20099e62990664262d16e"></a><!-- doxytag: member="ibmppl::inDisk_Vertex::edge_property_type" ref="a4e1c6e7551b20099e62990664262d16e" args="" -->
 typedef edge_type::property_type&#160;</td><td class="memItemRight" valign="bottom"><b>edge_property_type</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aff90e7495cb42a26f91bb69d2b130fd7"></a><!-- doxytag: member="ibmppl::inDisk_Vertex::basic_edge_iterator" ref="aff90e7495cb42a26f91bb69d2b130fd7" args="" -->
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8756103c49ebdbd86340874dcbdab103"></a><!-- doxytag: member="ibmppl::inDisk_Vertex::basic_edge_iterator" ref="a8756103c49ebdbd86340874dcbdab103" args="" -->
 typedef edgelist_type::iterator&#160;</td><td class="memItemRight" valign="bottom"><b>basic_edge_iterator</b></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5f4c71625b1a9e96259da494edf65763"></a><!-- doxytag: member="ibmppl::inDisk_Vertex::inDisk_Vertex" ref="a5f4c71625b1a9e96259da494edf65763" args="(vertexd_type id=&#45;1)" -->
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abef39a1d5b0d4bb18c985737013f7de3"></a><!-- doxytag: member="ibmppl::inDisk_Vertex::inDisk_Vertex" ref="abef39a1d5b0d4bb18c985737013f7de3" args="(vertexd_type id=&#45;1)" -->
 &#160;</td><td class="memItemRight" valign="bottom"><b>inDisk_Vertex</b> (vertexd_type id=-1)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa1d252f27dc0f768b37516709bfb8a84"></a><!-- doxytag: member="ibmppl::inDisk_Vertex::inDisk_Vertex" ref="aa1d252f27dc0f768b37516709bfb8a84" args="(vertexd_type id, const property_type &amp;p)" -->
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa5326b09470b2b11c737d1de344c3bf5"></a><!-- doxytag: member="ibmppl::inDisk_Vertex::inDisk_Vertex" ref="aa5326b09470b2b11c737d1de344c3bf5" args="(vertexd_type id, const property_type &amp;p)" -->
 &#160;</td><td class="memItemRight" valign="bottom"><b>inDisk_Vertex</b> (vertexd_type id, const property_type &amp;p)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><h3>template&lt;class Data, class EdgeList, DIRECTNESS Directedness&gt;<br/>
-class ibmppl::inDisk_Vertex&lt; Data, EdgeList, Directedness &gt;</h3>
+<div class="textblock"><h3>template&lt;class Data, class EdgeList, DIRECTNESS Directedness, class Base&gt;<br/>
+class ibmppl::inDisk_Vertex&lt; Data, EdgeList, Directedness, Base &gt;</h3>
 
 <p><a class="el" href="classibmppl_1_1Vertex.html" title="Generic implementation of graph vertex class w/ a list of edges and a vertex property.">Vertex</a> for a large graph where only part of the graph fits into the memory. </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="graph__disk__storage_8h_source.html">graph_disk_storage.h</a></li>
+<li>/home/yxia/Work/ibmppl.gsa/datastructure/graph/dbstore/graph_disk_storage.h</li>
 </ul>
 </div><!-- contents -->
 <!-- window showing the filter options -->

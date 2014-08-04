@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>IBM SYSTEMG RUNTIME: PPL: ibmppl::imp_graphelement_iterator&lt; GraphElement, BaseIterator, Graph, IdType &gt; Class Template Reference</title>
+<title>IBM SYSTEMG G RUNTIME &amp; NATIVE STORE: ibmppl::imp_graphelement_iterator&lt; GraphElement, BaseIterator, Graph, IdType &gt; Class Template Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">IBM SYSTEMG RUNTIME: PPL
-   &#160;<span id="projectnumber">0.3</span>
+   <div id="projectname">IBM SYSTEMG G RUNTIME &amp; NATIVE STORE
+   &#160;<span id="projectnumber">0.5</span>
    </div>
-   <div id="projectbrief">Parallel Programming Library</div>
+   <div id="projectbrief">IBM Native Graph Computing and Storage System based on IBM Parallel Programming Library</div>
   </td>
   
   
@@ -48,7 +48,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -100,6 +99,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#pri-types">Private Types</a>  </div>
@@ -110,6 +110,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <!-- doxytag: class="ibmppl::imp_graphelement_iterator" -->
 <p>Buffers all modifications to the properties until the user triggers the commit.  
  <a href="classibmppl_1_1imp__graphelement__iterator.html#details">More...</a></p>
+
+<p><code>#include &lt;ibm_multiproperty_graph.hpp&gt;</code></p>
 
 <p><a href="classibmppl_1_1imp__graphelement__iterator-members.html">List of all members.</a></p>
 <table class="memberdecls">
@@ -129,6 +131,12 @@ typedef std::string&#160;</td><td class="memItemRight" valign="bottom"><b>label_
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a939229b5f3181431951ff518ae60cce5"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::imp_graphelement_iterator" ref="a939229b5f3181431951ff518ae60cce5" args="(base_type it, graph_type *g)" -->
 &#160;</td><td class="memItemRight" valign="bottom"><b>imp_graphelement_iterator</b> (base_type it, <a class="el" href="classibmppl_1_1Graph.html">graph_type</a> *g)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af40044aada1b4146ee131994f12f812d"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::imp_graphelement_iterator" ref="af40044aada1b4146ee131994f12f812d" args="(imp_graphelement_iterator const &amp;others)" -->
+&#160;</td><td class="memItemRight" valign="bottom"><b>imp_graphelement_iterator</b> (<a class="el" href="classibmppl_1_1imp__graphelement__iterator.html">imp_graphelement_iterator</a> const &amp;others)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb65fa70f3ffec7755f7dd443db45b27"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::operator=" ref="aeb65fa70f3ffec7755f7dd443db45b27" args="(imp_graphelement_iterator const &amp;others)" -->
+<a class="el" href="classibmppl_1_1imp__graphelement__iterator.html">imp_graphelement_iterator</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classibmppl_1_1imp__graphelement__iterator.html">imp_graphelement_iterator</a> const &amp;others)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adf3f9b4fc27ac82813ee59540f574380"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::graph_ptr" ref="adf3f9b4fc27ac82813ee59540f574380" args="(void)" -->
+<a class="el" href="classibmppl_1_1Graph.html">graph_type</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>graph_ptr</b> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#aa7dd1de0b0bb26218710e6c5a234eb19">check_consistency</a> (const char *filename, int linenum)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab48a397e40691c2c44071f8c95dea923"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::operator*" ref="ab48a397e40691c2c44071f8c95dea923" args="()" -->
 GraphElement &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> ()</td></tr>
@@ -140,6 +148,8 @@ GraphElement &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operato
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8f66e7b846efe2e98e7713d8bc040a3d"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::operator!=" ref="a8f66e7b846efe2e98e7713d8bc040a3d" args="(const imp_graphelement_iterator &amp;other)" -->
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="classibmppl_1_1imp__graphelement__iterator.html">imp_graphelement_iterator</a> &amp;other)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const property_type &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a11c891b4a5b42ff9a3f711642b2b4f4d">property</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a28e4d347d3af115b19702bc38ca8802c"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::property" ref="a28e4d347d3af115b19702bc38ca8802c" args="()" -->
+property_type &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>property</b> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const elementd_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a979709c72e3dedf0a5a584bd545272b1">id</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a9ad1ad9b3e0e45bb1398f0ad1c3180e2">set_property</a> (property_type &amp;new_vp)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#ae85c54eaa891e2b0580458e8ff94d098">get_first_subproperty_id</a> ()</td></tr>
@@ -150,8 +160,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const
 <tr><td class="memItemLeft" align="right" valign="top">img_labelid_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a232172583d37b256043b091d4491f19b">get_labelid</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#ac55017cf669a1fc53bc5ca6d14cd70e5">set_label</a> (std::string label)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a886ebce94ce65d1fd0ed334a8873ca2b">set_labelid</a> (img_labelid_type labelid)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a0f95b86aec12b85815bb59f1157ac1c5">set_subproperty</a> (const property_name_type &amp;pname, property_value_type value)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a520c6a351f6e0f75c21fd6754c5230ff">set_subproperty</a> (const size_t propid, property_value_type value)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a8001a77427b9f0f1f8758c6eb19b2068">set_subproperty</a> (const property_name_type &amp;pname, const property_value_type &amp;value)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#ac4ad4e379058c0e3d42ca406681c3f42">set_subproperty</a> (const size_t propid, const property_value_type &amp;value)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#ab96015fb02bb1450baf2bef86b3e4ae4">set_subproperty</a> (const size_t propid, int ivalue)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a72bed296e0734c768c55325ea4673574">set_subproperty</a> (const size_t propid, double dvalue)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">property_value_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a6943170108502253c7a4aab3458da32a">get_subproperty</a> (const property_name_type &amp;pname)</td></tr>
@@ -162,6 +172,16 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#af81fd7f918a94f72a47f87ce4fa18b38">delete_subproperty</a> (const property_name_type &amp;pname)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#ac43f9513feb239fc245596c1bc852ac6">delete_subproperty</a> (size_t propid)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a483b5cfef2771c7ab20689da654f6ed3">get_subproperty_count</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a79e2ae39246487f9b2527e836dc5bcf5"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::iter_setEnd" ref="a79e2ae39246487f9b2527e836dc5bcf5" args="(base_type itEnd)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>iter_setEnd</b> (base_type itEnd)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a667e2d6f3f7f3332fd15f0fb461dc1ee"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::iter_done" ref="a667e2d6f3f7f3332fd15f0fb461dc1ee" args="()" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>iter_done</b> ()</td></tr>
+<tr><td colspan="2"><h2><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a820e7c34a288660d2e8c1ec974402cb8"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::_iter" ref="a820e7c34a288660d2e8c1ec974402cb8" args="" -->
+base_type&#160;</td><td class="memItemRight" valign="bottom"><b>_iter</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaaf529d36beda1920c311a4234498f2c"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::_graph_ptr" ref="aaaf529d36beda1920c311a4234498f2c" args="" -->
+<a class="el" href="classibmppl_1_1Graph.html">graph_type</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>_graph_ptr</b></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acfa2b078f43514827dbdf6b707ad5ed8"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::_get_or_allocate_propertyid" ref="acfa2b078f43514827dbdf6b707ad5ed8" args="(const property_name_type &amp;pname)" -->
@@ -174,10 +194,10 @@ Protected Attributes</h2></td></tr>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>_isEdge</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a18de66a6a769deb043f84cc60b676db1"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::vid_source" ref="a18de66a6a769deb043f84cc60b676db1" args="" -->
 long&#160;</td><td class="memItemRight" valign="bottom"><b>vid_source</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a820e7c34a288660d2e8c1ec974402cb8"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::_iter" ref="a820e7c34a288660d2e8c1ec974402cb8" args="" -->
-base_type&#160;</td><td class="memItemRight" valign="bottom"><b>_iter</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaaf529d36beda1920c311a4234498f2c"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::_graph_ptr" ref="aaaf529d36beda1920c311a4234498f2c" args="" -->
-<a class="el" href="classibmppl_1_1Graph.html">graph_type</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>_graph_ptr</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a76e8010de26fa860cc27845dd3779cd2"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::boolEndIterSet" ref="a76e8010de26fa860cc27845dd3779cd2" args="" -->
+int&#160;</td><td class="memItemRight" valign="bottom"><b>boolEndIterSet</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acd635132b01d93749f1662c4d7e86cf7"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::_iterEnd" ref="acd635132b01d93749f1662c4d7e86cf7" args="" -->
+base_type&#160;</td><td class="memItemRight" valign="bottom"><b>_iterEnd</b></td></tr>
 <tr><td colspan="2"><h2><a name="pri-types"></a>
 Private Types</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a28406af5cd7bb8668364b5071989b743"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::base_type" ref="a28406af5cd7bb8668364b5071989b743" args="" -->
@@ -573,6 +593,8 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 <p>This method advances the iterator.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014) </dd></dl>
 
+<p>Reimplemented in <a class="el" href="classibmppl_1_1imp__vertex__iterator.html#a31fd4f75ee2819bd179b7c48b8bec921">ibmppl::imp_vertex_iterator&lt; Vertex, BaseIterator, Graph, IdType &gt;</a>, and <a class="el" href="classibmppl_1_1imp__edge__iterator.html#a897bb76424187620347065a3a24c5941">ibmppl::imp_edge_iterator&lt; Edge, BaseEdgeIterator, Graph, IdType &gt;</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aec1d351ef116babe488e3210e8234a22"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::operator++" ref="aec1d351ef116babe488e3210e8234a22" args="()" -->
@@ -592,6 +614,8 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 <div class="memdoc">
 <p>advance the iterator</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014) </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classibmppl_1_1imp__vertex__iterator.html#a79303bed23033ee08c062e4bbce759e4">ibmppl::imp_vertex_iterator&lt; Vertex, BaseIterator, Graph, IdType &gt;</a>, and <a class="el" href="classibmppl_1_1imp__edge__iterator.html#ac0eb771bad4ab052c911b786111ba66d">ibmppl::imp_edge_iterator&lt; Edge, BaseEdgeIterator, Graph, IdType &gt;</a>.</p>
 
 </div>
 </div>
@@ -743,14 +767,14 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 
 </div>
 </div>
-<a class="anchor" id="a0f95b86aec12b85815bb59f1157ac1c5"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::set_subproperty" ref="a0f95b86aec12b85815bb59f1157ac1c5" args="(const property_name_type &amp;pname, property_value_type value)" -->
+<a class="anchor" id="a8001a77427b9f0f1f8758c6eb19b2068"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::set_subproperty" ref="a8001a77427b9f0f1f8758c6eb19b2068" args="(const property_name_type &amp;pname, const property_value_type &amp;value)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classibmppl_1_1imp__graphelement__iterator.html">ibmppl::imp_graphelement_iterator</a>&lt; GraphElement, BaseIterator, <a class="el" href="classibmppl_1_1Graph.html">Graph</a>, IdType &gt;::<a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a0f95b86aec12b85815bb59f1157ac1c5">set_subproperty</a> </td>
+          <td class="memname">void <a class="el" href="classibmppl_1_1imp__graphelement__iterator.html">ibmppl::imp_graphelement_iterator</a>&lt; GraphElement, BaseIterator, <a class="el" href="classibmppl_1_1Graph.html">Graph</a>, IdType &gt;::<a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a8001a77427b9f0f1f8758c6eb19b2068">set_subproperty</a> </td>
           <td>(</td>
           <td class="paramtype">const property_name_type &amp;&#160;</td>
           <td class="paramname"><em>pname</em>, </td>
@@ -758,7 +782,7 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">property_value_type&#160;</td>
+          <td class="paramtype">const property_value_type &amp;&#160;</td>
           <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>
@@ -774,14 +798,14 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 
 </div>
 </div>
-<a class="anchor" id="a520c6a351f6e0f75c21fd6754c5230ff"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::set_subproperty" ref="a520c6a351f6e0f75c21fd6754c5230ff" args="(const size_t propid, property_value_type value)" -->
+<a class="anchor" id="ac4ad4e379058c0e3d42ca406681c3f42"></a><!-- doxytag: member="ibmppl::imp_graphelement_iterator::set_subproperty" ref="ac4ad4e379058c0e3d42ca406681c3f42" args="(const size_t propid, const property_value_type &amp;value)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classibmppl_1_1imp__graphelement__iterator.html">ibmppl::imp_graphelement_iterator</a>&lt; GraphElement, BaseIterator, <a class="el" href="classibmppl_1_1Graph.html">Graph</a>, IdType &gt;::<a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a0f95b86aec12b85815bb59f1157ac1c5">set_subproperty</a> </td>
+          <td class="memname">void <a class="el" href="classibmppl_1_1imp__graphelement__iterator.html">ibmppl::imp_graphelement_iterator</a>&lt; GraphElement, BaseIterator, <a class="el" href="classibmppl_1_1Graph.html">Graph</a>, IdType &gt;::<a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a8001a77427b9f0f1f8758c6eb19b2068">set_subproperty</a> </td>
           <td>(</td>
           <td class="paramtype">const size_t&#160;</td>
           <td class="paramname"><em>propid</em>, </td>
@@ -789,7 +813,7 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">property_value_type&#160;</td>
+          <td class="paramtype">const property_value_type &amp;&#160;</td>
           <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>
@@ -819,7 +843,7 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classibmppl_1_1imp__graphelement__iterator.html">ibmppl::imp_graphelement_iterator</a>&lt; GraphElement, BaseIterator, <a class="el" href="classibmppl_1_1Graph.html">Graph</a>, IdType &gt;::<a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a0f95b86aec12b85815bb59f1157ac1c5">set_subproperty</a> </td>
+          <td class="memname">void <a class="el" href="classibmppl_1_1imp__graphelement__iterator.html">ibmppl::imp_graphelement_iterator</a>&lt; GraphElement, BaseIterator, <a class="el" href="classibmppl_1_1Graph.html">Graph</a>, IdType &gt;::<a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a8001a77427b9f0f1f8758c6eb19b2068">set_subproperty</a> </td>
           <td>(</td>
           <td class="paramtype">const size_t&#160;</td>
           <td class="paramname"><em>propid</em>, </td>
@@ -838,7 +862,7 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
       </table>
 </div>
 <div class="memdoc">
-<p>An int version of the <a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a0f95b86aec12b85815bb59f1157ac1c5">set_subproperty()</a> method.</p>
+<p>An int version of the <a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a8001a77427b9f0f1f8758c6eb19b2068">set_subproperty()</a> method.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014) </dd></dl>
 
 </div>
@@ -850,7 +874,7 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
 template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classibmppl_1_1imp__graphelement__iterator.html">ibmppl::imp_graphelement_iterator</a>&lt; GraphElement, BaseIterator, <a class="el" href="classibmppl_1_1Graph.html">Graph</a>, IdType &gt;::<a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a0f95b86aec12b85815bb59f1157ac1c5">set_subproperty</a> </td>
+          <td class="memname">void <a class="el" href="classibmppl_1_1imp__graphelement__iterator.html">ibmppl::imp_graphelement_iterator</a>&lt; GraphElement, BaseIterator, <a class="el" href="classibmppl_1_1Graph.html">Graph</a>, IdType &gt;::<a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a8001a77427b9f0f1f8758c6eb19b2068">set_subproperty</a> </td>
           <td>(</td>
           <td class="paramtype">const size_t&#160;</td>
           <td class="paramname"><em>propid</em>, </td>
@@ -869,13 +893,13 @@ template&lt;class GraphElement, class BaseIterator, class Graph, class IdType&gt
       </table>
 </div>
 <div class="memdoc">
-<p>An double version of the <a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a0f95b86aec12b85815bb59f1157ac1c5">set_subproperty()</a> method.</p>
+<p>An double version of the <a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a8001a77427b9f0f1f8758c6eb19b2068">set_subproperty()</a> method.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (1/6/2014) </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a></li>
+<li>/home/yxia/Work/ibmppl.gsa/datastructure/graph/ibm_multiproperty_graph.hpp</li>
 </ul>
 </div><!-- contents -->
 <!-- window showing the filter options -->

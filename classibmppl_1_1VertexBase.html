@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>IBM SYSTEMG RUNTIME: PPL: ibmppl::VertexBase&lt; Property, EdgeList &gt; Class Template Reference</title>
+<title>IBM SYSTEMG G RUNTIME &amp; NATIVE STORE: ibmppl::VertexBase&lt; Property, EdgeList &gt; Class Template Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">IBM SYSTEMG RUNTIME: PPL
-   &#160;<span id="projectnumber">0.3</span>
+   <div id="projectname">IBM SYSTEMG G RUNTIME &amp; NATIVE STORE
+   &#160;<span id="projectnumber">0.5</span>
    </div>
-   <div id="projectbrief">Parallel Programming Library</div>
+   <div id="projectbrief">IBM Native Graph Computing and Storage System based on IBM Parallel Programming Library</div>
   </td>
   
   
@@ -48,7 +48,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -108,14 +107,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <!-- doxytag: class="ibmppl::VertexBase" -->
 <p>Base vertex class with a list of edges and a vertex property.  
  <a href="classibmppl_1_1VertexBase.html#details">More...</a></p>
+
+<p><code>#include &lt;ibm_graph.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ibmppl::VertexBase&lt; Property, EdgeList &gt;:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="classibmppl_1_1VertexBase.png" usemap="#ibmppl::VertexBase&lt; Property, EdgeList &gt;_map" alt=""/>
   <map id="ibmppl::VertexBase&lt; Property, EdgeList &gt;_map" name="ibmppl::VertexBase&lt; Property, EdgeList &gt;_map">
-<area href="classibmppl_1_1Vertex.html" title="Generic implementation of graph vertex class w/ a list of edges and a vertex property." alt="ibmppl::Vertex&lt; Property, EdgeList, Directedness &gt;" shape="rect" coords="0,56,331,80"/>
-<area href="classibmppl_1_1Vertex_3_01Property_00_01EdgeList_00_01PRED__DIRECTED_01_4.html" title="Specialized Vertex for directed graph w/ predecessor list." alt="ibmppl::Vertex&lt; Property, EdgeList, PRED_DIRECTED &gt;" shape="rect" coords="341,56,672,80"/>
+<area href="classibmppl_1_1RDFVertex.html" alt="ibmppl::RDFVertex&lt; Property, EdgeList, Directedness &gt;" shape="rect" coords="0,56,331,80"/>
+<area href="classibmppl_1_1Vertex.html" title="Generic implementation of graph vertex class w/ a list of edges and a vertex property." alt="ibmppl::Vertex&lt; Property, EdgeList, Directedness &gt;" shape="rect" coords="341,56,672,80"/>
+<area href="classibmppl_1_1Vertex_3_01Property_00_01EdgeList_00_01PRED__DIRECTED_01_4.html" title="Specialized Vertex for directed graph w/ predecessor list." alt="ibmppl::Vertex&lt; Property, EdgeList, PRED_DIRECTED &gt;" shape="rect" coords="682,56,1013,80"/>
 </map>
  </div></div>
 
@@ -160,8 +162,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>set_property</b> (pro
 void&#160;</td><td class="memItemRight" valign="bottom"><b>clear_flag</b> (uint32_t flags)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae20d5f29d7eabb7188d9f500121662fc"></a><!-- doxytag: member="ibmppl::VertexBase::set_flag" ref="ae20d5f29d7eabb7188d9f500121662fc" args="(uint32_t flags)" -->
 void&#160;</td><td class="memItemRight" valign="bottom"><b>set_flag</b> (uint32_t flags)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1006e11730012fa300ce8406ce61bb8b"></a><!-- doxytag: member="ibmppl::VertexBase::test_flag" ref="a1006e11730012fa300ce8406ce61bb8b" args="(uint32_t flags)" -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>test_flag</b> (uint32_t flags)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae3d0de1280d7e04cc81e3236b1f9b89e"></a><!-- doxytag: member="ibmppl::VertexBase::test_flag" ref="ae3d0de1280d7e04cc81e3236b1f9b89e" args="(uint32_t flags) const " -->
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>test_flag</b> (uint32_t flags) const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a991e4dfb685dd43e6dd69de5f69ed181"></a><!-- doxytag: member="ibmppl::VertexBase::is_marked_for_deletion" ref="a991e4dfb685dd43e6dd69de5f69ed181" args="() const " -->
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_marked_for_deletion</b> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a57cd74624ade1bc69afdce8f2a6cb64d"></a><!-- doxytag: member="ibmppl::VertexBase::mark_for_deletion" ref="a57cd74624ade1bc69afdce8f2a6cb64d" args="()" -->
@@ -180,8 +182,6 @@ const_edge_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>edges_
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">insert an edge between this vertex and target  <a href="#af8c0249f437c7f95ea7c80fd9eb0b5ed"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">edge_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1VertexBase.html#a899f7b140bce2336850b2c75656a57d0">add_edge</a> (vertexd_type target, const typename edge_type::property_type &amp;p)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">insert an edge between this vertex and target  <a href="#a899f7b140bce2336850b2c75656a57d0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">edge_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1VertexBase.html#a661ad13dd2cd2e9c220c31fdc7570231">add_edge</a> (vertexd_type target, edged_type id)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">insert an edge between this vertex and target  <a href="#a661ad13dd2cd2e9c220c31fdc7570231"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">edge_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1VertexBase.html#ac5496a02040927054179cb54cb5982a4">add_edge</a> (vertexd_type target, const typename edge_type::property_type &amp;p, edged_type id)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">insert an edge between this vertex and target  <a href="#ac5496a02040927054179cb54cb5982a4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a807f3da29edeee7df36ab2eccd4f83cd"></a><!-- doxytag: member="ibmppl::VertexBase::find_edge" ref="a807f3da29edeee7df36ab2eccd4f83cd" args="(vertexd_type target, edged_type eid)" -->
@@ -286,45 +286,6 @@ template&lt;class Property, class EdgeList&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a661ad13dd2cd2e9c220c31fdc7570231"></a><!-- doxytag: member="ibmppl::VertexBase::add_edge" ref="a661ad13dd2cd2e9c220c31fdc7570231" args="(vertexd_type target, edged_type id)" -->
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Property, class EdgeList&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">edge_iterator <a class="el" href="classibmppl_1_1VertexBase.html">ibmppl::VertexBase</a>&lt; Property, EdgeList &gt;::<a class="el" href="classibmppl_1_1VertexBase.html#af8c0249f437c7f95ea7c80fd9eb0b5ed">add_edge</a> </td>
-          <td>(</td>
-          <td class="paramtype">vertexd_type&#160;</td>
-          <td class="paramname"><em>target</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">edged_type&#160;</td>
-          <td class="paramname"><em>id</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>insert an edge between this vertex and target </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">target</td><td>target vertex id </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>id of the new edge </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>iterator to the inserted edge </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="ac5496a02040927054179cb54cb5982a4"></a><!-- doxytag: member="ibmppl::VertexBase::add_edge" ref="ac5496a02040927054179cb54cb5982a4" args="(vertexd_type target, const typename edge_type::property_type &amp;p, edged_type id)" -->
 <div class="memitem">
 <div class="memproto">
@@ -372,7 +333,7 @@ template&lt;class Property, class EdgeList&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="ibm__graph_8h_source.html">ibm_graph.h</a></li>
+<li>/home/yxia/Work/ibmppl.gsa/datastructure/graph/ibm_graph.h</li>
 </ul>
 </div><!-- contents -->
 <!-- window showing the filter options -->

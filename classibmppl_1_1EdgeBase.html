@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>IBM SYSTEMG RUNTIME: PPL: ibmppl::EdgeBase Class Reference</title>
+<title>IBM SYSTEMG G RUNTIME &amp; NATIVE STORE: ibmppl::EdgeBase Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">IBM SYSTEMG RUNTIME: PPL
-   &#160;<span id="projectnumber">0.3</span>
+   <div id="projectname">IBM SYSTEMG G RUNTIME &amp; NATIVE STORE
+   &#160;<span id="projectnumber">0.5</span>
    </div>
-   <div id="projectbrief">Parallel Programming Library</div>
+   <div id="projectbrief">IBM Native Graph Computing and Storage System based on IBM Parallel Programming Library</div>
   </td>
   
   
@@ -48,7 +48,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -108,6 +107,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <!-- doxytag: class="ibmppl::EdgeBase" -->
 <p>Base class for graph edge with an id, a source and a sink.  
  <a href="classibmppl_1_1EdgeBase.html#details">More...</a></p>
+
+<p><code>#include &lt;ibm_graph.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ibmppl::EdgeBase:</div>
 <div class="dyncontent">
@@ -148,10 +149,12 @@ vertexd_type&#160;</td><td class="memItemRight" valign="bottom"><b>source</b> ()
 vertexd_type&#160;</td><td class="memItemRight" valign="bottom"><b>target</b> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a489d5e0136a0395f81b0816490d89059"></a><!-- doxytag: member="ibmppl::EdgeBase::clear_flag" ref="a489d5e0136a0395f81b0816490d89059" args="(uint32_t flags)" -->
 void&#160;</td><td class="memItemRight" valign="bottom"><b>clear_flag</b> (uint32_t flags)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeabdd9bfec976611b9c9b7c18ab7b9f5"></a><!-- doxytag: member="ibmppl::EdgeBase::set_flag_invalid" ref="aeabdd9bfec976611b9c9b7c18ab7b9f5" args="()" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set_flag_invalid</b> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab254a8a39b2846d849cd263f3f0bc255"></a><!-- doxytag: member="ibmppl::EdgeBase::set_flag" ref="ab254a8a39b2846d849cd263f3f0bc255" args="(uint32_t flags)" -->
 void&#160;</td><td class="memItemRight" valign="bottom"><b>set_flag</b> (uint32_t flags)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1ea4c005e000aaf238574195421b1158"></a><!-- doxytag: member="ibmppl::EdgeBase::test_flag" ref="a1ea4c005e000aaf238574195421b1158" args="(uint32_t flags)" -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>test_flag</b> (uint32_t flags)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a455f425d2287e64e880d282dcf48c6ec"></a><!-- doxytag: member="ibmppl::EdgeBase::test_flag" ref="a455f425d2287e64e880d282dcf48c6ec" args="(uint32_t flags) const " -->
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>test_flag</b> (uint32_t flags) const </td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a36e22107f8a8252c399e5f9e0afcc810"></a><!-- doxytag: member="ibmppl::EdgeBase::_id" ref="a36e22107f8a8252c399e5f9e0afcc810" args="" -->
@@ -166,7 +169,7 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>_flags</b></td></
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Base class for graph edge with an id, a source and a sink. </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="ibm__graph_8h_source.html">ibm_graph.h</a></li>
+<li>/home/yxia/Work/ibmppl.gsa/datastructure/graph/ibm_graph.h</li>
 </ul>
 </div><!-- contents -->
 <!-- window showing the filter options -->

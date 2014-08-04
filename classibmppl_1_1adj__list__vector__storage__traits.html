@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>IBM SYSTEMG RUNTIME: PPL: ibmppl::adj_list_vector_storage_traits&lt; VP, EP, Directedness &gt; Class Template Reference</title>
+<title>IBM SYSTEMG G RUNTIME &amp; NATIVE STORE: ibmppl::adj_list_vector_storage_traits&lt; VP, EP, Directedness &gt; Class Template Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">IBM SYSTEMG RUNTIME: PPL
-   &#160;<span id="projectnumber">0.3</span>
+   <div id="projectname">IBM SYSTEMG G RUNTIME &amp; NATIVE STORE
+   &#160;<span id="projectnumber">0.5</span>
    </div>
-   <div id="projectbrief">Parallel Programming Library</div>
+   <div id="projectbrief">IBM Native Graph Computing and Storage System based on IBM Parallel Programming Library</div>
   </td>
   
   
@@ -48,7 +48,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -107,6 +106,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Traits describes basic types and storage types used in representing the graph.  
  <a href="classibmppl_1_1adj__list__vector__storage__traits.html#details">More...</a></p>
 
+<p><code>#include &lt;ibm_graph.h&gt;</code></p>
+
 <p><a href="classibmppl_1_1adj__list__vector__storage__traits-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-types"></a>
@@ -121,10 +122,11 @@ typedef size_t&#160;</td><td class="memItemRight" valign="bottom"><b>vertexd_typ
 typedef size_t&#160;</td><td class="memItemRight" valign="bottom"><b>edged_type</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a300b1698733b0d499d69b5641befe4a2"></a><!-- doxytag: member="ibmppl::adj_list_vector_storage_traits::edge_type" ref="a300b1698733b0d499d69b5641befe4a2" args="" -->
 typedef <a class="el" href="classibmppl_1_1Edge.html">Edge</a>&lt; EP, Directedness &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>edge_type</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae1566cab8192aac1fef30766f1380266"></a><!-- doxytag: member="ibmppl::adj_list_vector_storage_traits::edgelist_type" ref="ae1566cab8192aac1fef30766f1380266" args="" -->
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aee8fe5f5414b3cd66ac37c6a93b21c24"></a><!-- doxytag: member="ibmppl::adj_list_vector_storage_traits::edgelist_type" ref="aee8fe5f5414b3cd66ac37c6a93b21c24" args="" -->
 typedef <br class="typebreak"/>
 internal::_list_storage_with_index<br class="typebreak"/>
-&lt; <a class="el" href="classibmppl_1_1Edge.html">edge_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>edgelist_type</b></td></tr>
+&lt; <a class="el" href="classibmppl_1_1Edge.html">edge_type</a>, std::list<br class="typebreak"/>
+&lt; <a class="el" href="classibmppl_1_1Edge.html">edge_type</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>edgelist_type</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6a6c34e6c35eece8e4415d70457462aa"></a><!-- doxytag: member="ibmppl::adj_list_vector_storage_traits::vertex_type" ref="a6a6c34e6c35eece8e4415d70457462aa" args="" -->
 typedef <a class="el" href="classibmppl_1_1Vertex.html">Vertex</a>&lt; VP, <br class="typebreak"/>
 edgelist_type, Directedness &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>vertex_type</b></td></tr>
@@ -145,7 +147,7 @@ class ibmppl::adj_list_vector_storage_traits&lt; VP, EP, Directedness &gt;</h3>
 <p>Traits describes basic types and storage types used in representing the graph. </p>
 <p><a class="el" href="classibmppl_1_1adj__list__vector__storage__traits.html" title="Traits describes basic types and storage types used in representing the graph.">adj_list_vector_storage_traits</a>: types used to represent adjacency vector </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="ibm__graph_8h_source.html">ibm_graph.h</a></li>
+<li>/home/yxia/Work/ibmppl.gsa/datastructure/graph/ibm_graph.h</li>
 </ul>
 </div><!-- contents -->
 <!-- window showing the filter options -->

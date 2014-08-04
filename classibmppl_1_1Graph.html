@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>IBM SYSTEMG RUNTIME: PPL: ibmppl::Graph&lt; VProperty, EProperty, Directedness, Traits &gt; Class Template Reference</title>
+<title>IBM SYSTEMG G RUNTIME &amp; NATIVE STORE: ibmppl::Graph&lt; VProperty, EProperty, Directedness, Traits &gt; Class Template Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">IBM SYSTEMG RUNTIME: PPL
-   &#160;<span id="projectnumber">0.3</span>
+   <div id="projectname">IBM SYSTEMG G RUNTIME &amp; NATIVE STORE
+   &#160;<span id="projectnumber">0.5</span>
    </div>
-   <div id="projectbrief">Parallel Programming Library</div>
+   <div id="projectbrief">IBM Native Graph Computing and Storage System based on IBM Parallel Programming Library</div>
   </td>
   
   
@@ -48,7 +48,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -110,6 +109,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The main graph class to be instantiated by users.  
  <a href="classibmppl_1_1Graph.html#details">More...</a></p>
 
+<p><code>#include &lt;ibm_graph.h&gt;</code></p>
+
 <p>Inherits DAdaptor&lt; Directedness, Traits &gt;.</p>
 
 <p><a href="classibmppl_1_1Graph-members.html">List of all members.</a></p>
@@ -136,6 +137,7 @@ base_type::const_vertex_iterator&#160;</td><td class="memItemRight" valign="bott
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1Graph.html#a9fe0e08afe5edc890a66f9633145fde5">Graph</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1Graph.html#ac60ced3fefea37223da78482b2ef6da6">Graph</a> (const <a class="el" href="structibmppl_1_1graph__config.html">graph_config</a> &amp;gc)</td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;class G &gt; </td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classibmppl_1_1Graph.html#abf57151ba1610a66e6e9fd22b56138b6">load</a> (const G &amp;dg)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1Graph.html#ae8ee8b68c118c3da8c7e376d3d1e4dba">graphviz</a> (std::ostream &amp;os=std::cout) const </td></tr>
@@ -179,8 +181,6 @@ template&lt;class VProperty, class EProperty, DIRECTNESS Directedness, class Tra
 <div class="memdoc">
 <p>Const Iterator type for traversing edges. You won't be able to modify properties when using this iterator. </p>
 
-<p>Reimplemented in <a class="el" href="classibmppl_1_1ibm__multiproperty__graph__generic.html#abcae073d6cbb2d35502d3ec36b2ba88f">ibmppl::ibm_multiproperty_graph_generic&lt; VProperty, EProperty, Directness &gt;</a>.</p>
-
 </div>
 </div>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
@@ -200,6 +200,26 @@ template&lt;class VProperty, class EProperty, DIRECTNESS Directedness, class Tra
 </div>
 <div class="memdoc">
 <p>Build an empty graph. It can be populated afterwards using add_verte and add_edge. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac60ced3fefea37223da78482b2ef6da6"></a><!-- doxytag: member="ibmppl::Graph::Graph" ref="ac60ced3fefea37223da78482b2ef6da6" args="(const graph_config &amp;gc)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VProperty, class EProperty, DIRECTNESS Directedness, class Traits = adj_list_list_storage_with_index_traits&lt;VProperty, EProperty, Directedness&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classibmppl_1_1Graph.html">ibmppl::Graph</a>&lt; VProperty, EProperty, Directedness, Traits &gt;::<a class="el" href="classibmppl_1_1Graph.html">Graph</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structibmppl_1_1graph__config.html">graph_config</a> &amp;&#160;</td>
+          <td class="paramname"><em>gc</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Generalized constructor where more args can be passed This class ignores them but others, like persisten storage graph doesn't </p>
 
 </div>
 </div>
@@ -259,7 +279,7 @@ template&lt;class G &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="ibm__graph_8h_source.html">ibm_graph.h</a></li>
+<li>/home/yxia/Work/ibmppl.gsa/datastructure/graph/ibm_graph.h</li>
 </ul>
 </div><!-- contents -->
 <!-- window showing the filter options -->

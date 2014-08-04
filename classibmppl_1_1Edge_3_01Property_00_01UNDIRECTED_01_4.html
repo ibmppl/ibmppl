@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>IBM SYSTEMG RUNTIME: PPL: ibmppl::Edge&lt; Property, UNDIRECTED &gt; Class Template Reference</title>
+<title>IBM SYSTEMG G RUNTIME &amp; NATIVE STORE: ibmppl::Edge&lt; Property, UNDIRECTED &gt; Class Template Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">IBM SYSTEMG RUNTIME: PPL
-   &#160;<span id="projectnumber">0.3</span>
+   <div id="projectname">IBM SYSTEMG G RUNTIME &amp; NATIVE STORE
+   &#160;<span id="projectnumber">0.5</span>
    </div>
-   <div id="projectbrief">Parallel Programming Library</div>
+   <div id="projectbrief">IBM Native Graph Computing and Storage System based on IBM Parallel Programming Library</div>
   </td>
   
   
@@ -48,7 +48,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -110,6 +109,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <!-- doxytag: class="ibmppl::Edge&lt; Property, UNDIRECTED &gt;" --><!-- doxytag: inherits="ibmppl::EdgeBase" -->
 <p>Specialization for <a class="el" href="classibmppl_1_1Edge.html" title="Generic implementation of graph edge templated by Property type.">Edge</a> for undirected graphs Undirected graph stores two edges between a pair of vertices, where both edges share the same property.  
  <a href="classibmppl_1_1Edge_3_01Property_00_01UNDIRECTED_01_4.html#details">More...</a></p>
+
+<p><code>#include &lt;ibm_graph.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ibmppl::Edge&lt; Property, UNDIRECTED &gt;:</div>
 <div class="dyncontent">
@@ -136,6 +137,8 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Edge</b> (vertexd_type s, vertexd_type t, edged_type id=-1)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab3450d162c377c324490164ac0256a4b"></a><!-- doxytag: member="ibmppl::Edge&lt; Property, UNDIRECTED &gt;::Edge" ref="ab3450d162c377c324490164ac0256a4b" args="(vertexd_type s, vertexd_type t, const property_type &amp;p, edged_type id)" -->
 &#160;</td><td class="memItemRight" valign="bottom"><b>Edge</b> (vertexd_type s, vertexd_type t, const property_type &amp;p, edged_type id)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae26efceaafd52ac4d0fbbe083a888fdb"></a><!-- doxytag: member="ibmppl::Edge&lt; Property, UNDIRECTED &gt;::link" ref="ae26efceaafd52ac4d0fbbe083a888fdb" args="(Edge&lt; Property, UNDIRECTED &gt; &amp;other)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>link</b> (<a class="el" href="classibmppl_1_1Edge.html">Edge</a>&lt; Property, UNDIRECTED &gt; &amp;other)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a844f7b1c64d7230087b73fd14679a95b"></a><!-- doxytag: member="ibmppl::Edge&lt; Property, UNDIRECTED &gt;::free_property" ref="a844f7b1c64d7230087b73fd14679a95b" args="()" -->
 void&#160;</td><td class="memItemRight" valign="bottom"><b>free_property</b> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6756d36eea181d87c0724be4e6cc9630"></a><!-- doxytag: member="ibmppl::Edge&lt; Property, UNDIRECTED &gt;::alloc_property" ref="a6756d36eea181d87c0724be4e6cc9630" args="()" -->
@@ -146,12 +149,12 @@ property_type &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>proper
 const property_type &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>property</b> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab688ee55679bb7ac551f09f6bcd0e912"></a><!-- doxytag: member="ibmppl::Edge&lt; Property, UNDIRECTED &gt;::set_property" ref="ab688ee55679bb7ac551f09f6bcd0e912" args="(property_type &amp;p)" -->
 void&#160;</td><td class="memItemRight" valign="bottom"><b>set_property</b> (property_type &amp;p)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a91ff05542d0b533575f156f82291314f"></a><!-- doxytag: member="ibmppl::Edge&lt; Property, UNDIRECTED &gt;::is_property_valid" ref="a91ff05542d0b533575f156f82291314f" args="()" -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_property_valid</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6f08c960b49eb86e7b47514c4b95538"></a><!-- doxytag: member="ibmppl::Edge&lt; Property, UNDIRECTED &gt;::is_property_valid" ref="ab6f08c960b49eb86e7b47514c4b95538" args="() const " -->
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_property_valid</b> () const </td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5c5a4f07031c65ba4a5dcdf0583961df"></a><!-- doxytag: member="ibmppl::Edge&lt; Property, UNDIRECTED &gt;::_property" ref="a5c5a4f07031c65ba4a5dcdf0583961df" args="" -->
-property_type *&#160;</td><td class="memItemRight" valign="bottom"><b>_property</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1f9b1f2958c2708006294910ccb2ad4e"></a><!-- doxytag: member="ibmppl::Edge&lt; Property, UNDIRECTED &gt;::_property" ref="a1f9b1f2958c2708006294910ccb2ad4e" args="" -->
+smart_pointer&lt; property_type &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_property</b></td></tr>
 <tr><td colspan="2"><h2><a name="pri-types"></a>
 Private Types</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af108b965fedd50b41163bc96e050ee15"></a><!-- doxytag: member="ibmppl::Edge&lt; Property, UNDIRECTED &gt;::base_type" ref="af108b965fedd50b41163bc96e050ee15" args="" -->
@@ -171,7 +174,7 @@ class ibmppl::Edge&lt; Property, UNDIRECTED &gt;</h3>
 
 <p>Specialization for <a class="el" href="classibmppl_1_1Edge.html" title="Generic implementation of graph edge templated by Property type.">Edge</a> for undirected graphs Undirected graph stores two edges between a pair of vertices, where both edges share the same property. </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="ibm__graph_8h_source.html">ibm_graph.h</a></li>
+<li>/home/yxia/Work/ibmppl.gsa/datastructure/graph/ibm_graph.h</li>
 </ul>
 </div><!-- contents -->
 <!-- window showing the filter options -->

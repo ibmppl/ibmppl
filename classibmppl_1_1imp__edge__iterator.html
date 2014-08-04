@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>IBM SYSTEMG RUNTIME: PPL: ibmppl::imp_edge_iterator&lt; Edge, BaseEdgeIterator, Graph, IdType &gt; Class Template Reference</title>
+<title>IBM SYSTEMG G RUNTIME &amp; NATIVE STORE: ibmppl::imp_edge_iterator&lt; Edge, BaseEdgeIterator, Graph, IdType &gt; Class Template Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">IBM SYSTEMG RUNTIME: PPL
-   &#160;<span id="projectnumber">0.3</span>
+   <div id="projectname">IBM SYSTEMG G RUNTIME &amp; NATIVE STORE
+   &#160;<span id="projectnumber">0.5</span>
    </div>
-   <div id="projectbrief">Parallel Programming Library</div>
+   <div id="projectbrief">IBM Native Graph Computing and Storage System based on IBM Parallel Programming Library</div>
   </td>
   
   
@@ -48,7 +48,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -104,7 +103,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ibmppl::imp_edge_iterator&lt; Edge, BaseEdgeIterator, Graph, IdType &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="ibmppl::imp_edge_iterator" --><!-- doxytag: inherits="imp_graphelement_iterator&lt; Edge, BaseEdgeIterator, Graph, IdType &gt;" --><div class="dynheader">
+<!-- doxytag: class="ibmppl::imp_edge_iterator" --><!-- doxytag: inherits="imp_graphelement_iterator&lt; Edge, BaseEdgeIterator, Graph, IdType &gt;" -->
+<p><code>#include &lt;ibm_multiproperty_graph.hpp&gt;</code></p>
+<div class="dynheader">
 Inheritance diagram for ibmppl::imp_edge_iterator&lt; Edge, BaseEdgeIterator, Graph, IdType &gt;:</div>
 <div class="dyncontent">
  <div class="center">
@@ -119,9 +120,21 @@ Inheritance diagram for ibmppl::imp_edge_iterator&lt; Edge, BaseEdgeIterator, Gr
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__edge__iterator.html#ace009c2dcee1a6ec8cee1018d24d6e55">imp_edge_iterator</a> (BaseEdgeIterator it, <a class="el" href="classibmppl_1_1Graph.html">graph_type</a> *g, vertexd_type vidin)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6e7f15812f7b6fe690e56e2e8698e4e7"></a><!-- doxytag: member="ibmppl::imp_edge_iterator::imp_edge_iterator" ref="a6e7f15812f7b6fe690e56e2e8698e4e7" args="(imp_edge_iterator const &amp;other)" -->
+&#160;</td><td class="memItemRight" valign="bottom"><b>imp_edge_iterator</b> (<a class="el" href="classibmppl_1_1imp__edge__iterator.html">imp_edge_iterator</a> const &amp;other)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__edge__iterator.html#a8a7ad07bf950c9b9cc7aa36efa875192">check_consistency</a> (const char *filename, int linenum)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">vertexd_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__edge__iterator.html#a2c61b1e877e89d58ed3b890c03398bca">source</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">vertexd_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__edge__iterator.html#a9c66b9cc038bb10ba9e39a30a935ff0c">target</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2860a3c5e387a4927967d61ee03a75d8"></a><!-- doxytag: member="ibmppl::imp_edge_iterator::operator*" ref="a2860a3c5e387a4927967d61ee03a75d8" args="()" -->
+<a class="el" href="classibmppl_1_1Edge.html">Edge</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa9834ca72015d6176acb403c41351b43"></a><!-- doxytag: member="ibmppl::imp_edge_iterator::operator&#45;&gt;" ref="aa9834ca72015d6176acb403c41351b43" args="()" -->
+<a class="el" href="classibmppl_1_1imp__edge__iterator.html">imp_edge_iterator</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>operator-&gt;</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__edge__iterator.html#a897bb76424187620347065a3a24c5941">operator++</a> (int xx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__edge__iterator.html#ac0eb771bad4ab052c911b786111ba66d">operator++</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a220a4db6f491d4341b7405ee3f580e55"></a><!-- doxytag: member="ibmppl::imp_edge_iterator::operator&#45;&#45;" ref="a220a4db6f491d4341b7405ee3f580e55" args="(int xx)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>operator--</b> (int xx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a586e056e3b4f3002897eb2b574047493"></a><!-- doxytag: member="ibmppl::imp_edge_iterator::operator&#45;&#45;" ref="a586e056e3b4f3002897eb2b574047493" args="()" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>operator--</b> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pri-types"></a>
 Private Types</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6ce6693c8d606c0fe7da9a5a6bbb9f72"></a><!-- doxytag: member="ibmppl::imp_edge_iterator::graph_type" ref="a6ce6693c8d606c0fe7da9a5a6bbb9f72" args="" -->
@@ -213,6 +226,51 @@ template&lt;class Edge , class BaseEdgeIterator , class Graph , class IdType &gt
 
 </div>
 </div>
+<a class="anchor" id="a897bb76424187620347065a3a24c5941"></a><!-- doxytag: member="ibmppl::imp_edge_iterator::operator++" ref="a897bb76424187620347065a3a24c5941" args="(int xx)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Edge , class BaseEdgeIterator , class Graph , class IdType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classibmppl_1_1imp__edge__iterator.html">ibmppl::imp_edge_iterator</a>&lt; <a class="el" href="classibmppl_1_1Edge.html">Edge</a>, BaseEdgeIterator, <a class="el" href="classibmppl_1_1Graph.html">Graph</a>, IdType &gt;::operator++ </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>xx</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>This method advances the iterator.</p>
+<dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014) </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a88f0f0fe6886dbf37f5a8fd25897d4d0">ibmppl::imp_graphelement_iterator&lt; Edge, BaseEdgeIterator, Graph, IdType &gt;</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac0eb771bad4ab052c911b786111ba66d"></a><!-- doxytag: member="ibmppl::imp_edge_iterator::operator++" ref="ac0eb771bad4ab052c911b786111ba66d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Edge , class BaseEdgeIterator , class Graph , class IdType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classibmppl_1_1imp__edge__iterator.html">ibmppl::imp_edge_iterator</a>&lt; <a class="el" href="classibmppl_1_1Edge.html">Edge</a>, BaseEdgeIterator, <a class="el" href="classibmppl_1_1Graph.html">Graph</a>, IdType &gt;::operator++ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>advance the iterator</p>
+<dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014) </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#aec1d351ef116babe488e3210e8234a22">ibmppl::imp_graphelement_iterator&lt; Edge, BaseEdgeIterator, Graph, IdType &gt;</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a2c61b1e877e89d58ed3b890c03398bca"></a><!-- doxytag: member="ibmppl::imp_edge_iterator::source" ref="a2c61b1e877e89d58ed3b890c03398bca" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -256,7 +314,7 @@ template&lt;class Edge , class BaseEdgeIterator , class Graph , class IdType &gt
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a></li>
+<li>/home/yxia/Work/ibmppl.gsa/datastructure/graph/ibm_multiproperty_graph.hpp</li>
 </ul>
 </div><!-- contents -->
 <!-- window showing the filter options -->

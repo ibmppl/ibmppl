@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>IBM SYSTEMG RUNTIME: PPL: ibmppl::Edge&lt; Property, Directedness &gt; Class Template Reference</title>
+<title>IBM SYSTEMG G RUNTIME &amp; NATIVE STORE: ibmppl::Edge&lt; Property, Directedness &gt; Class Template Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">IBM SYSTEMG RUNTIME: PPL
-   &#160;<span id="projectnumber">0.3</span>
+   <div id="projectname">IBM SYSTEMG G RUNTIME &amp; NATIVE STORE
+   &#160;<span id="projectnumber">0.5</span>
    </div>
-   <div id="projectbrief">Parallel Programming Library</div>
+   <div id="projectbrief">IBM Native Graph Computing and Storage System based on IBM Parallel Programming Library</div>
   </td>
   
   
@@ -48,7 +48,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -110,6 +109,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <!-- doxytag: class="ibmppl::Edge" --><!-- doxytag: inherits="ibmppl::EdgeBase" -->
 <p>Generic implementation of graph edge templated by Property type.  
  <a href="classibmppl_1_1Edge.html#details">More...</a></p>
+
+<p><code>#include &lt;ibm_graph.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ibmppl::Edge&lt; Property, Directedness &gt;:</div>
 <div class="dyncontent">
@@ -142,8 +143,10 @@ property_type &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>proper
 const property_type &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>property</b> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0d60b3b9d801269a01cf3ecf7a81c61e"></a><!-- doxytag: member="ibmppl::Edge::set_property" ref="a0d60b3b9d801269a01cf3ecf7a81c61e" args="(property_type &amp;p)" -->
 void&#160;</td><td class="memItemRight" valign="bottom"><b>set_property</b> (property_type &amp;p)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ade5440e3cef893b89bb0a4b261386b96"></a><!-- doxytag: member="ibmppl::Edge::is_property_valid" ref="ade5440e3cef893b89bb0a4b261386b96" args="()" -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_property_valid</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a642cda2911403188b3952157a223b081"></a><!-- doxytag: member="ibmppl::Edge::is_property_valid" ref="a642cda2911403188b3952157a223b081" args="() const " -->
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_property_valid</b> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aadb413bd283bf5149fba6133b9a2b6f3"></a><!-- doxytag: member="ibmppl::Edge::alloc_property" ref="aadb413bd283bf5149fba6133b9a2b6f3" args="(void)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>alloc_property</b> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a09f3a7f46bac3eebeedcb846595f923c"></a><!-- doxytag: member="ibmppl::Edge::free_property" ref="a09f3a7f46bac3eebeedcb846595f923c" args="(void)" -->
 void&#160;</td><td class="memItemRight" valign="bottom"><b>free_property</b> (void)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
@@ -170,7 +173,7 @@ class ibmppl::Edge&lt; Property, Directedness &gt;</h3>
 <p>Generic implementation of graph edge templated by Property type. </p>
 <p>Property may not be set at constructor, use flag kPropertyValid to indicate the availability of an edge property </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="ibm__graph_8h_source.html">ibm_graph.h</a></li>
+<li>/home/yxia/Work/ibmppl.gsa/datastructure/graph/ibm_graph.h</li>
 </ul>
 </div><!-- contents -->
 <!-- window showing the filter options -->

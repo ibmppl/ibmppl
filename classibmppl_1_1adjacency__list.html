@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>IBM SYSTEMG RUNTIME: PPL: ibmppl::adjacency_list&lt; Traits &gt; Class Template Reference</title>
+<title>IBM SYSTEMG G RUNTIME &amp; NATIVE STORE: ibmppl::adjacency_list&lt; Traits &gt; Class Template Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">IBM SYSTEMG RUNTIME: PPL
-   &#160;<span id="projectnumber">0.3</span>
+   <div id="projectname">IBM SYSTEMG G RUNTIME &amp; NATIVE STORE
+   &#160;<span id="projectnumber">0.5</span>
    </div>
-   <div id="projectbrief">Parallel Programming Library</div>
+   <div id="projectbrief">IBM Native Graph Computing and Storage System based on IBM Parallel Programming Library</div>
   </td>
   
   
@@ -48,7 +48,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -110,6 +109,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <!-- doxytag: class="ibmppl::adjacency_list" -->
 <p>Adjaceny list class. The main functionality of a directed graph is implemented here. It uses Traits as a template argument from which it infers all teh types used by the graph.  
  <a href="classibmppl_1_1adjacency__list.html#details">More...</a></p>
+
+<p><code>#include &lt;ibm_graph.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ibmppl::adjacency_list&lt; Traits &gt;:</div>
 <div class="dyncontent">
@@ -153,6 +154,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a757f16742038b8139a3bdee792d27a3e"></a><!-- doxytag: member="ibmppl::adjacency_list::adjacency_list" ref="a757f16742038b8139a3bdee792d27a3e" args="()" -->
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1adjacency__list.html#a757f16742038b8139a3bdee792d27a3e">adjacency_list</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1adjacency__list.html#a4ed9a3584b7a1a160d2d1c691c88fa75">set_offset</a> (size_t off)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a23c716f93d22dfdff75ce66d5d12e1d4"></a><!-- doxytag: member="ibmppl::adjacency_list::num_vertices" ref="a23c716f93d22dfdff75ce66d5d12e1d4" args="() const " -->
 size_t&#160;</td><td class="memItemRight" valign="bottom"><b>num_vertices</b> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a577c6044321d9268f5c5eca4504f84e5"></a><!-- doxytag: member="ibmppl::adjacency_list::num_edges" ref="a577c6044321d9268f5c5eca4504f84e5" args="() const " -->
@@ -531,8 +533,28 @@ template&lt;class Traits &gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a4ed9a3584b7a1a160d2d1c691c88fa75"></a><!-- doxytag: member="ibmppl::adjacency_list::set_offset" ref="a4ed9a3584b7a1a160d2d1c691c88fa75" args="(size_t off)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Traits &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classibmppl_1_1adjacency__list.html">ibmppl::adjacency_list</a>&lt; Traits &gt;::<a class="el" href="classibmppl_1_1adjacency__list.html#a4ed9a3584b7a1a160d2d1c691c88fa75">set_offset</a> </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>off</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Start vertex and edge id with the given offset; Usefull for multithreaded and distributed case </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="ibm__graph_8h_source.html">ibm_graph.h</a></li>
+<li>/home/yxia/Work/ibmppl.gsa/datastructure/graph/ibm_graph.h</li>
 </ul>
 </div><!-- contents -->
 <!-- window showing the filter options -->

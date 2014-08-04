@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>IBM SYSTEMG RUNTIME: PPL: ibmppl::imp_vertex_iterator&lt; Vertex, BaseIterator, Graph, IdType &gt; Class Template Reference</title>
+<title>IBM SYSTEMG G RUNTIME &amp; NATIVE STORE: ibmppl::imp_vertex_iterator&lt; Vertex, BaseIterator, Graph, IdType &gt; Class Template Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">IBM SYSTEMG RUNTIME: PPL
-   &#160;<span id="projectnumber">0.3</span>
+   <div id="projectname">IBM SYSTEMG G RUNTIME &amp; NATIVE STORE
+   &#160;<span id="projectnumber">0.5</span>
    </div>
-   <div id="projectbrief">Parallel Programming Library</div>
+   <div id="projectbrief">IBM Native Graph Computing and Storage System based on IBM Parallel Programming Library</div>
   </td>
   
   
@@ -48,7 +48,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -105,7 +104,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ibmppl::imp_vertex_iterator&lt; Vertex, BaseIterator, Graph, IdType &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="ibmppl::imp_vertex_iterator" --><!-- doxytag: inherits="imp_graphelement_iterator&lt; Vertex, BaseIterator, Graph, IdType &gt;" --><div class="dynheader">
+<!-- doxytag: class="ibmppl::imp_vertex_iterator" --><!-- doxytag: inherits="imp_graphelement_iterator&lt; Vertex, BaseIterator, Graph, IdType &gt;" -->
+<p><code>#include &lt;ibm_multiproperty_graph.hpp&gt;</code></p>
+<div class="dynheader">
 Inheritance diagram for ibmppl::imp_vertex_iterator&lt; Vertex, BaseIterator, Graph, IdType &gt;:</div>
 <div class="dyncontent">
  <div class="center">
@@ -120,7 +121,7 @@ Inheritance diagram for ibmppl::imp_vertex_iterator&lt; Vertex, BaseIterator, Gr
 <tr><td colspan="2"><h2><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae5c9e5e2df2697a22927c592ae86da29"></a><!-- doxytag: member="ibmppl::imp_vertex_iterator::edge_iterator" ref="ae5c9e5e2df2697a22927c592ae86da29" args="" -->
-typedef graph_type::edge_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>edge_iterator</b></td></tr>
+typedef <a class="el" href="classibmppl_1_1ibm__generic__graph.html#a4a42e55a50e32a3f7131d6bb42d054b1">graph_type::edge_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>edge_iterator</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad46c372a4082439ac16f080a715bb845"></a><!-- doxytag: member="ibmppl::imp_vertex_iterator::pred_iterator" ref="ad46c372a4082439ac16f080a715bb845" args="" -->
 typedef <a class="el" href="classibmppl_1_1imp__pred__iterator.html">imp_pred_iterator</a><br class="typebreak"/>
 &lt; edge_type, <br class="typebreak"/>
@@ -129,11 +130,37 @@ base_pred_iterator, <a class="el" href="classibmppl_1_1Graph.html">Graph</a> &gt
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a57ff6bfc43b92eaacb830e40e309c4a0"></a><!-- doxytag: member="ibmppl::imp_vertex_iterator::imp_vertex_iterator" ref="a57ff6bfc43b92eaacb830e40e309c4a0" args="(BaseIterator it, graph_type *g)" -->
 &#160;</td><td class="memItemRight" valign="bottom"><b>imp_vertex_iterator</b> (BaseIterator it, <a class="el" href="classibmppl_1_1Graph.html">graph_type</a> *g)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a69155e12cb7a9dadcd9bd8e5c5af52af"></a><!-- doxytag: member="ibmppl::imp_vertex_iterator::imp_vertex_iterator" ref="a69155e12cb7a9dadcd9bd8e5c5af52af" args="(imp_vertex_iterator const &amp;other)" -->
+&#160;</td><td class="memItemRight" valign="bottom"><b>imp_vertex_iterator</b> (<a class="el" href="classibmppl_1_1imp__vertex__iterator.html">imp_vertex_iterator</a> const &amp;other)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__vertex__iterator.html#ae82900660854cb6f0dc042ff2a13595c">check_consistency</a> (const char *filename, int linenum)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">edge_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__vertex__iterator.html#ac395f816a7cbe1b92e389507a0331766">edges_begin</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">edge_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__vertex__iterator.html#af63b27b0bd83604221d3f560a85d0eee">edges_end</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__vertex__iterator.html#a2d1d385f71eccb525ee91f79c5d77b5f">edges_size</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a138715e078f814f456f7d8329eb0c6a2"></a><!-- doxytag: member="ibmppl::imp_vertex_iterator::edges_size" ref="a138715e078f814f456f7d8329eb0c6a2" args="(size_t lid) const " -->
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>edges_size</b> (size_t lid) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac395f816a7cbe1b92e389507a0331766"></a><!-- doxytag: member="ibmppl::imp_vertex_iterator::edges_begin" ref="ac395f816a7cbe1b92e389507a0331766" args="()" -->
+<a class="el" href="classibmppl_1_1__edge__iterator__t.html">edge_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>edges_begin</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4a4e3c7edee24e84a8582e438e31cfe8"></a><!-- doxytag: member="ibmppl::imp_vertex_iterator::edges_begin" ref="a4a4e3c7edee24e84a8582e438e31cfe8" args="(size_t lid)" -->
+<a class="el" href="classibmppl_1_1__edge__iterator__t.html">edge_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>edges_begin</b> (size_t lid)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classibmppl_1_1__edge__iterator__t.html">edge_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__vertex__iterator.html#af63b27b0bd83604221d3f560a85d0eee">edges_end</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adcb89b9f5d404882b829ebe2e80c00ca"></a><!-- doxytag: member="ibmppl::imp_vertex_iterator::edges_end" ref="adcb89b9f5d404882b829ebe2e80c00ca" args="(size_t lid)" -->
+<a class="el" href="classibmppl_1_1__edge__iterator__t.html">edge_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>edges_end</b> (size_t lid)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a21082a8714c58f16bb77e56a6969ddf7"></a><!-- doxytag: member="ibmppl::imp_vertex_iterator::preds_size" ref="a21082a8714c58f16bb77e56a6969ddf7" args="() const " -->
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>preds_size</b> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a195ab0f5e5c1abde85acbc997a20a9bc"></a><!-- doxytag: member="ibmppl::imp_vertex_iterator::preds_size" ref="a195ab0f5e5c1abde85acbc997a20a9bc" args="(size_t lid) const " -->
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>preds_size</b> (size_t lid) const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classibmppl_1_1imp__pred__iterator.html">pred_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__vertex__iterator.html#ad9a69ed1c7dc1fcfa7ad33d4e4d19f8a">preds_begin</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classibmppl_1_1imp__pred__iterator.html">pred_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__vertex__iterator.html#a26d36fab01c7901a7d72c6a19953b16b">preds_end</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classibmppl_1_1imp__pred__iterator.html">pred_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__vertex__iterator.html#aa904ac7fa7d63106b29d0833beb173c4">preds_begin</a> (size_t lid)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classibmppl_1_1imp__pred__iterator.html">pred_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__vertex__iterator.html#acd888a3184d69a638244f251745302cb">preds_end</a> (size_t lid)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9be74c15ba0cc33227721e3331676cb2"></a><!-- doxytag: member="ibmppl::imp_vertex_iterator::operator*" ref="a9be74c15ba0cc33227721e3331676cb2" args="()" -->
+<a class="el" href="classibmppl_1_1Vertex.html">Vertex</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a37ccad71a1b543716574ff45536cebf7"></a><!-- doxytag: member="ibmppl::imp_vertex_iterator::operator&#45;&gt;" ref="a37ccad71a1b543716574ff45536cebf7" args="()" -->
+<a class="el" href="classibmppl_1_1imp__vertex__iterator.html">imp_vertex_iterator</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>operator-&gt;</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__vertex__iterator.html#a31fd4f75ee2819bd179b7c48b8bec921">operator++</a> (int xx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classibmppl_1_1imp__vertex__iterator.html#a79303bed23033ee08c062e4bbce759e4">operator++</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a390645ec7bc7df0a4827c700150349d8"></a><!-- doxytag: member="ibmppl::imp_vertex_iterator::operator&#45;&#45;" ref="a390645ec7bc7df0a4827c700150349d8" args="(int xx)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>operator--</b> (int xx)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6e431385f936581b34016305e2440d2f"></a><!-- doxytag: member="ibmppl::imp_vertex_iterator::operator&#45;&#45;" ref="a6e431385f936581b34016305e2440d2f" args="()" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>operator--</b> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pri-types"></a>
 Private Types</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4773fb29efd1d9051a30546bc875f7ab"></a><!-- doxytag: member="ibmppl::imp_vertex_iterator::graph_type" ref="a4773fb29efd1d9051a30546bc875f7ab" args="" -->
@@ -147,9 +174,9 @@ IdType &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>base_type</b><
 typedef Graph::edge_type&#160;</td><td class="memItemRight" valign="bottom"><b>edge_type</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7035461da2f1837f5dd547eeaacd9ebc"></a><!-- doxytag: member="ibmppl::imp_vertex_iterator::base_edge_iterator" ref="a7035461da2f1837f5dd547eeaacd9ebc" args="" -->
 typedef <br class="typebreak"/>
-graph_type::base_edge_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>base_edge_iterator</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a92b5f374a823975b906e3faea981edf3"></a><!-- doxytag: member="ibmppl::imp_vertex_iterator::base_pred_iterator" ref="a92b5f374a823975b906e3faea981edf3" args="" -->
-typedef BaseIterator::pred_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>base_pred_iterator</b></td></tr>
+<a class="el" href="classibmppl_1_1ibm__generic__graph.html#a980acfeeffc1263b31313cc0f2b9c5e4">graph_type::base_edge_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>base_edge_iterator</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af80965e488dc986744788452f5cc9658"></a><!-- doxytag: member="ibmppl::imp_vertex_iterator::base_pred_iterator" ref="af80965e488dc986744788452f5cc9658" args="" -->
+typedef Vertex::pred_iterator&#160;</td><td class="memItemRight" valign="bottom"><b>base_pred_iterator</b></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class Vertex, class BaseIterator, class Graph, class IdType&gt;<br/>
@@ -198,27 +225,6 @@ template&lt;class Vertex , class BaseIterator , class Graph , class IdType &gt; 
 
 </div>
 </div>
-<a class="anchor" id="ac395f816a7cbe1b92e389507a0331766"></a><!-- doxytag: member="ibmppl::imp_vertex_iterator::edges_begin" ref="ac395f816a7cbe1b92e389507a0331766" args="()" -->
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Vertex , class BaseIterator , class Graph , class IdType &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">edge_iterator <a class="el" href="classibmppl_1_1imp__vertex__iterator.html">ibmppl::imp_vertex_iterator</a>&lt; <a class="el" href="classibmppl_1_1Vertex.html">Vertex</a>, BaseIterator, <a class="el" href="classibmppl_1_1Graph.html">Graph</a>, IdType &gt;::<a class="el" href="classibmppl_1_1imp__vertex__iterator.html#ac395f816a7cbe1b92e389507a0331766">edges_begin</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>This method returns an iterator over the outgoing edges of this vertex.</p>
-<dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014)</dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>edge_iterator </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="af63b27b0bd83604221d3f560a85d0eee"></a><!-- doxytag: member="ibmppl::imp_vertex_iterator::edges_end" ref="af63b27b0bd83604221d3f560a85d0eee" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -226,7 +232,7 @@ template&lt;class Vertex , class BaseIterator , class Graph , class IdType &gt; 
 template&lt;class Vertex , class BaseIterator , class Graph , class IdType &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">edge_iterator <a class="el" href="classibmppl_1_1imp__vertex__iterator.html">ibmppl::imp_vertex_iterator</a>&lt; <a class="el" href="classibmppl_1_1Vertex.html">Vertex</a>, BaseIterator, <a class="el" href="classibmppl_1_1Graph.html">Graph</a>, IdType &gt;::<a class="el" href="classibmppl_1_1imp__vertex__iterator.html#af63b27b0bd83604221d3f560a85d0eee">edges_end</a> </td>
+          <td class="memname"><a class="el" href="classibmppl_1_1__edge__iterator__t.html">edge_iterator</a> <a class="el" href="classibmppl_1_1imp__vertex__iterator.html">ibmppl::imp_vertex_iterator</a>&lt; <a class="el" href="classibmppl_1_1Vertex.html">Vertex</a>, BaseIterator, <a class="el" href="classibmppl_1_1Graph.html">Graph</a>, IdType &gt;::<a class="el" href="classibmppl_1_1imp__vertex__iterator.html#af63b27b0bd83604221d3f560a85d0eee">edges_end</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [inline]</code></td>
@@ -237,6 +243,72 @@ template&lt;class Vertex , class BaseIterator , class Graph , class IdType &gt; 
 <p>This method returns an iterator instance that can be used to determine if the iterator returned by the edges_begin method is finished. See the C++ STL iterator documentation to understand how it works.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>edge_iterator </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2d1d385f71eccb525ee91f79c5d77b5f"></a><!-- doxytag: member="ibmppl::imp_vertex_iterator::edges_size" ref="a2d1d385f71eccb525ee91f79c5d77b5f" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Vertex , class BaseIterator , class Graph , class IdType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classibmppl_1_1imp__vertex__iterator.html">ibmppl::imp_vertex_iterator</a>&lt; <a class="el" href="classibmppl_1_1Vertex.html">Vertex</a>, BaseIterator, <a class="el" href="classibmppl_1_1Graph.html">Graph</a>, IdType &gt;::<a class="el" href="classibmppl_1_1imp__vertex__iterator.html#a2d1d385f71eccb525ee91f79c5d77b5f">edges_size</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>This method returns an iterator over the outgoing edges of this vertex.</p>
+<dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014)</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>edge_iterator </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a31fd4f75ee2819bd179b7c48b8bec921"></a><!-- doxytag: member="ibmppl::imp_vertex_iterator::operator++" ref="a31fd4f75ee2819bd179b7c48b8bec921" args="(int xx)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Vertex , class BaseIterator , class Graph , class IdType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classibmppl_1_1imp__vertex__iterator.html">ibmppl::imp_vertex_iterator</a>&lt; <a class="el" href="classibmppl_1_1Vertex.html">Vertex</a>, BaseIterator, <a class="el" href="classibmppl_1_1Graph.html">Graph</a>, IdType &gt;::operator++ </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>xx</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>This method advances the iterator.</p>
+<dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014) </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#a88f0f0fe6886dbf37f5a8fd25897d4d0">ibmppl::imp_graphelement_iterator&lt; Vertex, BaseIterator, Graph, IdType &gt;</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a79303bed23033ee08c062e4bbce759e4"></a><!-- doxytag: member="ibmppl::imp_vertex_iterator::operator++" ref="a79303bed23033ee08c062e4bbce759e4" args="()" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Vertex , class BaseIterator , class Graph , class IdType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classibmppl_1_1imp__vertex__iterator.html">ibmppl::imp_vertex_iterator</a>&lt; <a class="el" href="classibmppl_1_1Vertex.html">Vertex</a>, BaseIterator, <a class="el" href="classibmppl_1_1Graph.html">Graph</a>, IdType &gt;::operator++ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>advance the iterator</p>
+<dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014) </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classibmppl_1_1imp__graphelement__iterator.html#aec1d351ef116babe488e3210e8234a22">ibmppl::imp_graphelement_iterator&lt; Vertex, BaseIterator, Graph, IdType &gt;</a>.</p>
 
 </div>
 </div>
@@ -256,6 +328,28 @@ template&lt;class Vertex , class BaseIterator , class Graph , class IdType &gt; 
 </div>
 <div class="memdoc">
 <p>This method returns a predecessor iterator over the incoming edges of this vertex.</p>
+<dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014)</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>edge_iterator </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa904ac7fa7d63106b29d0833beb173c4"></a><!-- doxytag: member="ibmppl::imp_vertex_iterator::preds_begin" ref="aa904ac7fa7d63106b29d0833beb173c4" args="(size_t lid)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Vertex , class BaseIterator , class Graph , class IdType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classibmppl_1_1imp__pred__iterator.html">pred_iterator</a> <a class="el" href="classibmppl_1_1imp__vertex__iterator.html">ibmppl::imp_vertex_iterator</a>&lt; <a class="el" href="classibmppl_1_1Vertex.html">Vertex</a>, BaseIterator, <a class="el" href="classibmppl_1_1Graph.html">Graph</a>, IdType &gt;::<a class="el" href="classibmppl_1_1imp__vertex__iterator.html#ad9a69ed1c7dc1fcfa7ad33d4e4d19f8a">preds_begin</a> </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>lid</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>This method returns a predecessor iterator over the incoming edges of a given label for this vertex.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014)</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>edge_iterator </dd></dl>
 
@@ -282,8 +376,30 @@ template&lt;class Vertex , class BaseIterator , class Graph , class IdType &gt; 
 
 </div>
 </div>
+<a class="anchor" id="acd888a3184d69a638244f251745302cb"></a><!-- doxytag: member="ibmppl::imp_vertex_iterator::preds_end" ref="acd888a3184d69a638244f251745302cb" args="(size_t lid)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Vertex , class BaseIterator , class Graph , class IdType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classibmppl_1_1imp__pred__iterator.html">pred_iterator</a> <a class="el" href="classibmppl_1_1imp__vertex__iterator.html">ibmppl::imp_vertex_iterator</a>&lt; <a class="el" href="classibmppl_1_1Vertex.html">Vertex</a>, BaseIterator, <a class="el" href="classibmppl_1_1Graph.html">Graph</a>, IdType &gt;::<a class="el" href="classibmppl_1_1imp__vertex__iterator.html#a26d36fab01c7901a7d72c6a19953b16b">preds_end</a> </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>lid</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>This method returns an iterator instance that can be used to determine if the iterator returned by the edges_begin method is finished. See the C++ STL iterator documentation to understand how it works.</p>
+<dl class="author"><dt><b>Author:</b></dt><dd>ccjason (3/4/2014)</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>edge_iterator </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="ibm__multiproperty__graph_8hpp_source.html">ibm_multiproperty_graph.hpp</a></li>
+<li>/home/yxia/Work/ibmppl.gsa/datastructure/graph/ibm_multiproperty_graph.hpp</li>
 </ul>
 </div><!-- contents -->
 <!-- window showing the filter options -->
