@@ -1,7 +1,7 @@
 var searchData=
 [
   ['set_5fesubproperty',['set_esubproperty',['../classibmppl_1_1ibm__multiproperty__graph__generic.html#acb8eac708a7927d635ce1a442f4f6413',1,'ibmppl::ibm_multiproperty_graph_generic::set_esubproperty(edged_type eid, const property_name_type &amp;pname, const property_value_type &amp;value)'],['../classibmppl_1_1ibm__multiproperty__graph__generic.html#aaffd27bb8ad2e23eb44e90b6b1e6b687',1,'ibmppl::ibm_multiproperty_graph_generic::set_esubproperty(edged_type eid, const size_t propid, const property_value_type &amp;value)']]],
-  ['set_5fexternalid',['set_externalid',['../classibmppl_1_1imp__graphelement__iterator.html#aab4862bdf0aaae8122ea5e754a02131c',1,'ibmppl::imp_graphelement_iterator']]],
+  ['set_5fexternalidxxx',['set_externalidxxx',['../classibmppl_1_1imp__graphelement__iterator.html#ae77f42f18045fb4683e72703d5e5112d',1,'ibmppl::imp_graphelement_iterator']]],
   ['set_5flabel',['set_label',['../classibmppl_1_1imp__graphelement__iterator.html#ac55017cf669a1fc53bc5ca6d14cd70e5',1,'ibmppl::imp_graphelement_iterator']]],
   ['set_5flabelid',['set_labelid',['../classibmppl_1_1imp__graphelement__iterator.html#a886ebce94ce65d1fd0ed334a8873ca2b',1,'ibmppl::imp_graphelement_iterator']]],
   ['set_5foffset',['set_offset',['../classibmppl_1_1adjacency__list.html#a4ed9a3584b7a1a160d2d1c691c88fa75',1,'ibmppl::adjacency_list']]],

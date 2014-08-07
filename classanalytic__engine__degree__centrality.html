@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="analytic_engine_degree_centrality" --><!-- doxytag: inherits="analytic_engine_base,query_base" -->
-<p>gShell command for finding degree centrality of a graph  
+<p>compute the degree of each vertex  
  <a href="classanalytic__engine__degree__centrality.html#details">More...</a></p>
 
 <p><code>#include &lt;plugin_degree_centrality.h&gt;</code></p>
@@ -101,7 +101,7 @@ Public Member Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>options</b> (command_options &amp;opts)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>gShell command for finding degree centrality of a graph </p>
+<div class="textblock"><p>compute the degree of each vertex </p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a208b0e5c6ffa0f5444160cbf94347070"></a><!-- doxytag: member="analytic_engine_degree_centrality::run" ref="a208b0e5c6ffa0f5444160cbf94347070" args="(struct query_param_type)" -->
 <div class="memitem">
@@ -119,7 +119,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>options</b> (command_
 <div class="memdoc">
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">-in</td><td>Use cached data as input </td></tr>
+    <tr><td class="paramname">--in</td><td>previous query result to use as input (if it contains both vertices and edges, the computation will be restricted to the induced sub-graph; if it contains vertices only, the computation will be restricted to these vertices in the whole graph </td></tr>
   </table>
   </dd>
 </dl>

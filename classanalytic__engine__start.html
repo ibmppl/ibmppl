@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>IBM SYSTEMG G RUNTIME &amp; NATIVE STORE: analytic_engine_k_shortest_paths Class Reference</title>
+<title>IBM SYSTEMG G RUNTIME &amp; NATIVE STORE: analytic_engine_start Class Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -77,43 +77,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
-<div class="title">analytic_engine_k_shortest_paths Class Reference</div>  </div>
+<div class="title">analytic_engine_start Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="analytic_engine_k_shortest_paths" --><!-- doxytag: inherits="analytic_engine_base,query_base" -->
-<p>compute the top k shortest paths between a source vertex and a sink vertex  
- <a href="classanalytic__engine__k__shortest__paths.html#details">More...</a></p>
+<!-- doxytag: class="analytic_engine_start" --><!-- doxytag: inherits="query_base" -->
+<p>start analytic engine for a graph to initialize in-memory data structures used by the analytics  
+ <a href="classanalytic__engine__start.html#details">More...</a></p>
 
-<p><code>#include &lt;plugin_k_shortest_paths.h&gt;</code></p>
+<p><code>#include &lt;plugin_analytic_engine_start.h&gt;</code></p>
 
-<p>Inherits analytic_engine_base, and query_base.</p>
+<p>Inherits query_base.</p>
 
-<p><a href="classanalytic__engine__k__shortest__paths-members.html">List of all members.</a></p>
+<p><a href="classanalytic__engine__start-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ace3d270e4ad9ec5460327fadffb3e24c"></a><!-- doxytag: member="analytic_engine_k_shortest_paths::REGISTER_QUERY_TYPE" ref="ace3d270e4ad9ec5460327fadffb3e24c" args="(analytic_engine_k_shortest_paths)" -->
-&#160;</td><td class="memItemRight" valign="bottom"><b>REGISTER_QUERY_TYPE</b> (<a class="el" href="classanalytic__engine__k__shortest__paths.html">analytic_engine_k_shortest_paths</a>)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classanalytic__engine__k__shortest__paths.html#aab115fa31f29d98eb52072390befcc43">run</a> (struct query_param_type)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3ca1d3cf26a664bd929133fd9d7b2da8"></a><!-- doxytag: member="analytic_engine_k_shortest_paths::options" ref="a3ca1d3cf26a664bd929133fd9d7b2da8" args="(command_options &amp;opts)" -->
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8605069ccd264fee72f984230aef5d9b"></a><!-- doxytag: member="analytic_engine_start::REGISTER_QUERY_TYPE" ref="a8605069ccd264fee72f984230aef5d9b" args="(analytic_engine_start)" -->
+&#160;</td><td class="memItemRight" valign="bottom"><b>REGISTER_QUERY_TYPE</b> (<a class="el" href="classanalytic__engine__start.html">analytic_engine_start</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classanalytic__engine__start.html#aad11365d2079f44d87f621d4b34608aa">run</a> (struct query_param_type)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0bf629982dcfdca4896cd1f80bcf9efb"></a><!-- doxytag: member="analytic_engine_start::options" ref="a0bf629982dcfdca4896cd1f80bcf9efb" args="(command_options &amp;opts)" -->
 void&#160;</td><td class="memItemRight" valign="bottom"><b>options</b> (command_options &amp;opts)</td></tr>
-<tr><td colspan="2"><h2><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7f6b28cfbe58f7267f6780a8aa36aac6"></a><!-- doxytag: member="analytic_engine_k_shortest_paths::compute" ref="a7f6b28cfbe58f7267f6780a8aa36aac6" args="(struct query_param_type param, size_t k, string source_vertex_key, vertex_id_type source_vertex_id, string sink_vertex_key, vertex_id_type sink_vertex_id)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>compute</b> (struct query_param_type param, size_t k, string source_vertex_key, vertex_id_type source_vertex_id, string sink_vertex_key, vertex_id_type sink_vertex_id)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>compute the top k shortest paths between a source vertex and a sink vertex </p>
+<div class="textblock"><p>start analytic engine for a graph to initialize in-memory data structures used by the analytics </p>
 </div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="aab115fa31f29d98eb52072390befcc43"></a><!-- doxytag: member="analytic_engine_k_shortest_paths::run" ref="aab115fa31f29d98eb52072390befcc43" args="(struct query_param_type)" -->
+<a class="anchor" id="aad11365d2079f44d87f621d4b34608aa"></a><!-- doxytag: member="analytic_engine_start::run" ref="aad11365d2079f44d87f621d4b34608aa" args="(struct query_param_type)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="classanalytic__engine__k__shortest__paths.html#aab115fa31f29d98eb52072390befcc43">analytic_engine_k_shortest_paths::run</a> </td>
+          <td class="memname">int <a class="el" href="classanalytic__engine__start.html#aad11365d2079f44d87f621d4b34608aa">analytic_engine_start::run</a> </td>
           <td>(</td>
           <td class="paramtype">struct query_param_type&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -124,11 +119,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>compute</b> (struct q
 <div class="memdoc">
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">--sourcevertex</td><td>external id of the source (start) vertex </td></tr>
-    <tr><td class="paramname">--sinkvertex</td><td>external id of the sink (end) vertex </td></tr>
-    <tr><td class="paramname">--k</td><td>k for k shortest paths </td></tr>
-    <tr><td class="paramname">--in</td><td>previous query result to use as input (the computation will be restricted to the induced sub-graph) </td></tr>
-    <tr><td class="paramname">--ignoreedgeweight</td><td>ignore edge weight when computing shortest paths </td></tr>
+    <tr><td class="paramname">--edgeweightpropname</td><td>property name of edge weight; if not specified, all edge weights are 1.0 </td></tr>
   </table>
   </dd>
 </dl>
@@ -136,7 +127,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>compute</b> (struct q
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/yxia/Work/ibmppl.gsa/apps/gShell_v2/plugin_k_shortest_paths.h</li>
+<li>/home/yxia/Work/ibmppl.gsa/apps/gShell_v2/plugin_analytic_engine_start.h</li>
 </ul>
 </div><!-- contents -->
 <!-- window showing the filter options -->

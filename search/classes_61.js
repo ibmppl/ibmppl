@@ -14,7 +14,10 @@ var searchData=
   ['analytic_5fengine_5fegonet',['analytic_engine_egonet',['../classanalytic__engine__egonet.html',1,'']]],
   ['analytic_5fengine_5fk_5fcore',['analytic_engine_k_core',['../classanalytic__engine__k__core.html',1,'']]],
   ['analytic_5fengine_5fk_5fshortest_5fpaths',['analytic_engine_k_shortest_paths',['../classanalytic__engine__k__shortest__paths.html',1,'']]],
+  ['analytic_5fengine_5freset',['analytic_engine_reset',['../classanalytic__engine__reset.html',1,'']]],
   ['analytic_5fengine_5fshortest_5fpaths',['analytic_engine_shortest_paths',['../classanalytic__engine__shortest__paths.html',1,'']]],
+  ['analytic_5fengine_5fstart',['analytic_engine_start',['../classanalytic__engine__start.html',1,'']]],
+  ['analytic_5fengine_5fstop',['analytic_engine_stop',['../classanalytic__engine__stop.html',1,'']]],
   ['analytic_5fengine_5ftriangle_5fcount',['analytic_engine_triangle_count',['../classanalytic__engine__triangle__count.html',1,'']]],
   ['arena',['arena',['../classarena.html',1,'']]]
 ];

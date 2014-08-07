@@ -84,7 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="analytic_engine_shortest_paths" --><!-- doxytag: inherits="analytic_engine_base,query_base" -->
-<p>gShell command for finding shortest paths  
+<p>compute the shortest paths between vertices  
  <a href="classanalytic__engine__shortest__paths.html#details">More...</a></p>
 
 <p><code>#include &lt;plugin_shortest_paths.h&gt;</code></p>
@@ -97,8 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a080745f736075adbddb059cded5e48f7"></a><!-- doxytag: member="analytic_engine_shortest_paths::REGISTER_QUERY_TYPE" ref="a080745f736075adbddb059cded5e48f7" args="(analytic_engine_shortest_paths)" -->
 &#160;</td><td class="memItemRight" valign="bottom"><b>REGISTER_QUERY_TYPE</b> (<a class="el" href="classanalytic__engine__shortest__paths.html">analytic_engine_shortest_paths</a>)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aac0e95239b884c0f664fabb9357128a1"></a><!-- doxytag: member="analytic_engine_shortest_paths::run" ref="aac0e95239b884c0f664fabb9357128a1" args="(struct query_param_type)" -->
-int&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> (struct query_param_type)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classanalytic__engine__shortest__paths.html#aac0e95239b884c0f664fabb9357128a1">run</a> (struct query_param_type)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae68d17790ffaad8169febd0bc019497f"></a><!-- doxytag: member="analytic_engine_shortest_paths::options" ref="ae68d17790ffaad8169febd0bc019497f" args="(command_options &amp;opts)" -->
 void&#160;</td><td class="memItemRight" valign="bottom"><b>options</b> (command_options &amp;opts)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
@@ -111,8 +110,35 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>get_shortest_paths</b
 void&#160;</td><td class="memItemRight" valign="bottom"><b>get_shortest_paths</b> (vertex_id_type source, vertex_id_type sink, shortest_paths_struct_type &amp;shortest_paths_struct, unordered_map&lt; vertex_id_type, vector&lt; path_type &gt;&gt; &amp;paths)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>gShell command for finding shortest paths </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+<div class="textblock"><p>compute the shortest paths between vertices </p>
+</div><hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="aac0e95239b884c0f664fabb9357128a1"></a><!-- doxytag: member="analytic_engine_shortest_paths::run" ref="aac0e95239b884c0f664fabb9357128a1" args="(struct query_param_type)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classanalytic__engine__shortest__paths.html#aac0e95239b884c0f664fabb9357128a1">analytic_engine_shortest_paths::run</a> </td>
+          <td>(</td>
+          <td class="paramtype">struct query_param_type&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">--sourcevertex</td><td>external id of the source (start) vertex; if not specified, paths from all vertices are computed </td></tr>
+    <tr><td class="paramname">--sinkvertex</td><td>external id of the sink (end) vertex; if not specified, single-source shortest paths to all other vertices are computed </td></tr>
+    <tr><td class="paramname">--in</td><td>previous query result to use as input (if it contains both vertices and edges, the computation will be restricted to the induced sub-graph; if it contains vertices only, the computation will be restricted to single-source shortest paths from these vertices in the whole graph </td></tr>
+    <tr><td class="paramname">--ignoreedgeweight</td><td>ignore edge weight when computing shortest paths </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>/home/yxia/Work/ibmppl.gsa/apps/gShell_v2/plugin_shortest_paths.h</li>
 </ul>
 </div><!-- contents -->

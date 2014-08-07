@@ -84,7 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="analytic_engine_closeness_centrality" --><!-- doxytag: inherits="analytic_engine_base,query_base" -->
-<p>gShell analytic for finding closeness centrality  
+<p>compute the closeness centrality at the vertex level  
  <a href="classanalytic__engine__closeness__centrality.html#details">More...</a></p>
 
 <p><code>#include &lt;plugin_closeness_centrality.h&gt;</code></p>
@@ -106,7 +106,7 @@ Private Member Functions</h2></td></tr>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>compute</b> (struct query_param_type param, string vertex_label, vertex_id_type vertex_id)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>gShell analytic for finding closeness centrality </p>
+<div class="textblock"><p>compute the closeness centrality at the vertex level </p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="ae9552b7c148ac864c266537d67527625"></a><!-- doxytag: member="analytic_engine_closeness_centrality::run" ref="ae9552b7c148ac864c266537d67527625" args="(struct query_param_type)" -->
 <div class="memitem">
@@ -124,9 +124,9 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>compute</b> (struct 
 <div class="memdoc">
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">--id</td><td>Vertex ID; if not specified, all vertices are used </td></tr>
-    <tr><td class="paramname">--in</td><td>Use cached data as the input </td></tr>
-    <tr><td class="paramname">--ignore_edge_weight</td><td>Ignore edge weight when computing the shortest paths </td></tr>
+    <tr><td class="paramname">--vertex</td><td>external id of the vertex to be computed; if not specified, the computation includes all vertices </td></tr>
+    <tr><td class="paramname">--in</td><td>previous query result to use as input (if it contains both vertices and edges, the computation will be restricted to the induced sub-graph; if it contains vertices only, the computation will be restricted to these vertices in the whole graph (unless '--vertex' is used, in which case the computation is only for the specified vertex) </td></tr>
+    <tr><td class="paramname">--ignoreedgeweight</td><td>ignore edge weight when computing shortest paths </td></tr>
   </table>
   </dd>
 </dl>

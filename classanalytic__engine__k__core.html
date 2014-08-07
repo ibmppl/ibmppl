@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="analytic_engine_k_core" --><!-- doxytag: inherits="analytic_engine_base,query_base" -->
-<p>gShell command for finding k-core from a graph  
+<p>compute the k-core of the graph  
  <a href="classanalytic__engine__k__core.html#details">More...</a></p>
 
 <p><code>#include &lt;plugin_k_core.h&gt;</code></p>
@@ -101,7 +101,7 @@ Public Member Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>options</b> (command_options &amp;opts)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>gShell command for finding k-core from a graph </p>
+<div class="textblock"><p>compute the k-core of the graph </p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="aab5e88a7a30b427a61ee0d4d62d0f2e6"></a><!-- doxytag: member="analytic_engine_k_core::run" ref="aab5e88a7a30b427a61ee0d4d62d0f2e6" args="(struct query_param_type)" -->
 <div class="memitem">
@@ -119,8 +119,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>options</b> (command_
 <div class="memdoc">
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">--k</td><td>specifiy the value of k </td></tr>
-    <tr><td class="paramname">--in</td><td>use the cached data as the input </td></tr>
+    <tr><td class="paramname">--k</td><td>k for k-core </td></tr>
+    <tr><td class="paramname">--in</td><td>previous query result to use as input (if it contains both vertices and edges, the computation will be restricted to the induced sub-graph; if it contains vertices only, the output will be restricted to these vertices in the whole graph </td></tr>
   </table>
   </dd>
 </dl>

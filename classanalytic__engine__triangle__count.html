@@ -84,7 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="analytic_engine_triangle_count" --><!-- doxytag: inherits="analytic_engine_base,query_base" -->
-<p>gShell command for counting triangles in a graph  
+<p>compute the number of triangles at the vertex level  
  <a href="classanalytic__engine__triangle__count.html#details">More...</a></p>
 
 <p><code>#include &lt;plugin_triangle_count.h&gt;</code></p>
@@ -108,7 +108,7 @@ vector&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>com
 void&#160;</td><td class="memItemRight" valign="bottom"><b>compute</b> (struct query_param_type param)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>gShell command for counting triangles in a graph </p>
+<div class="textblock"><p>compute the number of triangles at the vertex level </p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="ad8bb6c9551475c4d090cbe4c7c977ab6"></a><!-- doxytag: member="analytic_engine_triangle_count::run" ref="ad8bb6c9551475c4d090cbe4c7c977ab6" args="(struct query_param_type)" -->
 <div class="memitem">
@@ -126,8 +126,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>compute</b> (struct q
 <div class="memdoc">
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">--id</td><td>Vertex ID (optional) </td></tr>
-    <tr><td class="paramname">--in</td><td>Use the cached data </td></tr>
+    <tr><td class="paramname">--vertex</td><td>external id of the vertex to be computed; if not specified, the computation includes all vertices </td></tr>
+    <tr><td class="paramname">--in</td><td>previous query result to use as input (if it contains both vertices and edges, the computation will be restricted to the induced sub-graph; if it contains vertices only, the computation will be restricted to these vertices in the whole graph (unless '--vertex' is used, in which case the computation is only for the specified vertex) </td></tr>
   </table>
   </dd>
 </dl>
