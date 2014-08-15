@@ -41,7 +41,7 @@ The IBMPPL is the kernel part of IBM System G Native Store, which provides high 
 ### More Information
 - [Getting Started](docs/ppl/getting_started.md)
 - [Developers' Guide](docs/ppl/developer_guide.md)
-- [Users' Guide](docs/ppl/programming_guide.md)
+- [Property Graph Developers' Guide](docs/ppl/programming_guide.md)
 - [PPL Library API](http://ibmppl.github.io/ibmppl/index.html)
 - [FAQ & Trouble Shooting](docs/ppl/faq.md)
 - [Users' Guide to gShell (Native Store)](docs/gShell/gShell_APIs.md)
