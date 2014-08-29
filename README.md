@@ -30,7 +30,7 @@ The IBMPPL is the kernel part of IBM System G Native Store, which provides high 
   + REST-like API support
   + Java TinkerPop API support
   + Gremlin Query support
-  + Python API support (undergoing)
+  + Python API support 
   + SPARQL frontend support (undergoing)
 
 <!--### Examples
@@ -44,5 +44,6 @@ The IBMPPL is the kernel part of IBM System G Native Store, which provides high 
 - [Property Graph Developers' Tutorial](docs/ppl/programming_guide.md)
 - [Graph Library APIs/Classes](http://ibmppl.github.io/ibmppl/index.html)
 - [FAQ & Trouble Shooting](docs/ppl/faq.md)
-- [Users' Guide to gShell (Native Store)](docs/gShell/gShell_APIs.md)
+- [Users' Guide to gShell (Native Store)](docs/gShell/gShellv2_APIs.md)
 - [Users' Guide to Graph K/V Store](docs/gKV/graphKVstore.md)
+- [Glance at Python Wrapper to Property Graph](docs/ppl/wrapper/python_wrapper.md) 
