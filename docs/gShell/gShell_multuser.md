@@ -95,8 +95,12 @@ store query commands:
 Here are some examples to try. Basically, the format for using the client is:
 
 ```bash
-  ./gShellClient "<command>" <username> <gShellSuperMgr_host> <gShellSuperMgr_port>
+  ./gShellClient "<command>" <username> <gShellSuperMgr_host>
+  <gShellSuperMgr_port> [friend]
 ```
+
+When one wants to shared a graph to someone else, the arguemnt `friend` is
+provided. The graph name will be detected by `--graph` in the command.
 
 ```bash
    ./gShellClient "list_users" tom 127.0.0.1 7755
