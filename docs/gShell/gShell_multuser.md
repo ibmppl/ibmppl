@@ -25,15 +25,15 @@ The expected message on your screen will be:
     start socket
 ```
 
--- How does gShell multiuser service work
+- How does gShell multiuser service work
 
 The gShell multiuser service consists of three critical parts:
 
-* gShellSuperMgr -- the demon code oversees the concurrent graph stores,
+  * gShellSuperMgr -- the demon code oversees the concurrent graph stores,
   coordindating the graph share between users
-* gShellClient -- the client code used by each users, likely hidden by a
+  * gShellClient -- the client code used by each users, likely hidden by a
   webpage or GUI
-* gShell (hidden) -- the gShell engine for manageing graphs from a specific graph store
+  * gShell (hidden) -- the gShell engine for manageing graphs from a specific graph store
 
 Baseically, gShellSuperMgr will listen to any request from any
 gShellClient. If the request is regarding user management or resource sharing,
@@ -46,7 +46,7 @@ store service. This process is hidden to users. So, from the users's
 perspective, the only explicit communication occurs between his/her client to
 the gShellSuperMgr. 
 
--- Messges from gShellSuperMgr
+- Messges from gShellSuperMgr
 
 The gShellSuperMgr communicates with clients using messages through
 sockets. It allows the server and client on different machines. The messages
@@ -76,7 +76,7 @@ error[8]: the specified friend is not valid;
 error[9]: permission denied;
 error[10]: invalid user;
 
--- How to use gShell multiuser service work
+- How to use gShell multiuser service work
 
 The user management commands are as follows, in addition to the regular graph
 store query commands:
