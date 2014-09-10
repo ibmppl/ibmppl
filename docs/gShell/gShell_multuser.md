@@ -1,17 +1,18 @@
 ### gShell Multi-User Support Manual
 
 Native Store [gShell (version 2)](gShellv2_APIs.md) supports multiuser
-mode. The multiuser mode starts concurrent service support for a set of
-graphs, created by different users. The user can operate their graphs in
-parallel, and possibly share some of their graphs to their friends. Actually,
-the users and their resources are actually managed by a graph, nothing
-essentially different from the graph created by users, where each vertex is an
-user, and the properties on an edge give the graph names shared by the source
+mode. The multiuser mode starts concurrent graph store services for managing a set of
+graphs, possibly created by different users. The users can work on their graphs in
+parallel, and share some graphs to their friends. Actually,
+the users and their resources are managed by a graph in System G Native Store, nothing
+essentially different from the graph created by users in gShell. The
+gShellSuperMgr maintains the user graph where each vertex is an
+user, and the properties on a directed edge give the graphs shared by the source
 vertex to the target user.
 
 - **How to start gShell multiuser service**
 
-The multiuser mode is started by:
+The multiuser mode can be started by:
 ```bash
      ./gShellSuperMgr <socket_port>
 ```
@@ -29,17 +30,17 @@ The expected message on your screen will be:
 
 The gShell multiuser service consists of three critical parts:
 
-  - gShellSuperMgr -- the demon code oversees the concurrent graph stores,
-  coordindating the graph share between users
-  - gShellClient -- the client code used by each users, likely hidden by a
-  webpage or GUI
+  - gShellSuperMgr -- the demon code oversees the concurrently opened graph stores,
+  coordindating the graph sharing between users
+  - gShellClient -- the client code used by each users, which can be embedded into a
+  webpage or GUI on the client side
   - gShell (hidden) -- the gShell engine for manageing graphs from a specific graph store
 
-Baseically, gShellSuperMgr will listen to any request from any
+Basically, gShellSuperMgr will listen to any request from any
 gShellClient. If the request is regarding user management or resource sharing,
 gShellSuperMgr will start a gShell service internally for the corresponding
-store, if not started already. The supermanager also kicked out inactive
-users, or even clean up the storage. If the request from the client is a
+store, if not started already. The supermanager also removes inactive
+users, or even cleans up the storage. If the request from the client is a
 regular gShell command (see [gShellv2 tutorial](gShellv2_APIs.md)), then the
 supermgr will notify the client to forward this request to a specific gShell
 store service. This process is hidden to users. So, from the users's
@@ -49,7 +50,7 @@ the gShellSuperMgr.
 - **Messges from gShellSuperMgr**
 
 The gShellSuperMgr communicates with clients using messages through
-sockets. It allows the server and client on different machines. The messages
+a socket. So, it allows the server and client on different machines. The messages
 are likely processed by the GUI or webpage, but in case you try to handle it
 yourself (e.g., embed the client into one's code), here are some hints:
 
@@ -120,5 +121,5 @@ provided. The graph name will be detected by `--graph` in the command.
    ./gShellClient "bye" admin 127.0.0.1 7755
 ```
 
-A full-featured multi-user support requires many operations, but I hope the
-current one can work for now.
+A full-featured multi-user support requires many operations and funcationalities, but I hope the
+current one can work for many cases.
