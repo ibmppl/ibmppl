@@ -29,11 +29,11 @@ The expected message on your screen will be:
 
 The gShell multiuser service consists of three critical parts:
 
-  * gShellSuperMgr -- the demon code oversees the concurrent graph stores,
+..* gShellSuperMgr -- the demon code oversees the concurrent graph stores,
   coordindating the graph share between users
-  * gShellClient -- the client code used by each users, likely hidden by a
+..* gShellClient -- the client code used by each users, likely hidden by a
   webpage or GUI
-  * gShell (hidden) -- the gShell engine for manageing graphs from a specific graph store
+..* gShell (hidden) -- the gShell engine for manageing graphs from a specific graph store
 
 Baseically, gShellSuperMgr will listen to any request from any
 gShellClient. If the request is regarding user management or resource sharing,
