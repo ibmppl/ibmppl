@@ -46,5 +46,5 @@ The IBMPPL is the kernel part of IBM System G Native Store, which provides high 
 - [APIs/Classes in Graph Library](http://ibmppl.github.io/ibmppl/index.html)
 - [Users' Guide to gShell](docs/gShell/gShellv2_APIs.md)
 - [Developers' Guide to gShell](docs/gShell/gShellv2_develop_guide.md)
-- [Users' Guide to Graph K/V Store](docs/gKV/graphKVstore.md)
+- [Developers' Guide to Graph K/V Store](docs/gKV/graphKVstore.md)
 - [FAQ & Trouble Shooting](docs/ppl/faq.md)
