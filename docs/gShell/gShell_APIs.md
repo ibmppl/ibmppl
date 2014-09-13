@@ -1,5 +1,8 @@
 ### Instructions on using Native Graph Store
 
+** gShell has been upgraded to [gShell version 2](gShellv2_APIs.md). The
+   support to gShell version 1 has stopped **
+
 gShell is a shell-like environment implemented using IBMPPL for demonstrating how the System G native graph store works. gShell allows users to operate multiple graph stores and it supports graphs of different edge types (directed, undirected, pred_directed). Each command in gShell is implemented by a function that can be easily plugged in to the system, so users can implement additional data store operations or analytic tools in the shell. The shell can work in interactive mode (similar to Linux terminal), server/client mode, or batch mode.
 
 <b> 1. Compile </b>
