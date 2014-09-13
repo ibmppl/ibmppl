@@ -40,10 +40,11 @@ The IBMPPL is the kernel part of IBM System G Native Store, which provides high 
 
 ### More Information
 - [Getting Started](docs/ppl/getting_started.md)
-- [Developers' Guide](docs/ppl/developer_guide.md)
-- [Property Graph Developers' Tutorial](docs/ppl/programming_guide.md)
-- [Graph Library APIs/Classes](http://ibmppl.github.io/ibmppl/index.html)
-- [FAQ & Trouble Shooting](docs/ppl/faq.md)
-- [Users' Guide to gShell (Native Store)](docs/gShell/gShellv2_APIs.md)
+- [Developers' Guide in General](docs/ppl/developer_guide.md)
+- [Developers' Guide to Property Graph](docs/ppl/programming_guide.md)
+- [Python Wrapper to Property Graph](docs/ppl/wrapper/python_wrapper.md) 
+- [APIs/Classes in Graph Library](http://ibmppl.github.io/ibmppl/index.html)
+- [Users' Guide to gShell](docs/gShell/gShellv2_APIs.md)
+- [Developers' Guide to gShell](docs/gShell/gShellv2_develop_guide.md)
 - [Users' Guide to Graph K/V Store](docs/gKV/graphKVstore.md)
-- [Glance at Python Wrapper to Property Graph](docs/ppl/wrapper/python_wrapper.md) 
+- [FAQ & Trouble Shooting](docs/ppl/faq.md)
