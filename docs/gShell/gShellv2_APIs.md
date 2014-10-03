@@ -361,6 +361,20 @@ Here are some examples:
          analytic_shortest_paths --graph <graph_name> --hidepath --ignoredgeweight --sinkvertex <source_node> --sinkvertex <target_node>
 ```
 
+<b> 5. Plug-In Indexer </b>
+
+- A third party indexer can be used for indexing vertices and edges based on
+  their properties. We provide a simple command to inovke CLucene (2.3.2) indexer. The
+  index must be used for a particular graph `<graph_name>`, specific type
+  (this indexing is for vertex or edge) and the mode of the current invocation
+  (build an index, or query from a built index). Thus, we can build indexings
+  for vertex/edges based on different subproperties, and perform the query accordingly.
+
+```bash
+         indexer_clucene --graph <graph_name> --type <vertex|edge> --mode <build|query> --prop <subproperty_name> --term <term to match>
+```
+ 
+
 
 <b> Note </b>
 
