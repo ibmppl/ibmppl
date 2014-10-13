@@ -9,6 +9,9 @@ the 2nd, 3rd property bundle) in the first design.
 
 ## Global configuration table ##
 
+The graph engine shall choose property data structure to create/load graphs
+to/from disk.
+
 |`name` | `value` |
 |------|-------|
 | vertex_history   |  disabled    |
