@@ -87,14 +87,16 @@ into memory. Therefore, when inserting new edges, it will only append data to
 a buffer or create new buffers. No need to touch earlier data.
 
 ```bash
-                 ---------------------------------
-                 prev | <eid,vid,lid>, <>, ...
-                 ---------------------------------
-                   ^
-	               |
-                 ---------------------------------
-(vrec_table )===>prev | <eid,vid,label>, <>, ... 
-                 ---------------------------------				 
+                    ---------------------------------
+                    prev | <eid,vid,lid>, <>, ..., <>
+                    ---------------------------------
+                      ^
+	                  |
+vertex record:      ---------------------------------
+(in/outEdge) ======>prev | <eid,vid,label>, <>, ... 
+                    ---------------------------------
+			                                  ^		
+(cnt) ----------------------------------------|
 ```
 
 
@@ -119,9 +121,12 @@ order. [Will this be an issue for the parsers??]
                  ---------------------------------
                    ^
 	               |
+vertex record:   ---------------------------------
+(property)======>prev | property_buffer ...
                  ---------------------------------
-(vrec_table )===>prev | property_buffer ...
-                 ---------------------------------
+			                           ^		
+(cnt) ---------------------------------|
+
 ```
 
 ## Edge record ##
