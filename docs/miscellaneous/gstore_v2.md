@@ -20,7 +20,7 @@ interpret the value.
 
 ## Vertex record ##
 
-| `flag` | `inEdge` | `outEdge`| `property` | `history` | `property2` | ... |
+| `flag` | `inEdge` `cnt` | `outEdge` `cnt`| `property` `cnt` | `history` | `property2` | ... |
 |--------|----------|----------|------------|-----------|-------------|-----|
 |  ...   |  ...    | ... | ... | ... | ... | ... |
 
@@ -31,11 +31,25 @@ another file, where the details can be found. This table should be mmapped
 into memory whenever is possible.
 
 - `flag`: a `uint8` to bitmap flags such as **deleted**, **locked**, etc.
-- `inEdge`: a pointer (offset) to an entry in the edge list table to find the incoming edge list 
-- `outEdge`: a pointer to an entry in the edge list table to find the outgoing edge list
-- `property`: a pointer to an entry in the property table
+- `inEdge`: a pointer (offset) to an entry in the edge list table to find the
+  incoming edge list
+- `outEdge`: a pointer to an entry in the edge list table to find the outgoing
+  edge list
+- `property`: a pointer to an entry in the property bundle table
 - `history`: a pointer to an entry in the history (versioning) table
-- `property*`: a pointer to an entry in the additional property table
+- `property*`: a pointer to an entry in the additional property bundle table
+- `cnt`: the number of elements filled in the last buffer of the edge
+  list/property buffer. This helps to determine where we can append new
+  edges/property. Since the size of a single buffer is not large typically
+  (say, 256bytes for the kvstore), we can use `uint16`.
+
+Therefore, if there is only a single property bundle (encoded multiple
+properties) for a vertex, the vertex record size is:
+```bash
+   39 bytes = uint8 + size_t(uint64) * 4 + uint16 * 3
+```
+For a graph with 120M vertices, the table size is about `39B * 120M
+= 4.7GB`. This seems reasonable for most servers. 
 
 ## Edge lists ##
 
@@ -44,10 +58,10 @@ into memory whenever is possible.
 The edge list table has a header and a fixed length buffer, storing a list of
 edge elements.
 
-- `header`: is used for chain multiple buffers together. The
-buffer size must be aligned with the element of the edge list.
-  - `prev`: pointer to the previous edge list buffer
-  - `cnt` : number of tuples in this buffer
+- `header`: is used for chain multiple buffers together. The buffer size must
+be aligned with the element of the edge list. For now, we only have `prev` in
+the header as the pointer to the previous edge list buffer
+
 
 - `edge_list_buffer`: The element is *configured* according to the global
 configuration table. Typically, it is a tuple of three subelements: `<eid,
@@ -76,7 +90,7 @@ a buffer or create new buffers. No need to touch earlier data.
       ^
 	  |
     ---------------------------------
- -->prev | <eid,vid,label>, <>, ... | 
+===>prev | <eid,vid,label>, <>, ... 
     ---------------------------------
 ```
 
@@ -85,20 +99,28 @@ a buffer or create new buffers. No need to touch earlier data.
 This conforms with the vertex record table. Note the entry `history` will
 point to the earlier record, if any.
 
-## Property table ##
+## Vertex property table ##
 
-This is the same chain buffer as it is used in the current kvstore. No update
-is provided for now.
+```bash
+                 ---------------------------------
+                 prev | <eid,vid,lid>, <>, ...
+                 ---------------------------------
+                   ^
+	               |
+                 ---------------------------------
+(vrec table )===>prev | <eid,vid,label>, <>, ... 
+                 ---------------------------------
+```
 
 ## Edge record ##
 
 In most cases, the only reason for accessing an edge recard is to access the
-edge property. Therefore, it makes sense to store the property directly along
-with the edge record, so that we can save an additional jump.
+edge property. Therefore, it makes sense to prioritize the access to edge
+properties, and keep the other edge info into a separate file.
 
 Edge record is like a 
 
-| `flag` | `property` | `history` | `property2` | ... |
+| `flag` | `property` =>(`prev`, `buffer_data`) | `history` | `property2` | ... |
 |--------|----------|----------|------------|-----------|
 |  ...   |  ...    | ... | ... | ... |
 
