@@ -33,4 +33,20 @@ another file, where the details can be found.
 - `inEdge`: a pointer (offset) to an entry in the edge list table to find the incoming edge list 
 - `outEdge`: a pointer to an entry in the edge list table to find the outgoing edge list
 - `property`: a pointer to an entry in the property table
- 
+- `history`: a pointer to an entry in the history (versioning) table
+- `property*`: a pointer to an entry in the additional property table
+
+## Edge lists ##
+
+```bash
+
+    -----------------
+
+    -----------------
+      ^
+	  |
+    -----------------
+ --> 
+    -----------------
+```
+
