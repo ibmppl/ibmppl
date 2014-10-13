@@ -11,8 +11,11 @@ the 2nd, 3rd property bundle) in the first design.
 
 |`name` | `value` |
 |------|-------|
-| k0   | v0    |
-| ...  | ...   |
+| vertex_history   |  disabled    |
+| num_extra_vertex_property_bundles  | 0   |
+| edge_history | disabled |
+| num_extra_edge_property_bundles | 0 |
+| ... | ... |
 
 `name` and `value` are both strings. This table will be loaded when open a
 graph as a key-value hashmap. It is the individual module's responsibility to
@@ -84,15 +87,16 @@ into memory. Therefore, when inserting new edges, it will only append data to
 a buffer or create new buffers. No need to touch earlier data.
 
 ```bash
-    ---------------------------------
-    prev | <eid,vid,lid>, <>, ...
-    ---------------------------------
-      ^
-	  |
-    ---------------------------------
-===>prev | <eid,vid,label>, <>, ... 
-    ---------------------------------
+                 ---------------------------------
+                 prev | <eid,vid,lid>, <>, ...
+                 ---------------------------------
+                   ^
+	               |
+                 ---------------------------------
+(vrec_table )===>prev | <eid,vid,label>, <>, ... 
+                 ---------------------------------				 
 ```
+
 
 ## Vertex history table ##
 
@@ -101,27 +105,39 @@ point to the earlier record, if any.
 
 ## Vertex property table ##
 
+Vertex property table is pretty similiar to the edge list table, where the
+property is store in a chained buffer, but we only
+point to the last buffer in the vertex record table. The vertex record table
+also tells us where the end of the valid data in the last buffer, so that we
+can easily pull out correct information. Note that for the property loader in
+the graph engine, it should read the buffer in reversed
+order. [Will this be an issue for the parsers??]
+
 ```bash
                  ---------------------------------
-                 prev | <eid,vid,lid>, <>, ...
+                 prev | property_buffer
                  ---------------------------------
                    ^
 	               |
                  ---------------------------------
-(vrec table )===>prev | <eid,vid,label>, <>, ... 
+(vrec_table )===>prev | property_buffer ...
                  ---------------------------------
 ```
 
 ## Edge record ##
 
-In most cases, the only reason for accessing an edge recard is to access the
-edge property. Therefore, it makes sense to prioritize the access to edge
-properties, and keep the other edge info into a separate file.
+Edge record is a subset of the 
 
-Edge record is like a 
-
-| `flag` | `property` =>(`prev`, `buffer_data`) | `history` | `property2` | ... |
+| `flag` | `property` `cnt` | `history` | `property2` | ... |
 |--------|----------|----------|------------|-----------|
 |  ...   |  ...    | ... | ... | ... |
+
+## Edge property table ##
+
+This conforms with the vertex property table.
+
+## Edge history table ##
+
+This conforms with the vertex history table.
 
 
