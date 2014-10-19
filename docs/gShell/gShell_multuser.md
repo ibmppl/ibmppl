@@ -54,28 +54,28 @@ a socket. So, it allows the server and client on different machines. The message
 are likely processed by the GUI or webpage, but in case you try to handle it
 yourself (e.g., embed the client into one's code), here are some hints:
 
-1) all errors come with a number in format of "error[<num>]: <description>".
-2) when admin says "bye", all active users are kicked out by calling their
-"close_all". So, data should be saved
-3) if we quit the gshell manager by "bye", there is no defunct process
+  - 1) all errors come with a number in format of "error[<num>]: <description>".
+  - 2) when admin says "bye", all active users are kicked out by calling their
+  "close_all". So, data should be saved
+  - 3) if we quit the gshell manager by "bye", there is no defunct process
 remaining in the system.
-4) all normal information has a prefix "success: ".
-5) user registration and graph sharing is persistent
-6) access to the shared graph is supported.
+  - 4) all normal information has a prefix "success: ".
+  - 5) user registration and graph sharing is persistent
+  - 6) access to the shared graph is supported.
 
 The error message list is as follows, coming with an error code and a string brief:
 
-error[0]: unknown error <msg>;
-error[1]: user is unregistered;
-error[2]: user has not logged in;
-error[3]: user passwd is incorrect;
-error[4]: user exists;
-error[5]: permission denied;
-error[6]: graph sharing fails;
-error[7]: insufficient parameters;
-error[8]: the specified friend is not valid;
-error[9]: permission denied;
-error[10]: invalid user;
+  - error[0]: unknown error <msg>;
+  - error[1]: user is unregistered;
+  - error[2]: user has not logged in;
+  - error[3]: user passwd is incorrect;
+  - error[4]: user exists;
+  - error[5]: permission denied;
+  - error[6]: graph sharing fails;
+  - error[7]: insufficient parameters;
+  - error[8]: the specified friend is not valid;
+  - error[9]: permission denied;
+  - error[10]: invalid user;
 
 - **How to use gShell multiuser service work**
 
@@ -104,6 +104,7 @@ When one wants to shared a graph to someone else, the arguemnt `friend` is
 provided. The graph name will be detected by `--graph` in the command.
 
 ```bash
+   ./gShellClient "register tom 111" tom 127.0.0.1 7755
    ./gShellClient "list_users" tom 127.0.0.1 7755
    ./gShellClient "login tom 111" tom 127.0.0.1 7755
    ./gShellClient "login sam 222" sam 127.0.0.1 7755
