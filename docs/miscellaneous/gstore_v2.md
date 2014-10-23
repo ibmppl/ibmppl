@@ -149,3 +149,69 @@ This conforms with the vertex property table.
 This conforms with the vertex history table.
 
 
+----------------------------------
+
+## API proposal ##
+
+// data structures: vertex list, inEdge list, outEdge list, edges, properties,
+history_optional
+  // create a store
+
+  // configure a store
+
+  // add vertex, edge or property to a store
+    // addVertex key is offset in the vertex table, if key=-1, then the offset
+    of new added vertex is returned
+	  // You need to add a Vertex before you add edges from/to the vertex
+	    int addVertex     (size_t &vid);
+		  // (eid, vid, lid) edges include vid and label of a bunch of edges,
+    label may be 4 bytes int
+	  int addOutEdge     (size_t vid, size_t &eid, size_t vid2, size_t lable,
+    bool newEdge=true);
+	  // just byte copy, no guanrantee of the validity of the eids
+	    int addOutEdges    (size_t vid, byte_type *edges, size_t edgeSize,
+    bool newEdge=true);
+	  int addInEdge      (size_t vid, size_t &eid, size_t vid2, size_t lable,
+    bool newEdge=false);
+	  // just byte copy, no guanrantee of the validity of the eids
+	    int addInEdges     (size_t vid, byte_type *edges, size_t edgeSize,
+    bool newEdge=false);
+
+  int addVertexProperties (size_t vid, size_t propertyBundleId, byte_type
+  *properties, size_t propSize);
+    int addEdgeProperties   (size_t eid, size_t propertyBundleId, byte_type
+  *properties, size_t propSize);
+
+  // update
+    // update can be remove first, then add later
+
+  // delete
+  // also delete all the edges, properties of it
+    int deleteOutEdge (size_t vid, size_t eid, bool deleteEdgeRecord=true,
+  bool reclaimSpace);
+    int deleteInEdige (size_t vid, size_t eid, bool
+  deleteEdgeRecord=false,bool reclaimSpace);
+    int deleteVertexProperty (size_t vid, bool reclaimSpace);
+	  int deleteEdgeProperty   (size_t eid, bool reclaimSpace);
+
+  // query vertex, edge or property from a store
+    int getVertex   (size_t vid, size_t &inEdgeCnt, size_t &outEdgeCnt,
+    size_t* propertySize);
+	  int getOutEdges (size_t vid, byte_type* edges, size_t edgesSize);
+	    int getInEdges  (size_t vid, byte_type* edges, size_t edgesSize);
+		  int getVertexProperty (size_t vid, size_t propBundle_id, byte_type*
+    prop);
+	  int getEdgeProperty   (size_t eid, size_t propBundle_id, byte_type*
+    prop);
+
+  // filtering
+
+  // retrieve information of a store
+
+  // util
+    // reclaim all the deleted space
+	  // level=1, garbageCollection in  vertex list
+	    // level=2, plus in edge list
+		  // level=3, plus in edge records
+		    // level=4, plus in properties
+			  int garbageCollection (size_t level);int deleteVertex  (size_t vid, bool reclaimSpace);
