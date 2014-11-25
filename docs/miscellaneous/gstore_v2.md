@@ -153,6 +153,7 @@ This conforms with the vertex history table.
 
 ## API proposal ##
 
+<!--
 // data structures: vertex list, inEdge list, outEdge list, edges, properties,
 history_optional
   // create a store
@@ -215,3 +216,109 @@ history_optional
 		  // level=3, plus in edge records
 		    // level=4, plus in properties
 			  int garbageCollection (size_t level);int deleteVertex  (size_t vid, bool reclaimSpace);
+
+-->
+
+
+=======================================================
+
+
+## add vertex, edge or property to a store ##
+
+addVertex
+
+`key` is offset in the vertex table, if key=-1, then the offset of new added vertex is returned. You need to add a Vertex before you add edges from/to the vertex
+
+```bash
+	int addVertex (size_t &vid, byte_type *inEdgeList=NULL, byte_type *outEdgeList=NULL, vector<byte_type*> *props=NULL);
+```
+
+ `(eid, vid, lid)` edges include vid and label of a bunch of edges, label may be 4 bytes int
+
+```bash
+    int addOutEdge     (size_t vid, size_t &eid, size_t vid2, size_t lable, xsbool newEdge=true);
+```
+
+just byte copy, no guanrantee of the validity of the `eids`
+
+```bash
+    int addOutEdges    (size_t vid, byte_type *edges, size_t edgeSize, bool newEdge=true);
+    int addInEdge      (size_t vid, size_t &eid, size_t vid2, size_t lable, bool newEdge=false);
+```
+
+just byte copy, no guanrantee of the validity of the `eids`
+
+```bash
+	int addInEdges     (size_t vid, byte_type *edges, size_t edgeSize, bool newEdge=false);
+	int addEdgeRecords (size_t offset, byte_type *edges, size_t edgeSize);
+    int addVertexProperties (size_t vid, size_t propertyBundleId, byte_type *properties, size_t propSize);
+    int addEdgeProperties   (size_t eid, size_t propertyBundleId, byte_type *properties, size_t propSize);
+```
+
+
+### update ###
+
+update can be remove first, then add later
+
+### delete ###
+
+also delete all the edges, properties of it
+
+```bash
+    int deleteOutEdge (size_t vid, size_t eid, bool deleteEdgeRecord=true, bool reclaimSpace);
+    int deleteInEdige (size_t vid, size_t eid, bool deleteEdgeRecord=false,bool reclaimSpace);
+    int deleteVertexProperty (size_t vid, bool reclaimSpace);
+	int deleteEdgeProperty   (size_t eid, bool reclaimSpace);
+```
+
+query vertex, edge or property from a store
+
+```bash
+    int getVertex   (size_t vid, size_t &inEdgeCnt, size_t &outEdgeCnt, size_t* propertySize);
+	int getOutEdges (size_t vid, byte_type* edges, size_t edgesSize);
+    int getInEdges  (size_t vid, byte_type* edges, size_t edgesSize);
+	int getVertexProperty (size_t vid, size_t propBundle_id, byte_type* prop);
+	int getEdgeProperty   (size_t eid, size_t propBundle_id, byte_type* prop);
+```	
+
+### filtering ###
+
+retrieve information of a store until reclaim all the deleted space
+
+- level=1, garbageCollection in  vertex list
+- level=2, plus in edge list
+- level=3, plus in edge records
+- level=4, plus in properties
+
+```bash
+	int garbageCollection (size_t level);
+
+    graphStore_type (string store_name);
+    virtual ~graphStore_type(){}
+```	
+
+Configure a store
+
+```bash
+    (string name, string value) { _props.insert (name, value); }
+    string getConfig  (string name)               {return _props.at(name); }
+```	
+
+```bash
+    void importConfig (string fileName);
+    void exportConfig (string fileName);
+```
+
+create a store when store files do not exist or open a store when files exist
+
+```bash
+    void createStore ();
+	void importStore ();
+```	
+
+### close ###
+
+```bash
+    void closeStore ();
+	void setConfigint deleteVertex  (size_t vid, bool reclaimSpace);
+```
