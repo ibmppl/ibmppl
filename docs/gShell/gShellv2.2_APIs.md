@@ -1,4 +1,4 @@
- ## Instructions on using Native Graph Store gShell (v2.2) ##
+## Instructions on using Native Graph Store gShell (v2.2) ##
 
 
 
