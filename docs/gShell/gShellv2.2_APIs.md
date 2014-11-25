@@ -1,4 +1,4 @@
- ### Instructions on using Native Graph Store gShell (v2.2)
+ ## Instructions on using Native Graph Store gShell (v2.2) ##
 
 
 
@@ -60,8 +60,9 @@ be invoked in any of the following modes:
 
 Interactive mode:
 
-./gShell interactive
-
+```bash
+    ./gShell interactive
+````
 
 
 gShell displays a prompt “>>” waiting for input commands. To exit, type
@@ -84,11 +85,12 @@ last command in the file in order exit from gShell.
 
 Server/client mode:
 
+```bash
 ./gShell server <socket_port> (e.g., ./gShell server 9998)
 
 ./gShellClient <server_ip> “<command+arguments>” <socket_port> (e.g.,
 ./gShellClient 127.0.0.1 "create --graph g --type undirected" 9998)
-
+```
 
 
 The communication between server and client is through IPC socket.
@@ -97,12 +99,13 @@ The communication between server and client is through IPC socket.
 
 Multi-user server/client mode:
 
+```bash
 ./gShellSuperMgr 7755
 
 ./gShellClientMulti “<command+arguments>” <username> <server_ip> <socket_port>
 (e.g., ./gShellClientMulti “create --graph g --type undirected”
 user123 127.0.0.1 7755
-
+```
 
 
 The multi-user mode allows multiple gShell instances to work concurrently, one
@@ -144,29 +147,19 @@ Typing in the command `help` shows some useful hints on using gShell:
 
 
 ```bash
-
 gShell>> help
 
 [help]
 
 {
-
 "info":[
-
 {"MESSAGE":"<tab>: list all available commands"},
-
 {"MESSAGE":"ab<tab>: auto complete the command or list all commands starting with ab"},
-
 {"MESSAGE":"Ctrl+C: quick exit"},
-
 {"MESSAGE":"up/down: find the previous/nest command"},
-
 {"MESSAGE":"left/right: move cursor for editing a command"},
-
 {"MESSAGE":"additional help and tutorials available at https://github.com/ibmppl/ibmppl "}
-
 ]
-
 }
 
 ```
@@ -186,9 +179,7 @@ gShell>> list_all
 [list_all]
 
 {
-
 "warning":[{"MESSAGE":"store is empty!"}]
-
 }
 
 gShell>> list_all --help
@@ -198,13 +189,9 @@ gShell>> list_all --help
 {
 
 "info":[
-
 {"MESSAGE":"list_all - list all graphs"},
-
 {"MESSAGE":"--format: [optional] output format"},
-
 {"MESSAGE":"--help: [optional] help infomation"}
-
 ]
 
 }
@@ -266,9 +253,7 @@ one of the enclosed arguments needs to be specified.
 - Create a store: `create`
 
 ```bash
-
 create --graph <graph_name> [--type <{undirected, directed}>]
-
 ```
 
 If `--type` is not specified, a directed graph is created by default. Note
@@ -281,7 +266,6 @@ type (directed, or undirected).
 - Populate a store: `load_csv_edges`, `load_csv_vertices`
 
 ```bash
-
 load_csv_edges --graph <graph_name> --csvfile <edge_csv_file> --srcpos
 <col#_src> --targpos <col#_targ> [--labelpos <col#_ label>]
 [--label <edge_label>] [--no_header] [--separator <,>]
@@ -289,7 +273,6 @@ load_csv_edges --graph <graph_name> --csvfile <edge_csv_file> --srcpos
 load_csv_vertices --graph <graph_name> --csvfile <vertex_csv_file> --keypos
 <col#_vid> [--labelpos <col#_label>] [--label <vertex_label>] [--no_header]
 [--separator <,>]
-
 ```
 
 
@@ -749,10 +732,9 @@ separate in-memory PageRank subroutine is provided outside gShell.
 - Auction: analytic_auction
 
 ```bash
-
 analytic_auction --graph <graph_name> --prop <edge_prop_name_for_weight>
 [--eps <epsilon>] [--num <max_num_iterations>] [--bipartite_check]
-
+```
 
 
 This analytic performs auction algorithm to find a maximum weight matching in
@@ -777,10 +759,8 @@ find path.
 - Start analytic engine: analytic_start_engine
 
 ```bash
-
 analytic_start_engine --graph <graph_name>
 [--edgeweightpropname <edge_prop_name_for_weight>] [--restart]
-
 ```
 
 
@@ -811,9 +791,7 @@ issued, it is not necessary to issue this command explicitly unless
 - Stop analytic engine: analytic_stop_engine
 
 ```bash
-
 analytic_stop_engine --graph <graph_name>
-
 ```
 
 This command stops the engine for a graph in order to release the memory.
@@ -823,9 +801,7 @@ This command stops the engine for a graph in order to release the memory.
 - Reset analytic engine: analytic_reset_engine
 
 ```bash
-
 analytic_reset_engine --graph <graph_name>
-
 ```
 
 
@@ -856,9 +832,7 @@ representations used for graph topology information; use ` --restart` of
 
 
 ```bash
-
 analytic_connected_component --graph <graph_name> [--in <cache_name>]
-
 ```
 
 This analytic finds all connected components in a graph. The edges in the
