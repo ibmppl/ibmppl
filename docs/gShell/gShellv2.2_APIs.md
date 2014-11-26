@@ -1059,8 +1059,22 @@ of hops on the path cannot exceed the value of `--maxnumhops` and/or that all
 edges on the path must have the same label value as specified by `--label`.
 
 
+<b> 5. Plug-In Indexer </b>
 
-<b> 5. Multi-User Support </b>
+- A third party indexer can be used for indexing vertices and edges based on
+  their properties. We provide a simple command to inovke CLucene (2.3.2) indexer. The
+  index must be used for a particular graph `<graph_name>`, specific type
+  (this indexing is for vertex or edge) and the mode of the current invocation
+  (build an index, or query from a built index). Thus, we can build indexings
+  for vertex/edges based on different subproperties, and perform the query accordingly.
+
+```bash
+         indexer_clucene --graph <graph_name> --type <vertex|edge> --mode <build|query> --prop <subproperty_name> --term <term to match>
+```
+ 
+
+
+<b> 6. Multi-User Support </b>
 
 gShellSuperMgr is used for the server-side processing of gShell in multi-user
 mode. gShellClientMulti is used by the client to communicate with the
