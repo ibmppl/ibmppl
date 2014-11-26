@@ -254,7 +254,7 @@ one of the enclosed arguments needs to be specified.
 ```bash
 create --graph <graph_name> [--type <{undirected, directed}>]
 ```
-If `--type` is not specified, a directed graph is created by default. Note
+    If `--type` is not specified, a directed graph is created by default. Note
 that the graph in a graph store is not necessarily connected; that is, a graph
 store can maintain a set of small graphs, but all of them must be of the same
 type (directed, or undirected).
