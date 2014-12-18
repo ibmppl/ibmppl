@@ -9,6 +9,7 @@ Generic graph is a high level interface on top of IBMPPL native graph store. It 
   ```cpp
   // define graph type as generic graph
   typedef ibmppl::ibm_generic_graph       graph_type;
+  typedef graph_type::configuration       graph_config;
   // define iterators
   typedef graph_type::vertex_iterator     vertex_iterator;
   typedef graph_type::edge_iterator       edge_iterator;
@@ -28,7 +29,7 @@ Generic graph is a high level interface on top of IBMPPL native graph store. It 
     graph name.
 
 ```c++
-   struct graph_config_type {
+   struct graph_config {
      string              graph_name;
 	 string              graph_path = "./database";
 	 DIRECTNESS          direct = ibmppl::PRED_DIRECTED;
