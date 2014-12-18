@@ -31,7 +31,7 @@ Generic graph is a high level interface on top of IBMPPL native graph store. It 
   * Initialize a graph configuration: `graph_config_type
     init_graph_config(const string &graph_name)`
 
-  * `graph_config` is a member variable of a graph object.
+  * __argument__: `graph_config` is a member variable of a graph object as follows:
 
 ```c++
    struct graph_config {
