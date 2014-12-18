@@ -95,21 +95,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>gShell class - provide CLI for querying graph store and invoking graph analytics  
  <a href="classgShell__t.html#details">More...</a></p>
 
-<p><code>#include &lt;gShell.beforeJNI.hpp&gt;</code></p>
+<p><code>#include &lt;gShellClass.hpp&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5ab08cb24b5b0bccb14c420fc037e80f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ab08cb24b5b0bccb14c420fc037e80f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgShell__t.html#a5ab08cb24b5b0bccb14c420fc037e80f">run</a> (string &amp;cmd)</td></tr>
-<tr class="memdesc:a5ab08cb24b5b0bccb14c420fc037e80f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute a command stored in cmd along with arguments. <br/></td></tr>
-<tr class="separator:a5ab08cb24b5b0bccb14c420fc037e80f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1cf419ce71c510673c5f0ce86ccdeea"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa1cf419ce71c510673c5f0ce86ccdeea"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgShell__t.html#aa1cf419ce71c510673c5f0ce86ccdeea">set_loop_ctrl</a> (bool newval)</td></tr>
+<tr class="memdesc:aa1cf419ce71c510673c5f0ce86ccdeea"><td class="mdescLeft">&#160;</td><td class="mdescRight">determine if the gShell should continously receiving command (TRUE) or just quit (FALSE) <br/></td></tr>
+<tr class="separator:aa1cf419ce71c510673c5f0ce86ccdeea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab72dde268b509332cfeab69c74d96037"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab72dde268b509332cfeab69c74d96037"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgShell__t.html#ab72dde268b509332cfeab69c74d96037">run</a> (string &amp;cmd, stringstream &amp;ss)</td></tr>
+<tr class="memdesc:ab72dde268b509332cfeab69c74d96037"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute a command stored in cmd along with arguments; argument ss is the output message. <br/></td></tr>
+<tr class="separator:ab72dde268b509332cfeab69c74d96037"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0daa4986b1bce9e20544f11a9a006854"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0daa4986b1bce9e20544f11a9a006854"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgShell__t.html#a0daa4986b1bce9e20544f11a9a006854">get_query_argument</a> (string query_cmd, string options, string &amp;ret)</td></tr>
 <tr class="memdesc:a0daa4986b1bce9e20544f11a9a006854"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a query command and an argument name, return the argument value by parsing the command. <br/></td></tr>
 <tr class="separator:a0daa4986b1bce9e20544f11a9a006854"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae19b03200be5420333dfcdbaf79be41e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae19b03200be5420333dfcdbaf79be41e"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgShell__t.html#ae19b03200be5420333dfcdbaf79be41e">execute</a> (store_engine_type *s, string &amp;cmd)</td></tr>
-<tr class="memdesc:ae19b03200be5420333dfcdbaf79be41e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute a query, called by <a class="el" href="classgShell__t.html#a5ab08cb24b5b0bccb14c420fc037e80f" title="Execute a command stored in cmd along with arguments. ">run()</a> <br/></td></tr>
+<tr class="memdesc:ae19b03200be5420333dfcdbaf79be41e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute a query, called by <a class="el" href="classgShell__t.html#ab72dde268b509332cfeab69c74d96037" title="Execute a command stored in cmd along with arguments; argument ss is the output message. ">run()</a> <br/></td></tr>
 <tr class="separator:ae19b03200be5420333dfcdbaf79be41e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55deb5b3fb7b64ec85b2d4ff45d3f6db"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a55deb5b3fb7b64ec85b2d4ff45d3f6db"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgShell__t.html#a55deb5b3fb7b64ec85b2d4ff45d3f6db">get_help_info</a> (string query_cmd, internal_outputFormat &amp;i_out)</td></tr>
@@ -124,18 +128,76 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a11a5d856daf9358097b41c04507a896d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output versioning information. <br/></td></tr>
 <tr class="separator:a11a5d856daf9358097b41c04507a896d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bba4e88c197f4a4d333363bd556904f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9bba4e88c197f4a4d333363bd556904f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>run_output</b> (const string &amp;s, socket_server_type &amp;sock, int mode)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>run_output</b> (const string &amp;s, <a class="el" href="classsocket__server__type.html">socket_server_type</a> &amp;sock, int mode)</td></tr>
 <tr class="separator:a9bba4e88c197f4a4d333363bd556904f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf11753a2c8fd04277736311cd558951"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf11753a2c8fd04277736311cd558951"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>run_input</b> (string &amp;data, string &amp;cmd, socket_server_type &amp;sock, int mode, simpleShell &amp;shell)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>run_input</b> (string &amp;data, string &amp;cmd, <a class="el" href="classsocket__server__type.html">socket_server_type</a> &amp;sock, int mode, simpleShell &amp;shell)</td></tr>
 <tr class="separator:acf11753a2c8fd04277736311cd558951"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26e5f892b3b4f43770926c227780534b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a26e5f892b3b4f43770926c227780534b"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgShell__t.html#a26e5f892b3b4f43770926c227780534b">main_start</a> (int argc, char *argv[])</td></tr>
 <tr class="memdesc:a26e5f892b3b4f43770926c227780534b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start gShell engine according to CLI argument. <br/></td></tr>
 <tr class="separator:a26e5f892b3b4f43770926c227780534b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affc90e288a69f1430112785b720ed565"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="affc90e288a69f1430112785b720ed565"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>setup</b> (int argc, char *argv[], string &amp;cmd)</td></tr>
+<tr class="separator:affc90e288a69f1430112785b720ed565"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1cf419ce71c510673c5f0ce86ccdeea"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa1cf419ce71c510673c5f0ce86ccdeea"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set_loop_ctrl</b> (bool newval)</td></tr>
+<tr class="separator:aa1cf419ce71c510673c5f0ce86ccdeea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ab08cb24b5b0bccb14c420fc037e80f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ab08cb24b5b0bccb14c420fc037e80f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgShell__t.html#a5ab08cb24b5b0bccb14c420fc037e80f">run</a> (string &amp;cmd)</td></tr>
+<tr class="memdesc:a5ab08cb24b5b0bccb14c420fc037e80f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute a command stored in cmd along with arguments. <br/></td></tr>
+<tr class="separator:a5ab08cb24b5b0bccb14c420fc037e80f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0daa4986b1bce9e20544f11a9a006854"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0daa4986b1bce9e20544f11a9a006854"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgShell__t.html#a0daa4986b1bce9e20544f11a9a006854">get_query_argument</a> (string query_cmd, string options, string &amp;ret)</td></tr>
+<tr class="memdesc:a0daa4986b1bce9e20544f11a9a006854"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a query command and an argument name, return the argument value by parsing the command. <br/></td></tr>
+<tr class="separator:a0daa4986b1bce9e20544f11a9a006854"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae19b03200be5420333dfcdbaf79be41e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae19b03200be5420333dfcdbaf79be41e"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgShell__t.html#ae19b03200be5420333dfcdbaf79be41e">execute</a> (store_engine_type *s, string &amp;cmd)</td></tr>
+<tr class="memdesc:ae19b03200be5420333dfcdbaf79be41e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute a query, called by <a class="el" href="classgShell__t.html#ab72dde268b509332cfeab69c74d96037" title="Execute a command stored in cmd along with arguments; argument ss is the output message. ">run()</a> <br/></td></tr>
+<tr class="separator:ae19b03200be5420333dfcdbaf79be41e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55deb5b3fb7b64ec85b2d4ff45d3f6db"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a55deb5b3fb7b64ec85b2d4ff45d3f6db"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgShell__t.html#a55deb5b3fb7b64ec85b2d4ff45d3f6db">get_help_info</a> (string query_cmd, internal_outputFormat &amp;i_out)</td></tr>
+<tr class="memdesc:a55deb5b3fb7b64ec85b2d4ff45d3f6db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output help info of a command. <br/></td></tr>
+<tr class="separator:a55deb5b3fb7b64ec85b2d4ff45d3f6db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace3fe1a4f0ab630fb4f26d8ee49618c0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ace3fe1a4f0ab630fb4f26d8ee49618c0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgShell__t.html#ace3fe1a4f0ab630fb4f26d8ee49618c0">get_general_help_info</a> (internal_outputFormat &amp;i_out)</td></tr>
+<tr class="memdesc:ace3fe1a4f0ab630fb4f26d8ee49618c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output general help info, not specific to any command. <br/></td></tr>
+<tr class="separator:ace3fe1a4f0ab630fb4f26d8ee49618c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11a5d856daf9358097b41c04507a896d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a11a5d856daf9358097b41c04507a896d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgShell__t.html#a11a5d856daf9358097b41c04507a896d">get_version_info</a> (internal_outputFormat &amp;i_out)</td></tr>
+<tr class="memdesc:a11a5d856daf9358097b41c04507a896d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output versioning information. <br/></td></tr>
+<tr class="separator:a11a5d856daf9358097b41c04507a896d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bba4e88c197f4a4d333363bd556904f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9bba4e88c197f4a4d333363bd556904f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>run_output</b> (const string &amp;s, <a class="el" href="classsocket__server__type.html">socket_server_type</a> &amp;sock, int mode)</td></tr>
+<tr class="separator:a9bba4e88c197f4a4d333363bd556904f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf11753a2c8fd04277736311cd558951"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf11753a2c8fd04277736311cd558951"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>run_input</b> (string &amp;data, string &amp;cmd, <a class="el" href="classsocket__server__type.html">socket_server_type</a> &amp;sock, int mode, simpleShell &amp;shell)</td></tr>
+<tr class="separator:acf11753a2c8fd04277736311cd558951"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26e5f892b3b4f43770926c227780534b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a26e5f892b3b4f43770926c227780534b"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgShell__t.html#a26e5f892b3b4f43770926c227780534b">main_start</a> (int argc, char *argv[])</td></tr>
+<tr class="memdesc:a26e5f892b3b4f43770926c227780534b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start gShell engine according to CLI argument. <br/></td></tr>
+<tr class="separator:a26e5f892b3b4f43770926c227780534b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affc90e288a69f1430112785b720ed565"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="affc90e288a69f1430112785b720ed565"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>setup</b> (int argc, char *argv[], string &amp;cmd)</td></tr>
+<tr class="separator:affc90e288a69f1430112785b720ed565"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="memitem:ac64000d2fad3fb465378cc761ae88319"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac64000d2fad3fb465378cc761ae88319"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>init_command_parser</b> ()</td></tr>
+<tr class="separator:ac64000d2fad3fb465378cc761ae88319"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d31201a9ff91e485d25ad2b7af5a1b2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2d31201a9ff91e485d25ad2b7af5a1b2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>init_shell</b> (simpleShell &amp;shell)</td></tr>
+<tr class="separator:a2d31201a9ff91e485d25ad2b7af5a1b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31bb5e10a62be49035e0a35dcc22b1b7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a31bb5e10a62be49035e0a35dcc22b1b7"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>command_parsing</b> (const string &amp;line, string &amp;query_cmd, internal_outputFormat &amp;i_out)</td></tr>
+<tr class="separator:a31bb5e10a62be49035e0a35dcc22b1b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95046d5a0530fef5ac674da5ce534bfa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a95046d5a0530fef5ac674da5ce534bfa"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>argument_processs</b> (const string &amp;data, string &amp;query_cmd)</td></tr>
+<tr class="separator:a95046d5a0530fef5ac674da5ce534bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad807cd9423d1a27652b39cf7b6207b00"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad807cd9423d1a27652b39cf7b6207b00"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>store_process</b> (string &amp;query_cmd, string &amp;store_name, internal_outputFormat &amp;i_out, store_manager_type &amp;stores)</td></tr>
+<tr class="separator:ad807cd9423d1a27652b39cf7b6207b00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac64000d2fad3fb465378cc761ae88319"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac64000d2fad3fb465378cc761ae88319"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>init_command_parser</b> ()</td></tr>
 <tr class="separator:ac64000d2fad3fb465378cc761ae88319"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,17 +228,30 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>store_manager_file<
 <tr class="memitem:a4160006f54fc7f52a24dddb9e1e0c0ab"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4160006f54fc7f52a24dddb9e1e0c0ab"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>serverport</b></td></tr>
 <tr class="separator:a4160006f54fc7f52a24dddb9e1e0c0ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad71197f6aa99e01099040dde0e81c6e9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad71197f6aa99e01099040dde0e81c6e9"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>supermgrhost</b></td></tr>
+<tr class="separator:ad71197f6aa99e01099040dde0e81c6e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5ec9dafdb99697e167776ca39705874"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac5ec9dafdb99697e167776ca39705874"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>supermgrport</b></td></tr>
+<tr class="separator:ac5ec9dafdb99697e167776ca39705874"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7aa6208f6c04589492aa11a05f00ff01"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7aa6208f6c04589492aa11a05f00ff01"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>owner_username</b></td></tr>
+<tr class="separator:a7aa6208f6c04589492aa11a05f00ff01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb659001c5e29d30e29b19411e9db45e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb659001c5e29d30e29b19411e9db45e"></a>
 string&#160;</td><td class="memItemRight" valign="bottom"><b>shell_prefix</b></td></tr>
 <tr class="separator:aeb659001c5e29d30e29b19411e9db45e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04cbcc0a94e55b7fabbeb7908e51644c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a04cbcc0a94e55b7fabbeb7908e51644c"></a>
 command_options_map&#160;</td><td class="memItemRight" valign="bottom"><b>commandOptMap</b></td></tr>
 <tr class="separator:a04cbcc0a94e55b7fabbeb7908e51644c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7c71d13bf50b7e7458e67f93fcd3de1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac7c71d13bf50b7e7458e67f93fcd3de1"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>storepath</b></td></tr>
+<tr class="separator:ac7c71d13bf50b7e7458e67f93fcd3de1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>gShell class - provide CLI for querying graph store and invoking graph analytics </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/yxia/Work/ibmppl.gsa/apps/gShell_v2/gShell.beforeJNI.hpp</li>
+</div><hr/>The documentation for this class was generated from the following files:<ul>
+<li>/home/yxia/Work/ibmppl.gsa/apps/gShell_v2.2/gShell.hpp</li>
+<li>/home/yxia/Work/ibmppl.gsa/apps/gShell_v2.2/gShellClass.hpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

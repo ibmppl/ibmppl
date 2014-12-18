@@ -11,6 +11,7 @@ var searchData=
   ['imp_5fgraphelement_5fiterator_3c_20vertex_2c_20baseiterator_2c_20graph_2c_20idtype_20_3e',['imp_graphelement_iterator&lt; Vertex, BaseIterator, Graph, IdType &gt;',['../classibmppl_1_1imp__graphelement__iterator.html',1,'ibmppl']]],
   ['imp_5fpred_5fiterator',['imp_pred_iterator',['../classibmppl_1_1imp__pred__iterator.html',1,'ibmppl']]],
   ['imp_5fvertex_5fiterator',['imp_vertex_iterator',['../classibmppl_1_1imp__vertex__iterator.html',1,'ibmppl']]],
+  ['indexer_5fclucene',['indexer_clucene',['../classindexer__clucene.html',1,'']]],
   ['indisk_5fvertex',['inDisk_Vertex',['../classibmppl_1_1inDisk__Vertex.html',1,'ibmppl']]],
   ['indisk_5fvertex_3c_20data_2c_20edgelist_2c_20directness_2c_20base_20_3e',['inDisk_Vertex&lt; Data, EdgeList, Directness, Base &gt;',['../classibmppl_1_1inDisk__Vertex.html',1,'ibmppl']]],
   ['indisk_5fvertex_3c_20data_2c_20edgelist_2c_20pred_5fdirected_2c_20base_20_3e',['inDisk_Vertex&lt; Data, EdgeList, PRED_DIRECTED, Base &gt;',['../classibmppl_1_1inDisk__Vertex.html',1,'ibmppl']]]
