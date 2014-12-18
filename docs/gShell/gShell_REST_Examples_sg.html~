@@ -1,0 +1,31 @@
+
+
+	http://127.0.0.1/cgi2/nsREST.pl?cmd=create&storename=kv11&graphtype=undirected
+	http://127.0.0.1/cgi2/nsREST.pl?cmd=close&storename=kv11
+        http://127.0.0.1/cgi2/nsREST.pl?cmd=list_all
+        http://127.0.0.1/cgi2/nsREST.pl?cmd=delete&storename=kv11
+	http://127.0.0.1/cgi2/nsREST.pl?cmd=add_vertex&storename=kv11&vertex_id=Q727718S84162V06&property_list="new prop"
+	http://127.0.0.1/cgi2/nsREST.pl?cmd=update_vertex&storename=kv11&vertex_id=Q727718S84162V06&property_list=prop1%20prop2
+	http://127.0.0.1/cgi2/nsREST.pl?cmd=add_edge&storename=kv11&src_vid=Q727718S84162V05&targ_vid=Q727718S84162V06&property_list=prop2%20prop3
+	http://127.0.0.1/cgi2/nsREST.pl?cmd=update_edge&storename=kv11&src_vid=Q727718S84162V05&targ_vid=Q727718S84162V06&property_list=prop1%20prop3
+	http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=delete_vertex&vertex_id=Q727718S84162V06
+	http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=delete_edge&src_vid=Q727718S84162V05&targ_vid=Q727718S84162V06
+	http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=get_num_vertices
+	http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=get_num_edges
+	http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=get_num_neighbors&vertex_id=Q727718S84162V06
+        http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=query_neighbors&vertex_id=Q727718S84162V06
+        http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=filter_vertices&prop_idx=0&prop_val=2012-02-10-10.04.39.485842
+        http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=find_vertex_max_degree
+        http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=find_random_vertices&n=10
+	http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=find_random_edges&n=10
+        http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=query_vpropkeys
+	http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=query_epropkeys
+	http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=bfs_visual&root=Q727718S84162V06&hops=3&max_breadth=5
+	http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=colFilter&vertex_id=Q727718S84162V06&hops=2&ranks=10
+        http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=centroid_visual&vertex_id=Y077571E64061O86&rank1=20&rank1=10
+	http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=pageRank&dumpling_factor=0.2&quadratic_factor=0.5
+        http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=connectedComponent
+        http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=kCore&k=2
+	http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=clusteringCoefficient
+	http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=triangleCount
+	http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=ShortestPaths&targ_vid

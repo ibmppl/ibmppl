@@ -1,0 +1,31 @@
+
+
+	http://127.0.0.1/cgi2/nsREST.pl?cmd=create&storename=kv11&graphtype=undirected
+	http://127.0.0.1/cgi2/nsREST.pl?cmd=close&storename=kv11
+        http://127.0.0.1/cgi2/nsREST.pl?cmd=list_all
+        http://127.0.0.1/cgi2/nsREST.pl?cmd=delete&storename=kv11
+	http://127.0.0.1/cgi2/nsREST.pl?cmd=add_vertex&storename=kv11&vertex_id=<vertex_id>&property_list=p1%20p2%p3
+	http://127.0.0.1/cgi2/nsREST.pl?cmd=update_vertex&storename=kv11&vertex_id=<vertex_id>&property_list=p1%20p2%p3
+	http://127.0.0.1/cgi2/nsREST.pl?cmd=add_edge&storename=kv11&src_vid=<source>&targ_vid=<target>&property_list=p1%20p2%20p3
+	http://127.0.0.1/cgi2/nsREST.pl?cmd=update_edge&storename=kv11&src_vid=<source>&targ_vid=<target>&property_list=p1%20p2%20p3
+	http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=delete_vertex&vertex_id=<vertex_id>
+	http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=delete_edge&src_vid=<source>&targ_vid=<target>
+	http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=get_num_vertices
+	http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=get_num_edges
+	http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=get_num_neighbors&vertex_id=<vertex_id>
+        http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=query_neighbors&vertex_id=<vertex_id>
+        http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=filter_vertices&prop_idx=<index>&prop_val=<value>
+        http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=find_vertex_max_degree
+        http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=find_random_vertices&n=<#n>
+	http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=find_random_edges&n=<#n>
+        http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=query_vpropkeys
+	http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=query_epropkeys
+	http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=bfs_visual&root=<vertex_id>&hops=<#hops>&max_breadth=<#max_breadth>
+	http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=colFilter&vertex_id=<vertex_id>&hops#=<n>&ranks=5
+        http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=centroid_visual&vertex_id=Y077571E64061O86&rank1=<rank1>&rank1=<rank2>
+	http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=pageRank&dumpling_factor=0.2&quadratic_factor=0.5
+        http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=connectedComponent
+        http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=kCore&k=2
+	http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=clusteringCoefficient
+	http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=triangleCount
+	http://127.0.0.1/cgi2/nsREST.pl?storename=kv11&cmd=ShortestPaths&targ_vid
