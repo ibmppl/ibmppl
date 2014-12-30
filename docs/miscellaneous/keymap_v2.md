@@ -39,6 +39,7 @@ most cases, the ID is found at L2, with very limited comparisons of
 hash codes. A iterator is provided for convenience. 
 
 ### L1 ###
+```
            -----------
            | ID/Index|
            -----------
@@ -47,3 +48,4 @@ hash codes. A iterator is provided for convenience.
 hc%N --->  |         |
            -----------
 		   |         |
+```
