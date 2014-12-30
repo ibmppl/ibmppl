@@ -114,8 +114,6 @@ private:
     _index_t          invalid_index;                                                                                                                   
     string            invalid_str;                                                                                                                     
                                                                                                                                                        
-    // vector<string>::iterator iter;                                                                                                                  
-                                                                                                                                                       
 public:                                                                                                                                                
     keymap_t(size_t num_bucket);      ///< constructor of keymap                                                                                       
                                                                                                                                                        
@@ -137,7 +135,7 @@ public:
     struct iterator{ ... } 
     iterator begin() { return iterator(0, this); }         ///< return the beginning for iteration                                                     
     iterator end() { return iterator(V.size(),  this); }   ///< return the end for iteration   
-                                                                                                                                     
+}                                                                                                                                     
 ```
 
 ### Example ###
