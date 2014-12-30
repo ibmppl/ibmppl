@@ -101,6 +101,44 @@ V is a vector of stl::string, where the k-th element stores the key of which
 the corresponding ID is k. If a slot has not key, it is marked as
 `invalid_str`.
 
+### keymap class ###
+
+```cpp
+class keymap_t {                                                                                                                                       
+private:                                                                                                                                               
+    _L1_t L1;                                                                                                                                          
+    _L2_t L2;                                                                                                                                          
+    _L3_t L3;                                                                                                                                          
+    _V_t  V;                                                                                                                                           
+    _data_t           invalid_data;                                                                                                                    
+    _index_t          invalid_index;                                                                                                                   
+    string            invalid_str;                                                                                                                     
+                                                                                                                                                       
+    // vector<string>::iterator iter;                                                                                                                  
+                                                                                                                                                       
+public:                                                                                                                                                
+    keymap_t(size_t num_bucket);      ///< constructor of keymap                                                                                       
+                                                                                                                                                       
+    size_t size() { return V.size(); }     ///< return the number of keys                                                                              
+    const string & at(_index_t i) { return V.at(i); }          /// return the key of ID i (not confused as the i'th key)                               
+    const string& operator[](_index_t i) { return V.at(i); }   /// the same as .at() method                                                            
+                                                                                                                                                       
+    void insert(const string &str, _data_t id);  ///< insert a key with corresponding ID                                                               
+    bool erase(const string &str);               ///< delete a key                                                                                     
+    _data_t find(const string &str);             ///< find the ID given a key                                                                          
+                                                                                                                                                       
+    void load(const string &filename);     ///< load the map from disk                                                                                 
+    void save(const string &filename);     ///< save the map to disk                                                                                   
+                                                                                                                                                       
+    void print();                          ///< print the map (for debugging)                                                                          
+    void statistics();                     ///< print the statistics (e.g. hit rates)                                                                  
+    ...                                                                                                                                                       
+                                                                                                                                                       
+    struct iterator{ ... } 
+    iterator begin() { return iterator(0, this); }         ///< return the beginning for iteration                                                     
+    iterator end() { return iterator(V.size(),  this); }   ///< return the end for iteration   
+                                                                                                                                     
+```
 
 ### Example ###
 
