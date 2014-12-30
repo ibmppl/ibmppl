@@ -132,11 +132,11 @@ public:
     void statistics();                     ///< print the statistics (e.g. hit rates)                                                                  
     ...                                                                                                                                                       
                                                                                                                                                        
-    struct iterator{ ... } 
+    struct iterator{ ... }
     iterator begin() { return iterator(0, this); }         ///< return the beginning for iteration                                                     
     iterator end() { return iterator(V.size(),  this); }   ///< return the end for iteration   
-}                                                                                                                                     
-```
+}
+```                                                                                                                                     ```
 
 ### Example ###
 
