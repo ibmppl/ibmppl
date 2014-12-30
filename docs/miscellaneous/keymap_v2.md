@@ -127,5 +127,52 @@ int main() {
 ### Performance ###
 
 ```
+yxia@/home/xiay/YXIA/ibmppl.gsa/tests/keymap>./test_keymap vertex_keys_uniq.txt
+------------- performance ------------
+execute shell command:                  "wc -l vertex_keys_uniq.txt"
+number of inputs:                       2041309
+building time [sec]:                    1.00145
+persisting time [sec]:                  1.05706
+loading time [sec]:                     0.429453
+search time [sec]:                      2.88775e-07
+
+------------- statistics -------------
+number of keys:                 	2041309
+L1 capacity:                    	2041309
+L1 hits:                        	750774	--> (36.779%)
+L2 hits:                        	1290535	--> (63.221%)
+L3 hits:                        	0	--> (0%)
+Number of chains in L2:         	539453
+Number of chains in L3:         	0
+Size of the longest chain in L2:	8
+Size of the longest chain in L3:	0
+Average size of all chains in L2:	2.3923
+Average size of all chains in L3:	0
+
+```
+
+
+```
+yinglongs-mbp:keymap yxia$ ./test_keymap vertex_keys_uniq.txt 
+------------- performance ------------
+execute shell command:                  "wc -l vertex_keys_uniq.txt"
+number of inputs:                       2041309
+building time [sec]:                    1.1231
+persisting time [sec]:                  0.497462
+loading time [sec]:                     0.716397
+search time [sec]:                      2.97101e-07
+
+------------- statistics -------------
+number of keys:                 	2041309
+L1 capacity:                    	2041309
+L1 hits:                        	750774	--> (36.779%)
+L2 hits:                        	1290535	--> (63.221%)
+L3 hits:                        	0	--> (0%)
+Number of chains in L2:         	539453
+Number of chains in L3:         	0
+Size of the longest chain in L2:	8
+Size of the longest chain in L3:	0
+Average size of all chains in L2:	2.3923
+Average size of all chains in L3:	0
 
 ```
