@@ -136,7 +136,8 @@ public:
     iterator begin() { return iterator(0, this); }         ///< return the beginning for iteration                                                     
     iterator end() { return iterator(V.size(),  this); }   ///< return the end for iteration   
 }
-```                                                                                                                                     ```
+```                                                                                                                 
+
 
 ### Example ###
 
@@ -161,6 +162,8 @@ int main() {
 ```
 
 ### Performance ###
+
+We first try a dataset with 2 million keys on two different machines (aleph1 server and my Macbook pro).
 
 ```
 yxia@/home/xiay/YXIA/ibmppl.gsa/tests/keymap>./test_keymap vertex_keys_uniq.txt
@@ -212,3 +215,41 @@ Average size of all chains in L2:	2.3923
 Average size of all chains in L3:	0
 
 ```
+Now, let's further increase the dataset size. We use the twitter dataset with 120M dintinguished keys. The experiment was on aleph1 server. We further boil down the time for persisting and loading data (which slightly increase the total timing due to the fine grained timers and print out.
+
+```
+yxia@/home/xiay/YXIA/ibmppl.gsa/tests/keymap>./test_keymap dbfile.ext_keys
+------------- performance ------------
+execute shell command:                  "wc -l dbfile.ext_keys"
+number of inputs:                       120775508
+building time [sec]:                    44.6653
+
+		save L1 [sec]:	2.49894
+		save L2 [sec]:	2.62026
+		save L3 [sec]:	2.8424e-05
+		save V [sec]:	7.99494
+persisting time [sec]:                  13.1143
+
+		load L1 [sec]:	2.42413
+		load L2 [sec]:	1.99176
+		load L3 [sec]:	2.4837e-05
+		load V [sec]:	12.5846
+loading time [sec]:                     17.0007
+search time [sec]:                      2.15873e-07
+
+------------- statistics -------------
+number of keys:                 	120775508
+L1 capacity:                    	120775508
+L1 hits:                        	44424132	--> (36.7824%)
+L2 hits:                        	76351376	--> (63.2176%)
+L3 hits:                        	0	        --> (0%)
+Number of chains in L2:         	31919239
+Number of chains in L3:         	0
+Size of the longest chain in L2:	11
+Size of the longest chain in L3:	0
+Average size of all chains in L2:	2.39202
+Average size of all chains in L3:	0
+
+```
+
+It clearly shows that the loading/saving time is much less than building the map from raw data. Besides, the statistics is very consistent with the first experiments, which implies the stable performance of the hashing function. 
