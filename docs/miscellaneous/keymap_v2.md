@@ -215,6 +215,42 @@ Average size of all chains in L2:	2.3923
 Average size of all chains in L3:	0
 
 ```
+
+We increase the key numbers by using the bitcoin dataset. There are in total 72M keys. The result looks promising:
+
+```
+yxia@/home/xiay/YXIA/ibmppl.gsa/tests/keymap>./test_keymap /home/xiay/Data/bitcoin/merged_vertices.txt
+------------- performance ------------
+execute shell command:                  "wc -l /home/xiay/Data/bitcoin/merged_vertices.txt"
+number of inputs:                       71739029
+building time [sec]:                    36.3132
+		save L1 [sec]:	1.51767
+		save L2 [sec]:	1.63301
+		save L3 [sec]:	2.7845e-05
+		save V [sec]:	6.58672
+persisting time [sec]:                  9.73759
+		load L1 [sec]:	1.40544
+		load L2 [sec]:	1.24406
+		load L3 [sec]:	2.276e-05
+		load V [sec]:	8.7697
+loading time [sec]:                     11.4194
+search time [sec]:                      3.43667e-07
+
+------------- statistics -------------
+number of keys:                 	71739029
+L1 capacity:                    	71739029
+L1 hits:                        	26390032	--> (36.7862%)
+L2 hits:                        	45348997	--> (63.2138%)
+L3 hits:                        	0	--> (0%)
+Number of chains in L2:         	18957103
+Number of chains in L3:         	0
+Size of the longest chain in L2:	11
+Size of the longest chain in L3:	0
+Average size of all chains in L2:	2.39219
+Average size of all chains in L3:	0
+
+```
+
 Now, let's further increase the dataset size. We use the twitter dataset with 120M dintinguished keys. The experiment was on aleph1 server. We further boil down the time for persisting and loading data (which slightly increase the total timing due to the fine grained timers and print out.
 
 ```
