@@ -224,11 +224,13 @@ yxia@/home/xiay/YXIA/ibmppl.gsa/tests/keymap>./test_keymap /home/xiay/Data/bitco
 execute shell command:                  "wc -l /home/xiay/Data/bitcoin/merged_vertices.txt"
 number of inputs:                       71739029
 building time [sec]:                    36.3132
+
 		save L1 [sec]:	1.51767
 		save L2 [sec]:	1.63301
 		save L3 [sec]:	2.7845e-05
 		save V [sec]:	6.58672
 persisting time [sec]:                  9.73759
+
 		load L1 [sec]:	1.40544
 		load L2 [sec]:	1.24406
 		load L3 [sec]:	2.276e-05
