@@ -163,7 +163,7 @@ int main() {
 
 ### Performance ###
 
-We first try a dataset with 2 million keys on two different machines (aleph1 server and my Macbook pro).
+We first tried a Watson graph dataset with 2 million keys. We conducted the same experiments on two different machines (aleph1 server and my Macbook pro).
 
 ```
 yxia@/home/xiay/YXIA/ibmppl.gsa/tests/keymap>./test_keymap vertex_keys_uniq.txt
@@ -216,7 +216,7 @@ Average size of all chains in L3:	0
 
 ```
 
-We increase the key numbers by using the bitcoin dataset. There are in total 72M keys. The result looks promising:
+We increased the key numbers by using the bitcoin dataset. There are in total 72M keys. The result looks promising. We further boiled down the time for persisting and loading data (which slightly increase the total timing due to the fine grained timers and print out). We only show the experiments on aleph1 since the observation is consistent.
 
 ```
 yxia@/home/xiay/YXIA/ibmppl.gsa/tests/keymap>./test_keymap /home/xiay/Data/bitcoin/merged_vertices.txt
@@ -253,7 +253,7 @@ Average size of all chains in L3:	0
 
 ```
 
-Now, let's further increase the dataset size. We use the twitter dataset with 120M dintinguished keys. The experiment was on aleph1 server. We further boil down the time for persisting and loading data (which slightly increase the total timing due to the fine grained timers and print out.
+Now, let's further increase the dataset size. We use the twitter dataset with 120M dintinguished keys. The experiment was on aleph1 server. We also boiled down the time for persisting and loading data.
 
 ```
 yxia@/home/xiay/YXIA/ibmppl.gsa/tests/keymap>./test_keymap dbfile.ext_keys
