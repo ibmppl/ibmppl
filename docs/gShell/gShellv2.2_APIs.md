@@ -332,6 +332,9 @@ name2:value2 ...>
 delete_eprop --graph <graph_name> --src <src_vid> --targ <targ_vid> --prop
 <name1:value1 name2:value2 ...> [--label <edge_label>] [--eid <edge_id>]
 
+delete_vertex --graph <graph_name> --id <vertex_id> 
+
+delete_edge --graph <graph_name> --src <src_vid> --targ <targ_vid> [--eid <edge_id>] 
 ```
 
 
