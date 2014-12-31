@@ -1066,10 +1066,12 @@ edges on the path must have the same label value as specified by `--label`.
   index must be used for a particular graph `<graph_name>`, specific type
   (this indexing is for vertex or edge) and the mode of the current invocation
   (build an index, or query from a built index). Thus, we can build indexings
-  for vertex/edges based on different subproperties, and perform the query accordingly.
+  for vertex/edges based on different subproperties, and perform the query accordingly. 
+  <query_terms> can include terms (case insensitive), wildcards (*, ?), ranges (TO), 
+  Boolean operators (AND, OR, NOT) and grouping described in [Lucene query syntax](http://lucene.apache.org/core/2_9_4/queryparsersyntax.html). 
 
 ```bash
-         indexer_clucene --graph <graph_name> --type <vertex|edge> --mode <build|query> --prop <subproperty_name> --term <term to match>
+ indexer_clucene --graph <graph_name> --type <vertex|edge> --mode <build|query> --prop <subproperty_name> --term <query_term>
 ```
  
 
