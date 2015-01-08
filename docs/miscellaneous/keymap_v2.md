@@ -163,7 +163,9 @@ int main() {
 
 ### Performance ###
 
-We first tried a Watson graph dataset with 2 million keys. We conducted the same experiments on two different machines (aleph1 server and my Macbook pro).
+We first tried a Watson graph dataset with 2 million keys. We conducted the
+same experiments on a server machine (aleph1 server) with two Intel(R) Xeon(R) CPU
+E5-2687W 0 @ 3.10GHz (Sandy Bridge), and 64GB memory, 800GB local HDD. 
 
 ```
 yxia@/home/xiay/YXIA/ibmppl.gsa/tests/keymap>./test_keymap /home/xiay/Data/watson_keys_uniq.csv                                                                                     
@@ -208,33 +210,6 @@ time for overall load [sec]: 1.63051
 time for save [sec]: 0.645337
 ```
 
-Here is the experiment on the MacBook pro laptop with SSD, where we can see
-the impact of disk IO.
-
-```
-yinglongs-mbp:keymap yxia$ ./test_keymap vertex_keys_uniq.txt 
-------------- performance ------------
-execute shell command:                  "wc -l vertex_keys_uniq.txt"
-number of inputs:                       2041309
-building time [sec]:                    1.1231
-persisting time [sec]:                  0.497462
-loading time [sec]:                     0.716397
-search time [sec]:                      2.97101e-07
-
-------------- statistics -------------
-number of keys:                 	2041309
-L1 capacity:                    	2041309
-L1 hits:                        	750774	--> (36.779%)
-L2 hits:                        	1290535	--> (63.221%)
-L3 hits:                        	0	--> (0%)
-Number of chains in L2:         	539453
-Number of chains in L3:         	0
-Size of the longest chain in L2:	8
-Size of the longest chain in L3:	0
-Average size of all chains in L2:	2.3923
-Average size of all chains in L3:	0
-
-```
 
 
 
