@@ -189,7 +189,20 @@ Average size of all chains in L2:	2.3923
 Average size of all chains in L3:	0
 
 ```
+In contrast, the performance numbers using the `std::unordered_map` on the
+same machine is:
 
+```
+yxia@/home/xiay/YXIA/ibmppl.gsa/tests/keymap>./test_baseline
+/home/xiay/Data/watson_keymap.csv                                                                                      
+time for overall load [sec]: 1.63051
+        time for building str2int map [sec]: 1.21652
+		time for building reverse map [sec]: 0.41398
+		
+time for save [sec]: 0.645337
+```
+
+Here is the experiments on a laptop with SSD:
 
 ```
 yinglongs-mbp:keymap yxia$ ./test_keymap vertex_keys_uniq.txt 
@@ -215,6 +228,9 @@ Average size of all chains in L2:	2.3923
 Average size of all chains in L3:	0
 
 ```
+
+In contrast, the execution time 
+
 
 We increased the key numbers by using the bitcoin dataset. There are in total 72M keys. The result looks promising. We further boiled down the time for persisting and loading data (which slightly increase the total timing due to the fine grained timers and print out). We only show the experiments on aleph1 since the observation is consistent. In contrast, the execution time for `std::unordered_map` takes `58.39` seconds for loading (building) and `96.53` seconds for saving on the same machine. `39.28` out of the `58.39` seconds is for building the string-to-integer mapping, and the rest is for building the reverse map and estimate the number of buckets for the map.
 
