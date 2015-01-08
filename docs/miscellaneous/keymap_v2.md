@@ -166,31 +166,37 @@ int main() {
 We first tried a Watson graph dataset with 2 million keys. We conducted the same experiments on two different machines (aleph1 server and my Macbook pro).
 
 ```
-yxia@/home/xiay/YXIA/ibmppl.gsa/tests/keymap>./test_keymap vertex_keys_uniq.txt
+yxia@/home/xiay/YXIA/ibmppl.gsa/tests/keymap>./test_keymap /home/xiay/Data/watson_keys_uniq.csv                                                                                     
 ------------- performance ------------
-execute shell command:                  "wc -l vertex_keys_uniq.txt"
+execute shell command:                  "wc -l /home/xiay/Data/watson_keys_uniq.csv"
 number of inputs:                       2041309
-building time [sec]:                    1.00145
-persisting time [sec]:                  1.05706
-loading time [sec]:                     0.429453
-search time [sec]:                      2.88775e-07
+building time [sec]:                    1.01583
+persisting time [sec]:                  0.280033
+
+                load L1 [sec]:  0.0383571
+                load L2 [sec]:  0.0315116
+                load L3 [sec]:  2.3854e-05
+                load V [sec]:   0.454381
+loading time [sec]:                     0.524439
+search time [sec]:                      3.79975e-07
 
 ------------- statistics -------------
-number of keys:                 	2041309
-L1 capacity:                    	2041309
-L1 hits:                        	750774	--> (36.779%)
-L2 hits:                        	1290535	--> (63.221%)
-L3 hits:                        	0	--> (0%)
-Number of chains in L2:         	539453
-Number of chains in L3:         	0
-Size of the longest chain in L2:	8
-Size of the longest chain in L3:	0
-Average size of all chains in L2:	2.3923
-Average size of all chains in L3:	0
+number of keys:                         2041309
+L1 capacity:                            2041309
+L1 hits:                                750774  --> (36.779%)
+L2 hits:                                1290535 --> (63.221%)
+L3 hits:                                0       --> (0%)
+Number of chains in L2:                 539453
+Number of chains in L3:                 0
+Size of the longest chain in L2:        8
+Size of the longest chain in L3:        0
+Average size of all chains in L2:       2.3923
+Average size of all chains in L3:       0
+``` 
 
-```
 In contrast, the performance numbers using the `std::unordered_map` on the
-same machine is:
+same machine is as follows. Therefore, the speedup for the proposed method is
+`3.13x`, and `2.3x` for persisting the data.
 
 ```
 yxia@/home/xiay/YXIA/ibmppl.gsa/tests/keymap>./test_baseline
@@ -202,7 +208,8 @@ time for overall load [sec]: 1.63051
 time for save [sec]: 0.645337
 ```
 
-Here is the experiments on a laptop with SSD:
+Here is the experiment on the MacBook pro laptop with SSD, where we can see
+the impact of disk IO.
 
 ```
 yinglongs-mbp:keymap yxia$ ./test_keymap vertex_keys_uniq.txt 
@@ -229,7 +236,7 @@ Average size of all chains in L3:	0
 
 ```
 
-In contrast, the execution time 
+
 
 
 We increased the key numbers by using the bitcoin dataset. There are in total 72M keys. The result looks promising. We further boiled down the time for persisting and loading data (which slightly increase the total timing due to the fine grained timers and print out). We only show the experiments on aleph1 since the observation is consistent. In contrast, the execution time for `std::unordered_map` takes `58.39` seconds for loading (building) and `96.53` seconds for saving on the same machine. `39.28` out of the `58.39` seconds is for building the string-to-integer mapping, and the rest is for building the reverse map and estimate the number of buckets for the map.
