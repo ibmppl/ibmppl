@@ -250,8 +250,18 @@ Size of the longest chain in L2:	11
 Size of the longest chain in L3:	0
 Average size of all chains in L2:	2.39219
 Average size of all chains in L3:	0
+```
+In contrast, the performance number using `std::unordered_map` is as follows:
 
 ```
+yxia@/home/xiay/YXIA/ibmppl.gsa/tests/keymap>./test_baseline /home/xiay/Data/bitcoin/merged_vertices_withVID.txt
+time for overall load [sec]: 89.6437
+        time for building str2int map [sec]: 71.8751
+		time for building reverse map [sec]: 17.7686
+		
+time for save [sec]: 17.6618
+```
+
 
 Now, let's further increase the dataset size. We use the twitter dataset with 120M dintinguished keys. The experiment was on aleph1 server. We also boiled down the time for persisting and loading data. 
 
