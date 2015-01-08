@@ -216,7 +216,7 @@ Average size of all chains in L3:	0
 
 ```
 
-We increased the key numbers by using the bitcoin dataset. There are in total 72M keys. The result looks promising. We further boiled down the time for persisting and loading data (which slightly increase the total timing due to the fine grained timers and print out). We only show the experiments on aleph1 since the observation is consistent.
+We increased the key numbers by using the bitcoin dataset. There are in total 72M keys. The result looks promising. We further boiled down the time for persisting and loading data (which slightly increase the total timing due to the fine grained timers and print out). We only show the experiments on aleph1 since the observation is consistent. In contrast, the execution time for `std::unordered_map` takes `58.39` seconds for loading (building) and `96.53` seconds for saving on the same machine. `39.28` out of the `58.39` seconds is for building the string-to-integer mapping, and the rest is for building the reverse map and estimate the number of buckets for the map.
 
 ```
 yxia@/home/xiay/YXIA/ibmppl.gsa/tests/keymap>./test_keymap /home/xiay/Data/bitcoin/merged_vertices.txt
@@ -253,7 +253,7 @@ Average size of all chains in L3:	0
 
 ```
 
-Now, let's further increase the dataset size. We use the twitter dataset with 120M dintinguished keys. The experiment was on aleph1 server. We also boiled down the time for persisting and loading data. In contrast, the execution time for `std::unordered_map` takes `58.39` seconds for loading (building) and `96.53` seconds for saving on the same machine. `39.28` out of the `58.39` seconds is for building the string-to-integer mapping, and the rest is for building the reverse map and estimate the number of buckets for the map.
+Now, let's further increase the dataset size. We use the twitter dataset with 120M dintinguished keys. The experiment was on aleph1 server. We also boiled down the time for persisting and loading data. In contrast, the execution time for `std::unordered_map` takes `79.68` seconds for loading (building) and `153.83` seconds for saving on the same machine. 
 
 ```
 yxia@/home/xiay/YXIA/ibmppl.gsa/tests/keymap>./test_keymap dbfile.ext_keys
