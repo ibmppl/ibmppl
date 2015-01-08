@@ -163,7 +163,7 @@ int main() {
 
 ### Performance ###
 
-We first tried a Watson graph dataset with 2 million keys. We conducted the
+We first tried a **Watson graph** dataset with 2 million keys. We conducted the
 same experiments on a server machine (aleph1 server) with two Intel(R) Xeon(R) CPU
 E5-2687W 0 @ 3.10GHz (Sandy Bridge), and 64GB memory, 800GB local HDD. 
 
@@ -214,7 +214,15 @@ time for save [sec]: 0.645337
 
 
 
-We increased the key numbers by using the bitcoin dataset. There are in total 72M keys. The result looks promising. We further boiled down the time for persisting and loading data (which slightly increase the total timing due to the fine grained timers and print out). We only show the experiments on aleph1 since the observation is consistent. In contrast, the execution time for `std::unordered_map` takes `58.39` seconds for loading (building) and `96.53` seconds for saving on the same machine. `39.28` out of the `58.39` seconds is for building the string-to-integer mapping, and the rest is for building the reverse map and estimate the number of buckets for the map.
+We increased the key numbers by using the **bitcoin dataset**. There are in total
+72M keys. The result looks promising. We further boiled down the time for
+persisting and loading data (which slightly increase the total timing due to
+the fine grained timers and print out). We only show the experiments on aleph1
+since the observation is consistent. In contrast, the execution time for
+`std::unordered_map` takes `58.39` seconds for loading (building) and `96.53`
+seconds for saving on the same machine. `39.28` out of the `58.39` seconds is
+for building the string-to-integer mapping, and the rest is for building the
+reverse map and estimate the number of buckets for the map.
 
 ```
 yxia@/home/xiay/YXIA/ibmppl.gsa/tests/keymap>./test_keymap /home/xiay/Data/bitcoin/merged_vertices.txt
@@ -261,7 +269,7 @@ time for save [sec]: 17.6618
 ```
 
 
-Now, let's further increase the dataset size. We use the twitter dataset with 120M dintinguished keys. The experiment was on aleph1 server. We also boiled down the time for persisting and loading data. 
+Now, let's further increase the dataset size. We use the **twitter interaction dataset** with 120M dintinguished keys. The experiment was on aleph1 server. We also boiled down the time for persisting and loading data. 
 
 ```
 yxia@/home/xiay/YXIA/ibmppl.gsa/tests/keymap>./test_keymap dbfile.ext_keys
