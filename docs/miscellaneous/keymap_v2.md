@@ -253,7 +253,7 @@ Average size of all chains in L3:	0
 
 ```
 
-Now, let's further increase the dataset size. We use the twitter dataset with 120M dintinguished keys. The experiment was on aleph1 server. We also boiled down the time for persisting and loading data. In contrast, the execution time for `std::unordered_map` takes `79.68` seconds for loading (building) and `153.83` seconds for saving on the same machine. 
+Now, let's further increase the dataset size. We use the twitter dataset with 120M dintinguished keys. The experiment was on aleph1 server. We also boiled down the time for persisting and loading data. 
 
 ```
 yxia@/home/xiay/YXIA/ibmppl.gsa/tests/keymap>./test_keymap dbfile.ext_keys
@@ -261,7 +261,7 @@ yxia@/home/xiay/YXIA/ibmppl.gsa/tests/keymap>./test_keymap dbfile.ext_keys
 execute shell command:                  "wc -l dbfile.ext_keys"
 number of inputs:                       120775508
 building time [sec]:                    44.6653
-
+  
 		save L1 [sec]:	2.49894
 		save L2 [sec]:	2.62026
 		save L3 [sec]:	2.8424e-05
@@ -274,7 +274,7 @@ persisting time [sec]:                  13.1143
 		load V [sec]:	12.5846
 loading time [sec]:                     17.0007
 search time [sec]:                      2.15873e-07
-
+  
 ------------- statistics -------------
 number of keys:                 	120775508
 L1 capacity:                    	120775508
@@ -287,7 +287,22 @@ Size of the longest chain in L2:	11
 Size of the longest chain in L3:	0
 Average size of all chains in L2:	2.39202
 Average size of all chains in L3:	0
-
 ```
 
+As a comparison, if we utilize the `std::unordered_map` instead of the
+proposed solution, the performance usign the same Twitter dataset on the same
+machine is as follows. Note that the mapping is bi-directional. So, we build a
+reverse map after the forward map is built. Note that the overall loading time
+is more than the sum of the two map building times, since it involves some
+preprocessing for estimating the property number of buckets for the
+map. Therefore, as we can see, our proposed method achieve `5.4x` speedup for
+loading, and `2.3x` speedup for persisting data.
+```
+yxia@/home/xiay/YXIA/ibmppl.gsa/tests/keymap>./test_baseline db.ext_keys
+time for overall load [sec]: 91.7489
+      time for building str2int map [sec]: 66.3573
+	  time for building reverse map [sec]: 25.3916
+	  
+time for save [sec]: 30.3115
+```
 It clearly shows that the loading/saving time is much less than building the map from raw data. Besides, the statistics is very consistent with the first experiments, which implies the stable performance of the hashing function. 
