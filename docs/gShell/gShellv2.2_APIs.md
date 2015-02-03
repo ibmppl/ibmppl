@@ -1079,23 +1079,6 @@ edges on the path must have the same label value as specified by `--label`.
  
 <b> 6. PLugin-In Geospatial Support</b>
 
-- gShell can process geo-spatial information in Well-Known-Text ((WKT)[http://en.wikipedia.org/wiki/Well-known_text]) format.
-
-```bash
-  geo_contains --graph test2 --src v1 --depth 1 --contained "BOUNDINGBOX
-  (-74.047285 40.6795479, -73.907 40.882214)" --geoloc "LOC"
-  geo_contains --graph test2 --src v1 --depth 1 --contained "BOUNDINGBOX
-  (-123.5337 36.8931, -121.9435 38.8643)" --geoloc "LOC"
-  geo_contains --graph test2 --src v1 --depth 3 --contained "POINT
-  (-122.41494 37.78745)" --geoloc "LOC"
-  geo_intersects --graph test2 --src v1 --targ v10  --geoloc "LOC"
-  geo_distance --graph test2 --src v1 --targ v10  --geoloc "LOC"
-  geo_distance --graph test2 --src v1 --targ v5  --geoloc "LOC"
-```
-
-
-
-
 - BFS on vertices contained in a bounding box `geo_contains`. In this command,
 `--src` specifies the ID of the vertex at which the BFS starts. `--depth`
 constrains the maximum number of levels (hops). `--contained` specifies the
