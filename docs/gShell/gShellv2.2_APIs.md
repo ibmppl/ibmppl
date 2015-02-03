@@ -1072,9 +1072,96 @@ edges on the path must have the same label value as specified by `--label`.
          indexer_clucene --graph <graph_name> --type <vertex|edge> --mode <build|query> --prop <subproperty_name> --term <term to match>
 ```
  
+<b> 6. PLugin-In Geospatial Support</b>
+
+- gShell can process geo-spatial information in Well-Known-Text ((WKT)[http://en.wikipedia.org/wiki/Well-known_text]) format.
+
+```bash
+  geo_contains --graph test2 --src v1 --depth 1 --contained "BOUNDINGBOX
+  (-74.047285 40.6795479, -73.907 40.882214)" --geoloc "LOC"
+  geo_contains --graph test2 --src v1 --depth 1 --contained "BOUNDINGBOX
+  (-123.5337 36.8931, -121.9435 38.8643)" --geoloc "LOC"
+  geo_contains --graph test2 --src v1 --depth 3 --contained "POINT
+  (-122.41494 37.78745)" --geoloc "LOC"
+  geo_intersects --graph test2 --src v1 --targ v10  --geoloc "LOC"
+  geo_distance --graph test2 --src v1 --targ v10  --geoloc "LOC"
+  geo_distance --graph test2 --src v1 --targ v5  --geoloc "LOC"
+```
 
 
-<b> 6. Multi-User Support </b>
+
+
+- BFS on vertices contained in a bounding box `geo_contains`. In this command,
+`--src` specifies the ID of the vertex at which the BFS starts. `--depth`
+constrains the maximum number of levels (hops). `--contained` specifies the
+geometry (in (WKT)[http://en.wikipedia.org/wiki/Well-known_text] format) used
+to specify a bounding-box condition. That is BFS returns those vertices that
+satisfy the “contains” condition. `--geoloc` specifies the property name that
+specifies the location property in the graph.
+
+```bash
+geo_contains --graph <graph_name> --src <root_vid> [—depth <num_hops>]
+—contained “<WKT string>” --geoloc “geo_property_name”
+```
+
+Example vertex csv:
+```
+ID,WEIGHT,TAG,INFO,LOC
+v1,0.5,A,aa,"POINT (-122.41823 37.78689)"
+...
+v10,0.3,C,aa,"POINT (-122.41823 37.78689)"
+```
+
+- We have a command `geo_contains` to check if a vertex is contained in a
+  user-defined polygon. An example and the output are:
+
+```bash
+geo_contains --graph test2 --src v1 --depth 1 --contained "BOUNDINGBOX
+(-123.5337 36.8931, -121.9435 38.8643)" --geoloc "LOC"
+{
+"time":[{"TIME":"0.000216007"}],
+"vertex":[{"id":"v2"}]
+}
+```
+
+- A command to check if two vertices intersect, invoked by `geo_intersects`,
+where `--src` specifies the ID of the vertex/edge 1 for which intersection
+check is performed `--targ` specifies the ID of the vertex/edge 2 for which
+intersection check is performed
+
+```bash
+geo_intersects --graph <graph_name> --src v1 --targ v10  --geoloc
+"geo_property_name"
+```
+Example:
+
+```bash
+geo_intersects --graph test2 --src v1 --targ v10  --geoloc "LOC"
+{
+"time":[{"TIME":"7.60555e-05"}],
+"vertex":[{"id":"v1 INSTERSECTS v10"}]
+}
+```
+
+- Distance of one geometry in another:
+
+```bash
+geo_distance --graph <graph_name> --src v1 --targ v10 --geoloc
+"geo_property_name"
+```
+
+Here is the example and sample output:
+```bash
+geo_distance --graph test2 --src v1 --targ v5  --geoloc "LOC"
+{
+"distance":[{"v1 -> v5":"1355.00467"}],
+"time":[{"TIME":"7.51019e-05"}]
+}
+```
+
+
+
+<b> 7. Multi-User Support </b>
 
 gShellSuperMgr is used for the server-side processing of gShell in multi-user
 mode. gShellClientMulti is used by the client to communicate with the
