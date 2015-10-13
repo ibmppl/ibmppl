@@ -1147,9 +1147,46 @@ geo_distance --graph test2 --src v1 --targ v5  --geoloc "LOC"
 }
 ```
 
+<b> 7. Plugins for Snapshot and Snapshot-based Analytics</b>
 
+gShell can generate snapshot of a graph and represent it using a highly compact format. The reason for highly compact represetation is to imporve the data locality and therefore leads to better performance. The snapshot captures the structure of a graph at the time of the generation. We will support the snapshot of properties in future version. 
 
-<b> 7. Multi-User Support </b>
+- Generate a snapshot of a graph or open it (if already generated)
+
+```bash
+snapshot_tool --graph <graph_name>
+```
+
+- Perform pagerank on a snapshot using multithreading. The number of threads is specified by `--thread`; the damping factor and quadratic error are set by `--damp` and `--quad`; if `--display` is specified, the result is shown on screen.
+
+```bash
+snapshot_pagerank --graph <graph_name> --damp <damping_factor> --quad <quadratic_error> --display --num <max_allowed_iteractions> --thread <num_of_threads>
+```
+
+- Find shortest path in a snapshot using multithreading.
+
+```bash
+snapshot_sssp --graph <graph_name> --src <source_vertex> --dest <target_vertex> --max <max_num_hops> --therad <num_thread>
+```
+
+- Generate a unipartite graph from a bipartite graph. Given an input bipartite graph, the command generates a unipartite graph from a type of the vertices where an edge corresponds to the exsitence of the common neighbors of the two vertices in the bipartite graph. The edge is weighted by the number of common neighbors.
+
+```bash
+snapshot_dealGraph --graph <graph_name>
+```
+
+- Invoke Spark/GraphX. This command generates GraphX RDDs for the vertices and edges in the snapshot. 
+
+```bash
+snapshot_spark --graph <graph_name>
+```
+- Invoke GPU code. The GPU code must be able to consume the snapshot and compiled as an executable by `nvcc`. This command invokes such an executable and feed the snapshot of `<graph_name>` to the GPU code.  
+
+```bash
+snapshot_gpu --graph <graph_name> --cmd <command_for_gpu>
+```
+
+<b> 8. Multi-User Support </b>
 
 gShellSuperMgr is used for the server-side processing of gShell in multi-user
 mode. gShellClientMulti is used by the client to communicate with the
