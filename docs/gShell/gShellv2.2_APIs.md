@@ -1169,13 +1169,13 @@ snapshot_pagerank --graph <graph_name> --damp <damping_factor> --quad <quadratic
 snapshot_sssp --graph <graph_name> --src <source_vertex> --dest <target_vertex> --max <max_num_hops> --therad <num_thread>
 ```
 
-- Generate a unipartite graph from a bipartite graph. Given an input bipartite graph, the command generates a unipartite graph from a type of the vertices where an edge corresponds to the exsitence of the common neighbors of the two vertices in the bipartite graph. The edge is weighted by the number of common neighbors. `--path` allows users to specify where the exported file is created. By default, it will be created at `\tmp`. To load the exported graph into Apache Spark, we provide a subdirectory called `spark`, which contains three subfolders, one (`\spark\data`) for a sample data file for testing; another (`simple.sbt`) for compiling the Spark code; and the last one (`\spark\nsSpark\`) for a set of scala files for Spark. The scala files inclue edge loader, vertex loader, RddGenerator, RddQuery, metaDataMgr, and vertexKeyMap. The user can invoke `graphRddQuery.scala` in Apache Spark, which will load an exported graph into Spark RDDs that are compatible with GraphX. 
+- Generate a unipartite graph from a bipartite graph. Given an input bipartite graph, the command generates a unipartite graph from a type of the vertices where an edge corresponds to the exsitence of the common neighbors of the two vertices in the bipartite graph. The edge is weighted by the number of common neighbors. 
 
 ```bash
 snapshot_dealGraph --graph <graph_name> [--path <path>]
 ```
 
-- Invoke Spark/GraphX. This command generates GraphX RDDs for the vertices and edges in the snapshot. Note that this command must be used after `snapshot_tool --graph <graph_name>` is invoked. This command exports the graph from native store and  
+- Invoke Spark/GraphX. This command generates GraphX RDDs for the vertices and edges in the snapshot. Note that this command must be used after `snapshot_tool --graph <graph_name>` is invoked. This command exports the graph from native store. `--path` allows users to specify where the exported file is created. By default, it will be created at `\tmp`. To load the exported graph into Apache Spark, we provide a subdirectory called `spark`, which contains three subfolders, one (`\spark\data`) for a sample data file for testing; another (`simple.sbt`) for compiling the Spark code; and the last one (`\spark\nsSpark\`) for a set of scala files for Spark. The scala files inclue edge loader, vertex loader, RddGenerator, RddQuery, metaDataMgr, and vertexKeyMap. The user can invoke `graphRddQuery.scala` in Apache Spark, which will load an exported graph into Spark RDDs that are compatible with GraphX. 
 
 ```bash
 snapshot_spark --graph <graph_name>
