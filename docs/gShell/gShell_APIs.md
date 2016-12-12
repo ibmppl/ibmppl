@@ -175,6 +175,13 @@ Here are some examples:
 		<store_name> query_epropkeys
 ```
 
+- To query the property keys of the vertices and edges, we use the following commands. If there is no such keys (i.e., the data was imported with arguemnt "no_header"), a notice is shown to tell that there is no property keys.
+
+```bash
+        <store_name> query_vpropkeys
+		<store_name> query_epropkeys
+```
+
 <b> 4. Plug-In Analytics </b>
 
 - A user controled Breadth First Search (BFS) can be invoked by the following commands. <root> is an arbitrary vertex in the graph stored in <store_name>, and #hops shows the maximum allowed BFS levels. <max_breadth_per_level> gives the maximum number of vertices to traverse at each BFS level. This is for visualization purpose, where we do not want to visualize all the edges for dense vertices. [json|plain] defines if the output format should be in JSON or simply in plain text.
